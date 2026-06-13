@@ -1,0 +1,218 @@
+/* Black Diamond Spa — Therapist Modal */
+
+.therapist-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-lg);
+  padding-top: calc(var(--sp-lg) + env(safe-area-inset-top));
+  padding-bottom: calc(var(--sp-lg) + env(safe-area-inset-bottom));
+  padding-left: calc(var(--sp-lg) + env(safe-area-inset-left));
+  padding-right: calc(var(--sp-lg) + env(safe-area-inset-right));
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.therapist-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.therapist-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 17, 21, 0.72);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.therapist-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 920px;
+  max-height: calc(100dvh - var(--sp-2xl));
+  max-height: calc(100svh - var(--sp-2xl));
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(10, 186, 181, 0.18);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(40px) scale(0.96);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+  -webkit-overflow-scrolling: touch;
+}
+
+.therapist-modal.is-open .therapist-modal__panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.therapist-modal__close {
+  position: absolute;
+  top: var(--sp-md);
+  right: var(--sp-md);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(26, 29, 33, 0.85);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-size: var(--fs-xl);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    color var(--transition-base);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.therapist-modal__close:hover {
+  border-color: rgba(10, 186, 181, 0.4);
+  color: var(--tiffany);
+}
+
+.therapist-modal__photo-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.therapist-modal__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.therapist-modal__years {
+  position: absolute;
+  bottom: var(--sp-lg);
+  left: var(--sp-lg);
+  padding: 0.35rem 0.75rem;
+  background: rgba(26, 29, 33, 0.88);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.therapist-modal__info {
+  padding: var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  overflow-y: auto;
+}
+
+.therapist-modal__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.therapist-modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.therapist-modal__bio {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  max-width: none;
+}
+
+.therapist-modal__services-title {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: var(--sp-sm);
+}
+
+.therapist-modal__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+  list-style: none;
+}
+
+.therapist-modal__cta {
+  margin-top: var(--sp-md);
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .therapist-modal__panel {
+    grid-template-columns: 42% 58%;
+    max-height: calc(100dvh - var(--sp-3xl));
+  }
+
+  .therapist-modal__photo-wrap {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+
+  .therapist-modal__info {
+    padding: var(--sp-2xl);
+  }
+}
+
+@media (max-width: 639px) {
+  .therapist-modal {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .therapist-modal__panel {
+    max-width: none;
+    max-height: 100dvh;
+    max-height: 100svh;
+    border-radius: 0;
+    border: none;
+  }
+
+  .therapist-modal__photo-wrap {
+    aspect-ratio: 16 / 11;
+  }
+
+  .therapist-modal__close {
+    top: calc(var(--sp-md) + env(safe-area-inset-top));
+    right: calc(var(--sp-md) + env(safe-area-inset-right));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .therapist-modal,
+  .therapist-modal__panel {
+    transition: none;
+  }
+}

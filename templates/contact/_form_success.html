@@ -1,0 +1,13 @@
+{% load i18n %}
+<div class="form-success" style="padding:var(--sp-xl);border-radius:var(--radius-lg);background:rgba(10,186,181,0.1);border:1px solid var(--tiffany);text-align:center">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--tiffany)" stroke-width="1.5" style="margin-bottom:var(--sp-md)" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="9,12 11,14 15,10"/>
+  </svg>
+  <h3 style="font-family:var(--font-display);font-size:var(--fs-xl);color:var(--tiffany);margin-bottom:var(--sp-sm)">
+    {% trans "Zpráva odeslána!" %}
+  </h3>
+  <p style="color:var(--text-secondary)">
+    {% blocktrans with name=contact.name %}Děkujeme, {{ name }}. Ozveme se vám co nejdříve.{% endblocktrans %}
+  </p>
+</div>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1d21">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/glass.css">
+  <link rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link rel="stylesheet" href="/assets/css/components/nav.css">
+  <link rel="stylesheet" href="/assets/css/components/mob-bar.css">
+  <link rel="stylesheet" href="/assets/css/components/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/home-v4.css">
+
+  <!-- SEO Meta -->
+  <title>Masáž Praha — Prémiový relaxační salon | Black Diamond Spa</title>
+  <meta name="description" content="Black Diamond Spa — luxusní relaxační masáže v centru Prahy. Klasická, aromamasáž, sportovní. Certifikované masérky. Rezervujte online. Opletalová 30, Praha 1.">
+  <link rel="canonical" href="https://blackdiamond.cz/cs/">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="cs" href="https://blackdiamond.cz/cs/">
+  <link rel="alternate" hreflang="en" href="https://blackdiamond.cz/en/">
+  <link rel="alternate" hreflang="ru" href="https://blackdiamond.cz/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://blackdiamond.cz/cs/">
+
+  <!-- OG -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://blackdiamond.cz/cs/">
+  <meta property="og:title"       content="Masáž Praha — Prémiový relaxační salon | Black Diamond Spa">
+  <meta property="og:description" content="Luxusní relaxační masáže v srdci Prahy. Klasická, aromamasáž, sportovní, lymfatická. Rezervujte online.">
+  <meta property="og:image"       content="https://blackdiamond.cz/assets/img/og/home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height"content="630">
+  <meta property="og:site_name"   content="Black Diamond Spa">
+  <meta property="og:locale"      content="cs_CZ">
+
+  <!-- Hero LCP preload -->
+  <link rel="preload" as="image" href="/assets/img/hero.webp" fetchpriority="high">
+
+  <!-- Fonts preconnect -->
+    
+  <!-- CSS -->
+
+  <!-- Schema.org: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Black Diamond Spa",
+    "url": "https://blackdiamond.cz",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://blackdiamond.cz/cs/masaze/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Schema.org: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MassageParlor",
+    "name": "Black Diamond Spa",
+    "url": "https://blackdiamond.cz",
+    "telephone": "+420797669633",
+    "email": "info@blackdiamond.cz",
+    "priceRange": "Kč Kč",
+    "currenciesAccepted": "CZK",
+    "paymentAccepted": "Cash, Credit Card",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "10:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Opletalová 30",
+      "postalCode": "110 00",
+      "addressLocality": "Praha 1",
+      "addressCountry": "CZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "50.0816",
+      "longitude": "14.4330"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "87",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://instagram.com/blackdiamondspa",
+      "https://facebook.com/blackdiamondspa"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Black Diamond Spa",
+        "item": "https://blackdiamond.cz/cs/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jak se připravit na masáž?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Před masáží doporučujeme přijít 10 minut předem, přijít čistí a hydratovaní. Vyhněte se jídlu hodinu před masáží."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak rezervovat masáž?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rezervaci provedete online na stránce rozvrhu, nebo nás kontaktujte telefonicky na +420 797 669 633."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak dlouho masáž trvá?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Délka masáže závisí na vybraném typu: od 60 minut (klasická, sportovní) do 90 minut (uvolňující). Přesné délky jsou uvedeny u každé masáže."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak probíhá platba?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Přijímáme hotovost i platební karty. Platba probíhá na místě po skončení masáže."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Nabízíte párovou masáž?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ano, párová masáž je možná po domluvě. Kontaktujte nás pro rezervaci pro dvě osoby ve stejném čase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co je zahrnuto v ceně?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "V ceně jsou masážní oleje, prostěradla a přístup do relaxační zóny. Parkování není dostupné přímo v salonu."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="has-mob-bar">
+
+  <!-- ── Navigation ──────────────────────────────── -->
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Hlavní navigace">
+      <a href="/cs/" class="nav__logo" aria-label="Black Diamond Spa — Domů">
+        
+        <span>Black Diamond</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/cs/" aria-current="page">Domů</a></li>
+        <li><a href="/cs/masazistky/">Masérky</a></li>
+        <li><a href="/cs/masaze/">Masáže</a></li>
+        <li><a href="/cs/rozvrh/">Rozvrh</a></li>
+        <li><a href="/cs/blog/">Blog</a></li>
+        <li><a href="/cs/kontakty/">Kontakt</a></li>
+      </ul>
+      <div class="nav__right">
+        <a href="https://wa.me/420797669633" class="nav__whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <ul class="nav__lang" role="list" aria-label="Přepínač jazyka">
+          <li><a href="/cs/" class="nav__lang-btn active" aria-current="true" hreflang="cs">CS</a></li>
+          <li><a href="/en/" class="nav__lang-btn" hreflang="en">EN</a></li>
+          <li><a href="/ru/" class="nav__lang-btn" hreflang="ru">RU</a></li>
+        </ul>
+        <button class="nav__burger" aria-expanded="false" aria-controls="nav-drawer" aria-label="Otevřít menu">
+          <span class="nav__burger-line" aria-hidden="true"></span>
+          <span class="nav__burger-line" aria-hidden="true"></span>
+          <span class="nav__burger-line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="nav__overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav__drawer" aria-label="Mobilní menu">
+      <div class="nav__drawer-head">
+    <button type="button" class="nav__drawer-close" aria-label="Zavřít menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+<ul class="nav__drawer-links" role="list">
+      <li><a href="/cs/" aria-current="page">Domů</a></li>
+      <li><a href="/cs/masazistky/">Masérky</a></li>
+      <li><a href="/cs/masaze/">Masáže</a></li>
+      <li><a href="/cs/rozvrh/">Rozvrh</a></li>
+      <li><a href="/cs/blog/">Blog</a></li>
+      <li><a href="/cs/kontakty/">Kontakt</a></li>
+      <li><a href="/cs/o-nas/">O nás</a></li>
+      <li><a href="/cs/pravidla-salonu/">Pravidla salonu</a></li>
+      <li><a href="/cs/soukromi/">Soukromí & GDPR</a></li>
+    </ul>
+  </nav>
+
+        <main id="main-content">
+
+    <!-- ── HERO ────────────────────────────────── -->
+    <section class="hero2" aria-label="Úvodní sekce">
+      <div class="hero2__bg" aria-hidden="true">
+        <img src="/assets/img/hero-spa.webp" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero2__overlay" aria-hidden="true"></div>
+      <div class="hero2__inner">
+        <h1 class="hero2__title">Umění<br><em>relaxace</em></h1>
+        <p class="hero2__sub">Certifikované masérky, privátní kabinety a luxusní atmosféra v srdci Prahy.</p>
+        <div class="hero2__actions">
+          <a href="/cs/rozvrh/" class="btn btn--primary btn--lg">Rezervovat masáž</a>
+          <a href="/cs/masaze/" class="btn btn--ghost btn--lg">Naše masáže</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICES ─────────────────────────────── -->
+    <section class="sec sec--dark" aria-labelledby="svc-hd">
+      <div class="container">
+        <header class="sec__hd sec__hd--center">
+          <span class="sec__label">Naše masáže</span>
+          <h2 class="sec__title" id="svc-hd">Relaxace pro každý moment</h2>
+          <p class="sec__sub">Šest druhů masáže přizpůsobených vašemu tělu i mysli — od klasické švédské po aromaterapii.</p>
+        </header>
+        <div class="svc-grid">
+          
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img">
+              <img src="/assets/img/services/klasicka-masaz.webp" alt="Klasická masáž Praha — Black Diamond Spa" width="120" height="90" loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__body">
+              <h3 class="svc-card__name">Klasická masáž</h3>
+              <p class="svc-card__desc">Tradiční švédská masáž pro uvolnění svalového napětí a celkovou relaxaci celého těla. Ideální pro každodenní stres.</p>
+              <div class="svc-card__tags">
+                <span class="tag tag--duration">60 min</span>
+                <span class="tag tag--price">1 200 Kč</span>
+              </div>
+              <a href="/cs/masaze/klasicka-masaz/" class="btn btn--ghost">Zjistit více</a>
+            </div>
+          </article>
+
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img">
+              <img src="/assets/img/services/cbd-relaxacni-masaz.webp" alt="Relax masáž Praha — Black Diamond Spa" width="120" height="90" loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__body">
+              <h3 class="svc-card__name">Relax masáž</h3>
+              <p class="svc-card__desc">Jemná relaxační masáž s prémiálními oleji. Hluboké uvolnění těla i mysli v klidné a privátní atmosféře salonu.</p>
+              <div class="svc-card__tags">
+                <span class="tag tag--duration">75 min</span>
+                <span class="tag tag--price">1 700 Kč</span>
+              </div>
+              <a href="/cs/masaze/cbd-relaxacni-masaz/" class="btn btn--ghost">Zjistit více</a>
+            </div>
+          </article>
+
+          <article class="svc-card" data-reveal>
+            <div class="svc-card__img">
+              <img src="/assets/img/services/aromaterapie.webp" alt="Aromamasáž Praha — Black Diamond Spa" width="120" height="90" loading="lazy" decoding="async">
+            </div>
+            <div class="svc-card__body">
+              <h3 class="svc-card__name">Aromamasáž</h3>
+              <p class="svc-card__desc">Aromaterapeutická masáž s éterickými oleji pro harmonii těla a mysli. Vůně a dotek jako jeden celek.</p>
+              <div class="svc-card__tags">
+                <span class="tag tag--duration">75 min</span>
+                <span class="tag tag--price">1 400 Kč</span>
+              </div>
+              <a href="/cs/masaze/aromaterapie/" class="btn btn--ghost">Zjistit více</a>
+            </div>
+          </article>
+        </div>
+        <p class="sec__more">
+          <a href="/cs/masaze/" class="btn btn--secondary btn--lg">Všechny masáže</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── MASSEUSES ─────────────────────────────── -->
+    <section class="sec sec--alt" aria-labelledby="team-hd">
+      <div class="container">
+        <header class="sec__hd sec__hd--center">
+          <span class="sec__label">Náš tým</span>
+          <h2 class="sec__title" id="team-hd">Masérky</h2>
+          <p class="sec__sub">Certifikované specialistky s individuálním přístupem a hlubokými znalostmi masážních technik.</p>
+        </header>
+        <div class="th-grid" role="list">
+          
+          <button type="button" class="th-card" data-modal-trigger
+            data-name="Julia"
+            data-spec="Klasická & Relax masáž" data-bio="Julia je certifikovaná masérka specializující se na klasickou a relax masáž. Každé sezení přizpůsobuje potřebám klienta a vytváří prostor pro skutečné uvolnění."
+            data-svcs="Klasická masáž|Relax masáž|Uvolňující masáž" data-photo="/assets/img/masseuses/julia.webp"
+            aria-label="Profil Julia">
+            <div class="th-card__img">
+              <img src="/assets/img/masseuses/julia.webp" alt="Julia — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
+            </div>
+            <div class="th-card__info">
+              <span class="th-card__name">Julia</span>
+              <span class="th-card__spec">Klasická & Relax masáž</span>
+            </div>
+            <span class="th-card__hint" aria-hidden="true">+</span>
+          </button>
+
+          <button type="button" class="th-card" data-modal-trigger
+            data-name="Diana"
+            data-spec="Uvolňující & Aromamasáž" data-bio="Diana se zaměřuje na uvolňující a aromaterapeutické masáže. Její klidný přístup je ideální pro hluboký odpočinek a celkovou regeneraci."
+            data-svcs="Uvolňující masáž|Aromamasáž" data-photo="/assets/img/masseuses/diana.webp"
+            aria-label="Profil Diana">
+            <div class="th-card__img">
+              <img src="/assets/img/masseuses/diana.webp" alt="Diana — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
+            </div>
+            <div class="th-card__info">
+              <span class="th-card__name">Diana</span>
+              <span class="th-card__spec">Uvolňující & Aromamasáž</span>
+            </div>
+            <span class="th-card__hint" aria-hidden="true">+</span>
+          </button>
+
+          <button type="button" class="th-card" data-modal-trigger
+            data-name="Laura"
+            data-spec="Aromaterapie & Relax" data-bio="Laura kombinuje aromamasáž a relaxační techniky s prémiálními éterickými oleji pro harmonii těla a mysli."
+            data-svcs="Aromamasáž|Relax masáž" data-photo="/assets/img/masseuses/laura.webp"
+            aria-label="Profil Laura">
+            <div class="th-card__img">
+              <img src="/assets/img/masseuses/laura.webp" alt="Laura — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
+            </div>
+            <div class="th-card__info">
+              <span class="th-card__name">Laura</span>
+              <span class="th-card__spec">Aromaterapie & Relax</span>
+            </div>
+            <span class="th-card__hint" aria-hidden="true">+</span>
+          </button>
+
+          <button type="button" class="th-card" data-modal-trigger
+            data-name="Vanessa"
+            data-spec="Klasická & Sportovní masáž" data-bio="Vanessa se specializuje na klasickou a sportovní masáž. Pomáhá uvolnit napětí po sportu i v každodenním životě."
+            data-svcs="Klasická masáž|Sportovní masáž" data-photo="/assets/img/masseuses/vanessa.webp"
+            aria-label="Profil Vanessa">
+            <div class="th-card__img">
+              <img src="/assets/img/masseuses/vanessa.webp" alt="Vanessa — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
+            </div>
+            <div class="th-card__info">
+              <span class="th-card__name">Vanessa</span>
+              <span class="th-card__spec">Klasická & Sportovní masáž</span>
+            </div>
+            <span class="th-card__hint" aria-hidden="true">+</span>
+          </button>
+
+          <button type="button" class="th-card" data-modal-trigger
+            data-name="Ella"
+            data-spec="Sportovní & Regenerace" data-bio="Ella specialuje sportovní a regenerační masáže, které efektivně podporují zotavení svalů a celkovou regeneraci těla."
+            data-svcs="Sportovní masáž|Regenerační masáž" data-photo="/assets/img/masseuses/ella.webp"
+            aria-label="Profil Ella">
+            <div class="th-card__img">
+              <img src="/assets/img/masseuses/ella.webp" alt="Ella — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
+            </div>
+            <div class="th-card__info">
+              <span class="th-card__name">Ella</span>
+              <span class="th-card__spec">Sportovní & Regenerace</span>
+            </div>
+            <span class="th-card__hint" aria-hidden="true">+</span>
+          </button>
+
+          <button type="button" class="th-card" data-modal-trigger
+            data-name="Mira"
+            data-spec="Lymfatická & Aromaterapie" data-bio="Mira nabízí lymfatickou a aromamasáž s jemným a uvědomělým přístupem, který podporuje detoxikaci a hlubokou relaxaci."
+            data-svcs="Lymfatická masáž|Aromamasáž" data-photo="/assets/img/masseuses/mira.webp"
+            aria-label="Profil Mira">
+            <div class="th-card__img">
+              <img src="/assets/img/masseuses/mira.webp" alt="Mira — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
+            </div>
+            <div class="th-card__info">
+              <span class="th-card__name">Mira</span>
+              <span class="th-card__spec">Lymfatická & Aromaterapie</span>
+            </div>
+            <span class="th-card__hint" aria-hidden="true">+</span>
+          </button>
+        </div>
+        <p class="sec__more">
+          <a href="/cs/masazistky/" class="btn btn--secondary btn--lg">Seznámit se s týmem</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ───────────────────────────── -->
+    <section class="sec sec--dark sec--how" aria-labelledby="proc-hd">
+      <div class="container">
+        <div class="proc-layout">
+          <div class="proc-intro">
+            <span class="sec__label">Vaše cesta k relaxaci</span>
+            <h2 class="sec__title sec__title--large" id="proc-hd">Každý detail<br>myslíme za vás</h2>
+          </div>
+          <div class="proc-acc" role="list">
+            
+          <div class="proc-acc__item">
+            <button type="button" class="proc-acc__trigger" aria-expanded="true" aria-controls="proc-1">
+              <span class="proc-acc__title">Vyberte masáž</span>
+              <span class="proc-acc__mark" aria-hidden="true"></span>
+            </button>
+            <div id="proc-1" class="proc-acc__panel is-open">
+              <p class="proc-acc__text">Prozkoumejte katalog a vyberte masáž, která nejlépe odpovídá vašim potřebám a přáním.</p>
+            </div>
+          </div>
+
+          <div class="proc-acc__item">
+            <button type="button" class="proc-acc__trigger" aria-expanded="false" aria-controls="proc-2">
+              <span class="proc-acc__title">Zvolte masérku</span>
+              <span class="proc-acc__mark" aria-hidden="true"></span>
+            </button>
+            <div id="proc-2" class="proc-acc__panel">
+              <p class="proc-acc__text">Každá z našich masérky má jedinečnou specializaci. Vyberte tu, jejíž styl vám vyhovuje.</p>
+            </div>
+          </div>
+
+          <div class="proc-acc__item">
+            <button type="button" class="proc-acc__trigger" aria-expanded="false" aria-controls="proc-3">
+              <span class="proc-acc__title">Potvrďte termín</span>
+              <span class="proc-acc__mark" aria-hidden="true"></span>
+            </button>
+            <div id="proc-3" class="proc-acc__panel">
+              <p class="proc-acc__text">Zvolte volný termín v online rozvrhu a potvrďte rezervaci. Potvrzení přijde e-mailem.</p>
+            </div>
+          </div>
+
+          <div class="proc-acc__item">
+            <button type="button" class="proc-acc__trigger" aria-expanded="false" aria-controls="proc-4">
+              <span class="proc-acc__title">Relaxujte</span>
+              <span class="proc-acc__mark" aria-hidden="true"></span>
+            </button>
+            <div id="proc-4" class="proc-acc__panel">
+              <p class="proc-acc__text">Přijďte 10 minut předem. Vše ostatní necháme na nás — váš čas je jen pro vás.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────── -->
+    <section class="sec sec--alt" aria-labelledby="faq-hd">
+      <div class="container container--md">
+        <header class="sec__hd sec__hd--center">
+          <span class="sec__label">FAQ</span>
+          <h2 class="sec__title" id="faq-hd">Odpovědi na vaše otázky</h2>
+        </header>
+        <div class="faq" role="list">
+          
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-1">
+              Jak se připravit na masáž?
+              <span class="faq__mark" aria-hidden="true"></span>
+            </button>
+            <div id="faq-1" class="faq__answer">
+              <div class="faq__answer-inner">Doporučujeme přijít 10 minut předem, čistí a hydratovaní. Vyhněte se jídlu hodinu před masáží.</div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-2">
+              Jak rezervovat masáž?
+              <span class="faq__mark" aria-hidden="true"></span>
+            </button>
+            <div id="faq-2" class="faq__answer">
+              <div class="faq__answer-inner">Online v sekci <a href="/cs/rozvrh/">Rozvrh</a> — vyberte masáž, masérku a volný termín. Potvrzení obdržíte e-mailem.</div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-3">
+              Jak dlouho masáž trvá?
+              <span class="faq__mark" aria-hidden="true"></span>
+            </button>
+            <div id="faq-3" class="faq__answer">
+              <div class="faq__answer-inner">Závisí na zvoleném typu: od 60 minut (klasická, sportovní) do 90 minut (uvolňující masáž).</div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-4">
+              Jak probíhá platba?
+              <span class="faq__mark" aria-hidden="true"></span>
+            </button>
+            <div id="faq-4" class="faq__answer">
+              <div class="faq__answer-inner">Přijímáme hotovost i platební karty. Platba probíhá na místě po skončení masáže.</div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-5">
+              Nabízíte párovou masáž?
+              <span class="faq__mark" aria-hidden="true"></span>
+            </button>
+            <div id="faq-5" class="faq__answer">
+              <div class="faq__answer-inner">Ano, párová masáž je možná po domluvě. Kontaktujte nás pro rezervaci pro dvě osoby.</div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-6">
+              Co je zahrnuto v ceně?
+              <span class="faq__mark" aria-hidden="true"></span>
+            </button>
+            <div id="faq-6" class="faq__answer">
+              <div class="faq__answer-inner">Masážní oleje, prostěradla a přístup do relaxační zóny jsou součástí každé masáže.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ───────────────────────────────────── -->
+    <section class="cta-sec" aria-labelledby="cta-hd">
+      <div class="cta-sec__bg" aria-hidden="true">
+        <img src="/assets/img/services/lymfaticka-masaz.webp" alt="" width="1920" height="900" loading="lazy" decoding="async">
+      </div>
+      <div class="cta-sec__overlay" aria-hidden="true"></div>
+      <div class="container cta-sec__inner">
+        <span class="sec__label">Dopřejte si</span>
+        <h2 class="sec__title cta-sec__title" id="cta-hd">Vaše tělo si<br>zaslouží péči</h2>
+        <p class="sec__sub cta-sec__sub">Rezervujte si masáž online a nechte se unést luxusní atmosférou Black Diamond Spa.</p>
+        <div class="cta-sec__actions">
+          <a href="/cs/rozvrh/" class="btn btn--primary btn--lg">Rezervovat nyní</a>
+          <a href="/cs/kontakty/" class="btn btn--ghost btn--lg">Kontakt</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MODAL ─────────────────────────────────── -->
+    <div id="th-modal" class="th-modal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+      <div class="th-modal__bd" data-close-modal></div>
+      <div class="th-modal__panel">
+        <button type="button" class="th-modal__close" data-close-modal aria-label="Zavřít">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="th-modal__photo-wrap">
+          <img id="modal-photo" class="th-modal__photo" src="" alt="" width="480" height="600" decoding="async">
+        </div>
+        <div class="th-modal__info">
+          <h2 id="modal-name" class="th-modal__name"></h2>
+          <div id="modal-tags" class="th-modal__tags"></div>
+          <p id="modal-bio" class="th-modal__bio"></p>
+          <p class="th-modal__svcs-title">Nabízené masáže</p>
+          <ul id="modal-svcs" class="th-modal__svcs"></ul>
+          <a id="modal-cta" href="/cs/rozvrh/" class="btn btn--primary btn--lg">Rezervovat termín</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+
+
+  <!-- ── Footer ─────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/cs/" class="footer__logo">
+            
+            <span>Black Diamond</span>
+          </a>
+          <p class="footer__tagline">Prémiový relaxační masážní salon v centru Prahy.</p>
+          <address class="footer__nap" itemscope itemtype="https://schema.org/MassageParlor">
+            <meta itemprop="name" content="Black Diamond Spa">
+            <div class="footer__nap-item">
+              <svg class="footer__nap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <span itemprop="streetAddress">Opletalová 30</span>, <span itemprop="postalCode">110 00</span> <span itemprop="addressLocality">Praha 1</span>
+              </span>
+            </div>
+            <div class="footer__nap-item">
+              <svg class="footer__nap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href="tel:+420797669633" itemprop="telephone">+420 797 669 633</a>
+            </div>
+            <div class="footer__nap-item">
+              <svg class="footer__nap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@blackdiamond.cz" itemprop="email">info@blackdiamond.cz</a>
+            </div>
+          </address>
+          <div class="footer__social">
+            <a href="https://instagram.com/blackdiamondspa" class="footer__social-link" rel="noopener noreferrer" aria-label="Instagram" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+            <a href="https://facebook.com/blackdiamondspa" class="footer__social-link" rel="noopener noreferrer" aria-label="Facebook" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title">Stránky</h3>
+          <ul class="footer__links">
+            <li><a href="/cs/">Domů</a></li>
+            <li><a href="/cs/masazistky/">Naše masérky</a></li>
+            <li><a href="/cs/masaze/">Masáže a ceny</a></li>
+            <li><a href="/cs/rozvrh/">Rozvrh</a></li>
+            <li><a href="/cs/blog/">Blog</a></li>
+            <li><a href="/cs/kontakty/">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title">Salon</h3>
+          <ul class="footer__links">
+            <li><a href="/cs/o-nas/">O nás</a></li>
+            <li><a href="/cs/pravidla-salonu/">Pravidla salonu</a></li>
+            <li><a href="/cs/soukromi/">Soukromí &amp; GDPR</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title">Otevírací doba</h3>
+          <div class="footer__hours">
+            <div class="footer__hours-row">
+              <span class="footer__hours-days">Po – Pá</span>
+              <span class="footer__hours-time">10:00 – 21:00</span>
+            </div>
+            <div class="footer__hours-row">
+              <span class="footer__hours-days">So – Ne</span>
+              <span class="footer__hours-time">10:00 – 19:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="footer__disclaimer">
+    <p class="footer__disclaimer-text">Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě a slouží pouze jako inzerce pro individuální masérky. Podmínkou inzerce je pronájem prostorů v masážním salonu. Vstup povolen osobám starším 18 let.</p>
+  </div>
+
+  <div class="container">
+    <div class="footer__bottom">
+        <p class="footer__copy">© <span id="footer-year">2026</span> Black Diamond Spa. Všechna práva vyhrazena.</p>
+        <ul class="footer__legal-links">
+          <li><a href="/cs/soukromi/">Soukromí</a></li>
+          <li><a href="/cs/pravidla-salonu/">Pravidla</a></li>
+          <li><a href="/cs/o-nas/">O nás</a></li>
+        </ul>
+      </div>
+  </div>
+</footer>
+
+  <nav class="mob-bar" aria-label="Navigation">
+  <a href="/cs/masaze/" class="mob-bar__item">Masáže</a>
+  <a href="/cs/masazistky/" class="mob-bar__item">Masérky</a>
+  <a href="/cs/masaze/" class="mob-bar__item">Ceny</a>
+  <a href="/cs/rozvrh/" class="mob-bar__item mob-bar__item--cta">Rezervovat</a>
+</nav>
+
+  <!-- Scripts -->
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/main.js" defer></script>
+  <script>
+
+(function () {
+  'use strict';
+
+  // ── Modal ───────────────────────────────────────
+  const modal = document.getElementById('th-modal');
+  if (modal) {
+    const photo   = document.getElementById('modal-photo');
+    const name    = document.getElementById('modal-name');
+    const tags    = document.getElementById('modal-tags');
+    const bio     = document.getElementById('modal-bio');
+    const svcsEl  = document.getElementById('modal-svcs');
+    const ctaEl   = document.getElementById('modal-cta');
+    const closes  = modal.querySelectorAll('[data-close-modal]');
+    let lastFocus = null;
+    let bodyScrollY = 0;
+
+    function lockBody() {
+      bodyScrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + bodyScrollY + 'px';
+      document.body.style.width = '100%';
+    }
+    function unlockBody() {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, bodyScrollY);
+    }
+
+    function openModal(trigger) {
+      lastFocus = trigger;
+      const d = trigger.dataset;
+      if (photo) { photo.src = d.photo || ''; photo.alt = d.name || ''; }
+      if (name)  name.textContent = d.name || '';
+      if (bio)   bio.textContent  = d.bio  || '';
+
+      if (tags) {
+        tags.innerHTML = '';
+        (d.spec || '').split('|').filter(Boolean).forEach(s => {
+          const sp = document.createElement('span');
+          sp.className = 'tag tag--specialty';
+          sp.textContent = s;
+          tags.appendChild(sp);
+        });
+      }
+      if (svcsEl) {
+        svcsEl.innerHTML = '';
+        (d.svcs || '').split('|').filter(Boolean).forEach(s => {
+          const li = document.createElement('li');
+          const sp = document.createElement('span');
+          sp.className = 'tag tag--duration';
+          sp.textContent = s;
+          li.appendChild(sp);
+          svcsEl.appendChild(li);
+        });
+      }
+
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => modal.classList.add('is-open'));
+      lockBody();
+      const closeBtn = modal.querySelector('.th-modal__close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      unlockBody();
+      const panel = modal.querySelector('.th-modal__panel');
+      const onEnd = () => { modal.hidden = true; if (lastFocus) lastFocus.focus(); };
+      if (panel) panel.addEventListener('transitionend', onEnd, { once: true });
+      setTimeout(onEnd, 500);
+    }
+
+    document.querySelectorAll('[data-modal-trigger]').forEach(btn =>
+      btn.addEventListener('click', () => openModal(btn))
+    );
+    closes.forEach(el => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }
+
+  // ── Accordions (FAQ + process) ──────────────────
+  function bindAccordion(root, itemSel, triggerSel, panelSel) {
+    if (!root) return;
+    root.querySelectorAll(itemSel).forEach(item => {
+      const trigger = item.querySelector(triggerSel);
+      const panel = item.querySelector(panelSel);
+      if (!trigger || !panel) return;
+      trigger.addEventListener('click', () => {
+        const open = trigger.getAttribute('aria-expanded') === 'true';
+        root.querySelectorAll(triggerSel).forEach(t => {
+          t.setAttribute('aria-expanded', 'false');
+          const p = t.closest(itemSel).querySelector(panelSel);
+          if (p) p.classList.remove('is-open');
+        });
+        if (!open) {
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+        }
+      });
+    });
+  }
+
+  document.querySelectorAll('.faq').forEach(el =>
+    bindAccordion(el, '.faq__item', '.faq__question', '.faq__answer')
+  );
+  document.querySelectorAll('.proc-acc').forEach(el =>
+    bindAccordion(el, '.proc-acc__item', '.proc-acc__trigger', '.proc-acc__panel')
+  );
+
+  // ── Scroll reveal ────────────────────────────────
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
+  }
+
+})();
+
+  </script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{% trans "Masáže a ceny" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Nabídka masáží Black Diamond Spa — klasická, CBD relaxační, thajská, sportovní, lymfatická, aromaterapie. Ceny a délky trvání." %}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
+
+  <header class="section-header section-header--center" style="margin-bottom:var(--sp-3xl)">
+    <span class="section-label" aria-hidden="true">{% trans "Naše služby" %}</span>
+    <h1 class="section-title">{% trans "Masáže a ceny" %}</h1>
+    <p class="section-subtitle">
+      {% trans "Vyberte masáž, která nejlépe odpovídá vašim potřebám. Každá masáž je prováděna certifikovanými masérkami." %}
+    </p>
+  </header>
+
+  <div class="grid-3" role="list">
+    {% for service in services %}
+    <article class="service-card" role="listitem" data-reveal>
+      {% if service.image %}
+      <div class="service-card__image">
+        <img src="{{ service.image.url }}" alt="{{ service|trans_field:'title' }} Praha — {{ SITE_NAME }}"
+          width="640" height="360" loading="lazy" decoding="async">
+      </div>
+      {% else %}
+      <div class="service-card__image service-card__image--placeholder"></div>
+      {% endif %}
+      <div class="service-card__body">
+        <h2 class="service-card__name">{{ service|trans_field:"title" }}</h2>
+        <p class="service-card__description">{{ service|trans_field:"short" }}</p>
+        <div class="service-card__meta">
+          <span class="tag tag--duration">{{ service.duration }} min</span>
+          <span class="tag tag--price">{{ service.price|floatformat:0 }}&nbsp;Kč</span>
+        </div>
+        <a href="/{{ LANG }}/masaze/{{ service.slug }}/" class="btn btn--ghost">{% trans "Detail masáže" %}</a>
+      </div>
+    </article>
+    {% empty %}
+    <p class="section-subtitle" style="grid-column:1/-1;text-align:center">{% trans "Brzy přidáme masáže." %}</p>
+    {% endfor %}
+  </div>
+
+  <div style="text-align:center;margin-top:var(--sp-3xl)">
+    <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg">{% trans "Rezervovat masáž" %}</a>
+  </div>
+</div>
+{% endblock %}

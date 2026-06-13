@@ -1,0 +1,67 @@
+/* Black Diamond Spa — Blog post styles */
+
+.blog-post__content {
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--text-secondary);
+  max-width: 70ch;
+}
+
+.blog-post__content h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  color: var(--text-primary);
+  margin-top: var(--sp-3xl);
+  margin-bottom: var(--sp-lg);
+  padding-top: var(--sp-xl);
+  border-top: 1px solid var(--divider);
+}
+
+.blog-post__content h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  color: var(--text-primary);
+  margin-top: var(--sp-2xl);
+  margin-bottom: var(--sp-md);
+}
+
+.blog-post__content p {
+  margin-bottom: var(--sp-lg);
+  max-width: none;
+  color: var(--text-secondary);
+}
+
+.blog-post__content a {
+  color: var(--tiffany);
+  text-decoration: underline;
+  text-decoration-color: rgba(10, 186, 181, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-base), color var(--transition-base);
+}
+
+.blog-post__content a:hover {
+  color: var(--tiffany-light);
+  text-decoration-color: var(--tiffany-light);
+}
+
+.blog-post__content ul,
+.blog-post__content ol {
+  margin-bottom: var(--sp-lg);
+  padding-left: var(--sp-xl);
+}
+
+.blog-post__content li {
+  margin-bottom: var(--sp-sm);
+  color: var(--text-secondary);
+}
+
+.blog-post__content blockquote {
+  border-left: 3px solid var(--tiffany);
+  padding-left: var(--sp-xl);
+  margin: var(--sp-2xl) 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+}

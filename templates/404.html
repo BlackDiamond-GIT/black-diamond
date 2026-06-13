@@ -1,0 +1,24 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1d21">
+  <title>404 — {% trans "Stránka nenalezena" %} | Black Diamond Spa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}">
+</head>
+<body style="display:flex;align-items:center;justify-content:center;min-height:100dvh;text-align:center;padding:var(--sp-2xl)">
+  <div>
+    <span style="font-family:var(--font-display);font-size:clamp(6rem,20vw,12rem);color:var(--tiffany);opacity:0.2;line-height:1;display:block">404</span>
+    <h1 style="font-family:var(--font-display);font-size:var(--fs-h2);margin-bottom:var(--sp-lg)">{% trans "Stránka nenalezena" %}</h1>
+    <p style="color:var(--text-muted);margin-bottom:var(--sp-2xl)">{% trans "Omlouváme se, požadovaná stránka neexistuje." %}</p>
+    <a href="/cs/" class="btn btn--primary btn--lg">{% trans "Zpět na hlavní stránku" %}</a>
+  </div>
+</body>
+</html>

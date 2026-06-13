@@ -1,0 +1,395 @@
+/* Black Diamond Spa — Cards (service, masseuse, blog) */
+
+/* ── Service Card ────────────────────────────────── */
+
+.service-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(10, 186, 181, 0.30);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card__image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}
+
+.service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card__image img {
+  transform: scale(1.05);
+}
+
+.service-card__body {
+  padding: var(--sp-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-sm);
+  line-height: var(--lh-snug);
+}
+
+.service-card__description {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  flex: 1;
+  margin-bottom: var(--sp-lg);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.service-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-lg);
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  white-space: nowrap;
+}
+
+.tag--duration {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+}
+
+.tag--price {
+  background: rgba(10, 186, 181, 0.10);
+  border: 1px solid rgba(10, 186, 181, 0.25);
+  color: var(--tiffany);
+}
+
+.tag--specialty {
+  background: rgba(10, 186, 181, 0.10);
+  border: 1px solid rgba(10, 186, 181, 0.20);
+  color: var(--tiffany-light);
+  font-size: var(--fs-xs);
+}
+
+/* ── Masseuse Card ───────────────────────────────── */
+
+.masseuse-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+  text-decoration: none;
+}
+
+.masseuse-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(10, 186, 181, 0.35);
+  box-shadow: var(--shadow-tiffany);
+  color: inherit;
+}
+
+/* Portrait gallery (home) */
+.masseuse-gallery {
+  display: flex;
+  gap: var(--sp-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  padding-bottom: var(--sp-md);
+  scrollbar-width: thin;
+}
+
+.masseuse-gallery::-webkit-scrollbar {
+  height: 4px;
+}
+
+.masseuse-gallery::-webkit-scrollbar-thumb {
+  background: rgba(10, 186, 181, 0.35);
+  border-radius: var(--radius-pill);
+}
+
+.masseuse-portrait {
+  flex: 0 0 clamp(200px, 28vw, 280px);
+  scroll-snap-align: start;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-tertiary);
+  padding: 0;
+  text-align: left;
+  transition:
+    transform var(--transition-slow),
+    box-shadow var(--transition-slow),
+    filter var(--transition-slow);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.masseuse-portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 17, 21, 0.92) 0%,
+    rgba(14, 17, 21, 0.35) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.masseuse-portrait:hover,
+.masseuse-portrait:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(10, 186, 181, 0.15);
+  filter: brightness(1.05);
+}
+
+.masseuse-portrait__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.masseuse-portrait__placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--bg-tertiary), var(--bg-secondary));
+}
+
+.masseuse-portrait__overlay {
+  position: absolute;
+  inset: auto var(--sp-md) var(--sp-md);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.masseuse-portrait__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+}
+
+.masseuse-portrait__spec {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--tiffany-light);
+}
+
+.masseuse-card__portrait {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  position: relative;
+}
+
+.masseuse-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--transition-slow);
+}
+
+.masseuse-card:hover .masseuse-card__portrait img {
+  transform: scale(1.04);
+}
+
+.masseuse-card__portrait-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  color: var(--tiffany-dark);
+  background: linear-gradient(160deg, var(--bg-tertiary), var(--bg-secondary));
+}
+
+.masseuse-card__years {
+  display: none;
+}
+
+.masseuse-card__body {
+  padding: var(--sp-lg);
+  flex: 1;
+}
+
+.masseuse-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-xs);
+}
+
+.masseuse-card__spec {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--tiffany);
+}
+
+/* ── Blog Card ───────────────────────────────────── */
+
+.blog-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(10, 186, 181, 0.25);
+}
+
+.blog-card__image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}
+
+.blog-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.blog-card:hover .blog-card__image img {
+  transform: scale(1.05);
+}
+
+.blog-card__body {
+  padding: var(--sp-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card__date {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--sp-sm);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.blog-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-md);
+  line-height: var(--lh-snug);
+  flex: 1;
+}
+
+.blog-card__excerpt {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: var(--sp-lg);
+}
+
+/* ── Grid layouts ────────────────────────────────── */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-xl);
+}
+
+@media (min-width: 640px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+}
+
+@media (min-width: 768px) {
+  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-xl);
+}
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+}

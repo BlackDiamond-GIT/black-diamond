@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Black Diamond Spa — prémiová masáž a spa služby. Relaxace, regenerace a obnova v atmosféře luxusu.">
+  <meta name="keywords" content="masáž, spa, relaxace, thajská masáž, horké kameny, wellness">
+  <meta name="theme-color" content="#2a2a2a">
+  
+  <title>Black Diamond Spa — Prémiová spa služby</title>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #f5f5f5;
+      line-height: 1.6;
+      letter-spacing: 0.3px;
+    }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    h1, h2, h3, h4 { font-weight: 600; letter-spacing: 0.5px; }
+    h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+    h2 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .grid { display: grid; gap: 2rem; }
+    @media (min-width: 768px) { .grid { gap: 3rem; } }
+    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      gap: 0.5rem;
+    }
+    .btn-primary { background: linear-gradient(135deg, #1ba0c8 0%, #0d8fa3 100%); color: white; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(27, 160, 200, 0.3); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.1); color: #1ba0c8; border: 1px solid #1ba0c8; }
+    .btn-secondary:hover { background: rgba(27, 160, 200, 0.1); }
+    
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+    .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; white-space: nowrap; }
+    .nav-center { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+    @media (max-width: 1024px) { .nav-center { gap: 1rem; } }
+    @media (max-width: 767px) { .nav-center { display: none; } }
+    .nav-center a { color: #f5f5f5; text-decoration: none; transition: color 0.3s; white-space: nowrap; font-size: 0.95rem; }
+    .nav-center a:hover { color: #1ba0c8; }
+    
+    .nav-right { display: flex; gap: 1rem; align-items: center; }
+    .lang-selector { display: flex; gap: 0.5rem; }
+    .lang-btn {
+      padding: 0.5rem 0.8rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(27, 160, 200, 0.3);
+      color: #f5f5f5;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .lang-btn.active {
+      background: #1ba0c8;
+      color: white;
+      border-color: #1ba0c8;
+    }
+    .lang-btn:hover { background: rgba(27, 160, 200, 0.2); }
+    
+    .mobile-menu { display: none; }
+    @media (max-width: 767px) { .mobile-menu { display: block; } }
+    .mobile-menu-toggle {
+      background: none;
+      border: none;
+      color: #1ba0c8;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    section { padding: clamp(3rem, 8vw, 6rem) 1.5rem; }
+    @media (min-width: 768px) { section { padding: clamp(4rem, 10vw, 7rem) 0; } }
+    
+    .hero {
+      background: #07090a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .hero-content {
+      max-width: 660px;
+      position: relative;
+      z-index: 3;
+      padding: 2.5rem 3rem;
+      background: rgba(5, 10, 14, 0.52);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(27, 160, 200, 0.18);
+      border-radius: 4px;
+    }
+    .hero-content h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 300;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #e8f4f8;
+      margin-bottom: 0.6rem;
+      line-height: 1.1;
+    }
+    .hero-content .hero-rule {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #1ba0c8, transparent);
+      margin: 1.2rem auto;
+    }
+    .hero-content p {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      margin-bottom: 2rem;
+      opacity: 0.75;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .service-card {
+      padding: 2rem;
+      border-radius: 12px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(27, 160, 200, 0.1) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(27, 160, 200, 0.15); }
+    .service-card h3 { margin-bottom: 1rem; color: #1ba0c8; }
+    .service-card p { opacity: 0.85; }
+    
+    .masseuse-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .masseuse-card { text-align: center; padding: 1.5rem; border-radius: 12px; }
+    .masseuse-avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1ba0c8, #0d8fa3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    
+    .process-step { padding: 2rem; border-radius: 12px; text-align: center; position: relative; }
+    .process-number {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, #1ba0c8, #0d8fa3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .review-card { padding: 2rem; border-radius: 12px; max-width: 400px; }
+    .stars { color: #1ba0c8; margin-bottom: 1rem; font-size: 1.1rem; }
+    .review-text { margin-bottom: 1rem; font-style: italic; }
+    .review-author { font-weight: 600; }
+    
+    .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 1.5rem 0; }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; gap: 1rem; }
+    .faq-question:hover { color: #1ba0c8; }
+    .faq-toggle { font-size: 1.5rem; transition: transform 0.3s; }
+    .faq-item.open .faq-toggle { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s; margin-top: 0; }
+    .faq-item.open .faq-answer { max-height: 500px; margin-top: 1rem; }
+    
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: #f5f5f5;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #1ba0c8;
+      box-shadow: 0 0 0 3px rgba(27, 160, 200, 0.1);
+    }
+    
+    footer { background: rgba(0, 0, 0, 0.3); padding: 3rem 1.5rem 1rem; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .footer-content { max-width: 1280px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-section h4 { margin-bottom: 1rem; color: #1ba0c8; }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 0.5rem; }
+    .footer-section a { color: #d0d0d0; text-decoration: none; transition: color 0.3s; }
+    .footer-section a:hover { color: #1ba0c8; }
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.7; }
+    
+    .text-center { text-align: center; }
+    .mb-2 { margin-bottom: 2rem; }
+    .mb-3 { margin-bottom: 3rem; }
+    .opacity-70 { opacity: 0.7; }
+    
+    [data-page] { display: none; }
+    [data-page].active { display: block; }
+  </style>
+</helmet>
+
+<nav class="glass">
+  <div class="nav-content">
+    <div class="logo">◆ BLACK DIAMOND</div>
+    <ul class="nav-center">
+      <li><a href="#" onClick="{{ () => showPage('home') }}">{{ langText.nav_home }}</a></li>
+      <li><a href="#" onClick="{{ () => showPage('services') }}">{{ langText.nav_services }}</a></li>
+      <li><a href="#" onClick="{{ () => showPage('therapists') }}">{{ langText.nav_therapists }}</a></li>
+      <li><a href="#" onClick="{{ () => showPage('schedule') }}">{{ langText.nav_schedule }}</a></li>
+      <li><a href="#" onClick="{{ () => showPage('prices') }}">{{ langText.nav_prices }}</a></li>
+      <li><a href="#" onClick="{{ () => showPage('contacts') }}">{{ langText.nav_contacts }}</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-selector">
+        <button class="lang-btn {{ language === 'cs' ? 'active' : '' }}" onClick="{{ () => setLanguage('cs') }}">CS</button>
+        <button class="lang-btn {{ language === 'en' ? 'active' : '' }}" onClick="{{ () => setLanguage('en') }}">EN</button>
+        <button class="lang-btn {{ language === 'ru' ? 'active' : '' }}" onClick="{{ () => setLanguage('ru') }}">RU</button>
+      </div>
+      <div class="mobile-menu">
+        <button class="mobile-menu-toggle" onClick="{{ toggleMobileMenu }}">☰</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div data-page="home" class="active">
+  <section class="hero">
+    <svg class="hero-background" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="skyG" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#101820"/>
+          <stop offset="100%" stop-color="#1c2e28"/>
+        </linearGradient>
+        <linearGradient id="waterG" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0d7a7a"/>
+          <stop offset="35%" stop-color="#1298b0"/>
+          <stop offset="100%" stop-color="#0a5560"/>
+        </linearGradient>
+        <linearGradient id="stoneL" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#3a3530"/>
+          <stop offset="100%" stop-color="#1e1a16"/>
+        </linearGradient>
+        <radialGradient id="lanternGL" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f0c040" stop-opacity="0.7"/>
+          <stop offset="60%" stop-color="#e08020" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#c05010" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="lanternGR" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f0c040" stop-opacity="0.7"/>
+          <stop offset="60%" stop-color="#e08020" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#c05010" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="centerGlow" cx="50%" cy="55%" r="50%">
+          <stop offset="0%" stop-color="#1ba0c8" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#1ba0c8" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="mist">
+          <feGaussianBlur stdDeviation="22"/>
+        </filter>
+        <filter id="soft">
+          <feGaussianBlur stdDeviation="7"/>
+        </filter>
+        <filter id="treeFx">
+          <feGaussianBlur stdDeviation="3.5"/>
+        </filter>
+      </defs>
+
+      <!-- ── Base ── -->
+      <rect width="1920" height="1080" fill="#07090a"/>
+
+      <!-- ── Sky (center opening 310–1610) ── -->
+      <rect x="310" y="0" width="1300" height="560" fill="url(#skyG)"/>
+
+      <!-- Stars -->
+      <g fill="white" opacity="0.55">
+        <circle cx="500" cy="55" r="1.3"/><circle cx="660" cy="35" r="1"/>
+        <circle cx="820" cy="75" r="1.5"/><circle cx="960" cy="28" r="1"/>
+        <circle cx="1110" cy="60" r="1.3"/><circle cx="1280" cy="42" r="1"/>
+        <circle cx="1440" cy="72" r="1.5"/><circle cx="740" cy="105" r="1"/>
+        <circle cx="1180" cy="95" r="1.2"/><circle cx="590" cy="120" r="0.9"/>
+        <circle cx="1380" cy="110" r="0.9"/>
+      </g>
+
+      <!-- ── Far mountains ── -->
+      <path d="M310,370 Q440,240 580,320 Q700,195 840,295 Q960,155 1080,280 Q1200,195 1340,310 Q1470,235 1610,360 L1610,420 L310,420 Z"
+            fill="#18302a" filter="url(#soft)" opacity="0.7"/>
+      <!-- Mid mountains -->
+      <path d="M310,430 Q480,300 640,385 Q790,270 950,360 Q1080,255 1230,348 Q1390,268 1560,400 L1610,440 L310,440 Z"
+            fill="#1e3a30" filter="url(#treeFx)" opacity="0.9"/>
+
+      <!-- ── Forest base ── -->
+      <rect x="310" y="370" width="1300" height="200" fill="#152a1a"/>
+
+      <!-- Back tree layer -->
+      <g fill="#1a3020" filter="url(#treeFx)">
+        <ellipse cx="380" cy="400" rx="85" ry="115"/>
+        <ellipse cx="530" cy="382" rx="100" ry="130"/>
+        <ellipse cx="690" cy="368" rx="115" ry="148"/>
+        <ellipse cx="860" cy="355" rx="125" ry="158"/>
+        <ellipse cx="960" cy="350" rx="135" ry="162"/>
+        <ellipse cx="1065" cy="355" rx="125" ry="158"/>
+        <ellipse cx="1230" cy="368" rx="115" ry="148"/>
+        <ellipse cx="1390" cy="382" rx="100" ry="130"/>
+        <ellipse cx="1540" cy="400" rx="85" ry="115"/>
+      </g>
+
+      <!-- Front tree layer -->
+      <g fill="#1f3d25">
+        <ellipse cx="360" cy="455" rx="68" ry="100"/>
+        <ellipse cx="490" cy="443" rx="82" ry="115"/>
+        <ellipse cx="635" cy="432" rx="92" ry="126"/>
+        <ellipse cx="790" cy="422" rx="98" ry="132"/>
+        <ellipse cx="960" cy="417" rx="108" ry="140"/>
+        <ellipse cx="1130" cy="422" rx="98" ry="132"/>
+        <ellipse cx="1285" cy="432" rx="92" ry="126"/>
+        <ellipse cx="1430" cy="443" rx="82" ry="115"/>
+        <ellipse cx="1560" cy="455" rx="68" ry="100"/>
+      </g>
+
+      <!-- Tree teal highlights -->
+      <g fill="#1d4535" opacity="0.5">
+        <ellipse cx="510" cy="438" rx="72" ry="98"/>
+        <ellipse cx="780" cy="416" rx="88" ry="118"/>
+        <ellipse cx="960" cy="410" rx="95" ry="126"/>
+        <ellipse cx="1150" cy="416" rx="88" ry="118"/>
+        <ellipse cx="1420" cy="438" rx="72" ry="98"/>
+      </g>
+
+      <!-- ── Mist layer over forest / water edge ── -->
+      <rect x="310" y="492" width="1300" height="90" fill="white" opacity="0.055" filter="url(#mist)"/>
+      <rect x="400" y="510" width="1120" height="65" fill="#a8d8d8" opacity="0.07" filter="url(#mist)"/>
+      <ellipse cx="960" cy="525" rx="500" ry="55" fill="white" opacity="0.06" filter="url(#mist)"/>
+      <ellipse cx="640" cy="540" rx="200" ry="35" fill="white" opacity="0.05" filter="url(#soft)"/>
+      <ellipse cx="1300" cy="538" rx="180" ry="32" fill="white" opacity="0.05" filter="url(#soft)"/>
+
+      <!-- ── Water pool (Tiffany blue) ── -->
+      <rect x="310" y="555" width="1300" height="525" fill="url(#waterG)"/>
+
+      <!-- Water shimmer lines -->
+      <g stroke="rgba(255,255,255,0.14)" stroke-width="1.5" fill="none">
+        <path d="M310,576 Q560,570 810,578 Q1060,585 1310,577 Q1480,572 1610,577"/>
+        <path d="M310,618 Q610,611 910,619 Q1180,626 1610,618"/>
+        <path d="M310,668 Q660,661 1010,669 Q1300,676 1610,668"/>
+        <path d="M310,728 Q710,721 1110,729 Q1400,736 1610,728"/>
+        <path d="M310,800 Q760,793 1210,801 Q1460,808 1610,800"/>
+      </g>
+
+      <!-- Teal glow on water surface -->
+      <ellipse cx="960" cy="600" rx="550" ry="65" fill="#1ba0c8" opacity="0.2" filter="url(#mist)"/>
+      <rect width="1920" height="1080" fill="url(#centerGlow)"/>
+
+      <!-- Lantern reflections on water -->
+      <ellipse cx="395" cy="700" rx="40" ry="120" fill="#f0c040" opacity="0.07" filter="url(#soft)"/>
+      <ellipse cx="1525" cy="700" rx="40" ry="120" fill="#f0c040" opacity="0.07" filter="url(#soft)"/>
+
+      <!-- ── Stone deck edges ── -->
+      <!-- Left deck -->
+      <rect x="310" y="548" width="160" height="532" fill="url(#stoneL)"/>
+      <g stroke="#2e2924" stroke-width="1" fill="none" opacity="0.8">
+        <line x1="310" y1="600" x2="470" y2="600"/>
+        <line x1="310" y1="660" x2="470" y2="660"/>
+        <line x1="310" y1="720" x2="470" y2="720"/>
+        <line x1="310" y1="790" x2="470" y2="790"/>
+        <line x1="390" y1="548" x2="390" y2="1080"/>
+      </g>
+      <!-- Right deck -->
+      <rect x="1450" y="548" width="160" height="532" fill="url(#stoneL)"/>
+      <g stroke="#2e2924" stroke-width="1" fill="none" opacity="0.8">
+        <line x1="1450" y1="600" x2="1610" y2="600"/>
+        <line x1="1450" y1="660" x2="1610" y2="660"/>
+        <line x1="1450" y1="720" x2="1610" y2="720"/>
+        <line x1="1450" y1="790" x2="1610" y2="790"/>
+        <line x1="1530" y1="548" x2="1530" y2="1080"/>
+      </g>
+
+      <!-- ── Stones at water edge ── -->
+      <ellipse cx="420" cy="562" rx="65" ry="24" fill="#2e2924"/><ellipse cx="420" cy="560" rx="61" ry="20" fill="#3e3930"/>
+      <ellipse cx="520" cy="568" rx="42" ry="17" fill="#2a2620"/><ellipse cx="520" cy="566" rx="39" ry="14" fill="#3a3630"/>
+      <ellipse cx="1500" cy="562" rx="65" ry="24" fill="#2e2924"/><ellipse cx="1500" cy="560" rx="61" ry="20" fill="#3e3930"/>
+      <ellipse cx="1400" cy="568" rx="42" ry="17" fill="#2a2620"/><ellipse cx="1400" cy="566" rx="39" ry="14" fill="#3a3630"/>
+
+      <!-- ── Ceiling / roof ── -->
+      <rect x="0" y="0" width="1920" height="145" fill="#0c0704"/>
+      <!-- Main beam -->
+      <rect x="0" y="135" width="1920" height="22" fill="#160d06"/>
+      <rect x="0" y="155" width="1920" height="6" fill="#1f1208"/>
+      <!-- Cross-beams -->
+      <g fill="#120a04">
+        <rect x="0" y="0" width="25" height="145"/><rect x="160" y="0" width="22" height="145"/>
+        <rect x="460" y="0" width="22" height="145"/><rect x="760" y="0" width="22" height="145"/>
+        <rect x="1060" y="0" width="22" height="145"/><rect x="1360" y="0" width="22" height="145"/>
+        <rect x="1660" y="0" width="22" height="145"/><rect x="1875" y="0" width="45" height="145"/>
+      </g>
+
+      <!-- ── Main wooden columns (symmetric) ── -->
+      <!-- Left column -->
+      <rect x="290" y="0" width="50" height="1080" fill="#180e06"/>
+      <rect x="290" y="0" width="7" height="1080" fill="#2a1a0a" opacity="0.6"/>
+      <rect x="333" y="0" width="7" height="1080" fill="#0b0502" opacity="0.7"/>
+      <!-- Right column -->
+      <rect x="1580" y="0" width="50" height="1080" fill="#180e06"/>
+      <rect x="1580" y="0" width="7" height="1080" fill="#2a1a0a" opacity="0.6"/>
+      <rect x="1623" y="0" width="7" height="1080" fill="#0b0502" opacity="0.7"/>
+
+      <!-- Inner columns -->
+      <rect x="455" y="155" width="30" height="420" fill="#160c05"/>
+      <rect x="1435" y="155" width="30" height="420" fill="#160c05"/>
+
+      <!-- ── Shoji screens (side walls) ── -->
+      <!-- Left outer shoji -->
+      <rect x="0" y="160" width="285" height="390" fill="#c5ba98" opacity="0.22"/>
+      <g stroke="#8a7a5a" stroke-width="1" fill="none" opacity="0.35">
+        <line x1="0" y1="230" x2="285" y2="230"/><line x1="0" y1="300" x2="285" y2="300"/>
+        <line x1="0" y1="370" x2="285" y2="370"/><line x1="0" y1="440" x2="285" y2="440"/>
+        <line x1="95" y1="160" x2="95" y2="550"/><line x1="190" y1="160" x2="190" y2="550"/>
+      </g>
+      <!-- Left inner shoji -->
+      <rect x="340" y="160" width="110" height="360" fill="#c5ba98" opacity="0.13"/>
+      <g stroke="#8a7a5a" stroke-width="0.8" fill="none" opacity="0.25">
+        <line x1="340" y1="228" x2="450" y2="228"/><line x1="340" y1="296" x2="450" y2="296"/>
+        <line x1="340" y1="364" x2="450" y2="364"/><line x1="340" y1="432" x2="450" y2="432"/>
+        <line x1="377" y1="160" x2="377" y2="520"/><line x1="414" y1="160" x2="414" y2="520"/>
+      </g>
+
+      <!-- Right outer shoji -->
+      <rect x="1635" y="160" width="285" height="390" fill="#c5ba98" opacity="0.22"/>
+      <g stroke="#8a7a5a" stroke-width="1" fill="none" opacity="0.35">
+        <line x1="1635" y1="230" x2="1920" y2="230"/><line x1="1635" y1="300" x2="1920" y2="300"/>
+        <line x1="1635" y1="370" x2="1920" y2="370"/><line x1="1635" y1="440" x2="1920" y2="440"/>
+        <line x1="1730" y1="160" x2="1730" y2="550"/><line x1="1825" y1="160" x2="1825" y2="550"/>
+      </g>
+      <!-- Right inner shoji -->
+      <rect x="1470" y="160" width="110" height="360" fill="#c5ba98" opacity="0.13"/>
+      <g stroke="#8a7a5a" stroke-width="0.8" fill="none" opacity="0.25">
+        <line x1="1470" y1="228" x2="1580" y2="228"/><line x1="1470" y1="296" x2="1580" y2="296"/>
+        <line x1="1470" y1="364" x2="1580" y2="364"/><line x1="1470" y1="432" x2="1580" y2="432"/>
+        <line x1="1506" y1="160" x2="1506" y2="520"/><line x1="1543" y1="160" x2="1543" y2="520"/>
+      </g>
+
+      <!-- ── Hanging lanterns ── -->
+      <!-- Left lantern glow -->
+      <ellipse cx="372" cy="400" rx="200" ry="260" fill="url(#lanternGL)"/>
+      <!-- Left lantern body -->
+      <line x1="372" y1="162" x2="372" y2="268" stroke="#1e0e04" stroke-width="4"/>
+      <rect x="348" y="268" width="48" height="5" rx="2" fill="#3d2010"/>
+      <rect x="344" y="273" width="56" height="95" rx="5" fill="#7a5008"/>
+      <rect x="349" y="278" width="46" height="85" rx="3" fill="#f2ca50" opacity="0.92"/>
+      <line x1="372" y1="275" x2="372" y2="368" stroke="#6a4008" stroke-width="2" opacity="0.4"/>
+      <rect x="344" y="366" width="56" height="10" rx="3" fill="#3d2010"/>
+
+      <!-- Right lantern glow -->
+      <ellipse cx="1548" cy="400" rx="200" ry="260" fill="url(#lanternGR)"/>
+      <!-- Right lantern body -->
+      <line x1="1548" y1="162" x2="1548" y2="268" stroke="#1e0e04" stroke-width="4"/>
+      <rect x="1524" y="268" width="48" height="5" rx="2" fill="#3d2010"/>
+      <rect x="1520" y="273" width="56" height="95" rx="5" fill="#7a5008"/>
+      <rect x="1525" y="278" width="46" height="85" rx="3" fill="#f2ca50" opacity="0.92"/>
+      <line x1="1548" y1="275" x2="1548" y2="368" stroke="#6a4008" stroke-width="2" opacity="0.4"/>
+      <rect x="1520" y="366" width="56" height="10" rx="3" fill="#3d2010"/>
+
+      <!-- ── Side darkness / vignette ── -->
+      <rect x="0" y="0" width="290" height="1080" fill="rgba(0,0,0,0.55)"/>
+      <rect x="1630" y="0" width="290" height="1080" fill="rgba(0,0,0,0.55)"/>
+      <!-- Top ceiling blend -->
+      <rect x="0" y="0" width="1920" height="165" fill="rgba(0,0,0,0.35)"/>
+      <!-- Bottom fade -->
+      <rect x="0" y="820" width="1920" height="260">
+        <animate attributeName="fill" values="rgba(0,0,0,0);rgba(0,0,0,0)" dur="0s"/>
+      </rect>
+      <defs>
+        <linearGradient id="bottomFade" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="750" width="1920" height="330" fill="url(#bottomFade)"/>
+      <!-- Center subtle vignette -->
+      <rect x="310" y="0" width="1300" height="1080" fill="rgba(0,0,0,0.12)"/>
+    </svg>
+    <div class="hero-content" style="position: relative; z-index: 3;">
+      <h1 style="font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0 0 1.5rem 0; text-transform: uppercase; letter-spacing: 3px;">Black Diamond Spa</h1>
+      <p style="font-size: clamp(1rem, 2vw, 1.3rem); margin-bottom: 2.5rem; opacity: 0.9; font-weight: 300;">{{ langText.hero_subtitle }}</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onClick="{{ () => showPage('services') }}">{{ langText.btn_choose_service }}</button>
+        <button class="btn btn-secondary" onClick="{{ () => showPage('prices') }}">{{ langText.btn_book }}</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="container">
+    <h2 class="text-center mb-3">{{ langText.section_services }}</h2>
+    <div class="grid">
+      <div class="service-card glass">
+        <h3>💆 {{ langText.service1_title }}</h3>
+        <p>{{ langText.service1_desc }}</p>
+      </div>
+      <div class="service-card glass">
+        <h3>🔥 {{ langText.service2_title }}</h3>
+        <p>{{ langText.service2_desc }}</p>
+      </div>
+      <div class="service-card glass">
+        <h3>🧘 {{ langText.service3_title }}</h3>
+        <p>{{ langText.service3_desc }}</p>
+      </div>
+      <div class="service-card glass">
+        <h3>💅 {{ langText.service4_title }}</h3>
+        <p>{{ langText.service4_desc }}</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="container mb-3">
+    <h2 class="text-center mb-3">{{ langText.section_therapists }}</h2>
+    <div class="masseuse-grid">
+      <sc-for list="{{ therapists }}" as="t" hint-placeholder-count="4">
+        <div class="masseuse-card glass">
+          <div class="masseuse-avatar">{{ t.emoji }}</div>
+          <div style="font-size: 1.1rem; margin-bottom: 0.5rem;">{{ t.name }}</div>
+          <div style="font-size: 0.9rem; opacity: 0.7;">{{ t.specialty }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  
+  <section class="container mb-3" style="background: linear-gradient(135deg, rgba(27, 160, 200, 0.05) 0%, transparent 100%); padding: 4rem 1.5rem; border-radius: 20px;">
+    <h2 class="text-center mb-3">{{ langText.section_process }}</h2>
+    <div class="grid">
+      <sc-for list="{{ processSteps }}" as="step" hint-placeholder-count="4">
+        <div class="process-step glass">
+          <div class="process-number">{{ $index + 1 }}</div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  
+  <section class="container mb-3">
+    <h2 class="text-center mb-3">{{ langText.section_reviews }}</h2>
+    <div class="grid">
+      <sc-for list="{{ reviews }}" as="review" hint-placeholder-count="4">
+        <div class="review-card glass">
+          <div class="stars">{{ review.stars }}</div>
+          <div class="review-text">"{{ review.text }}"</div>
+          <div class="review-author">— {{ review.author }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  
+  <section class="container mb-3">
+    <h2 class="text-center mb-3">{{ langText.section_faq }}</h2>
+    <div style="max-width: 600px; margin: 0 auto;">
+      <sc-for list="{{ faqItems }}" as="item" hint-placeholder-count="4">
+        <div class="faq-item">
+          <div class="faq-question" onClick="{{ toggleFaq }}">
+            <span>{{ item.q }}</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">{{ item.a }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  
+  <section style="background: linear-gradient(135deg, rgba(27, 160, 200, 0.15) 0%, rgba(42, 42, 42, 0.5) 100%); padding: 4rem 1.5rem; text-align: center;">
+    <div class="container">
+      <h2 style="margin-bottom: 1.5rem;">{{ langText.cta_title }}</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.1rem;">{{ langText.cta_subtitle }}</p>
+      <button class="btn btn-primary" onClick="{{ () => showPage('prices') }}" style="font-size: 1.1rem; padding: 1rem 3rem;">{{ langText.btn_book_now }}</button>
+    </div>
+  </section>
+</div>
+
+<div data-page="services">
+  <section class="container" style="padding-top: 3rem;">
+    <h1 class="text-center mb-3">{{ langText.page_services_title }}</h1>
+    <p class="text-center opacity-70" style="max-width: 600px; margin: 0 auto 3rem;">{{ langText.page_services_desc }}</p>
+    
+    <div style="max-width: 800px; margin: 0 auto;">
+      <sc-for list="{{ allServices }}" as="service" hint-placeholder-count="5">
+        <div class="service-card glass" style="margin-bottom: 2rem;">
+          <h3>{{ service.emoji }} {{ service.name }}</h3>
+          <p style="margin-bottom: 1rem;">{{ service.fullDesc }}</p>
+          <p><strong>{{ langText.duration }}:</strong> {{ service.duration }}</p>
+          <p><strong>{{ langText.price }}:</strong> {{ service.price }}</p>
+        </div>
+      </sc-for>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <button class="btn btn-primary" onClick="{{ () => showPage('prices') }}">{{ langText.btn_to_booking }}</button>
+      <button class="btn btn-secondary" style="margin-left: 1rem;" onClick="{{ () => showPage('home') }}">{{ langText.btn_home }}</button>
+    </div>
+  </section>
+</div>
+
+<div data-page="therapists">
+  <section class="container" style="padding-top: 3rem;">
+    <h1 class="text-center mb-3">{{ langText.page_therapists_title }}</h1>
+    <p class="text-center opacity-70" style="max-width: 600px; margin: 0 auto 3rem;">{{ langText.page_therapists_desc }}</p>
+    
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+      <sc-for list="{{ therapistDetails }}" as="th" hint-placeholder-count="4">
+        <div class="glass" style="padding: 2rem; border-radius: 12px; text-align: center;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">{{ th.emoji }}</div>
+          <h3>{{ th.fullName }}</h3>
+          <p style="color: #1ba0c8; margin-bottom: 1rem;">{{ th.title }}</p>
+          <p style="opacity: 0.8; margin-bottom: 1rem;">{{ th.bio }}</p>
+          <p><strong>{{ langText.rating }}:</strong> {{ th.rating }}</p>
+        </div>
+      </sc-for>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <button class="btn btn-primary" onClick="{{ () => showPage('prices') }}">{{ langText.btn_book_therapist }}</button>
+      <button class="btn btn-secondary" style="margin-left: 1rem;" onClick="{{ () => showPage('home') }}">{{ langText.btn_home }}</button>
+    </div>
+  </section>
+</div>
+
+<div data-page="prices">
+  <section class="container" style="padding-top: 3rem;">
+    <h1 class="text-center mb-3">{{ langText.page_prices_title }}</h1>
+    
+    <div style="background: linear-gradient(135deg, rgba(27, 160, 200, 0.1) 0%, transparent 100%); padding: 2rem; border-radius: 12px; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h2 style="margin-bottom: 2rem;">{{ langText.form_title }}</h2>
+      
+      <form onSubmit="{{ handleReservation }}">
+        <div class="form-group">
+          <label htmlFor="name">{{ langText.form_name }} *</label>
+          <input type="text" id="name" name="name" required="true" />
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="phone">{{ langText.form_phone }} *</label>
+          <input type="tel" id="phone" name="phone" required="true" />
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="service">{{ langText.form_service }} *</label>
+          <select id="service" name="service" required="true">
+            <option value="">-- {{ langText.form_select_service }} --</option>
+            <sc-for list="{{ serviceOptions }}" as="opt" hint-placeholder-count="5">
+              <option value="{{ opt.id }}">{{ opt.name }} ({{ opt.price }})</option>
+            </sc-for>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="therapist">{{ langText.form_therapist }}</label>
+          <select id="therapist" name="therapist">
+            <option value="">-- {{ langText.form_any_therapist }} --</option>
+            <sc-for list="{{ therapists }}" as="t" hint-placeholder-count="4">
+              <option value="{{ t.id }}">{{ t.name }}</option>
+            </sc-for>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="date">{{ langText.form_date }} *</label>
+          <input type="date" id="date" name="date" required="true" />
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="time">{{ langText.form_time }} *</label>
+          <select id="time" name="time" required="true">
+            <option value="">-- {{ langText.form_select_time }} --</option>
+            <option value="10:00">10:00</option>
+            <option value="11:30">11:30</option>
+            <option value="13:00">13:00</option>
+            <option value="14:30">14:30</option>
+            <option value="16:00">16:00</option>
+            <option value="17:30">17:30</option>
+            <option value="19:00">19:00</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label htmlFor="message">{{ langText.form_notes }}</label>
+          <textarea id="message" name="message" rows="3" placeholder="{{ langText.form_notes_placeholder }}"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">{{ langText.btn_book }} (10% {{ langText.discount }})</button>
+      </form>
+    </div>
+    
+    <h2 class="text-center mb-3" style="margin-top: 3rem;">{{ langText.price_table }}</h2>
+    <div style="overflow-x: auto; margin-bottom: 3rem;">
+      <table style="width: 100%; border-collapse: collapse; max-width: 800px; margin: 0 auto;">
+        <thead>
+          <tr style="border-bottom: 2px solid rgba(27, 160, 200, 0.3);">
+            <th style="padding: 1rem; text-align: left; color: #1ba0c8;">{{ langText.service }}</th>
+            <th style="padding: 1rem; text-align: center; color: #1ba0c8;">30 min</th>
+            <th style="padding: 1rem; text-align: center; color: #1ba0c8;">60 min</th>
+            <th style="padding: 1rem; text-align: center; color: #1ba0c8;">90 min</th>
+            <th style="padding: 1rem; text-align: center; color: #1ba0c8;">120 min</th>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{ priceTable }}" as="row" hint-placeholder-count="4">
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+              <td style="padding: 1rem;">{{ row.service }}</td>
+              <td style="padding: 1rem; text-align: center;">{{ row.p30 }}</td>
+              <td style="padding: 1rem; text-align: center;">{{ row.p60 }}</td>
+              <td style="padding: 1rem; text-align: center;">{{ row.p90 }}</td>
+              <td style="padding: 1rem; text-align: center;">{{ row.p120 }}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+    
+    <div style="background: rgba(27, 160, 200, 0.1); padding: 1.5rem; border-radius: 8px; max-width: 700px; margin: 0 auto; margin-bottom: 3rem;">
+      <h3 style="color: #1ba0c8; margin-bottom: 1rem;">✨ {{ langText.special_offers }}</h3>
+      <ul style="list-style: none;">
+        <li style="margin-bottom: 0.5rem;">🎁 {{ langText.offer1 }}</li>
+        <li style="margin-bottom: 0.5rem;">👥 {{ langText.offer2 }}</li>
+        <li style="margin-bottom: 0.5rem;">📅 {{ langText.offer3 }}</li>
+        <li style="margin-bottom: 0.5rem;">🎉 {{ langText.offer4 }}</li>
+      </ul>
+    </div>
+    
+    <div style="text-align: center;">
+      <button class="btn btn-secondary" onClick="{{ () => showPage('home') }}">{{ langText.btn_home }}</button>
+    </div>
+  </section>
+</div>
+
+<div data-page="schedule">
+  <section class="container" style="padding-top: 3rem;">
+    <h1 class="text-center mb-3">{{ langText.page_schedule_title }}</h1>
+    <p class="text-center opacity-70" style="max-width: 600px; margin: 0 auto 3rem;">{{ langText.page_schedule_desc }}</p>
+    
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="background: linear-gradient(135deg, rgba(27, 160, 200, 0.1) 0%, transparent 100%); padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
+        <h2 style="margin-bottom: 2rem; color: #1ba0c8;">{{ langText.schedule_week }}</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+          <sc-for list="{{ weekDays }}" as="day" hint-placeholder-count="7">
+            <div class="glass" style="padding: 1.5rem; border-radius: 8px; text-align: center;">
+              <h4 style="color: #1ba0c8; margin-bottom: 1rem;">{{ day.name }}</h4>
+              <p style="font-size: 0.9rem;">{{ day.hours }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      
+      <div style="background: linear-gradient(135deg, rgba(27, 160, 200, 0.1) 0%, transparent 100%); padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
+        <h2 style="margin-bottom: 2rem; color: #1ba0c8;">{{ langText.schedule_therapists }}</h2>
+        <div class="grid">
+          <sc-for list="{{ therapistSchedule }}" as="th" hint-placeholder-count="4">
+            <div class="glass" style="padding: 1.5rem; border-radius: 8px;">
+              <h3 style="color: #1ba0c8; margin-bottom: 1rem;">{{ th.name }}</h3>
+              <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>{{ langText.schedule_available }}:</strong></p>
+              <p style="opacity: 0.8; font-size: 0.85rem;">{{ th.available }}</p>
+              <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>{{ langText.schedule_speciality }}:</strong></p>
+              <p style="opacity: 0.8; font-size: 0.85rem;">{{ th.speciality }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      
+      <div style="text-align: center;">
+        <button class="btn btn-primary" onClick="{{ () => showPage('prices') }}" style="margin-bottom: 1rem;">{{ langText.btn_book }}</button>
+        <button class="btn btn-secondary" onClick="{{ () => showPage('home') }}" style="margin-left: 1rem;">{{ langText.btn_home }}</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div data-page="contacts">
+  <section class="container" style="padding-top: 3rem;">
+    <h1 class="text-center mb-3">{{ langText.page_contacts_title }}</h1>
+    
+    <div class="grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto;">
+      <div class="glass" style="padding: 2rem; border-radius: 12px;">
+        <h3 style="color: #1ba0c8; margin-bottom: 2rem;">{{ langText.contact_info }}</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="color: #1ba0c8; margin-bottom: 0.5rem;">📍 {{ langText.address }}</h4>
+          <p>Zlatá Ulica 5, Praha 1, Česká Republika</p>
+          <p style="opacity: 0.7; font-size: 0.9rem;">{{ langText.address_desc }}</p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="color: #1ba0c8; margin-bottom: 0.5rem;">📞 {{ langText.phone }}</h4>
+          <p><a href="tel:+420212345678" style="color: #1ba0c8; text-decoration: none;">+420 212 345 678</a></p>
+          <p style="opacity: 0.7; font-size: 0.9rem;">{{ langText.phone_desc }}</p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="color: #1ba0c8; margin-bottom: 0.5rem;">✉️ Email</h4>
+          <p><a href="mailto:info@blackdiamondspa.cz" style="color: #1ba0c8; text-decoration: none;">info@blackdiamondspa.cz</a></p>
+          <p style="opacity: 0.7; font-size: 0.9rem;">{{ langText.email_desc }}</p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="color: #1ba0c8; margin-bottom: 0.5rem;">⏰ {{ langText.hours }}</h4>
+          <p>{{ langText.hours_mon_fri }}</p>
+          <p>{{ langText.hours_sat_sun }}</p>
+          <p style="opacity: 0.7; font-size: 0.9rem;">{{ langText.hours_note }}</p>
+        </div>
+        
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(27, 160, 200, 0.2); border-radius: 8px; color: #1ba0c8; text-decoration: none; font-size: 1.2rem;">f</a>
+          <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(27, 160, 200, 0.2); border-radius: 8px; color: #1ba0c8; text-decoration: none; font-size: 1.2rem;">i</a>
+          <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(27, 160, 200, 0.2); border-radius: 8px; color: #1ba0c8; text-decoration: none; font-size: 1.2rem;">w</a>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <button class="btn btn-primary" onClick="{{ () => showPage('prices') }}" style="margin-bottom: 1rem;">{{ langText.btn_book }}</button>
+      <button class="btn btn-secondary" onClick="{{ () => showPage('home') }}" style="margin-left: 1rem;">{{ langText.btn_home }}</button>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>{{ langText.footer_about }}</h4>
+        <p style="opacity: 0.7; margin-bottom: 1rem;">{{ langText.footer_about_text }}</p>
+        <p style="opacity: 0.7;">© 2024 Black Diamond Spa. {{ langText.all_rights }}</p>
+      </div>
+      <div class="footer-section">
+        <h4>{{ langText.footer_quick_links }}</h4>
+        <ul>
+          <li><a href="#" onClick="{{ () => showPage('home') }}">{{ langText.nav_home }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('services') }}">{{ langText.nav_services }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('therapists') }}">{{ langText.nav_therapists }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('schedule') }}">{{ langText.nav_schedule }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('prices') }}">{{ langText.nav_prices }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>{{ langText.footer_services }}</h4>
+        <ul>
+          <li><a href="#" onClick="{{ () => showPage('services') }}">{{ langText.service1_title }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('services') }}">{{ langText.service2_title }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('services') }}">{{ langText.service3_title }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('services') }}">{{ langText.service4_title }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>{{ langText.footer_contact }}</h4>
+        <ul>
+          <li><a href="tel:+420212345678">+420 212 345 678</a></li>
+          <li><a href="mailto:info@blackdiamondspa.cz">info@blackdiamondspa.cz</a></li>
+          <li><a href="#" onClick="{{ () => showPage('contacts') }}">{{ langText.address }}</a></li>
+          <li><a href="#" onClick="{{ () => showPage('contacts') }}">{{ langText.hours }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Black Diamond Spa™ | {{ langText.footer_created }}
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Black Diamond Spa",
+  "url": "https://blackdiamondspa.cz",
+  "telephone": "+420212345678",
+  "email": "info@blackdiamondspa.cz",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zlatá Ulica 5",
+    "addressLocality": "Praha 1",
+    "addressCountry": "CZ"
+  }
+}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    language: 'cs',
+    currentPage: 'home',
+  };
+
+  languages = {
+    cs: {
+      nav_home: 'Domů',
+      nav_services: 'Služby',
+      nav_therapists: 'Terapeuti',
+      nav_schedule: 'Rozvrh',
+      nav_prices: 'Ceny',
+      nav_contacts: 'Kontakty',
+      hero_subtitle: 'Ponořte se do světa prémiové relaxace a regenerace',
+      btn_choose_service: 'Vybrat službu',
+      btn_book: 'Rezervovat',
+      btn_book_now: 'Rezervovat nyní',
+      btn_to_booking: 'Přejít k rezervaci',
+      btn_home: 'Domů',
+      btn_book_therapist: 'Rezervovat terapeuta',
+      section_services: 'Naše služby',
+      section_therapists: 'Naši terapeuti',
+      section_process: 'Jak to funguje',
+      section_reviews: 'Co říkají naši klienti',
+      section_faq: 'Často kladené otázky',
+      cta_title: 'Připraveni k relaxaci?',
+      cta_subtitle: 'Rezervujte si svou relaksační proceduru hned teď a získejte 10% slevu na první návštěvu',
+      service1_title: 'Klasická masáž',
+      service1_desc: 'Relaxační masáž celého těla s přírodními oleji. Ideální pro zmírnění napětí a únavy.',
+      service2_title: 'Masáž horkými kameny',
+      service2_desc: 'Starobylá technika s použitím vyhřátých kamenů. Podporuje hlubokou relaxaci a zlepšuje krevní oběh.',
+      service3_title: 'Thajská masáž',
+      service3_desc: 'Energetická masáž kombinující tlak, protahy a akupresuru. Obnovuje rovnováhu a flexibilitu.',
+      service4_title: 'Spa procedury',
+      service4_desc: 'Komplexní procedury pro tvář a tělo s prémiovými prostředky. Omlaďující efekt.',
+      page_services_title: 'Všechny služby Black Diamond',
+      page_services_desc: 'Každá služba je navržena pro maximální prospěch vašemu zdraví a pohodě',
+      page_therapists_title: 'Naši terapeuti',
+      page_therapists_desc: 'Zkušení profesionálové s licencí a mezinárodními certifikáty',
+      page_schedule_title: 'Rozvrh a dostupnost',
+      page_schedule_desc: 'Podívejte se na dostupnost našich terapeутů a otevírací dobu',
+      schedule_week: 'Týdenní rozvrh',
+      schedule_therapists: 'Terapeuti a jejich dostupnost',
+      schedule_available: 'Dostupné dny',
+      schedule_speciality: 'Specialita',
+      page_prices_title: 'Ceny a rezervace',
+      page_contacts_title: 'Kontaktujte nás',
+      form_title: 'Rezervujte si sezení',
+      form_name: 'Vaše jméno',
+      form_phone: 'Telefonní číslo',
+      form_service: 'Vyberte službu',
+      form_select_service: 'Vyberte službu',
+      form_therapist: 'Preferovaný terapeut (volitelně)',
+      form_any_therapist: 'Jakýkoli terapeut',
+      form_date: 'Datum návštěvy',
+      form_time: 'Čas',
+      form_select_time: 'Vyberte čas',
+      form_notes: 'Dodatečné poznámky',
+      form_notes_placeholder: 'Řekněte nám o vašich přáních...',
+      duration: 'Trvání',
+      price: 'Cena',
+      discount: 'sleva',
+      price_table: 'Tabulka cen',
+      service: 'Služba',
+      special_offers: 'Speciální nabídky',
+      offer1: '10% sleva při první návštěvě',
+      offer2: '5% sleva při rezervaci na dva',
+      offer3: '15% sleva na 5+ návštěv za měsíc',
+      offer4: 'Dostupné dárkové certifikáty',
+      contact_info: 'Kontaktní informace',
+      address: 'Adresa',
+      address_desc: 'Centrální poloha, snadný přístup veřejnou dopravou',
+      phone: 'Telefon',
+      phone_desc: 'Konzultace a rezervace dostupné',
+      email: 'E-mail',
+      email_desc: 'Odpovíme během 2 hodin',
+      hours: 'Otevírací doba',
+      hours_mon_fri: 'Po–Pá: 10:00–21:00',
+      hours_sat_sun: 'So–Ne: 11:00–20:00',
+      hours_note: 'Svátky dle dohody',
+      rating: 'Hodnocení',
+      footer_about: 'O nás',
+      footer_about_text: 'Black Diamond Spa je vaším zdrojem prémiové relaxace a obnovy energie ve městě.',
+      footer_quick_links: 'Rychlé odkazy',
+      footer_services: 'Služby',
+      footer_contact: 'Kontakty',
+      all_rights: 'Všechna práva vyhrazena.',
+      footer_created: 'Vytvořeno s ❖ pro vaše blaho',
+    },
+    en: {
+      nav_home: 'Home',
+      nav_services: 'Services',
+      nav_therapists: 'Therapists',
+      nav_schedule: 'Schedule',
+      nav_prices: 'Prices',
+      nav_contacts: 'Contacts',
+      hero_subtitle: 'Immerse yourself in a world of premium relaxation and recovery',
+      btn_choose_service: 'Choose Service',
+      btn_book: 'Book',
+      btn_book_now: 'Book Now',
+      btn_to_booking: 'Go to Booking',
+      btn_home: 'Home',
+      btn_book_therapist: 'Book Therapist',
+      section_services: 'Our Services',
+      section_therapists: 'Our Therapists',
+      section_process: 'How It Works',
+      section_reviews: 'What Our Clients Say',
+      section_faq: 'Frequently Asked Questions',
+      cta_title: 'Ready for Relaxation?',
+      cta_subtitle: 'Book your session right now and get 10% discount on your first visit',
+      service1_title: 'Classic Massage',
+      service1_desc: 'Relaxing full body massage with natural oils. Perfect for relieving tension and fatigue.',
+      service2_title: 'Hot Stone Massage',
+      service2_desc: 'Ancient technique using heated stones. Promotes deep relaxation and improves circulation.',
+      service3_title: 'Thai Massage',
+      service3_desc: 'Energetic massage combining pressure, stretching and acupressure. Restores balance and flexibility.',
+      service4_title: 'Spa Treatments',
+      service4_desc: 'Comprehensive treatments for face and body with premium products. Rejuvenating effect.',
+      page_services_title: 'All Black Diamond Services',
+      page_services_desc: 'Each service is designed for maximum benefit to your health and wellbeing',
+      page_therapists_title: 'Our Therapists',
+      page_therapists_desc: 'Experienced professionals with licenses and international certifications',
+      page_schedule_title: 'Schedule and Availability',
+      page_schedule_desc: 'Check our therapists availability and opening hours',
+      schedule_week: 'Weekly Schedule',
+      schedule_therapists: 'Therapists and Their Availability',
+      schedule_available: 'Available Days',
+      schedule_speciality: 'Speciality',
+      page_prices_title: 'Prices and Booking',
+      page_contacts_title: 'Contact Us',
+      form_title: 'Book Your Session',
+      form_name: 'Your Name',
+      form_phone: 'Phone Number',
+      form_service: 'Choose Service',
+      form_select_service: 'Select Service',
+      form_therapist: 'Preferred Therapist (optional)',
+      form_any_therapist: 'Any Therapist',
+      form_date: 'Visit Date',
+      form_time: 'Time',
+      form_select_time: 'Select Time',
+      form_notes: 'Additional Notes',
+      form_notes_placeholder: 'Tell us your preferences...',
+      duration: 'Duration',
+      price: 'Price',
+      discount: 'discount',
+      price_table: 'Price Table',
+      service: 'Service',
+      special_offers: 'Special Offers',
+      offer1: '10% discount on first visit',
+      offer2: '5% discount for booking two people',
+      offer3: '15% discount for 5+ visits per month',
+      offer4: 'Gift certificates available',
+      contact_info: 'Contact Information',
+      address: 'Address',
+      address_desc: 'Central location, easy public transport access',
+      phone: 'Phone',
+      phone_desc: 'Consultations and booking available',
+      email: 'Email',
+      email_desc: 'We will respond within 2 hours',
+      hours: 'Business Hours',
+      hours_mon_fri: 'Mon–Fri: 10:00–21:00',
+      hours_sat_sun: 'Sat–Sun: 11:00–20:00',
+      hours_note: 'Holidays by arrangement',
+      rating: 'Rating',
+      footer_about: 'About Us',
+      footer_about_text: 'Black Diamond Spa is your source for premium relaxation and energy recovery in the city.',
+      footer_quick_links: 'Quick Links',
+      footer_services: 'Services',
+      footer_contact: 'Contacts',
+      all_rights: 'All rights reserved.',
+      footer_created: 'Created with ❖ for your wellbeing',
+    },
+    ru: {
+      nav_home: 'Главная',
+      nav_services: 'Услуги',
+      nav_therapists: 'Терапевты',
+      nav_schedule: 'Расписание',
+      nav_prices: 'Цены',
+      nav_contacts: 'Контакты',
+      hero_subtitle: 'Погрузитесь в мир премиум релаксации и восстановления',
+      btn_choose_service: 'Выбрать услугу',
+      btn_book: 'Забронировать',
+      btn_book_now: 'Забронировать сейчас',
+      btn_to_booking: 'Перейти к бронированию',
+      btn_home: 'На главную',
+      btn_book_therapist: 'Забронировать терапевта',
+      section_services: 'Наши услуги',
+      section_therapists: 'Наши терапевты',
+      section_process: 'Как это работает',
+      section_reviews: 'Что говорят наши клиенты',
+      section_faq: 'Частые вопросы',
+      cta_title: 'Готовы к релаксации?',
+      cta_subtitle: 'Забронируйте свой сеанс прямо сейчас и получите 10% скидку на первый визит',
+      service1_title: 'Классический массаж',
+      service1_desc: 'Релаксирующий массаж всего тела с использованием натуральных масел. Идеален для снятия напряжения и усталости.',
+      service2_title: 'Массаж горячими камнями',
+      service2_desc: 'Древняя техника с использованием подогретых камней. Способствует глубокой релаксации и циркуляции крови.',
+      service3_title: 'Тайский массаж',
+      service3_desc: 'Энергетический массаж, сочетающий давление, растяжку и акупрессуру. Восстанавливает баланс и гибкость.',
+      service4_title: 'Спа процедуры',
+      service4_desc: 'Комплексные процедуры для лица и тела с использованием премиум средств. Омолаживающий эффект.',
+      page_services_title: 'Все услуги Black Diamond',
+      page_services_desc: 'Каждая услуга разработана для максимальной пользы вашему здоровью и благополучию',
+      page_therapists_title: 'Наши терапевты',
+      page_therapists_desc: 'Опытные профессионалы с лицензией и сертификатами международного уровня',
+      page_schedule_title: 'Расписание и доступность',
+      page_schedule_desc: 'Посмотрите доступность наших терапевтов и часы работы',
+      schedule_week: 'Расписание на неделю',
+      schedule_therapists: 'Терапевты и их доступность',
+      schedule_available: 'Доступные дни',
+      schedule_speciality: 'Специальность',
+      page_prices_title: 'Цены и бронирование',
+      page_contacts_title: 'Свяжитесь с нами',
+      form_title: 'Забронировать сеанс',
+      form_name: 'Ваше имя',
+      form_phone: 'Номер телефона',
+      form_service: 'Выберите услугу',
+      form_select_service: 'Выберите услугу',
+      form_therapist: 'Предпочтительный терапевт (опционально)',
+      form_any_therapist: 'Любой терапевт',
+      form_date: 'Дата посещения',
+      form_time: 'Время',
+      form_select_time: 'Выберите время',
+      form_notes: 'Дополнительные пожелания',
+      form_notes_placeholder: 'Расскажите нам о ваших пожеланиях...',
+      duration: 'Длительность',
+      price: 'Цена',
+      discount: 'скидка',
+      price_table: 'Таблица цен',
+      service: 'Услуга',
+      special_offers: 'Специальные предложения',
+      offer1: '10% скидка при первом визите',
+      offer2: '5% скидка при бронировании на двоих',
+      offer3: '15% скидка на 5+ посещений в месяц',
+      offer4: 'Подарочные сертификаты доступны',
+      contact_info: 'Информация для связи',
+      address: 'Адрес',
+      address_desc: 'Центральное расположение, легкий доступ общественным транспортом',
+      phone: 'Телефон',
+      phone_desc: 'Доступны консультации и бронирование',
+      email: 'Email',
+      email_desc: 'Ответим в течение 2 часов',
+      hours: 'Режим работы',
+      hours_mon_fri: 'Пн–Пт: 10:00–21:00',
+      hours_sat_sun: 'Сб–Вс: 11:00–20:00',
+      hours_note: 'Праздничные дни по договоренности',
+      rating: 'Рейтинг',
+      footer_about: 'О нас',
+      footer_about_text: 'Black Diamond Spa — ваш источник премиум релаксации и восстановления энергии в городе.',
+      footer_quick_links: 'Быстрые ссылки',
+      footer_services: 'Услуги',
+      footer_contact: 'Контакты',
+      all_rights: 'Все права защищены.',
+      footer_created: 'Создано с ❖ для вашего блага',
+    }
+  };
+
+  setLanguage = (lang) => {
+    this.setState({ language: lang });
+  };
+
+  showPage = (pageName) => {
+    document.querySelectorAll('[data-page]').forEach(el => el.classList.remove('active'));
+    const page = document.querySelector(`[data-page="${pageName}"]`);
+    if (page) page.classList.add('active');
+    this.setState({ currentPage: pageName });
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  };
+
+  toggleMobileMenu = () => {
+    const menu = document.getElementById('mobileNav');
+    if (menu) menu.classList.toggle('active');
+  };
+
+  componentDidMount() {
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.faq-question')) {
+        const item = e.target.closest('.faq-item');
+        if (item) item.classList.toggle('open');
+      }
+    });
+  }
+
+  handleReservation = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const lang = this.state.language;
+    alert(`✓ ${name} — ${lang.toUpperCase()}`);
+    form.reset();
+  };
+
+  renderVals() {
+    const lang = this.state.language;
+    const langText = this.languages[lang];
+
+    const therapists = [
+      { id: 'viktor', name: 'Viktor Novák', emoji: '👨‍⚕️', specialty: lang === 'cs' ? 'Specialista na thajskou masáž' : lang === 'en' ? 'Thai massage specialist' : 'Специалист по тайскому массажу' },
+      { id: 'sofia', name: 'Sophia Králová', emoji: '👩‍⚕️', specialty: lang === 'cs' ? 'Spa terapeut' : lang === 'en' ? 'Spa therapist' : 'Спа терапевт' },
+      { id: 'maksim', name: 'Maximilián Svoboda', emoji: '👨‍⚕️', specialty: lang === 'cs' ? 'Klasická masáž' : lang === 'en' ? 'Classic massage' : 'Классический массаж' },
+      { id: 'anna', name: 'Anna Dvořáková', emoji: '👩‍⚕️', specialty: lang === 'cs' ? 'Horké kameny' : lang === 'en' ? 'Hot stones' : 'Горячие камни' },
+    ];
+
+    const therapistDetails = [
+      { 
+        id: 'viktor', 
+        fullName: 'Viktor Novák', 
+        emoji: '👨‍⚕️', 
+        title: lang === 'cs' ? 'Specialista na thajskou masáž' : lang === 'en' ? 'Thai Massage Specialist' : 'Специалист по тайскому массажу', 
+        bio: lang === 'cs' ? '10 let zkušeností. Vyškolený v Thajsku. Specialista na energetickou regeneraci.' : lang === 'en' ? '10 years experience. Trained in Thailand. Expert in energy restoration.' : '10 лет опыта. Обучен в Таиланде. Специалист по энергетическому восстановлению.', 
+        rating: '⭐⭐⭐⭐⭐ (98)' 
+      },
+      { 
+        id: 'sofia', 
+        fullName: 'Sophia Králová', 
+        emoji: '👩‍⚕️', 
+        title: lang === 'cs' ? 'Spa terapeut, kosmetička' : lang === 'en' ? 'Spa Therapist, Cosmetologist' : 'Спа-терапевт, косметолог', 
+        bio: lang === 'cs' ? '7 let zkušeností. Mezinárodně certifikovaná. Specialistka na prémiové procedury.' : lang === 'en' ? '7 years experience. Internationally certified. Premium treatments specialist.' : '7 лет опыта. Сертифицирована международно. Специалист по премиум процедурам.', 
+        rating: '⭐⭐⭐⭐⭐ (127)' 
+      },
+      { 
+        id: 'maksim', 
+        fullName: 'Maximilián Svoboda', 
+        emoji: '👨‍⚕️', 
+        title: lang === 'cs' ? 'Klasická a relaxační masáž' : lang === 'en' ? 'Classic & Relaxation Massage' : 'Классический и релакс массаж', 
+        bio: lang === 'cs' ? '8 let zkušeností. Specialista na léčebnou masáž. Asistent sportovců.' : lang === 'en' ? '8 years experience. Therapeutic massage specialist. Athletes assistant.' : '8 лет опыта. Специалист по лечебному массажу. Помощник спортсменов.', 
+        rating: '⭐⭐⭐⭐⭐ (87)' 
+      },
+      { 
+        id: 'anna', 
+        fullName: 'Anna Dvořáková', 
+        emoji: '👩‍⚕️', 
+        title: lang === 'cs' ? 'Masáž horkými kameny' : lang === 'en' ? 'Hot Stone Massage' : 'Массаж горячими камнями', 
+        bio: lang === 'cs' ? '6 let zkušeností. Specialistka na energetickou regeneraci s aromaterapií.' : lang === 'en' ? '6 years experience. Energy restoration with aromatherapy specialist.' : '6 лет опыта. Специалист по энергетическому восстановлению с ароматерапией.', 
+        rating: '⭐⭐⭐⭐⭐ (72)' 
+      },
+    ];
+
+    const weekDays = [
+      { name: lang === 'cs' ? 'Pondělí' : lang === 'en' ? 'Monday' : 'Понедельник', hours: lang === 'cs' ? '10:00–21:00' : lang === 'en' ? '10:00–21:00' : '10:00–21:00' },
+      { name: lang === 'cs' ? 'Úterý' : lang === 'en' ? 'Tuesday' : 'Вторник', hours: lang === 'cs' ? '10:00–21:00' : lang === 'en' ? '10:00–21:00' : '10:00–21:00' },
+      { name: lang === 'cs' ? 'Středa' : lang === 'en' ? 'Wednesday' : 'Среда', hours: lang === 'cs' ? '10:00–21:00' : lang === 'en' ? '10:00–21:00' : '10:00–21:00' },
+      { name: lang === 'cs' ? 'Čtvrtek' : lang === 'en' ? 'Thursday' : 'Четверг', hours: lang === 'cs' ? '10:00–21:00' : lang === 'en' ? '10:00–21:00' : '10:00–21:00' },
+      { name: lang === 'cs' ? 'Pátek' : lang === 'en' ? 'Friday' : 'Пятница', hours: lang === 'cs' ? '10:00–21:00' : lang === 'en' ? '10:00–21:00' : '10:00–21:00' },
+      { name: lang === 'cs' ? 'Sobota' : lang === 'en' ? 'Saturday' : 'Суббота', hours: lang === 'cs' ? '11:00–20:00' : lang === 'en' ? '11:00–20:00' : '11:00–20:00' },
+      { name: lang === 'cs' ? 'Neděle' : lang === 'en' ? 'Sunday' : 'Воскресенье', hours: lang === 'cs' ? '11:00–20:00' : lang === 'en' ? '11:00–20:00' : '11:00–20:00' },
+    ];
+
+    const therapistSchedule = [
+      { name: 'Viktor Novák', available: lang === 'cs' ? 'Po–Pá 11:00–20:00' : lang === 'en' ? 'Mon–Fri 11:00–20:00' : 'Пн–Пт 11:00–20:00', speciality: langText.service3_title },
+      { name: 'Sophia Králová', available: lang === 'cs' ? 'Po–Ne 10:00–19:00' : lang === 'en' ? 'Mon–Sun 10:00–19:00' : 'Пн–Вс 10:00–19:00', speciality: langText.service4_title },
+      { name: 'Maximilián Svoboda', available: lang === 'cs' ? 'Po–Pá 12:00–21:00' : lang === 'en' ? 'Mon–Fri 12:00–21:00' : 'Пн–Пт 12:00–21:00', speciality: langText.service1_title },
+      { name: 'Anna Dvořáková', available: lang === 'cs' ? 'Út–So 10:00–18:00' : lang === 'en' ? 'Tue–Sat 10:00–18:00' : 'Вт–Сб 10:00–18:00', speciality: langText.service2_title },
+    ];
+
+    const allServices = [
+      { emoji: '💆', name: langText.service1_title, fullDesc: langText.service1_desc, duration: lang === 'cs' ? '60, 90 nebo 120 minut' : lang === 'en' ? '60, 90 or 120 minutes' : '60, 90 или 120 минут', price: '300 CZK' },
+      { emoji: '🔥', name: langText.service2_title, fullDesc: langText.service2_desc, duration: lang === 'cs' ? '90 nebo 120 minut' : lang === 'en' ? '90 or 120 minutes' : '90 или 120 минут', price: '375 CZK' },
+      { emoji: '🧘', name: langText.service3_title, fullDesc: langText.service3_desc, duration: lang === 'cs' ? '90 nebo 120 minut' : lang === 'en' ? '90 or 120 minutes' : '90 или 120 минут', price: '330 CZK' },
+      { emoji: '💅', name: langText.service4_title, fullDesc: langText.service4_desc, duration: lang === 'cs' ? '120 minut' : lang === 'en' ? '120 minutes' : '120 минут', price: '525 CZK' },
+      { emoji: '👰', name: lang === 'cs' ? 'Svatební balíček' : lang === 'en' ? 'Wedding Package' : 'Свадебный пакет', fullDesc: lang === 'cs' ? 'Speciální balíček pro nevěsty a ženichy.' : lang === 'en' ? 'Special package for brides and grooms.' : 'Специальный пакет для невест и женихов.', duration: lang === 'cs' ? 'Individuálně' : lang === 'en' ? 'Individually' : 'Индивидуально', price: '750 CZK' },
+    ];
+
+    const processSteps = [
+      { title: lang === 'cs' ? 'Výběr' : lang === 'en' ? 'Choose' : 'Выбор', desc: lang === 'cs' ? 'Vyberte službu z nabídky.' : lang === 'en' ? 'Choose your service.' : 'Выберите услугу.' },
+      { title: lang === 'cs' ? 'Rezervace' : lang === 'en' ? 'Book' : 'Бронирование', desc: lang === 'cs' ? 'Vyberte čas a terapeuta.' : lang === 'en' ? 'Select time and therapist.' : 'Выберите время и мастера.' },
+      { title: lang === 'cs' ? 'Relaxace' : lang === 'en' ? 'Relax' : 'Релаксация', desc: lang === 'cs' ? 'Užívejte si proceduru.' : lang === 'en' ? 'Enjoy your treatment.' : 'Наслаждайтесь процедурой.' },
+      { title: lang === 'cs' ? 'Obnova' : lang === 'en' ? 'Recover' : 'Восстановление', desc: lang === 'cs' ? 'Cítěte výsledek.' : lang === 'en' ? 'Feel the results.' : 'Почувствуйте результат.' },
+    ];
+
+    const reviews = [
+      { stars: '★★★★★', text: lang === 'cs' ? 'Úžasný zážitek! Terapeuti jsou velmi profesionální.' : lang === 'en' ? 'Amazing experience! Very professional therapists.' : 'Потрясающий опыт! Очень профессиональные мастера.', author: 'Marie K.' },
+      { stars: '★★★★★', text: lang === 'cs' ? 'Po masáži se cítím znovuzrozený.' : lang === 'en' ? 'After massage I feel reborn.' : 'После массажа чувствую себя заново рожденным.', author: 'Jan P.' },
+      { stars: '★★★★★', text: lang === 'cs' ? 'Nejlepší spa ve městě!' : lang === 'en' ? 'Best spa in the city!' : 'Лучший спа в городе!', author: 'Anna M.' },
+      { stars: '★★★★★', text: lang === 'cs' ? 'Doporučuji všem.' : lang === 'en' ? 'Highly recommended.' : 'Рекомендую всем.', author: 'Tomáš S.' },
+    ];
+
+    const faqItems = [
+      { q: lang === 'cs' ? 'Jak dlouho trvá sezení?' : lang === 'en' ? 'How long is a session?' : 'Как долго длится сеанс?', a: lang === 'cs' ? '60 minut standardně, nebo 30/90/120 minut.' : lang === 'en' ? '60 minutes standard, or 30/90/120 minutes.' : '60 минут стандартно или 30/90/120 минут.' },
+      { q: lang === 'cs' ? 'Musím si rezervovat?' : lang === 'en' ? 'Do I need to book?' : 'Нужно ли бронировать?', a: lang === 'cs' ? 'Doporučujeme rezervaci, zvláště o víkendech.' : lang === 'en' ? 'We recommend booking, especially weekends.' : 'Рекомендуем бронирование, особенно выходные.' },
+      { q: lang === 'cs' ? 'Jaké platby?' : lang === 'en' ? 'What payment methods?' : 'Какие методы оплаты?', a: lang === 'cs' ? 'Hotovost, karty, mobilní platby.' : lang === 'en' ? 'Cash, cards, mobile payments.' : 'Наличные, карты, мобильные платежи.' },
+      { q: lang === 'cs' ? 'Jsou kontraindikace?' : lang === 'en' ? 'Any contraindications?' : 'Есть ли противопоказания?', a: lang === 'cs' ? 'Ověřte si zdravotní stav s terapeuta.' : lang === 'en' ? 'Check with therapist about health conditions.' : 'Проверьте состояние здоровья с терапевтом.' },
+    ];
+
+    const serviceOptions = [
+      { id: 'relaxation', name: langText.service1_title, price: '300 CZK' },
+      { id: 'stones', name: langText.service2_title, price: '375 CZK' },
+      { id: 'thai', name: langText.service3_title, price: '330 CZK' },
+      { id: 'spa', name: langText.service4_title, price: '525 CZK' },
+      { id: 'wedding', name: lang === 'cs' ? 'Svatební balíček' : lang === 'en' ? 'Wedding Package' : 'Свадебный пакет', price: '750 CZK' },
+    ];
+
+    const priceTable = [
+      { service: langText.service1_title, p30: '150', p60: '300', p90: '420', p120: '525' },
+      { service: langText.service3_title, p30: '165', p60: '330', p90: '465', p120: '585' },
+      { service: langText.service2_title, p30: '210', p60: '375', p90: '525', p120: '645' },
+      { service: langText.service4_title, p30: '—', p60: '—', p90: '525', p120: '750' },
+    ];
+
+    return {
+      language: this.state.language,
+      langText,
+      setLanguage: this.setLanguage,
+      showPage: this.showPage,
+      toggleMobileMenu: this.toggleMobileMenu,
+      handleReservation: this.handleReservation,
+      toggleFaq: this.toggleFaq,
+      therapists,
+      therapistDetails,
+      allServices,
+      processSteps,
+      reviews,
+      faqItems,
+      serviceOptions,
+      priceTable,
+    };
+  }
+}
+</script>
+</body>
+</html>

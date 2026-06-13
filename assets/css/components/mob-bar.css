@@ -1,0 +1,66 @@
+/* Black Diamond Spa — Mobile sticky bottom bar */
+
+body.has-mob-bar {
+  padding-bottom: calc(54px + env(safe-area-inset-bottom));
+}
+
+.mob-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: calc(var(--z-nav) - 1);
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  background: rgba(18, 20, 24, 0.96);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  backdrop-filter: blur(20px) saturate(1.4);
+  border-top: 1px solid var(--divider);
+  padding-bottom: env(safe-area-inset-bottom);
+  min-height: calc(54px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 1023px) {
+  .mob-bar { display: grid; }
+}
+
+.mob-bar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.2rem;
+  min-height: 54px;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 380px) {
+  .mob-bar__item {
+    font-size: 0.55rem;
+    letter-spacing: 0.03em;
+    padding: 0.4rem 0.15rem;
+  }
+}
+
+.mob-bar__item:hover,
+.mob-bar__item[aria-current="page"] {
+  color: var(--tiffany-light);
+}
+
+.mob-bar__item--cta {
+  color: var(--tiffany);
+  font-weight: 700;
+}

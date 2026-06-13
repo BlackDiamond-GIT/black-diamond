@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{{ service|trans_field:"short" }}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
+
+  <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
+    <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
+      <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
+      <li aria-hidden="true">·</li>
+      <li><a href="/{{ LANG }}/masaze/">{% trans "Masáže" %}</a></li>
+      <li aria-hidden="true">·</li>
+      <li aria-current="page">{{ service|trans_field:"title" }}</li>
+    </ol>
+  </nav>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-3xl)">
+
+    {% if service.image %}
+    <div style="border-radius:var(--radius-xl);overflow:hidden;max-height:480px">
+      <img src="{{ service.image.url }}" alt="{{ service|trans_field:'title' }} — {{ SITE_NAME }}"
+        width="1200" height="600" style="width:100%;height:100%;object-fit:cover" loading="eager">
+    </div>
+    {% endif %}
+
+    <div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-bottom:var(--sp-lg)">
+        <span class="tag tag--duration">{{ service.duration }} min</span>
+        <span class="tag tag--price">{{ service.price|floatformat:0 }}&nbsp;Kč</span>
+      </div>
+
+      <h1 style="font-family:var(--font-display);font-size:var(--fs-h1);margin-bottom:var(--sp-lg)">
+        {{ service|trans_field:"title" }}
+      </h1>
+
+      <div style="color:var(--text-secondary);line-height:var(--lh-relaxed)">
+        {{ service|trans_field:"description" }}
+      </div>
+
+      <div style="margin-top:var(--sp-2xl);display:flex;flex-wrap:wrap;gap:var(--sp-md)">
+        <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat nyní" %}</a>
+        <a href="/{{ LANG }}/masaze/" class="btn btn--secondary btn--lg">{% trans "Všechny masáže" %}</a>
+      </div>
+    </div>
+
+  </div>
+
+  {% if other_services %}
+  <section style="margin-top:var(--sp-4xl)" aria-labelledby="other-heading">
+    <header class="section-header" style="margin-bottom:var(--sp-2xl)">
+      <span class="section-label" aria-hidden="true">{% trans "Také vás zajímá" %}</span>
+      <h2 class="section-title" id="other-heading">{% trans "Další masáže" %}</h2>
+    </header>
+    <div class="grid-3" role="list">
+      {% for s in other_services %}
+      <article class="service-card" role="listitem">
+        <div class="service-card__body">
+          <h3 class="service-card__name">{{ s|trans_field:"title" }}</h3>
+          <div class="service-card__meta">
+            <span class="tag tag--duration">{{ s.duration }} min</span>
+            <span class="tag tag--price">{{ s.price|floatformat:0 }}&nbsp;Kč</span>
+          </div>
+          <a href="/{{ LANG }}/masaze/{{ s.slug }}/" class="btn btn--ghost">{% trans "Detail" %}</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
+{% endblock %}

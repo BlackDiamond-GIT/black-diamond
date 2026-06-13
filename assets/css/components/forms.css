@@ -1,0 +1,85 @@
+/* Black Diamond Spa — Forms */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+  margin-bottom: var(--sp-lg);
+}
+
+.form-field label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem var(--sp-lg);
+  font-size: var(--fs-base);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  width: 100%;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+  min-height: 44px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--tiffany);
+  box-shadow: 0 0 0 3px var(--tiffany-glow);
+  background: rgba(10, 186, 181, 0.04);
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Prevent iOS zoom on small inputs */
+@media (max-width: 767px) {
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    font-size: 16px;
+  }
+}
+
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8682' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-error {
+  font-size: var(--fs-xs);
+  color: #e57373;
+  margin-top: 0.25rem;
+}
+
+.form-success {
+  padding: var(--sp-lg);
+  background: rgba(10, 186, 181, 0.10);
+  border: 1px solid rgba(10, 186, 181, 0.30);
+  border-radius: var(--radius-md);
+  color: var(--tiffany-light);
+  font-size: var(--fs-sm);
+  text-align: center;
+}

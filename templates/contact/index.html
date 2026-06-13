@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{% trans "Kontakt — Masáž Praha 1" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Kontaktujte Black Diamond Spa Praha. Adresa: Opletalová 30, Praha 1. Telefon: +420 797 669 633. Po–Pá 10–21, So–Ne 10–19." %}{% endblock %}
+
+{% block content %}
+<section style="padding-block:clamp(3rem,8vw,5rem)">
+  <div class="container">
+
+    <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-2xl)">
+      <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;font-size:var(--fs-sm);color:var(--text-muted)">
+        <li><a href="/{{ LANG }}/" style="color:var(--text-muted)">{{ SITE_NAME }}</a></li>
+        <li aria-hidden="true"> / </li>
+        <li aria-current="page" style="color:var(--tiffany)">{% trans "Kontakt" %}</li>
+      </ol>
+    </nav>
+
+    <header class="section-header" style="margin-bottom:var(--sp-3xl)">
+      <span class="section-label" aria-hidden="true">{% trans "Jsme tu pro vás" %}</span>
+      <h1 class="section-title">{% trans "Kontakt" %}</h1>
+      <p class="section-subtitle">{% trans "Máte dotaz nebo chcete rezervovat? Kontaktujte nás telefonicky, e-mailem nebo vyplňte formulář níže." %}</p>
+    </header>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-3xl);align-items:start">
+
+      <!-- Contact info -->
+      <div>
+        <div class="glass" style="padding:var(--sp-2xl);border-radius:var(--radius-xl);margin-bottom:var(--sp-xl)"
+          itemscope itemtype="https://schema.org/MassageParlor">
+          <meta itemprop="name" content="{{ SITE_NAME }}">
+          <h2 style="font-family:var(--font-display);font-size:var(--fs-h2);margin-bottom:var(--sp-xl)">{{ SITE_NAME }}</h2>
+
+          <div style="display:flex;flex-direction:column;gap:var(--sp-lg)">
+            <div style="display:flex;align-items:flex-start;gap:var(--sp-md)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tiffany)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <address style="font-style:normal" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <strong style="color:var(--text-primary);display:block;margin-bottom:4px">{% trans "Adresa" %}</strong>
+                <span itemprop="streetAddress">Opletalová 30</span><br>
+                <span itemprop="postalCode">110 00</span> <span itemprop="addressLocality">Praha 1</span><br>
+                <span itemprop="addressCountry">{% trans "Česká republika" %}</span>
+              </address>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:var(--sp-md)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tiffany)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <div>
+                <strong style="color:var(--text-primary);display:block;margin-bottom:4px">{% trans "Telefon" %}</strong>
+                <a href="tel:+420797669633" style="color:var(--tiffany);font-size:var(--fs-lg)" itemprop="telephone">{{ SITE_PHONE }}</a>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:var(--sp-md)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tiffany)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong style="color:var(--text-primary);display:block;margin-bottom:4px">E-mail</strong>
+                <a href="mailto:{{ SITE_EMAIL }}" style="color:var(--tiffany)" itemprop="email">{{ SITE_EMAIL }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass" style="padding:var(--sp-2xl);border-radius:var(--radius-xl);margin-bottom:var(--sp-xl)">
+          <h2 style="font-family:var(--font-display);font-size:var(--fs-xl);margin-bottom:var(--sp-xl)">{% trans "Otevírací doba" %}</h2>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-md)">
+            <div style="display:flex;justify-content:space-between;padding-bottom:var(--sp-md);border-bottom:1px solid var(--glass-border)">
+              <span style="color:var(--text-secondary)">{% trans "Pondělí – Pátek" %}</span>
+              <span style="color:var(--tiffany);font-weight:600">10:00 – 21:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-secondary)">{% trans "Sobota – Neděle" %}</span>
+              <span style="color:var(--tiffany);font-weight:600">10:00 – 19:00</span>
+            </div>
+          </div>
+          <div style="margin-top:var(--sp-xl)">
+            <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--full shimmer">{% trans "Zobrazit rozvrh & rezervovat" %}</a>
+          </div>
+        </div>
+
+        <div style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--glass-border);background:var(--bg-secondary);height:240px;display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--sp-xl)">
+          <div>
+            <p style="color:var(--text-muted);font-size:var(--fs-sm);margin-bottom:var(--sp-md)">Opletalová 30, Praha 1</p>
+            <a href="https://maps.google.com/?q=Opletalová+30,+110+00+Praha+1" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">{% trans "Otevřít v Google Maps" %}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div>
+        <div class="glass" style="padding:var(--sp-2xl);border-radius:var(--radius-xl)">
+          <h2 style="font-family:var(--font-display);font-size:var(--fs-xl);margin-bottom:var(--sp-2xl)">{% trans "Napište nám" %}</h2>
+          <form
+            action="/api/contact/"
+            method="POST"
+            hx-post="/api/contact/"
+            hx-target="#form-response"
+            hx-swap="innerHTML"
+            hx-indicator="#form-spinner"
+            aria-label="{% trans 'Kontaktní formulář' %}">
+            {% csrf_token %}
+
+            <div class="form-field">
+              <label for="contact-name">{% trans "Jméno a příjmení" %}</label>
+              <input type="text" id="contact-name" name="name" placeholder="{% trans 'Jana Nováková' %}" required autocomplete="name">
+            </div>
+
+            <div class="form-field">
+              <label for="contact-email">E-mail</label>
+              <input type="email" id="contact-email" name="email" placeholder="jana@example.com" required autocomplete="email">
+            </div>
+
+            <div class="form-field">
+              <label for="contact-phone">{% trans "Telefon" %} ({% trans "nepovinné" %})</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="+420 xxx xxx xxx" autocomplete="tel" inputmode="tel">
+            </div>
+
+            <div class="form-field">
+              <label for="contact-service">{% trans "Typ masáže" %} ({% trans "nepovinné" %})</label>
+              <select id="contact-service" name="service">
+                <option value="">— {% trans "Vyberte masáž" %} —</option>
+                {% for service in services %}
+                <option value="{{ service.slug }}">{{ service|trans_field:"title" }} ({{ service.duration }} min / {{ service.price|floatformat:0 }}&nbsp;Kč)</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-message">{% trans "Zpráva" %}</label>
+              <textarea id="contact-message" name="message" placeholder="{% trans 'Váš dotaz nebo požadavek...' %}" rows="5"></textarea>
+            </div>
+
+            <div id="form-response" role="status" aria-live="polite"></div>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg shimmer" style="margin-top:var(--sp-md)">
+              <span id="form-spinner" class="htmx-indicator">{% trans "Odesílání..." %}</span>
+              <span id="form-label">{% trans "Odeslat zprávu" %}</span>
+            </button>
+
+            <p style="font-size:var(--fs-xs);color:var(--text-muted);margin-top:var(--sp-md);text-align:center">
+              {% trans "Odesláním souhlasíte se zpracováním osobních údajů dle" %}
+              <a href="/{{ LANG }}/soukromi/">{% trans "Zásad soukromí" %}</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

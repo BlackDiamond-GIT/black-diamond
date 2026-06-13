@@ -1,0 +1,14 @@
+# Black Diamond Spa — robots.txt
+User-agent: *
+Allow: /
+
+# Block future Django admin/API
+Disallow: /admin/
+Disallow: /api/
+Disallow: /django-admin/
+
+# Allow all bots to crawl
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://blackdiamond.cz/sitemap.xml

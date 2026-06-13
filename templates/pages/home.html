@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Black Diamond Spa — luxusní relaxační masáže v centru Prahy. Klasická, aromamasáž, sportovní. Certifikované masérky. Rezervujte online." %}{% endblock %}
+{% block og_title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
+{% block og_description %}{% trans "Luxusní relaxační masáže v srdci Prahy. Klasická, aromamasáž, sportovní, lymfatická. Rezervujte online." %}{% endblock %}
+
+{% block lcp_image %}{% static 'img/hero.webp' %}{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MassageParlor",
+  "name": "Black Diamond Spa",
+  "url": "{{ SITE_URL }}",
+  "telephone": "{{ SITE_PHONE }}",
+  "email": "{{ SITE_EMAIL }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Opletalová 30",
+    "postalCode": "110 00",
+    "addressLocality": "Praha 1",
+    "addressCountry": "CZ"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "10:00","closes": "21:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday","Sunday"],"opens": "10:00","closes": "19:00"}
+  ],
+  "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "87","bestRating": "5"}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Hero — split screen -->
+  <section class="hero hero--split" aria-label="{% trans 'Uvítací sekce' %}">
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__bg">
+        <img src="{% static 'img/hero.webp' %}" alt="" width="1920" height="1080" fetchpriority="high" decoding="async" data-parallax>
+      </div>
+      <div class="hero__noise"></div>
+    </div>
+
+    <div class="hero__layout">
+      <div class="hero__content">
+        <div class="hero__eyebrow" aria-hidden="true">Praha 1 · {% trans "Prémiový salon" %}</div>
+
+        <h1 class="hero__title" data-ink>
+          {% trans "Umění" %}<br><em>{% trans "relaxace" %}</em>
+        </h1>
+
+        <p class="hero__subtitle" data-ink>
+          {% trans "Certifikované masérky, privátní kabinety a luxusní atmosféra v srdci Prahy. Dopřejte si klid a regeneraci, které si zasloužíte." %}
+        </p>
+
+        <div class="hero__actions">
+          <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg" aria-label="{% trans 'Rezervovat masáž online' %}">
+            {% trans "Rezervovat masáž" %}
+          </a>
+          <a href="/{{ LANG }}/masaze/" class="btn btn--secondary btn--lg">
+            {% trans "Naše masáže" %}
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero__stats-col" aria-label="{% trans 'Statistiky salonu' %}">
+        <div class="hero__stat">
+          <span class="hero__stat-value">6</span>
+          <span class="hero__stat-label">{% trans "Masáží" %}</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">6</span>
+          <span class="hero__stat-label">{% trans "Masérky" %}</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">4.9★</span>
+          <span class="hero__stat-label">{% trans "Hodnocení" %}</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Atmosphere -->
+  <section class="atmosphere" aria-label="{% trans 'Atmosféra salonu' %}">
+    <div class="atmosphere__bg" aria-hidden="true">
+      <img src="{% static 'img/atmosphere.webp' %}" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+    </div>
+    <div class="atmosphere__mist mist-breath" aria-hidden="true"></div>
+    <blockquote class="atmosphere__quote" data-ink>
+      {% trans "Čas zastavit čas." %}
+      <span class="atmosphere__quote-sub">{% trans "Ticho, voda, péče" %}</span>
+    </blockquote>
+  </section>
+
+  <!-- Services — editorial layout -->
+  <section class="section-services" aria-labelledby="services-heading">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <span class="section-label" aria-hidden="true">{% trans "Naše služby" %}</span>
+        <h2 class="section-title" id="services-heading" data-line>{% trans "Masáže pro každou potřebu" %}</h2>
+        <span class="section-line" aria-hidden="true"></span>
+        <p class="section-subtitle">
+          {% trans "Od klasické švédské po lymfatickou a aromaterapii — vyberte masáž, která vám přinese úlevu." %}
+        </p>
+      </header>
+
+      <div class="services-editorial" role="list">
+        {% for service in featured_services %}
+        <article class="service-editorial service-editorial--{% cycle 'left' 'right' 'left' %}" role="listitem" data-ink>
+          <div class="service-editorial__visual{% if not service.image %} service-editorial__visual--placeholder{% endif %}">
+            {% if service.image %}
+            <img src="{{ service.image.url }}" alt="{{ service|trans_field:'title' }} Praha — Black Diamond Spa"
+              width="800" height="600" loading="lazy" decoding="async">
+            {% endif %}
+            {% if forloop.counter == 1 %}
+            <div class="service-editorial__overlay">
+              <h3 class="service-editorial__name">{{ service|trans_field:"title" }}</h3>
+            </div>
+            {% endif %}
+          </div>
+          <div class="service-editorial__body">
+            {% if forloop.counter != 1 %}
+            <h3 class="service-editorial__name">{{ service|trans_field:"title" }}</h3>
+            {% endif %}
+            <p class="service-editorial__description">{{ service|trans_field:"short" }}</p>
+            <div class="service-editorial__meta">
+              <span class="tag tag--duration">{{ service.duration }} min</span>
+              <span class="tag tag--price">{{ service.price|floatformat:0 }}&nbsp;Kč</span>
+            </div>
+            <a href="/{{ LANG }}/masaze/{{ service.slug }}/" class="btn btn--ghost">{% trans "Detail masáže" %}</a>
+          </div>
+        </article>
+        {% empty %}
+        <p class="section-subtitle" style="text-align:center">{% trans "Brzy přidáme masáže." %}</p>
+        {% endfor %}
+      </div>
+
+      <div style="text-align:center;margin-top:var(--sp-3xl)">
+        <a href="/{{ LANG }}/masaze/" class="btn btn--secondary btn--lg">{% trans "Všechny masáže" %}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Masseuses — portrait gallery + modal -->
+  <section class="section-masseuses" aria-labelledby="masseuses-heading" style="background:var(--bg-tertiary)">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <span class="section-label" aria-hidden="true">{% trans "Náš tým" %}</span>
+        <h2 class="section-title" id="masseuses-heading" data-line>{% trans "Certifikované masérky" %}</h2>
+        <span class="section-line" aria-hidden="true"></span>
+        <p class="section-subtitle">
+          {% trans "Šest zkušených specialistek, každá s vlastním přístupem a hlubokými znalostmi masážních technik." %}
+        </p>
+      </header>
+
+      <div class="masseuse-gallery" role="list">
+        {% for therapist in featured_therapists %}
+        <button type="button"
+          class="masseuse-portrait"
+          role="listitem"
+          data-therapist-trigger
+          data-therapist-name="{{ therapist.name }}"
+          data-therapist-slug="{{ therapist.slug }}"
+          {% if therapist.photo %}data-therapist-photo="{{ therapist.photo.url }}"{% endif %}
+          data-therapist-bio="{{ therapist|trans_field:'bio'|truncatewords:30|escapejs }}"
+          data-therapist-services="{% for spec in therapist.specialties.all %}{{ spec|trans_field:'title' }}{% if not forloop.last %}|{% endif %}{% endfor %}"
+          data-therapist-cta="{% blocktrans with name=therapist.name %}Rezervovat s {{ name }}{% endblocktrans %}"
+          aria-label="{% blocktrans with name=therapist.name %}Zobrazit profil {{ name }}{% endblocktrans %}">
+          {% if therapist.photo %}
+          <img class="masseuse-portrait__image" src="{{ therapist.photo.url }}" alt="{{ therapist.name }} — Black Diamond Spa Praha"
+            width="300" height="400" loading="lazy" decoding="async">
+          {% else %}
+          <div class="masseuse-portrait__placeholder" aria-hidden="true"></div>
+          {% endif %}
+          <div class="masseuse-portrait__overlay">
+            <span class="masseuse-portrait__name">{{ therapist.name }}</span>
+            {% with spec=therapist.specialties.first %}
+            {% if spec %}
+            <span class="masseuse-portrait__spec">{{ spec|trans_field:"title" }}</span>
+            {% endif %}
+            {% endwith %}
+          </div>
+        </button>
+        {% empty %}
+        <p style="text-align:center">{% trans "Brzy přidáme masérky." %}</p>
+        {% endfor %}
+      </div>
+
+      <div style="text-align:center;margin-top:var(--sp-3xl)">
+        <a href="/{{ LANG }}/masazistky/" class="btn btn--secondary btn--lg">{% trans "Všechny masérky" %}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process — horizontal timeline -->
+  <section class="section-process" aria-labelledby="process-heading">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <span class="section-label" aria-hidden="true">{% trans "Jak to funguje" %}</span>
+        <h2 class="section-title" id="process-heading" data-line>{% trans "4 kroky k dokonalé relaxaci" %}</h2>
+        <span class="section-line" aria-hidden="true"></span>
+      </header>
+
+      <ol class="process-timeline" aria-label="{% trans 'Kroky rezervace a masáže' %}">
+        {% for step in process_steps %}
+        <li class="process-timeline__item" data-ink>
+          <div class="process-timeline__marker" aria-hidden="true">{{ step.num }}</div>
+          <div class="process-timeline__content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.text }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-faq" aria-labelledby="faq-heading" style="background:var(--bg-tertiary)">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <span class="section-label" aria-hidden="true">FAQ</span>
+        <h2 class="section-title" id="faq-heading" data-line>{% trans "Časté otázky" %}</h2>
+        <span class="section-line" aria-hidden="true"></span>
+      </header>
+
+      <div class="faq" role="list">
+        {% for faq in faqs %}
+        <div class="faq__item" role="listitem">
+          <button class="faq__question" aria-expanded="false" aria-controls="faq-{{ forloop.counter }}">
+            {{ faq.q }}
+            <span class="faq__icon" aria-hidden="true">
+              <span class="faq__icon-line"></span>
+            </span>
+          </button>
+          <div id="faq-{{ forloop.counter }}" class="faq__answer" role="region">
+            <div class="faq__answer-inner">{{ faq.a }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta" aria-labelledby="cta-heading">
+    <div class="container">
+      <span class="section-label" aria-hidden="true">{% trans "Dopřejte si" %}</span>
+      <h2 class="section-title" id="cta-heading" style="font-size:var(--fs-h1);max-width:16ch;margin-inline:auto">
+        {% trans "Vaše cesta k dokonalé relaxaci začíná zde" %}
+      </h2>
+      <p class="section-subtitle" style="margin-inline:auto;margin-top:var(--sp-lg);margin-bottom:var(--sp-3xl)">
+        {% trans "Rezervujte si masáž ještě dnes a nechte se unést péčí, která obnoví vaše tělo i mysl." %}
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-md);justify-content:center">
+        <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg">{% trans "Rezervovat nyní" %}</a>
+        <a href="/{{ LANG }}/kontakty/" class="btn btn--secondary btn--lg">{% trans "Kontaktovat nás" %}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Therapist modal -->
+  <div class="therapist-modal" id="therapist-modal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="therapist-modal__backdrop" data-therapist-close></div>
+    <div class="therapist-modal__panel">
+      <button type="button" class="therapist-modal__close" data-therapist-close aria-label="{% trans 'Zavřít' %}">×</button>
+      <div class="therapist-modal__photo-wrap">
+        <img class="therapist-modal__photo" src="" alt="" width="480" height="600" decoding="async">
+      </div>
+      <div class="therapist-modal__info">
+        <h2 class="therapist-modal__name"></h2>
+        <div class="therapist-modal__tags"></div>
+        <p class="therapist-modal__bio"></p>
+        <p class="therapist-modal__services-title">{% trans "Nabízené masáže" %}</p>
+        <ul class="therapist-modal__services"></ul>
+        <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg therapist-modal__cta" data-default-label="{% trans 'Rezervovat' %}">{% trans "Rezervovat" %}</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

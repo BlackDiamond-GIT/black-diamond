@@ -1,0 +1,119 @@
+/* Black Diamond Spa — Price summary (masáže listing) */
+
+.price-summary {
+  padding: var(--sp-md) var(--sp-sm);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--sp-3xl);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.price-summary__item {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 32%) 1fr;
+  gap: var(--sp-sm);
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--divider);
+  min-width: 0;
+}
+
+.price-summary__item:first-child {
+  padding-top: 0;
+}
+
+.price-summary__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.price-summary__amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 4.2vw, 1.45rem);
+  color: var(--tiffany);
+  line-height: 1.1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.price-summary__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.price-summary__name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  line-height: 1.35;
+  overflow-wrap: break-word;
+}
+
+.price-summary__duration {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+@media (min-width: 640px) {
+  .price-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-md);
+    padding: var(--sp-lg);
+  }
+
+  .price-summary__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--sp-md) var(--sp-sm);
+    border-bottom: none;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .price-summary__amount {
+    font-size: var(--fs-2xl);
+    text-align: center;
+  }
+
+  .price-summary__info {
+    align-items: center;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .price-summary__name {
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .price-summary__duration {
+    font-size: var(--fs-xs);
+  }
+}
+
+@media (min-width: 1024px) {
+  .price-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--sp-lg) var(--sp-xl);
+    padding: var(--sp-xl) var(--sp-2xl);
+  }
+
+  .price-summary__item {
+    background: transparent;
+    padding: var(--sp-sm);
+  }
+}

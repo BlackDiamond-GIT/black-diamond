@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{{ article|trans_field:"title" }} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{{ article|trans_field:"meta_description" }}{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ article|trans_field:'title'|escapejs }}",
+  "datePublished": "{{ article.published_at|date:'c' }}",
+  "publisher": {"@type": "Organization","name": "{{ SITE_NAME }}"}
+  {% if article.image %},"image": "{{ SITE_URL }}{{ article.image.url }}"{% endif %}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl);max-width:820px">
+
+  <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
+    <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
+      <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
+      <li aria-hidden="true">·</li>
+      <li><a href="/{{ LANG }}/blog/">Blog</a></li>
+      <li aria-hidden="true">·</li>
+      <li aria-current="page">{{ article|trans_field:"title"|truncatewords:6 }}</li>
+    </ol>
+  </nav>
+
+  <article itemscope itemtype="https://schema.org/Article">
+    <header style="margin-bottom:var(--sp-2xl)">
+      <time style="color:var(--text-muted);font-size:var(--fs-sm)" datetime="{{ article.published_at|date:'Y-m-d' }}" itemprop="datePublished">
+        {{ article.published_at|date:"j. n. Y" }}
+      </time>
+      <h1 style="font-family:var(--font-display);font-size:var(--fs-h1);margin-top:var(--sp-sm)" itemprop="headline">
+        {{ article|trans_field:"title" }}
+      </h1>
+    </header>
+
+    {% if article.image %}
+    <div style="border-radius:var(--radius-xl);overflow:hidden;margin-bottom:var(--sp-2xl)">
+      <img src="{{ article.image.url }}" alt="{{ article|trans_field:'title' }}"
+        width="820" height="460" style="width:100%;height:auto;display:block" loading="eager" itemprop="image">
+    </div>
+    {% endif %}
+
+    <div class="blog-content" style="color:var(--text-secondary);line-height:var(--lh-relaxed)" itemprop="articleBody">
+      {{ article|trans_field:"body" }}
+    </div>
+  </article>
+
+  {% if related %}
+  <section style="margin-top:var(--sp-4xl)" aria-labelledby="related-heading">
+    <h2 class="section-title" id="related-heading" style="font-size:var(--fs-h3);margin-bottom:var(--sp-2xl)">{% trans "Další články" %}</h2>
+    <div class="grid-3" role="list">
+      {% for a in related %}
+      <article class="blog-card" role="listitem">
+        <div class="blog-card__body">
+          <time class="blog-card__date" datetime="{{ a.published_at|date:'Y-m-d' }}">{{ a.published_at|date:"j. n. Y" }}</time>
+          <h3 class="blog-card__title"><a href="/{{ LANG }}/blog/{{ a.slug }}/">{{ a|trans_field:"title" }}</a></h3>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
+{% endblock %}

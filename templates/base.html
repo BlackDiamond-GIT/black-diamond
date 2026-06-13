@@ -1,0 +1,63 @@
+{% load i18n static bd_tags %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1d21">
+
+  {% block seo %}
+  <title>{% block title %}Black Diamond Spa — Prémiový masážní salon Praha{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Black Diamond Spa — luxusní relaxační masáže v centru Prahy. Certifikované masérky. Rezervujte online.{% endblock %}">
+  <link rel="canonical" href="{% block canonical %}{{ SITE_URL }}{{ request.path }}{% endblock %}">
+  {% endblock %}
+
+  <link rel="alternate" hreflang="cs" href="{{ SITE_URL }}{% lang_url "cs" %}">
+  <link rel="alternate" hreflang="en" href="{{ SITE_URL }}{% lang_url "en" %}">
+  <link rel="alternate" hreflang="ru" href="{{ SITE_URL }}{% lang_url "ru" %}">
+  <link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/cs/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITE_URL }}{{ request.path }}">
+  <meta property="og:title" content="{% block og_title %}Black Diamond Spa{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Luxusní relaxační masáže v srdci Prahy.{% endblock %}">
+  <meta property="og:image" content="{{ SITE_URL }}{% block og_image %}/assets/img/og/home.jpg{% endblock %}">
+  <meta property="og:site_name" content="{{ SITE_NAME }}">
+  <meta property="og:locale" content="{{ LANGUAGE_CODE }}_CZ">
+
+  {% if lcp_image %}
+  <link rel="preload" as="image" href="{{ lcp_image }}" fetchpriority="high">
+  {% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap">
+
+  <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components/nav.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components/footer.css' %}">
+
+  {% for sheet in extra_css %}
+  <link rel="stylesheet" href="{% static sheet %}">
+  {% endfor %}
+
+  {% block extra_head %}{% endblock %}
+
+  {% block schema %}{% endblock %}
+</head>
+<body>
+
+  {% include "partials/_nav.html" %}
+
+  <main id="main-content" class="page-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "partials/_footer.html" %}
+
+  <script src="{% static 'js/main.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+  <script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.min.js" defer></script>
+</body>
+</html>

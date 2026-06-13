@@ -1,0 +1,14 @@
+{% load i18n %}
+<div class="form-error" style="padding:var(--sp-lg);border-radius:var(--radius-lg);background:rgba(220,53,69,0.1);border:1px solid rgba(220,53,69,0.4);margin-bottom:var(--sp-lg)">
+  <p style="color:#ff6b6b;font-weight:600;margin-bottom:var(--sp-sm)">{% trans "Prosím opravte chyby:" %}</p>
+  <ul style="color:var(--text-secondary);padding-left:var(--sp-lg)">
+    {% for field in form %}
+      {% for error in field.errors %}
+      <li>{{ field.label }}: {{ error }}</li>
+      {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{% trans "Pravidla salonu" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Pravidla a podmínky návštěvy Black Diamond Spa Praha. Věk 18+. Zákaznická etiketa a provozní řád." %}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl);max-width:820px">
+
+  <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
+    <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
+      <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
+      <li aria-hidden="true"> / </li>
+      <li aria-current="page" style="color:var(--tiffany)">{% trans "Pravidla salonu" %}</li>
+    </ol>
+  </nav>
+
+  <h1 style="font-family:var(--font-display);font-size:var(--fs-h1);margin-bottom:var(--sp-3xl)">{% trans "Pravidla salonu" %}</h1>
+
+  <div class="glass" style="padding:var(--sp-2xl);border-radius:var(--radius-xl);color:var(--text-secondary);line-height:var(--lh-relaxed)">
+    <h2 style="font-family:var(--font-display);font-size:var(--fs-h3);color:var(--text-primary);margin-bottom:var(--sp-md)">{% trans "Věkové omezení" %}</h2>
+    <p style="margin-bottom:var(--sp-xl)">{% trans "Vstup povolen pouze osobám starším 18 let. Tento požadavek bude ověřen při každé návštěvě." %}</p>
+
+    <h2 style="font-family:var(--font-display);font-size:var(--fs-h3);color:var(--text-primary);margin-bottom:var(--sp-md)">{% trans "Rezervace a příchod" %}</h2>
+    <p style="margin-bottom:var(--sp-xl)">{% trans "Prosíme o příchod nejméně 10 minut před dohodnutým termínem. V případě zpoždění se prosím předem ozvěte telefonicky." %}</p>
+
+    <h2 style="font-family:var(--font-display);font-size:var(--fs-h3);color:var(--text-primary);margin-bottom:var(--sp-md)">{% trans "Chování v salonu" %}</h2>
+    <p style="margin-bottom:var(--sp-xl)">{% trans "Žádáme naše klienty o respektování soukromí ostatních návštěvníků a zaměstnanců. Jakékoliv nevhodné chování nebo požadavky povede k okamžitému ukončení návštěvy." %}</p>
+
+    <h2 style="font-family:var(--font-display);font-size:var(--fs-h3);color:var(--text-primary);margin-bottom:var(--sp-md)">{% trans "Platba" %}</h2>
+    <p style="margin-bottom:var(--sp-xl)">{% trans "Přijímáme hotovost a platební karty. Platba probíhá na místě po dokončení masáže." %}</p>
+
+    <h2 style="font-family:var(--font-display);font-size:var(--fs-h3);color:var(--text-primary);margin-bottom:var(--sp-md)">{% trans "Povaha služeb" %}</h2>
+    <p>{% trans "Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě a slouží výhradně jako profesionální relaxační a masážní salon." %}</p>
+  </div>
+
+</div>
+{% endblock %}

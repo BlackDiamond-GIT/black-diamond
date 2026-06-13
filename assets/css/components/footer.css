@@ -1,0 +1,216 @@
+/* Black Diamond Spa — Footer */
+
+.footer {
+  background: var(--bg-deep);
+  border-top: 1px solid var(--divider);
+  padding-top: var(--sp-4xl);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3xl);
+  padding-bottom: var(--sp-3xl);
+  border-bottom: 1px solid var(--divider);
+}
+
+@media (min-width: 640px) {
+  .footer__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .footer__grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+
+/* Brand column */
+.footer__brand {}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  letter-spacing: var(--ls-logo);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  text-decoration: none;
+  margin-bottom: var(--sp-lg);
+}
+
+.footer__logo:hover { color: var(--tiffany); }
+
+.footer__logo-diamond {
+  display: none;
+}
+
+.footer__tagline {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-loose);
+  margin-bottom: var(--sp-xl);
+  max-width: 28ch;
+}
+
+.footer__nap address {
+  font-style: normal;
+}
+
+.footer__nap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-sm);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--sp-sm);
+  line-height: var(--lh-snug);
+}
+
+.footer__nap-icon {
+  color: var(--tiffany);
+  flex-shrink: 0;
+  width: 16px;
+  margin-top: 2px;
+}
+
+.footer__nap-item a {
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
+}
+
+.footer__nap-item a:hover { color: var(--tiffany); }
+
+/* Column heading */
+.footer__col-title {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-lg);
+}
+
+/* Links */
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.footer__links a {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  min-height: 32px;
+}
+
+.footer__links a:hover { color: var(--tiffany); }
+
+/* Hours */
+.footer__hours {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.footer__hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  gap: var(--sp-md);
+}
+
+.footer__hours-days { color: var(--text-muted); }
+.footer__hours-time { color: var(--tiffany); font-weight: 500; }
+
+/* Bottom bar */
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  padding-block: var(--sp-xl);
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer__copy {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  list-style: none;
+}
+
+.footer__legal-links a {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  transition: color var(--transition-base);
+}
+
+.footer__legal-links a:hover { color: var(--tiffany); }
+
+/* Disclaimer — full width, outside container */
+.footer__disclaimer {
+  width: 100%;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  background: var(--bg-primary);
+  padding: 1.125rem var(--container-pad);
+}
+
+.footer__disclaimer-text {
+  max-width: 68ch;
+  margin: 0 auto;
+  font-size: .68rem;
+  font-weight: 300;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  line-height: 1.75;
+  text-align: center;
+}
+
+/* Social */
+.footer__social {
+  display: flex;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-lg);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  transition: all var(--transition-base);
+}
+
+.footer__social-link:hover {
+  background: var(--tiffany-glow);
+  border-color: var(--tiffany);
+  color: var(--tiffany);
+}

@@ -1,0 +1,84 @@
+/* Black Diamond Spa — FAQ Accordion */
+
+.faq {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--divider);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  padding: var(--sp-xl) 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color var(--transition-base);
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq__question:hover {
+  color: var(--tiffany);
+}
+
+.faq__question[aria-expanded="true"] {
+  color: var(--tiffany);
+}
+
+.faq__icon,
+.faq__icon-line,
+.faq__icon-dash {
+  display: none;
+}
+
+.faq__mark {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: color var(--transition-base);
+}
+
+.faq__question[aria-expanded="true"] .faq__mark {
+  color: var(--tiffany);
+}
+
+.faq__mark::before { content: '+'; }
+.faq__question[aria-expanded="true"] .faq__mark::before { content: '−'; }
+
+.faq__answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq__answer.is-open {
+  max-height: 500px;
+}
+
+.faq__answer-inner {
+  padding-bottom: var(--sp-xl);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  max-width: none;
+}

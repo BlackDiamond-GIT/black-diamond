@@ -1,0 +1,119 @@
+/* Black Diamond Spa — Design Tokens */
+
+:root {
+  /* Background */
+  --bg-primary:   #1a1d21;
+  --bg-secondary: #2a2e35;
+  --bg-tertiary:  #232830;
+  --bg-deep:      #14171b;
+
+  /* Tiffany Accent */
+  --tiffany:       #0ABAB5;
+  --tiffany-light: #81D8D0;
+  --tiffany-dark:  #00827F;
+  --tiffany-glow:  rgba(10, 186, 181, 0.20);
+  --tiffany-glow-strong: rgba(10, 186, 181, 0.35);
+
+  /* Gold */
+  --gold:         #D4AF37;
+  --gold-light:   #F0D060;
+  --gold-subtle:  rgba(212, 175, 55, 0.15);
+
+  /* Text */
+  --text-primary:   #F5F0EB;
+  --text-secondary: #C8C4BE;
+  --text-muted:     #8A8682;
+  --text-inverse:   #1a1d21;
+
+  /* Glass */
+  --glass-bg:     rgba(255, 255, 255, 0.07);
+  --glass-bg-md:  rgba(255, 255, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur:   20px;
+
+  /* Divider */
+  --divider: rgba(255, 255, 255, 0.08);
+
+  /* Status */
+  --status-free:    #0ABAB5;
+  --status-busy:    #8A8682;
+  --status-soon:    #D4AF37;
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.30);
+  --shadow-md:  0 8px 24px rgba(0, 0, 0, 0.40);
+  --shadow-lg:  0 16px 48px rgba(0, 0, 0, 0.50);
+  --shadow-tiffany: 0 8px 32px rgba(10, 186, 181, 0.25);
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 100px;
+
+  /* Spacing */
+  --sp-xs:  0.25rem;
+  --sp-sm:  0.5rem;
+  --sp-md:  1rem;
+  --sp-lg:  1.5rem;
+  --sp-xl:  2rem;
+  --sp-2xl: 3rem;
+  --sp-3xl: 4rem;
+  --sp-4xl: 6rem;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fs-xs:    0.75rem;
+  --fs-sm:    0.875rem;
+  --fs-base:  1rem;
+  --fs-md:    1.125rem;
+  --fs-lg:    1.25rem;
+  --fs-xl:    1.5rem;
+  --fs-2xl:   2rem;
+  --fs-3xl:   2.5rem;
+  --fs-4xl:   3.25rem;
+  --fs-hero:  clamp(2.5rem, 7vw, 4.5rem);
+  --fs-h1:    clamp(2rem, 5vw, 3.25rem);
+  --fs-h2:    clamp(1.5rem, 4vw, 2.25rem);
+  --fs-h3:    clamp(1.25rem, 3vw, 1.75rem);
+
+  --lh-tight:  1.2;
+  --lh-snug:   1.4;
+  --lh-normal: 1.6;
+  --lh-loose:  1.8;
+
+  --ls-tight:   -0.02em;
+  --ls-normal:  0;
+  --ls-wide:    0.05em;
+  --ls-wider:   0.1em;
+  --ls-logo:    0.2em;
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Nav */
+  --nav-height: 68px;
+
+  /* Container */
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1280px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+
+  /* Z-index */
+  --z-below:   -1;
+  --z-base:     0;
+  --z-card:     10;
+  --z-sticky:   100;
+  --z-nav:      200;
+  --z-overlay:  300;
+  --z-drawer:   400;
+  --z-modal:    500;
+  --z-toast:    600;
+}

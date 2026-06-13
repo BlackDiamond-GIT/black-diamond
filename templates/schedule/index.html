@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% get_current_language as LANG %}
+
+{% block title %}{% trans "Rozvrh masáží" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Prohlédněte si rozvrh dostupných termínů u jednotlivých masérek Black Diamond Spa a rezervujte si masáž online." %}{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/schedule.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
+
+  <header class="section-header section-header--center" style="margin-bottom:var(--sp-3xl)">
+    <span class="section-label" aria-hidden="true">{% trans "Rezervace" %}</span>
+    <h1 class="section-title">{% trans "Rozvrh masáží" %}</h1>
+  </header>
+
+  <!-- Day strip -->
+  <div class="schedule__day-strip" id="day-strip" role="tablist" aria-label="{% trans 'Vyberte datum' %}" style="display:flex;gap:var(--sp-sm);overflow-x:auto;padding-bottom:var(--sp-sm);margin-bottom:var(--sp-xl);-webkit-overflow-scrolling:touch">
+    {% for day in days %}
+    <button
+      class="schedule__day-btn{% if forloop.first %} is-active{% endif %}"
+      role="tab"
+      aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+      data-date="{{ day|date:'Y-m-d' }}"
+      hx-get="/api/schedule/slots/"
+      hx-vals='{"date": "{{ day|date:'Y-m-d' }}"}'
+      hx-target="#slots-container"
+      hx-indicator="#slots-loading"
+      hx-trigger="click">
+      <span class="schedule__day-name">{{ day|date:"D" }}</span>
+      <span class="schedule__day-num">{{ day|date:"j" }}</span>
+    </button>
+    {% endfor %}
+  </div>
+
+  <!-- Therapist filter -->
+  {% if therapists %}
+  <div style="display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-bottom:var(--sp-xl)" role="group" aria-label="{% trans 'Filtrovat podle masérky' %}">
+    <button class="schedule__therapist-chip is-active"
+      hx-get="/api/schedule/slots/"
+      hx-vals='{"date": "{{ today|date:'Y-m-d' }}"}'
+      hx-target="#slots-container"
+      hx-trigger="click">{% trans "Všechny" %}</button>
+    {% for therapist in therapists %}
+    <button class="schedule__therapist-chip"
+      hx-get="/api/schedule/slots/"
+      hx-vals='{"date": "{{ today|date:'Y-m-d' }}", "therapist": "{{ therapist.pk }}"}'
+      hx-target="#slots-container"
+      hx-trigger="click">{{ therapist.name }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Loading indicator -->
+  <div id="slots-loading" class="htmx-indicator" style="text-align:center;padding:var(--sp-xl);color:var(--text-muted)">
+    <span>{% trans "Načítám..." %}</span>
+  </div>
+
+  <!-- Slots container -->
+  <div id="slots-container"
+    hx-get="/api/schedule/slots/"
+    hx-vals='{"date": "{{ today|date:'Y-m-d' }}"}'
+    hx-trigger="load">
+    <p style="text-align:center;color:var(--text-muted)">{% trans "Načítám rozvrh..." %}</p>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="glass" style="margin-top:var(--sp-3xl);padding:var(--sp-xl);border-radius:var(--radius-xl);text-align:center">
+    <p style="margin-bottom:var(--sp-lg);color:var(--text-secondary)">
+      {% trans "Nenašli jste vhodný termín? Kontaktujte nás přímo." %}
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-md);justify-content:center">
+      <a href="tel:{{ SITE_PHONE|cut:' ' }}" class="btn btn--primary btn--lg">{{ SITE_PHONE }}</a>
+      <a href="/{{ LANG }}/kontakty/" class="btn btn--secondary btn--lg">{% trans "Napsat zprávu" %}</a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
