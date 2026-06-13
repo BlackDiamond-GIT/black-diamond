@@ -2,9 +2,10 @@ services:
   - type: web
     name: black-diamond
     runtime: python
-    plan: free
+    plan: starter
+    branch: main
     buildCommand: ./build.sh
-    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
+    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     healthCheckPath: /cs/
     envVars:
       - key: PYTHON_VERSION
@@ -12,7 +13,7 @@ services:
       - key: DJANGO_SETTINGS_MODULE
         value: config.settings.prod
       - key: SECRET_KEY
-        generateValue: true
+        sync: false
       - key: ALLOWED_HOSTS
         value: .onrender.com,blackdiamond.cz,www.blackdiamond.cz
       - key: CSRF_TRUSTED_ORIGINS
@@ -26,6 +27,6 @@ services:
 
 databases:
   - name: black-diamond-db
-    plan: free
+    plan: basic-256mb
     databaseName: black_diamond
     user: black_diamond
