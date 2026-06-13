@@ -15,9 +15,9 @@ services:
       - key: SECRET_KEY
         sync: false
       - key: ALLOWED_HOSTS
-        value: .onrender.com,blackdiamond.cz,www.blackdiamond.cz
+        value: .onrender.com,127.0.0.1,black-diamond.onrender.com,black-diamond.cz,www.black-diamond.cz,blackdiamond.cz,www.blackdiamond.cz
       - key: CSRF_TRUSTED_ORIGINS
-        value: https://black-diamond.onrender.com,https://blackdiamond.cz,https://www.blackdiamond.cz
+        value: https://black-diamond.onrender.com,https://black-diamond.cz,https://www.black-diamond.cz,https://blackdiamond.cz,https://www.blackdiamond.cz
       - key: DATABASE_URL
         fromDatabase:
           name: black-diamond-db
