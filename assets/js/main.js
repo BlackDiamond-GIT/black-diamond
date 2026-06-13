@@ -108,22 +108,35 @@
   });
 
   // ── Ink reveal + line draw ─────────────────────
+  function revealInkElement(el) {
+    el.classList.add('is-visible');
+  }
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.bottom > 0 && rect.top < window.innerHeight;
+  }
+
   if ('IntersectionObserver' in window && !prefersReducedMotion) {
     const inkObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            revealInkElement(entry.target);
             inkObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0, rootMargin: '0px 0px -5% 0px' }
     );
 
     document.querySelectorAll('[data-ink]').forEach((el, i) => {
       el.style.transitionDelay = `${(i % 5) * 60}ms`;
-      inkObserver.observe(el);
+      if (isInViewport(el)) {
+        revealInkElement(el);
+      } else {
+        inkObserver.observe(el);
+      }
     });
 
     document.querySelectorAll('[data-line]').forEach(title => {

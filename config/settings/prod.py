@@ -11,6 +11,8 @@ for _host in ('127.0.0.1', _render_host):
 
 MIDDLEWARE = ['apps.core.middleware.RenderHostMiddleware', *MIDDLEWARE]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True

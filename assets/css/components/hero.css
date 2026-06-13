@@ -12,6 +12,7 @@
 
 .hero--split {
   align-items: stretch;
+  background: transparent;
 }
 
 .hero__visual {
