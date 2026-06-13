@@ -19,14 +19,10 @@
   <div class="grid-3" role="list">
     {% for service in services %}
     <article class="service-card" role="listitem" data-reveal>
-      {% if service.image %}
       <div class="service-card__image">
-        <img src="{{ service.image.url }}" alt="{{ service|trans_field:'title' }} Praha — {{ SITE_NAME }}"
+        <img src="{% asset_img 'services' service.slug %}" alt="{{ service|trans_field:'title' }} Praha — {{ SITE_NAME }}"
           width="640" height="360" loading="lazy" decoding="async">
       </div>
-      {% else %}
-      <div class="service-card__image service-card__image--placeholder"></div>
-      {% endif %}
       <div class="service-card__body">
         <h2 class="service-card__name">{{ service|trans_field:"title" }}</h2>
         <p class="service-card__description">{{ service|trans_field:"short" }}</p>

@@ -20,6 +20,13 @@ def trans_field(obj, field_base):
     return value
 
 
+@register.simple_tag
+def asset_img(category, slug, ext='webp'):
+    """Статичне зображення за slug: img/{category}/{slug}.{ext}"""
+    from django.templatetags.static import static
+    return static(f'img/{category}/{slug}.{ext}')
+
+
 @register.simple_tag(takes_context=True)
 def lang_url(context, lang_code):
     """

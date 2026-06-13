@@ -20,12 +20,10 @@
 
   <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-3xl)">
 
-    {% if service.image %}
     <div style="border-radius:var(--radius-xl);overflow:hidden;max-height:480px">
-      <img src="{{ service.image.url }}" alt="{{ service|trans_field:'title' }} — {{ SITE_NAME }}"
+      <img src="{% asset_img 'services' service.slug %}" alt="{{ service|trans_field:'title' }} — {{ SITE_NAME }}"
         width="1200" height="600" style="width:100%;height:100%;object-fit:cover" loading="eager">
     </div>
-    {% endif %}
 
     <div>
       <div style="display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-bottom:var(--sp-lg)">

@@ -41,15 +41,13 @@
       </h1>
     </header>
 
-    {% if article.image %}
     <div style="border-radius:var(--radius-xl);overflow:hidden;margin-bottom:var(--sp-2xl)">
-      <img src="{{ article.image.url }}" alt="{{ article|trans_field:'title' }}"
+      <img src="{% asset_img 'blog' article.slug %}" alt="{{ article|trans_field:'title' }}"
         width="820" height="460" style="width:100%;height:auto;display:block" loading="eager" itemprop="image">
     </div>
-    {% endif %}
 
     <div class="blog-content" style="color:var(--text-secondary);line-height:var(--lh-relaxed)" itemprop="articleBody">
-      {{ article|trans_field:"body" }}
+      {{ article|trans_field:"body"|safe }}
     </div>
   </article>
 

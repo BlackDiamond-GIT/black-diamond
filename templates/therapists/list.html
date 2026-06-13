@@ -21,12 +21,8 @@
     <a href="/{{ LANG }}/masazistky/{{ therapist.slug }}/" class="masseuse-card" role="listitem" data-reveal
       itemscope itemtype="https://schema.org/Person">
       <div class="masseuse-card__portrait">
-        {% if therapist.photo %}
-        <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }} — {{ SITE_NAME }} Praha"
+        <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }} Praha"
           width="300" height="400" loading="lazy" decoding="async" itemprop="image">
-        {% else %}
-        <div style="width:100%;height:100%;background:var(--bg-secondary)"></div>
-        {% endif %}
       </div>
       <div class="masseuse-card__body">
         <h2 class="masseuse-card__name" itemprop="name">{{ therapist.name }}</h2>

@@ -21,7 +21,7 @@
   <meta property="og:url" content="{{ SITE_URL }}{{ request.path }}">
   <meta property="og:title" content="{% block og_title %}Black Diamond Spa{% endblock %}">
   <meta property="og:description" content="{% block og_description %}Luxusní relaxační masáže v srdci Prahy.{% endblock %}">
-  <meta property="og:image" content="{{ SITE_URL }}{% block og_image %}/assets/img/og/home.jpg{% endblock %}">
+  <meta property="og:image" content="{{ SITE_URL }}{% block og_image %}{% static 'img/og/home.jpg' %}{% endblock %}">
   <meta property="og:site_name" content="{{ SITE_NAME }}">
   <meta property="og:locale" content="{{ LANGUAGE_CODE }}_CZ">
 

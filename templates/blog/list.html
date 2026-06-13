@@ -17,12 +17,10 @@
   <div class="grid-3" role="list">
     {% for article in articles %}
     <article class="blog-card" role="listitem" data-reveal itemscope itemtype="https://schema.org/Article">
-      {% if article.image %}
       <a href="/{{ LANG }}/blog/{{ article.slug }}/" class="blog-card__image">
-        <img src="{{ article.image.url }}" alt="{{ article|trans_field:'title' }}"
+        <img src="{% asset_img 'blog' article.slug %}" alt="{{ article|trans_field:'title' }}"
           width="640" height="360" loading="lazy" decoding="async" itemprop="image">
       </a>
-      {% endif %}
       <div class="blog-card__body">
         <time class="blog-card__date" datetime="{{ article.published_at|date:'Y-m-d' }}" itemprop="datePublished">
           {{ article.published_at|date:"j. n. Y" }}

@@ -21,12 +21,10 @@
   <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-3xl)" itemscope itemtype="https://schema.org/Person">
 
     <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-2xl)">
-      {% if therapist.photo %}
       <div style="border-radius:var(--radius-xl);overflow:hidden;max-width:360px;margin:0 auto">
-        <img src="{{ therapist.photo.url }}" alt="{{ therapist.name }} — {{ SITE_NAME }}"
+        <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }}"
           width="360" height="480" style="width:100%;height:auto;display:block" loading="eager" itemprop="image">
       </div>
-      {% endif %}
 
       <div>
         <h1 style="font-family:var(--font-display);font-size:var(--fs-h1);margin-bottom:var(--sp-md)" itemprop="name">

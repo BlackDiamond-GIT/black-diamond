@@ -116,11 +116,9 @@
       <div class="services-editorial" role="list">
         {% for service in featured_services %}
         <article class="service-editorial service-editorial--{% cycle 'left' 'right' 'left' %}" role="listitem" data-ink>
-          <div class="service-editorial__visual{% if not service.image %} service-editorial__visual--placeholder{% endif %}">
-            {% if service.image %}
-            <img src="{{ service.image.url }}" alt="{{ service|trans_field:'title' }} Praha — Black Diamond Spa"
+          <div class="service-editorial__visual">
+            <img src="{% asset_img 'services' service.slug %}" alt="{{ service|trans_field:'title' }} Praha — Black Diamond Spa"
               width="800" height="600" loading="lazy" decoding="async">
-            {% endif %}
             {% if forloop.counter == 1 %}
             <div class="service-editorial__overlay">
               <h3 class="service-editorial__name">{{ service|trans_field:"title" }}</h3>
@@ -170,17 +168,13 @@
           data-therapist-trigger
           data-therapist-name="{{ therapist.name }}"
           data-therapist-slug="{{ therapist.slug }}"
-          {% if therapist.photo %}data-therapist-photo="{{ therapist.photo.url }}"{% endif %}
+          data-therapist-photo="{% asset_img 'masseuses' therapist.slug %}"
           data-therapist-bio="{{ therapist|trans_field:'bio'|truncatewords:30|escapejs }}"
           data-therapist-services="{% for spec in therapist.specialties.all %}{{ spec|trans_field:'title' }}{% if not forloop.last %}|{% endif %}{% endfor %}"
           data-therapist-cta="{% blocktrans with name=therapist.name %}Rezervovat s {{ name }}{% endblocktrans %}"
           aria-label="{% blocktrans with name=therapist.name %}Zobrazit profil {{ name }}{% endblocktrans %}">
-          {% if therapist.photo %}
-          <img class="masseuse-portrait__image" src="{{ therapist.photo.url }}" alt="{{ therapist.name }} — Black Diamond Spa Praha"
+          <img class="masseuse-portrait__image" src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — Black Diamond Spa Praha"
             width="300" height="400" loading="lazy" decoding="async">
-          {% else %}
-          <div class="masseuse-portrait__placeholder" aria-hidden="true"></div>
-          {% endif %}
           <div class="masseuse-portrait__overlay">
             <span class="masseuse-portrait__name">{{ therapist.name }}</span>
             {% with spec=therapist.specialties.first %}
