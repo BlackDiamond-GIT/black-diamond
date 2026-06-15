@@ -25,9 +25,7 @@
   <meta property="og:site_name" content="{{ SITE_NAME }}">
   <meta property="og:locale" content="{{ LANGUAGE_CODE }}_CZ">
 
-  {% if lcp_image %}
-  <link rel="preload" as="image" href="{{ lcp_image }}" fetchpriority="high">
-  {% endif %}
+  {% block lcp_preload %}{% endblock %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

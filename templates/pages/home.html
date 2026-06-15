@@ -7,7 +7,7 @@
 {% block og_title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
 {% block og_description %}{{ home.hero_sub }}{% endblock %}
 
-{% block lcp_image %}{% static 'img/hero.webp' %}{% endblock %}
+{% block lcp_preload %}<link rel="preload" as="image" href="{% static 'img/hero.webp' %}" fetchpriority="high">{% endblock %}
 {% block main_class %}{% endblock %}
 
 {% block schema %}
