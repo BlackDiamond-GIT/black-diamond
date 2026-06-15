@@ -4,52 +4,139 @@
 {% block meta_description %}{{ therapist|trans_field:"bio"|truncatewords:25 }}{% endblock %}
 
 {% block content %}
-<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
+<article class="therapist-detail container" itemscope itemtype="https://schema.org/Person">
 
-  <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
-    <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
-      <li><a href="{% url 'pages:home' %}">{% trans "Domů" %}</a></li>
-      <li aria-hidden="true">·</li>
+  <nav class="therapist-detail__breadcrumb" aria-label="{% trans 'Breadcrumb' %}">
+    <ol>
+      <li><a href="{% url 'pages:home' %}">{{ SITE_NAME }}</a></li>
+      <li class="therapist-detail__breadcrumb-sep" aria-hidden="true"> / </li>
       <li><a href="{% url 'therapists:list' %}">{% trans "Masérky" %}</a></li>
-      <li aria-hidden="true">·</li>
+      <li class="therapist-detail__breadcrumb-sep" aria-hidden="true"> / </li>
       <li aria-current="page">{{ therapist.name }}</li>
     </ol>
   </nav>
 
-  <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-3xl)" itemscope itemtype="https://schema.org/Person">
-
-    <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-2xl)">
-      <div style="border-radius:var(--radius-xl);overflow:hidden;max-width:360px;margin:0 auto">
+  <div class="therapist-detail__hero">
+    <div class="therapist-detail__portrait-wrap">
+      <div class="therapist-detail__portrait">
         <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }}"
-          width="360" height="480" style="width:100%;height:auto;display:block" loading="eager" itemprop="image">
-      </div>
-
-      <div>
-        <h1 style="font-family:var(--font-display);font-size:var(--fs-h1);margin-bottom:var(--sp-md)" itemprop="name">
-          {{ therapist.name }}
-        </h1>
-
-        {% if therapist.specialties.all %}
-        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-bottom:var(--sp-xl)">
-          {% for spec in therapist.specialties.all %}
-          <span class="tag tag--specialty" itemprop="knowsAbout">{{ spec|trans_field:"title" }}</span>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        {% if therapist|trans_field:"bio" %}
-        <div style="color:var(--text-secondary);line-height:var(--lh-relaxed)" itemprop="description">
-          {{ therapist|trans_field:"bio" }}
-        </div>
-        {% endif %}
-
-        <div style="margin-top:var(--sp-2xl);display:flex;flex-wrap:wrap;gap:var(--sp-md)">
-          <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat u {{ therapist.name }}" %}</a>
-          <a href="{% url 'therapists:list' %}" class="btn btn--secondary btn--lg">{% trans "Všechny masérky" %}</a>
-        </div>
+          width="480" height="640" loading="eager" decoding="async" fetchpriority="high" itemprop="image">
       </div>
     </div>
 
+    <div class="therapist-detail__info">
+      <span class="section-label">{% trans "Masérka" %}</span>
+      <h1 class="therapist-detail__name" itemprop="name">{{ therapist.name }}</h1>
+
+      {% if therapist.specialties.all %}
+      <div class="therapist-detail__tags">
+        {% for spec in therapist.specialties.all %}
+        <span class="tag tag--specialty" itemprop="knowsAbout">{{ spec|trans_field:"title" }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if therapist|trans_field:"bio" %}
+      <p class="therapist-detail__bio" itemprop="description">{{ therapist|trans_field:"bio" }}</p>
+      {% endif %}
+
+      {% if therapist|trans_field:"loves_text" %}
+      <blockquote class="glass--tiffany therapist-detail__quote">
+        <p class="therapist-detail__quote-text">{{ therapist|trans_field:"loves_text" }}</p>
+      </blockquote>
+      {% endif %}
+
+      <div class="therapist-detail__cta-row">
+        <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">
+          {% blocktrans with name=therapist.name %}Rezervovat u {{ name }}{% endblocktrans %}
+        </a>
+        <a href="{% url 'therapists:list' %}" class="btn btn--secondary btn--lg">{% trans "Všechny masérky" %}</a>
+      </div>
+    </div>
   </div>
-</div>
+
+  {% if therapist.offers.all or therapist.loves.all or therapist.extras.all or therapist.languages.all or therapist.hashtags.all %}
+  <div class="therapist-detail__sections">
+    {% if therapist.offers.all %}
+    <section class="therapist-detail__section" aria-labelledby="offers-heading">
+      <h2 class="therapist-detail__section-title" id="offers-heading">{% trans "Nabízí" %}</h2>
+      <div class="therapist-detail__chip-row">
+        {% for service in therapist.offers.all %}
+        <a href="{% url 'services:detail' service.slug %}" class="therapist-detail__chip-link">
+          {{ service|trans_field:"title" }}
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if therapist.loves.all %}
+    <section class="therapist-detail__section" aria-labelledby="loves-heading">
+      <h2 class="therapist-detail__section-title" id="loves-heading">{% trans "Oblíbené techniky" %}</h2>
+      <div class="therapist-detail__chip-row">
+        {% for service in therapist.loves.all %}
+        <span class="tag tag--specialty">{{ service|trans_field:"title" }}</span>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if therapist.extras.all %}
+    <section class="therapist-detail__section" aria-labelledby="extras-heading">
+      <h2 class="therapist-detail__section-title" id="extras-heading">{% trans "Doplňkové služby" %}</h2>
+      <div class="therapist-detail__chip-row">
+        {% for extra in therapist.extras.all %}
+        <span class="therapist-detail__chip therapist-detail__chip--neutral">{{ extra|trans_field:"name" }}</span>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if therapist.languages.all %}
+    <section class="therapist-detail__section" aria-labelledby="langs-heading">
+      <h2 class="therapist-detail__section-title" id="langs-heading">{% trans "Jazyky" %}</h2>
+      <div class="therapist-detail__chip-row">
+        {% for lang in therapist.languages.all %}
+        <span class="therapist-detail__chip therapist-detail__chip--lang">
+          {% if lang.flag_emoji %}<span aria-hidden="true">{{ lang.flag_emoji }}</span>{% endif %}
+          {{ lang.name }}
+        </span>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if therapist.hashtags.all %}
+    <section class="therapist-detail__section" aria-labelledby="tags-heading">
+      <h2 class="therapist-detail__section-title" id="tags-heading">{% trans "Vlastnosti" %}</h2>
+      <div class="therapist-detail__chip-row">
+        {% for tag in therapist.hashtags.all %}
+        <span class="therapist-detail__chip therapist-detail__chip--neutral">{{ tag|trans_field:"label" }}</span>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if therapist.gallery_cloudinary.all %}
+  <section class="therapist-detail__gallery" aria-labelledby="gallery-heading">
+    <h2 class="therapist-detail__gallery-title" id="gallery-heading">{% trans "Galerie" %}</h2>
+    <div class="therapist-detail__gallery-strip" role="list">
+      {% for img in therapist.gallery_cloudinary.all %}
+      <div class="therapist-detail__gallery-item" role="listitem">
+        <img src="{{ img.card_url }}" alt="{{ therapist.name }} — {% trans 'Galerie' %}" width="240" height="320" loading="lazy" decoding="async">
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="therapist-detail__sticky-cta">
+    <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">
+      {% blocktrans with name=therapist.name %}Rezervovat u {{ name }}{% endblocktrans %}
+    </a>
+  </div>
+
+</article>
 {% endblock %}

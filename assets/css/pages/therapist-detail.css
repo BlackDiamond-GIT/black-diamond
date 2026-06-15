@@ -1,0 +1,321 @@
+/* Therapist detail page — editorial split profile */
+
+.therapist-detail {
+  padding-top: calc(var(--nav-height) + var(--sp-3xl));
+  padding-bottom: var(--sp-4xl);
+}
+
+@media (max-width: 767px) {
+  body.has-mob-bar .therapist-detail {
+    padding-bottom: calc(var(--sp-4xl) + 72px + 54px + env(safe-area-inset-bottom));
+  }
+}
+
+.therapist-detail__breadcrumb {
+  margin-bottom: var(--sp-2xl);
+}
+
+.therapist-detail__breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-xs);
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.therapist-detail__breadcrumb [aria-current="page"] {
+  color: var(--tiffany);
+}
+
+.therapist-detail__breadcrumb-sep {
+  color: var(--divider);
+}
+
+.therapist-detail__hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-2xl);
+  align-items: start;
+  margin-bottom: var(--sp-4xl);
+}
+
+@media (min-width: 768px) {
+  .therapist-detail__hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: var(--sp-3xl);
+  }
+}
+
+.therapist-detail__portrait-wrap {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .therapist-detail__portrait-wrap {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--sp-xl));
+  }
+}
+
+.therapist-detail__portrait {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-tiffany);
+  background: linear-gradient(160deg, var(--bg-tertiary), var(--bg-secondary));
+}
+
+.therapist-detail__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.therapist-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.therapist-detail__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--sp-md);
+}
+
+.therapist-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-xl);
+}
+
+.therapist-detail__bio {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  max-width: 60ch;
+  margin-bottom: var(--sp-2xl);
+}
+
+.therapist-detail__quote {
+  position: relative;
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-xl) var(--sp-2xl);
+  margin-bottom: var(--sp-2xl);
+  border-radius: var(--radius-xl);
+}
+
+.therapist-detail__quote::before {
+  content: '\201C';
+  position: absolute;
+  top: var(--sp-sm);
+  left: var(--sp-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: 1;
+  color: var(--tiffany);
+  opacity: 0.65;
+}
+
+.therapist-detail__quote-text {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  font-style: italic;
+}
+
+.therapist-detail__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+}
+
+@media (max-width: 767px) {
+  .therapist-detail__cta-row {
+    display: none;
+  }
+}
+
+.therapist-detail__sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-xl);
+  margin-bottom: var(--sp-4xl);
+}
+
+@media (min-width: 640px) {
+  .therapist-detail__sections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-2xl);
+  }
+}
+
+.therapist-detail__section {
+  padding: var(--sp-xl);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider);
+}
+
+.therapist-detail__section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-md);
+  line-height: var(--lh-snug);
+}
+
+.therapist-detail__chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.therapist-detail__chip-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-decoration: none;
+  background: rgba(10, 186, 181, 0.10);
+  border: 1px solid rgba(10, 186, 181, 0.25);
+  color: var(--tiffany-light);
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base),
+    color var(--transition-base);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.therapist-detail__chip-link:hover,
+.therapist-detail__chip-link:focus-visible {
+  border-color: rgba(10, 186, 181, 0.45);
+  background: rgba(10, 186, 181, 0.16);
+  color: var(--tiffany);
+}
+
+.therapist-detail__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+}
+
+.therapist-detail__chip--neutral {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+}
+
+.therapist-detail__chip--lang {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+}
+
+.therapist-detail__gallery {
+  margin-bottom: var(--sp-4xl);
+}
+
+.therapist-detail__gallery-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-lg);
+}
+
+.therapist-detail__gallery-strip {
+  display: flex;
+  gap: var(--sp-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  padding-bottom: var(--sp-md);
+  scrollbar-width: thin;
+}
+
+.therapist-detail__gallery-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.therapist-detail__gallery-strip::-webkit-scrollbar-thumb {
+  background: rgba(10, 186, 181, 0.35);
+  border-radius: var(--radius-pill);
+}
+
+.therapist-detail__gallery-item {
+  flex: 0 0 clamp(180px, 42vw, 240px);
+  scroll-snap-align: start;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  background: var(--bg-tertiary);
+}
+
+.therapist-detail__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.therapist-detail__sticky-cta {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .therapist-detail__sticky-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(54px + env(safe-area-inset-bottom));
+    z-index: calc(var(--z-nav) - 2);
+    padding: var(--sp-sm) var(--container-pad);
+    padding-bottom: var(--sp-sm);
+    background: rgba(18, 20, 24, 0.96);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    backdrop-filter: blur(20px) saturate(1.4);
+    border-top: 1px solid var(--divider);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .therapist-detail__sticky-cta .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .therapist-detail__hero {
+    gap: var(--sp-xl);
+  }
+
+  .therapist-detail__name {
+    font-size: var(--fs-h2);
+  }
+
+  .therapist-detail__bio,
+  .therapist-detail__quote-text {
+    font-size: var(--fs-base);
+  }
+}
