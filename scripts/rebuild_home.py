@@ -8,9 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 # ─── Texts ────────────────────────────────────────────────────────────────────
 T = {
     'cs': {
-        'hero_eyebrow':   'Praha 1 · Prémiový masážní salon',
-        'hero_title':     'Umění<br><em>relaxace</em><br>ve vašich rukou',
-        'hero_sub':       'Certifikované masérky, privátní kabinety a luxusní atmosféra v srdci Prahy.',
+        'hero_title':     'Místo<br><em>odpočinku</em><br>a klidu',
+        'hero_sub':       'Nechte stres za dveřmi. Privátní kabinety, vědomá masáž a atmosféra, kde si tělo i mysl konečně oddychnou.',
         'hero_cta1': 'Rezervovat masáž', 'hero_cta1_href': '/cs/rozvrh/',
         'hero_cta2': 'Naše masáže',      'hero_cta2_href': '/cs/masaze/',
         'svc_label': 'Naše masáže', 'svc_title': 'Relaxace pro každý moment',
@@ -46,9 +45,8 @@ T = {
         ],
     },
     'en': {
-        'hero_eyebrow':   'Prague 1 · Premium massage salon',
-        'hero_title':     'The art<br>of <em>relaxation</em><br>in your hands',
-        'hero_sub':       'Certified masseuses, private cabins and a luxurious atmosphere in the heart of Prague.',
+        'hero_title':     'A place for<br><em>rest</em><br>and calm',
+        'hero_sub':       'Leave stress at the door. Private cabins, mindful massage and an atmosphere where body and mind truly recover.',
         'hero_cta1': 'Book a massage', 'hero_cta1_href': '/en/rozvrh/',
         'hero_cta2': 'Our massages',   'hero_cta2_href': '/en/masaze/',
         'svc_label': 'Our massages', 'svc_title': 'Relaxation for every moment',
@@ -84,9 +82,8 @@ T = {
         ],
     },
     'ru': {
-        'hero_eyebrow':   'Прага 1 · Премиальный массажный салон',
-        'hero_title':     'Искусство<br><em>расслабления</em><br>в ваших руках',
-        'hero_sub':       'Сертифицированные массажистки, приватные кабинеты и роскошная атмосфера в центре Праги.',
+        'hero_title':     'Место<br><em>отдыха</em><br>и покоя',
+        'hero_sub':       'Оставьте стресс за дверью. Приватные кабинеты, сознательный массаж и атмосфера, где тело и разум наконец отдохнут.',
         'hero_cta1': 'Записаться на массаж', 'hero_cta1_href': '/ru/rozvrh/',
         'hero_cta2': 'Наши массажи',          'hero_cta2_href': '/ru/masaze/',
         'svc_label': 'Наши массажи', 'svc_title': 'Расслабление для каждого момента',
@@ -259,7 +256,6 @@ def build_main(lang):
       </div>
       <div class="hero2__overlay" aria-hidden="true"></div>
       <div class="hero2__inner">
-        <p class="hero2__eyebrow">{t['hero_eyebrow']}</p>
         <h1 class="hero2__title">{t['hero_title']}</h1>
         <p class="hero2__sub">{t['hero_sub']}</p>
         <div class="hero2__actions">
