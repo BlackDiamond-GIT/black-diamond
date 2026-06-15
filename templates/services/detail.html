@@ -1,7 +1,74 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% block title %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{{ service|trans_field:"short" }}{% endblock %}
+{% block title %}{% if service|trans_field:"meta_title" %}{{ service|trans_field:"meta_title" }}{% else %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endif %}{% endblock %}
+{% block meta_description %}{% if service|trans_field:"meta_description" %}{{ service|trans_field:"meta_description" }}{% else %}{{ service|trans_field:"short" }}{% endif %}{% endblock %}
+{% block og_title %}{% if service|trans_field:"meta_title" %}{{ service|trans_field:"meta_title" }}{% else %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endif %}{% endblock %}
+{% block og_description %}{% if service|trans_field:"meta_description" %}{{ service|trans_field:"meta_description" }}{% else %}{{ service|trans_field:"short" }}{% endif %}{% endblock %}
+{% block og_image %}{% asset_img 'services' service.slug %}{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ service|trans_field:'title'|escapejs }}",
+  "description": "{{ service|trans_field:'description'|escapejs }}",
+  "image": "{{ SITE_URL }}{% asset_img 'services' service.slug %}",
+  "provider": {
+    "@type": "MassageParlor",
+    "name": "{{ SITE_NAME|escapejs }}",
+    "url": "{{ SITE_URL }}",
+    "telephone": "{{ SITE_PHONE|escapejs }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ SITE_STREET_ADDRESS|escapejs }}",
+      "postalCode": "{{ SITE_POSTAL_CODE|escapejs }}",
+      "addressLocality": "{{ SITE_ADDRESS_LOCALITY|escapejs }}",
+      "addressCountry": "{{ SITE_ADDRESS_COUNTRY|escapejs }}"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ service.price|floatformat:0 }}",
+    "priceCurrency": "CZK",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ SITE_URL }}{{ request.path }}"
+  },
+  "serviceType": "Massage",
+  "areaServed": {"@type": "City", "name": "Praha"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{{ SITE_NAME|escapejs }}", "item": "{{ SITE_URL }}/{{ LANGUAGE_CODE|slice:':2' }}/"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Masáže' %}", "item": "{{ SITE_URL }}/{{ LANGUAGE_CODE|slice:':2' }}/masaze/"},
+    {"@type": "ListItem", "position": 3, "name": "{{ service|trans_field:'title'|escapejs }}"}
+  ]
+}
+</script>
+{% with faq=service|faq_items %}
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.q|escapejs }}",
+      "acceptedAnswer": {"@type": "Answer", "text": "{{ item.a|striptags|escapejs }}"}
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endwith %}
+{% endblock %}
 
 {% block content %}
 <article class="service-detail container" itemscope itemtype="https://schema.org/Service">

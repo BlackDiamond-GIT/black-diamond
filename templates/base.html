@@ -22,7 +22,7 @@
   <link rel="alternate" hreflang="ru" href="{{ SITE_URL }}{% lang_url "ru" %}">
   <link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/cs/">
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
   <meta property="og:url" content="{{ SITE_URL }}{{ request.path }}">
   <meta property="og:title" content="{% block og_title %}Black Diamond Spa{% endblock %}">
   <meta property="og:description" content="{% block og_description %}Luxusní relaxační masáže v srdci Prahy.{% endblock %}">

@@ -7,7 +7,7 @@ class TherapistListView(ExtraCssMixin, ListView):
     model = Therapist
     template_name = 'therapists/list.html'
     context_object_name = 'therapists'
-    queryset = Therapist.objects.filter(is_active=True).prefetch_related('specialties')
+    queryset = Therapist.objects.filter(is_active=True).prefetch_related('specialties', 'offers')
     extra_css = [
         'css/components/cards.css',
         'css/components/glass.css',
@@ -24,6 +24,7 @@ class TherapistDetailView(ExtraCssMixin, DetailView):
         'css/components/glass.css',
         'css/components/cards.css',
         'css/components/buttons.css',
+        'css/components/faq.css',
     ]
 
     def get_queryset(self):

@@ -44,14 +44,21 @@ class TherapistAdmin(BDModelAdmin):
             'fields': ('photo', 'main_photo_url', 'gallery_urls'),
             'classes': ('collapse',),
         }),
-        (_('Czech'), {'fields': ('bio_cs', 'loves_text_cs')}),
-        (_('English'), {'fields': ('bio_en', 'loves_text_en')}),
-        (_('Russian'), {'fields': ('bio_ru', 'loves_text_ru')}),
+        (_('Czech'), {'fields': ('tagline_cs', 'bio_cs', 'loves_text_cs', 'faq_cs')}),
+        (_('English'), {'fields': ('tagline_en', 'bio_en', 'loves_text_en', 'faq_en')}),
+        (_('Russian'), {'fields': ('tagline_ru', 'bio_ru', 'loves_text_ru', 'faq_ru')}),
         (None, {'fields': ('use_default',)}),
         (_('Services & Attributes'), {
             'fields': ('offers', 'loves', 'extras', 'hashtags', 'languages', 'branches', 'specialties'),
         }),
-        (_('SEO'), {'fields': ('meta_title', 'meta_description')}),
+        (_('SEO'), {
+            'fields': (
+                'meta_title_cs', 'meta_description_cs',
+                'meta_title_en', 'meta_description_en',
+                'meta_title_ru', 'meta_description_ru',
+                'meta_title', 'meta_description',
+            ),
+        }),
     )
 
     @admin.display(description=_('Photo'))

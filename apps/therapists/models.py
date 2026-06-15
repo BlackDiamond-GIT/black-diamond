@@ -64,8 +64,22 @@ class Therapist(models.Model):
         'branches.Branch', blank=True, verbose_name=_('Branches'),
     )
 
-    meta_title = models.CharField(_('Meta title'), max_length=200, blank=True)
-    meta_description = models.CharField(_('Meta description'), max_length=300, blank=True)
+    tagline_cs = models.CharField(_('Tagline (CS)'), max_length=120, blank=True)
+    tagline_en = models.CharField(_('Tagline (EN)'), max_length=120, blank=True)
+    tagline_ru = models.CharField(_('Tagline (RU)'), max_length=120, blank=True)
+
+    faq_cs = models.JSONField(_('FAQ (CS)'), default=list, blank=True)
+    faq_en = models.JSONField(_('FAQ (EN)'), default=list, blank=True)
+    faq_ru = models.JSONField(_('FAQ (RU)'), default=list, blank=True)
+
+    meta_title = models.CharField(_('Meta title (legacy)'), max_length=200, blank=True)
+    meta_description = models.CharField(_('Meta description (legacy)'), max_length=300, blank=True)
+    meta_title_cs = models.CharField(_('Meta title (CS)'), max_length=200, blank=True)
+    meta_title_en = models.CharField(_('Meta title (EN)'), max_length=200, blank=True)
+    meta_title_ru = models.CharField(_('Meta title (RU)'), max_length=200, blank=True)
+    meta_description_cs = models.CharField(_('Meta description (CS)'), max_length=300, blank=True)
+    meta_description_en = models.CharField(_('Meta description (EN)'), max_length=300, blank=True)
+    meta_description_ru = models.CharField(_('Meta description (RU)'), max_length=300, blank=True)
 
     order = models.PositiveSmallIntegerField(default=0)
 
@@ -79,6 +93,11 @@ class Therapist(models.Model):
 
     def get_bio(self, lang='cs'):
         return getattr(self, f'bio_{lang}', self.bio_cs) or self.bio_cs
+
+    def get_faq(self, lang='cs'):
+        code = (lang or 'cs').split('-')[0].lower()
+        items = getattr(self, f'faq_{code}', None) or self.faq_cs
+        return items if isinstance(items, list) else []
 
     @property
     def photo_url(self):

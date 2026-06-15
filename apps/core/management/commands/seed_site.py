@@ -1,4 +1,4 @@
-"""Імпорт контенту зі статичних HTML у Django БД."""
+"""Заповнює БД масажистками, масажами та статтями блогу."""
 
 from __future__ import annotations
 
@@ -15,7 +15,6 @@ from apps.services.models import Service
 from apps.therapists.models import Therapist
 
 from apps.core.seed_data import BLOG_DATES, BLOG_SLUGS, SERVICES, THERAPISTS
-from apps.core.service_import import read_service_page
 
 ROOT = Path(__file__).resolve().parents[4]
 
@@ -71,7 +70,7 @@ def _read_blog(lang: str, slug: str) -> dict[str, str]:
 
 
 class Command(BaseCommand):
-    help = 'Заповнює БД масажистками, масажами та статтями блогу зі статичних HTML.'
+    help = 'Заповнює БД масажистками, масажами та статтями блогу z seed_data (blog z HTML).'
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -85,19 +84,8 @@ class Command(BaseCommand):
         services_by_slug: dict[str, Service] = {}
 
         for item in SERVICES:
-            defaults = {k: v for k, v in item.items() if k != 'slug'}
             slug = item['slug']
-
-            for lang in ('cs', 'en', 'ru'):
-                page = read_service_page(ROOT, lang, slug)
-                if page.get('description'):
-                    defaults[f'description_{lang}'] = page['description']
-                if page.get('what'):
-                    defaults[f'what_{lang}'] = page['what']
-                if page.get('who'):
-                    defaults[f'who_{lang}'] = page['who']
-                if page.get('faq'):
-                    defaults[f'faq_{lang}'] = page['faq']
+            defaults = {k: v for k, v in item.items() if k != 'slug'}
 
             if force:
                 obj, created = Service.objects.update_or_create(
@@ -114,7 +102,11 @@ class Command(BaseCommand):
 
         for item in THERAPISTS:
             spec_slugs = item['specialties']
-            defaults = {k: v for k, v in item.items() if k not in ('slug', 'specialties')}
+            offer_slugs = item.get('offers', spec_slugs)
+            defaults = {
+                k: v for k, v in item.items()
+                if k not in ('slug', 'specialties', 'offers')
+            }
             if force:
                 obj, created = Therapist.objects.update_or_create(
                     slug=item['slug'],
@@ -126,6 +118,7 @@ class Command(BaseCommand):
                     defaults=defaults,
                 )
             obj.specialties.set([services_by_slug[s] for s in spec_slugs if s in services_by_slug])
+            obj.offers.set([services_by_slug[s] for s in offer_slugs if s in services_by_slug])
             self.stdout.write(f'  therapist {obj.name}: {"created" if created else "exists"}')
 
         for slug in BLOG_SLUGS:

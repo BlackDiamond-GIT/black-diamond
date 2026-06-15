@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% block title %}{% trans "Naše masérky" %} | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{% trans "Poznajte naše certifikované masérky — Julia, Diana, Laura, Vanessa, Ella, Mira. Každá s vlastní specializací." %}{% endblock %}
+{% block title %}{% trans "Masérky Praha — Certifikované specialistky" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Poznajte certifikované masérky Black Diamond Spa v centru Prahy — Julia, Diana, Laura, Vanessa, Ella, Mira. Každá s vlastní specializací. Rezervujte online." %}{% endblock %}
+{% block og_title %}{% trans "Masérky Praha — Certifikované specialistky" %} | {{ SITE_NAME }}{% endblock %}
+{% block og_description %}{% trans "Šest zkušených masérek v centru Prahy. Klasická, relax, sportovní a aromamasáž. Rezervujte online." %}{% endblock %}
+{% block og_image %}{% static 'img/og/masazistky.jpg' %}{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{{ SITE_NAME|escapejs }}", "item": "{{ SITE_URL }}/{{ LANGUAGE_CODE|slice:':2' }}/"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Masérky' %}"}
+  ]
+}
+</script>
+{% endblock %}
 
 {% block content %}
 <div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
@@ -19,16 +35,17 @@
     <a href="{% url 'therapists:detail' therapist.slug %}" class="masseuse-card" role="listitem" data-reveal
       itemscope itemtype="https://schema.org/Person">
       <div class="masseuse-card__portrait">
-        <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }} Praha"
+        <img src="{% asset_img 'masseuses' therapist.slug %}"
+          alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
           width="300" height="400" loading="lazy" decoding="async" itemprop="image">
       </div>
       <div class="masseuse-card__body">
         <h2 class="masseuse-card__name" itemprop="name">{{ therapist.name }}</h2>
-        {% with spec=therapist.specialties.first %}
-        {% if spec %}
-        <p class="masseuse-card__spec" itemprop="jobTitle">{{ spec|trans_field:"title" }}</p>
+        {% if therapist|trans_field:"tagline" %}
+        <p class="masseuse-card__spec" itemprop="jobTitle">{{ therapist|trans_field:"tagline" }}</p>
+        {% elif therapist.specialties.first %}
+        <p class="masseuse-card__spec" itemprop="jobTitle">{{ therapist.specialties.first|trans_field:"title" }}</p>
         {% endif %}
-        {% endwith %}
       </div>
     </a>
     {% empty %}

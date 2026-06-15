@@ -66,6 +66,41 @@
 
 .nav__logo:hover { color: var(--tiffany); }
 
+.nav__logo span {
+  display: inline-block;
+  background: linear-gradient(
+    105deg,
+    var(--text-primary) 0%,
+    var(--text-primary) 42%,
+    rgba(255, 255, 255, 0.95) 50%,
+    var(--text-primary) 58%,
+    var(--text-primary) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 120% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: nav-logo-shine 7s ease-in-out infinite;
+}
+
+.nav__logo:hover span {
+  background-image: linear-gradient(
+    105deg,
+    var(--tiffany-light) 0%,
+    var(--tiffany-light) 42%,
+    rgba(255, 255, 255, 0.95) 50%,
+    var(--tiffany-light) 58%,
+    var(--tiffany-light) 100%
+  );
+}
+
+@keyframes nav-logo-shine {
+  0%, 78%, 100% { background-position: 120% center; }
+  88%           { background-position: -20% center; }
+}
+
 .nav__logo-diamond,
 .footer__logo-diamond {
   display: none;
@@ -367,5 +402,14 @@
   .nav__whatsapp svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__logo span {
+    animation: none;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: inherit;
   }
 }

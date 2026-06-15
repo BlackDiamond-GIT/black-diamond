@@ -91,6 +91,15 @@
   margin-bottom: var(--sp-md);
 }
 
+.therapist-detail__tagline {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--tiffany);
+  margin-bottom: var(--sp-xl);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
 .therapist-detail__tags {
   display: flex;
   flex-wrap: wrap;
@@ -142,6 +151,31 @@
   .therapist-detail__cta-row {
     display: none;
   }
+}
+
+.therapist-detail__offers {
+  margin-bottom: var(--sp-4xl);
+}
+
+.therapist-detail__offers-grid {
+  gap: var(--sp-xl);
+}
+
+.therapist-detail__offers-grid .service-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.therapist-detail__offers-grid .service-card__body .btn {
+  margin-top: auto;
+}
+
+.therapist-detail__faq {
+  max-width: 800px;
+  margin-bottom: var(--sp-4xl);
 }
 
 .therapist-detail__sections {

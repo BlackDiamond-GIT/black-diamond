@@ -1,7 +1,68 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% block title %}{{ therapist.name }} — {% trans "masérka" %} | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{{ therapist|trans_field:"bio"|truncatewords:25 }}{% endblock %}
+{% block title %}{% if therapist|trans_field:"meta_title" %}{{ therapist|trans_field:"meta_title" }}{% else %}{{ therapist.name }} — {% trans "masérka" %} {{ therapist|trans_field:"tagline" }} Praha | {{ SITE_NAME }}{% endif %}{% endblock %}
+{% block meta_description %}{% if therapist|trans_field:"meta_description" %}{{ therapist|trans_field:"meta_description" }}{% else %}{{ therapist|trans_field:"bio"|truncatewords:25 }}{% endif %}{% endblock %}
+{% block og_type %}profile{% endblock %}
+{% block og_title %}{% if therapist|trans_field:"meta_title" %}{{ therapist|trans_field:"meta_title" }}{% else %}{{ therapist.name }} — {{ therapist|trans_field:"tagline" }} | {{ SITE_NAME }}{% endif %}{% endblock %}
+{% block og_description %}{% if therapist|trans_field:"meta_description" %}{{ therapist|trans_field:"meta_description" }}{% else %}{{ therapist|trans_field:"bio"|truncatewords:25 }}{% endif %}{% endblock %}
+{% block og_image %}{% asset_img 'masseuses' therapist.slug %}{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ therapist.name|escapejs }}",
+  "jobTitle": "{{ therapist|trans_field:'tagline'|escapejs }}",
+  "description": "{{ therapist|trans_field:'bio'|truncatewords:35|escapejs }}",
+  "image": "{{ SITE_URL }}{% asset_img 'masseuses' therapist.slug %}",
+  "url": "{{ SITE_URL }}{{ request.path }}",
+  "worksFor": {
+    "@type": "MassageParlor",
+    "name": "{{ SITE_NAME|escapejs }}",
+    "url": "{{ SITE_URL }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ SITE_STREET_ADDRESS|escapejs }}",
+      "postalCode": "{{ SITE_POSTAL_CODE|escapejs }}",
+      "addressLocality": "{{ SITE_ADDRESS_LOCALITY|escapejs }}",
+      "addressCountry": "{{ SITE_ADDRESS_COUNTRY|escapejs }}"
+    }
+  }
+  {% if therapist.specialties.all %},"knowsAbout": [{% for spec in therapist.specialties.all %}"{{ spec|trans_field:'title'|escapejs }}"{% if not forloop.last %}, {% endif %}{% endfor %}]{% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{{ SITE_NAME|escapejs }}", "item": "{{ SITE_URL }}/{{ LANGUAGE_CODE|slice:':2' }}/"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Masérky' %}", "item": "{{ SITE_URL }}/{{ LANGUAGE_CODE|slice:':2' }}/masazistky/"},
+    {"@type": "ListItem", "position": 3, "name": "{{ therapist.name|escapejs }}"}
+  ]
+}
+</script>
+{% with faq=therapist|faq_items %}
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.q|escapejs }}",
+      "acceptedAnswer": {"@type": "Answer", "text": "{{ item.a|striptags|escapejs }}"}
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endwith %}
+{% endblock %}
 
 {% block content %}
 <article class="therapist-detail container" itemscope itemtype="https://schema.org/Person">
@@ -19,7 +80,8 @@
   <div class="therapist-detail__hero">
     <div class="therapist-detail__portrait-wrap">
       <div class="therapist-detail__portrait">
-        <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }}"
+        <img src="{% asset_img 'masseuses' therapist.slug %}"
+          alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
           width="480" height="640" loading="eager" decoding="async" fetchpriority="high" itemprop="image">
       </div>
     </div>
@@ -27,6 +89,10 @@
     <div class="therapist-detail__info">
       <span class="section-label">{% trans "Masérka" %}</span>
       <h1 class="therapist-detail__name" itemprop="name">{{ therapist.name }}</h1>
+
+      {% if therapist|trans_field:"tagline" %}
+      <p class="therapist-detail__tagline" itemprop="jobTitle">{{ therapist|trans_field:"tagline" }}</p>
+      {% endif %}
 
       {% if therapist.specialties.all %}
       <div class="therapist-detail__tags">
@@ -55,21 +121,31 @@
     </div>
   </div>
 
-  {% if therapist.offers.all or therapist.loves.all or therapist.extras.all or therapist.languages.all or therapist.hashtags.all %}
-  <div class="therapist-detail__sections">
-    {% if therapist.offers.all %}
-    <section class="therapist-detail__section" aria-labelledby="offers-heading">
-      <h2 class="therapist-detail__section-title" id="offers-heading">{% trans "Nabízí" %}</h2>
-      <div class="therapist-detail__chip-row">
-        {% for service in therapist.offers.all %}
-        <a href="{% url 'services:detail' service.slug %}" class="therapist-detail__chip-link">
-          {{ service|trans_field:"title" }}
+  {% if therapist.offers.all %}
+  <section class="therapist-detail__offers" aria-labelledby="offered-heading">
+    <h2 class="therapist-detail__section-title" id="offered-heading">{% trans "Nabízené masáže" %}</h2>
+    <div class="grid-3 therapist-detail__offers-grid">
+      {% for service in therapist.offers.all %}
+      <article class="service-card">
+        <a href="{% url 'services:detail' service.slug %}" class="service-card__link">
+          <div class="service-card__image">
+            <img src="{% asset_img 'services' service.slug %}"
+              alt="{{ service|trans_field:'title' }} Praha — {{ SITE_NAME }}"
+              width="640" height="360" loading="lazy" decoding="async">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__name">{{ service|trans_field:"title" }}</h3>
+            <span class="btn btn--ghost">{% trans "Detail masáže" %}</span>
+          </div>
         </a>
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
+  {% if therapist.loves.all or therapist.extras.all or therapist.languages.all or therapist.hashtags.all %}
+  <div class="therapist-detail__sections">
     {% if therapist.loves.all %}
     <section class="therapist-detail__section" aria-labelledby="loves-heading">
       <h2 class="therapist-detail__section-title" id="loves-heading">{% trans "Oblíbené techniky" %}</h2>
@@ -119,13 +195,35 @@
   </div>
   {% endif %}
 
+  {% with faq=therapist|faq_items %}
+  {% if faq %}
+  <section class="therapist-detail__faq" aria-labelledby="faq-heading">
+    <h2 class="therapist-detail__section-title" id="faq-heading">{% trans "Časté otázky" %}</h2>
+    <div class="faq">
+      {% for item in faq %}
+      <div class="faq__item">
+        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-{{ therapist.slug }}-{{ forloop.counter }}">
+          {{ item.q }}
+          <span class="faq__mark" aria-hidden="true"></span>
+        </button>
+        <div id="faq-{{ therapist.slug }}-{{ forloop.counter }}" class="faq__answer">
+          <div class="faq__answer-inner">{{ item.a|safe }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  {% endwith %}
+
   {% if therapist.gallery_cloudinary.all %}
   <section class="therapist-detail__gallery" aria-labelledby="gallery-heading">
     <h2 class="therapist-detail__gallery-title" id="gallery-heading">{% trans "Galerie" %}</h2>
     <div class="therapist-detail__gallery-strip" role="list">
       {% for img in therapist.gallery_cloudinary.all %}
       <div class="therapist-detail__gallery-item" role="listitem">
-        <img src="{{ img.card_url }}" alt="{{ therapist.name }} — {% trans 'Galerie' %}" width="240" height="320" loading="lazy" decoding="async">
+        <img src="{{ img.card_url }}" alt="{{ therapist.name }} — {% trans 'Galerie' %}, {{ SITE_NAME }} Praha"
+          width="240" height="320" loading="lazy" decoding="async">
       </div>
       {% endfor %}
     </div>
