@@ -1,7 +1,9 @@
 from django.conf import settings
 from django.db import DatabaseError
+from django.utils.translation import get_language
 
 from .models import SiteSettings
+from .opening_hours import DEFAULT_HOURS, get_opening_hours_display
 
 
 def _fallback_address():
@@ -16,11 +18,15 @@ def _fallback_address():
 
 
 def site_settings(request):
+    lang = (get_language() or 'cs').split('-')[0].lower()
     base = {
         'SITE_NAME': settings.SITE_NAME,
         'SITE_URL': settings.SITE_URL,
         'SITE_PHONE': settings.SITE_PHONE,
         'SITE_EMAIL': settings.SITE_EMAIL,
+        'SITE_OPENING_HOURS': DEFAULT_HOURS.get(lang, DEFAULT_HOURS['cs']),
+        'SITE_INSTAGRAM_URL': 'https://instagram.com/blackdiamondspa',
+        'SITE_TELEGRAM_URL': '',
     }
 
     try:
@@ -32,8 +38,12 @@ def site_settings(request):
             'SITE_ADDRESS_COUNTRY': 'CZ',
             'SITE_ADDRESS': site.address or site.full_address,
             'SITE_MAPS_URL': site.map_url or f'https://maps.google.com/?q={site.maps_query}',
+            'SITE_OPENING_HOURS': site.get_hours_for_language(lang),
+            'SITE_INSTAGRAM_URL': (site.instagram_url or '').strip() or 'https://instagram.com/blackdiamondspa',
+            'SITE_TELEGRAM_URL': (site.telegram_url or '').strip(),
         })
     except DatabaseError:
         base.update(_fallback_address())
+        base['SITE_OPENING_HOURS'] = get_opening_hours_display(lang)
 
     return base

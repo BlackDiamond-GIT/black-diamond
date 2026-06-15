@@ -49,10 +49,16 @@ class SiteSettings(models.Model):
     maps_embed_url_2 = models.TextField(_('Google Maps embed URL (studio 2)'), blank=True)
     hours = models.CharField(
         _('Opening hours (Czech — default fallback)'), max_length=100,
-        default='Od 11 ráno do 4 ráno',
+        default='Od 9 ráno do 4 ráno',
     )
-    hours_en = models.CharField(_('Opening hours (English)'), max_length=100, blank=True)
-    hours_ru = models.CharField(_('Opening hours (Russian)'), max_length=100, blank=True)
+    hours_en = models.CharField(
+        _('Opening hours (English)'), max_length=100,
+        blank=True, default='From 9 am to 4 am',
+    )
+    hours_ru = models.CharField(
+        _('Opening hours (Russian)'), max_length=100,
+        blank=True, default='С 9 утра до 4 утра',
+    )
     instagram_url = models.URLField(_('Instagram URL'), blank=True)
     telegram_url = models.URLField(_('Telegram URL'), blank=True)
     default_meta_title = models.CharField(_('Default meta title'), max_length=200, blank=True)

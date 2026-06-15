@@ -11,9 +11,9 @@
   const DAYS_RU = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
   const OPENING_HOURS = {
-    cs: { weekdays: 'Po – Pá', weekend: 'So – Ne', weekdays_hours: '10:00 – 21:00', weekend_hours: '10:00 – 19:00' },
-    en: { weekdays: 'Mon – Fri', weekend: 'Sat – Sun', weekdays_hours: '10:00 – 21:00', weekend_hours: '10:00 – 19:00' },
-    ru: { weekdays: 'Пн – Пт', weekend: 'Сб – Вс', weekdays_hours: '10:00 – 21:00', weekend_hours: '10:00 – 19:00' },
+    cs: 'Od 9 ráno do 4 ráno',
+    en: 'From 9 am to 4 am',
+    ru: 'С 9 утра до 4 утра',
   };
 
   const THERAPISTS = [
@@ -76,13 +76,15 @@
   const slotsTarget = scheduleEl.querySelector('[data-schedule-slots]');
   if (!slotsTarget) return;
 
-  const hours = OPENING_HOURS[lang] || OPENING_HOURS.cs;
+  const hoursText = OPENING_HOURS[lang] || OPENING_HOURS.cs;
   const hoursBar = document.querySelector('.schedule__hours-bar');
   if (hoursBar) {
     hoursBar.innerHTML = `
-      ${hours.weekdays}: <span>${hours.weekdays_hours}</span>
-      &nbsp;|&nbsp;
-      ${hours.weekend}: <span>${hours.weekend_hours}</span>
+      <svg class="schedule__hours-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <span class="schedule__hours-text">${hoursText}</span>
       &nbsp;|&nbsp;
       <a href="tel:+420797669633" style="color:var(--tiffany)">+420 797 669 633</a>
     `;

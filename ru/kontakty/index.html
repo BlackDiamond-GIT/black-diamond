@@ -46,15 +46,9 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "10:00",
-        "closes": "21:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday","Sunday"],
-        "opens": "10:00",
-        "closes": "19:00"
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "04:00"
       }
     ],
     "address": {
@@ -177,7 +171,14 @@
                     <span itemprop="streetAddress">Soukenická</span><br>
                     <span itemprop="postalCode">110 00</span> <span itemprop="addressLocality">Praha 1</span><br>
                     <span itemprop="addressCountry">Česká republika</span>
-                  </address>
+                            <div class="footer__nap-item">
+            <svg class="footer__nap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span class="footer__hours-text" itemprop="openingHours">С 9 утра до 4 утра</span>
+          </div>
+          </address>
                 </div>
 
                 <div style="display:flex;align-items:flex-start;gap:var(--sp-md)">
@@ -201,11 +202,13 @@
             <!-- Hours -->
             <div class="glass" style="padding:var(--sp-2xl);border-radius:var(--radius-xl);margin-bottom:var(--sp-xl)">
               <h2 style="font-family:var(--font-display);font-size:var(--fs-xl);margin-bottom:var(--sp-xl)">Otevírací doba</h2>
-              <div style="display:flex;flex-direction:column;gap:var(--sp-md)">
-                <div style="display:flex;justify-content:space-between;padding-bottom:var(--sp-md);border-bottom:1px solid var(--divider)">
-                  <span style="color:var(--text-secondary)">Pondělí – Pátek</span>
-                  <span style="color:var(--tiffany);font-weight:600">10:00 – 21:00</span>
-                </div>
+              <div style="display:flex;align-items:center;gap:var(--sp-md)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tiffany)" stroke-width="1.5" style="flex-shrink:0" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <p style="color:var(--tiffany);font-weight:600;font-size:var(--fs-md);margin:0" itemprop="openingHours">С 9 утра до 4 утра</p>
+              </div>
                 <div style="display:flex;justify-content:space-between">
                   <span style="color:var(--text-secondary)">Sobota – Neděle</span>
                   <span style="color:var(--tiffany);font-weight:600">10:00 – 19:00</span>
@@ -299,8 +302,7 @@
           <address class="footer__nap"><div class="footer__nap-item">Soukenická, 110 00 Praha 1</div><div class="footer__nap-item"><a href="tel:+420797669633">+420 797 669 633</a></div></address>
         </div>
         <div><h3 class="footer__col-title">Stránky</h3><ul class="footer__links"><li><a href="/ru/">Domů</a></li><li><a href="/ru/masazistky/">Masérky</a></li><li><a href="/ru/masaze/">Masáže</a></li><li><a href="/ru/rozvrh/">Rozvrh</a></li><li><a href="/ru/blog/">Blog</a></li><li><a href="/ru/kontakty/">Kontakt</a></li></ul></div>
-        <div><h3 class="footer__col-title">Salon</h3><ul class="footer__links"><li><a href="/ru/o-nas/">O nás</a></li><li><a href="/ru/pravidla-salonu/">Pravidla</a></li><li><a href="/ru/soukromi/">Soukromí</a></li></ul></div>
-        <div><h3 class="footer__col-title">Otevírací doba</h3><div class="footer__hours"><div class="footer__hours-row"><span class="footer__hours-days">Po – Pá</span><span class="footer__hours-time">10:00 – 21:00</span></div><div class="footer__hours-row"><span class="footer__hours-days">So – Ne</span><span class="footer__hours-time">10:00 – 19:00</span></div></div></div>
+        <div><h3 class="footer__col-title">Salon</h3><ul class="footer__links"><li><a href="/ru/o-nas/">O nás</a></li><li><a href="/ru/pravidla-salonu/">Pravidla</a></li><li><a href="/ru/soukromi/">Soukromí</a></li></ul></div></div>
       </div>
       <div class="footer__bottom"><p class="footer__copy">© <span class="footer-year">2026</span> Black Diamond Spa.</p><ul class="footer__legal-links"><li><a href="/ru/soukromi/">Soukromí</a></li><li><a href="/ru/pravidla-salonu/">Pravidla</a></li></ul></div>
     </div>

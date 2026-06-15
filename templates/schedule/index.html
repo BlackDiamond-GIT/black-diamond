@@ -77,9 +77,11 @@
   <p class="schedule__hint">{% trans "Klikněte na volný slot pro rezervaci." %}</p>
 
   <div class="schedule__hours-bar" role="complementary" aria-label="{% trans 'Otevírací doba' %}">
-    {{ opening_hours.weekdays }}: <span>{{ opening_hours.weekdays_hours }}</span>
-    &nbsp;|&nbsp;
-    {{ opening_hours.weekend }}: <span>{{ opening_hours.weekend_hours }}</span>
+    <svg class="schedule__hours-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </svg>
+    <span class="schedule__hours-text">{{ opening_hours_text }}</span>
     &nbsp;|&nbsp;
     <a href="tel:{{ SITE_PHONE|cut:' ' }}" style="color:var(--tiffany)">{{ SITE_PHONE }}</a>
   </div>

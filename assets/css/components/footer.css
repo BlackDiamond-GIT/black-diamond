@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 1024px) {
-  .footer__grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .footer__grid { grid-template-columns: 2fr 1fr 1fr; }
 }
 
 /* Brand column */
@@ -129,6 +129,11 @@
 
 .footer__hours-days { color: var(--text-muted); }
 .footer__hours-time { color: var(--tiffany); font-weight: 500; }
+
+.footer__hours-text {
+  color: var(--tiffany);
+  font-weight: 500;
+}
 
 /* Bottom bar */
 .footer__bottom {

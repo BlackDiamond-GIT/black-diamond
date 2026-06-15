@@ -13,40 +13,14 @@ DAYS_SHORT = {
 
 OPENING_HOURS_SCHEMA = [
     {
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        'opens': '10:00',
-        'closes': '21:00',
-    },
-    {
-        'dayOfWeek': ['Saturday', 'Sunday'],
-        'opens': '10:00',
-        'closes': '19:00',
+        'dayOfWeek': [
+            'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+            'Friday', 'Saturday', 'Sunday',
+        ],
+        'opens': '09:00',
+        'closes': '04:00',
     },
 ]
-
-OPENING_HOURS_LABEL = {
-    'cs': {
-        'weekdays': 'Po – Pá',
-        'weekend': 'So – Ne',
-        'weekdays_hours': '10:00 – 21:00',
-        'weekend_hours': '10:00 – 19:00',
-        'bar': 'Po–Pá: 10:00–21:00 | So–Ne: 10:00–19:00',
-    },
-    'en': {
-        'weekdays': 'Mon – Fri',
-        'weekend': 'Sat – Sun',
-        'weekdays_hours': '10:00 – 21:00',
-        'weekend_hours': '10:00 – 19:00',
-        'bar': 'Mon–Fri: 10:00–21:00 | Sat–Sun: 10:00–19:00',
-    },
-    'ru': {
-        'weekdays': 'Пн – Пт',
-        'weekend': 'Сб – Вс',
-        'weekdays_hours': '10:00 – 21:00',
-        'weekend_hours': '10:00 – 19:00',
-        'bar': 'Пн–Пт: 10:00–21:00 | Сб–Вс: 10:00–19:00',
-    },
-}
 
 
 def today_weekday_index():

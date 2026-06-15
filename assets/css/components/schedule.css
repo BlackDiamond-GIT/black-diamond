@@ -254,8 +254,10 @@
   padding: var(--sp-md) var(--container-pad);
   padding-bottom: calc(var(--sp-md) + env(safe-area-inset-bottom));
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: var(--sp-xl);
+  gap: var(--sp-sm) var(--sp-xl);
   font-size: var(--fs-xs);
   color: var(--text-muted);
   position: sticky;
@@ -263,7 +265,13 @@
   z-index: var(--z-sticky);
 }
 
-.schedule__hours-bar span {
+.schedule__hours-icon {
+  color: var(--tiffany);
+  flex-shrink: 0;
+}
+
+.schedule__hours-bar span,
+.schedule__hours-text {
   color: var(--tiffany);
   font-weight: 600;
 }

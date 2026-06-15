@@ -8,10 +8,11 @@ from django.views.generic import TemplateView
 from apps.core.mixins import ExtraCssMixin
 from apps.therapists.models import Therapist
 
+from apps.core.opening_hours import get_opening_hours_display
+
 from .models import TimeSlot
 from .schedule_data import (
     DAYS_SHORT,
-    OPENING_HOURS_LABEL,
     TIMES,
     build_db_grid,
     build_demo_grid,
@@ -50,7 +51,7 @@ class SchedulePageView(ExtraCssMixin, TemplateView):
             'days_short': DAYS_SHORT.get(lang, DAYS_SHORT['cs']),
             'today_idx': today_idx,
             'rows': build_schedule_rows(grid, today_idx),
-            'opening_hours': OPENING_HOURS_LABEL.get(lang, OPENING_HOURS_LABEL['cs']),
+            'opening_hours_text': get_opening_hours_display(lang),
         })
         return ctx
 
