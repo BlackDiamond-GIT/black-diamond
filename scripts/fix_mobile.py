@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mobile nav fixes: WhatsApp, mob-bar, remove hero eyebrow, body class."""
+"""Mobile nav fixes: WhatsApp, mob-bar, body class."""
 import re
 from pathlib import Path
 
@@ -80,8 +80,6 @@ def mob_bar_html(lang: str, path: Path) -> str:
 
 def patch_html(html: str, path: Path) -> str:
     lang = detect_lang(path)
-
-    html = re.sub(r'\s*<p class="hero2__eyebrow">[^<]*</p>\s*', '\n        ', html)
 
     if 'class="has-mob-bar"' not in html:
         html = html.replace('<body>', '<body class="has-mob-bar">')

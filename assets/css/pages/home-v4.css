@@ -141,7 +141,14 @@
 }
 
 .hero2__eyebrow {
-  display: none;
+  font-family: var(--font-body);
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  animation: heroFadeUp 1.1s ease 0.5s both;
 }
 
 .hero2__title {
@@ -210,6 +217,14 @@
     box-sizing: border-box;
     align-items: stretch;
     min-width: 0;
+  }
+
+  .hero2__eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 1rem;
+    padding-inline: 0.5rem;
+    line-height: 1.5;
   }
 
   .hero2__title {
