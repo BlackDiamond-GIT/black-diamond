@@ -37,19 +37,19 @@ class ServiceAdmin(BDModelAdmin):
         (_('Defaults'), {'fields': ('base_price_czk', 'base_duration_min', 'price', 'duration')}),
         (_('Czech'), {
             'fields': (
-                'title_cs', 'short_cs', 'description_cs',
+                'title_cs', 'short_cs', 'description_cs', 'what_cs', 'who_cs', 'faq_cs',
                 'meta_title_cs', 'meta_description_cs',
             ),
         }),
         (_('English'), {
             'fields': (
-                'title_en', 'short_en', 'description_en',
+                'title_en', 'short_en', 'description_en', 'what_en', 'who_en', 'faq_en',
                 'meta_title_en', 'meta_description_en',
             ),
         }),
         (_('Russian'), {
             'fields': (
-                'title_ru', 'short_ru', 'description_ru',
+                'title_ru', 'short_ru', 'description_ru', 'what_ru', 'who_ru', 'faq_ru',
                 'meta_title_ru', 'meta_description_ru',
             ),
         }),

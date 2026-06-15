@@ -15,6 +15,7 @@ from apps.services.models import Service
 from apps.therapists.models import Therapist
 
 from apps.core.seed_data import BLOG_DATES, BLOG_SLUGS, SERVICES, THERAPISTS
+from apps.core.service_import import read_service_page
 
 ROOT = Path(__file__).resolve().parents[4]
 
@@ -85,17 +86,30 @@ class Command(BaseCommand):
 
         for item in SERVICES:
             defaults = {k: v for k, v in item.items() if k != 'slug'}
+            slug = item['slug']
+
+            for lang in ('cs', 'en', 'ru'):
+                page = read_service_page(ROOT, lang, slug)
+                if page.get('description'):
+                    defaults[f'description_{lang}'] = page['description']
+                if page.get('what'):
+                    defaults[f'what_{lang}'] = page['what']
+                if page.get('who'):
+                    defaults[f'who_{lang}'] = page['who']
+                if page.get('faq'):
+                    defaults[f'faq_{lang}'] = page['faq']
+
             if force:
                 obj, created = Service.objects.update_or_create(
-                    slug=item['slug'],
+                    slug=slug,
                     defaults=defaults,
                 )
             else:
                 obj, created = Service.objects.get_or_create(
-                    slug=item['slug'],
+                    slug=slug,
                     defaults=defaults,
                 )
-            services_by_slug[item['slug']] = obj
+            services_by_slug[slug] = obj
             self.stdout.write(f'  service {obj.slug}: {"created" if created else "exists"}')
 
         for item in THERAPISTS:

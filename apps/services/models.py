@@ -49,6 +49,18 @@ class Service(models.Model):
     description_en = models.TextField(blank=True)
     description_ru = models.TextField(blank=True)
 
+    what_cs = models.TextField(_('What is it (CS)'), blank=True)
+    what_en = models.TextField(_('What is it (EN)'), blank=True)
+    what_ru = models.TextField(_('What is it (RU)'), blank=True)
+
+    who_cs = models.TextField(_('Who is it for (CS)'), blank=True)
+    who_en = models.TextField(_('Who is it for (EN)'), blank=True)
+    who_ru = models.TextField(_('Who is it for (RU)'), blank=True)
+
+    faq_cs = models.JSONField(_('FAQ (CS)'), default=list, blank=True)
+    faq_en = models.JSONField(_('FAQ (EN)'), default=list, blank=True)
+    faq_ru = models.JSONField(_('FAQ (RU)'), default=list, blank=True)
+
     meta_title_cs = models.CharField(_('Meta title (CS)'), max_length=200, blank=True)
     meta_title_en = models.CharField(_('Meta title (EN)'), max_length=200, blank=True)
     meta_title_ru = models.CharField(_('Meta title (RU)'), max_length=200, blank=True)
@@ -82,6 +94,21 @@ class Service(models.Model):
 
     def get_description(self, lang='cs'):
         return getattr(self, f'description_{lang}', self.description_cs) or self.description_cs
+
+    def get_what(self, lang='cs'):
+        code = (lang or 'cs').split('-')[0].lower()
+        value = getattr(self, f'what_{code}', '') or self.what_cs
+        return value
+
+    def get_who(self, lang='cs'):
+        code = (lang or 'cs').split('-')[0].lower()
+        value = getattr(self, f'who_{code}', '') or self.who_cs
+        return value
+
+    def get_faq(self, lang='cs'):
+        code = (lang or 'cs').split('-')[0].lower()
+        items = getattr(self, f'faq_{code}', None) or self.faq_cs
+        return items if isinstance(items, list) else []
 
 
 class Price(models.Model):

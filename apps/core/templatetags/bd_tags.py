@@ -27,6 +27,12 @@ def asset_img(category, slug, ext='webp'):
     return static(f'img/{category}/{slug}.{ext}')
 
 
+@register.filter
+def faq_items(obj):
+    lang = get_language() or 'cs'
+    return obj.get_faq(lang[:2])
+
+
 @register.simple_tag(takes_context=True)
 def lang_url(context, lang_code):
     """

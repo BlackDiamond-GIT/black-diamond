@@ -1,0 +1,130 @@
+/* Service detail page */
+
+.service-detail {
+  padding-top: calc(var(--nav-height) + var(--sp-3xl));
+  padding-bottom: var(--sp-4xl);
+}
+
+.service-detail__hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3xl);
+  align-items: start;
+  margin-bottom: var(--sp-4xl);
+}
+
+@media (min-width: 768px) {
+  .service-detail__hero {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.service-detail__image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--divider);
+}
+
+.service-detail__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-detail__lead {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  margin-bottom: var(--sp-2xl);
+  max-width: 60ch;
+}
+
+.service-detail__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-2xl);
+  align-items: center;
+}
+
+.service-detail__stat {
+  padding: var(--sp-lg) var(--sp-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  min-width: 96px;
+}
+
+.service-detail__stat-value {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  color: var(--tiffany);
+  line-height: 1;
+}
+
+.service-detail__stat-label {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  margin-top: 4px;
+}
+
+.service-detail__sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3xl);
+  max-width: 800px;
+  margin-bottom: var(--sp-4xl);
+}
+
+.service-detail__section-text {
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  font-size: var(--fs-md);
+}
+
+.service-detail__price-box {
+  padding: var(--sp-2xl);
+  border-radius: var(--radius-xl);
+}
+
+.service-detail__faq {
+  max-width: 800px;
+  margin-bottom: var(--sp-4xl);
+}
+
+.service-detail__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+}
+
+.service-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  margin-top: var(--sp-xl);
+}
+
+.service-detail__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+}
+
+@media (max-width: 767px) {
+  .service-detail__cta-row .btn {
+    width: 100%;
+  }
+
+  .service-detail__actions .btn {
+    flex: 1 1 calc(50% - var(--sp-md));
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 479px) {
+  .service-detail__actions .btn {
+    flex: 1 1 100%;
+  }
+}

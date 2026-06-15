@@ -23,6 +23,8 @@ class ServiceDetailView(ExtraCssMixin, DetailView):
         'css/components/glass.css',
         'css/components/buttons.css',
         'css/components/cards.css',
+        'css/components/faq.css',
+        'css/components/service-detail.css',
     ]
 
     def get_context_data(self, **kwargs):
