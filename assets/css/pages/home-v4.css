@@ -8,6 +8,7 @@
 :root {
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body:    'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script:  'Pinyon Script', 'Segoe Script', cursive;
 }
 
 /* ── Section shell ───────────────────────────────── */
@@ -111,7 +112,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 42%;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .hero2__overlay {
@@ -163,8 +167,16 @@
   animation: heroFadeUp 1.1s ease .75s both;
 }
 .hero2__title em {
-  font-style: italic;
+  font-family: var(--font-script);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.22em;
+  line-height: 0.95;
   color: var(--tiffany-light);
+  letter-spacing: 0.02em;
+  display: inline-block;
+  padding-inline: 0.08em;
+  vertical-align: baseline;
 }
 
 .hero2__sub {
@@ -237,6 +249,11 @@
     hyphens: auto;
     margin-bottom: 1.5rem;
     padding-inline: 0;
+  }
+
+  .hero2__title em {
+    font-size: 1.18em;
+    line-height: 0.92;
   }
 
   .hero2__sub {

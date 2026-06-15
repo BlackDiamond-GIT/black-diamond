@@ -1168,6 +1168,7 @@ FONT_LINK = (
     '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
     'family=DM+Serif+Display:ital@0;1'
     '&family=Jost:wght@300;400;500;600'
+    '&family=Pinyon+Script'
     '&display=swap">\n'
 )
 
