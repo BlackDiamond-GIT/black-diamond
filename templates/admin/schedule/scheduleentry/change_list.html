@@ -1,0 +1,16 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div class="schedule-admin-actions" style="display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem">
+    <a href="{{ add_week_url }}"
+       style="display:inline-flex;align-items:center;min-height:36px;padding:0 1rem;background:#0ABAB5;color:#fff;border-radius:6px;font-size:.875rem;text-decoration:none">
+      {% trans "Add schedule for week" %}
+    </a>
+    <a href="{{ week_grid_url }}"
+       style="display:inline-flex;align-items:center;min-height:36px;padding:0 1rem;background:#00827F;color:#fff;border-radius:6px;font-size:.875rem;text-decoration:none">
+      {% trans "Week schedule grid" %}
+    </a>
+  </div>
+  {{ block.super }}
+{% endblock %}

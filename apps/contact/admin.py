@@ -1,9 +1,12 @@
 from django.contrib import admin
+
+from apps.core.unfold_admin import BDModelAdmin
+
 from .models import ContactRequest
 
 
 @admin.register(ContactRequest)
-class ContactRequestAdmin(admin.ModelAdmin):
+class ContactRequestAdmin(BDModelAdmin):
     list_display = ('name', 'email', 'phone', 'service', 'created_at', 'is_processed')
     list_editable = ('is_processed',)
     list_filter = ('is_processed',)

@@ -1,13 +1,9 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n bd_tags %}
 {% get_current_language as LANG %}
 
 {% block title %}{% trans "Rozvrh masáží" %} | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{% trans "Prohlédněte si rozvrh dostupných termínů u jednotlivých masérek Black Diamond Spa a rezervujte si masáž online." %}{% endblock %}
-
-{% block extra_js %}
-<script src="{% static 'js/schedule.js' %}" defer></script>
-{% endblock %}
+{% block meta_description %}{% trans "Aktuální dostupnost. Klikněte na volný slot pro rezervaci." %}{% endblock %}
 
 {% block content %}
 <div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
@@ -15,59 +11,79 @@
   <header class="section-header section-header--center" style="margin-bottom:var(--sp-3xl)">
     <span class="section-label" aria-hidden="true">{% trans "Rezervace" %}</span>
     <h1 class="section-title">{% trans "Rozvrh masáží" %}</h1>
+    <p class="section-subtitle">{% trans "Aktuální dostupnost. Klikněte na volný slot pro rezervaci." %}</p>
   </header>
 
-  <!-- Day strip -->
-  <div class="schedule__day-strip" id="day-strip" role="tablist" aria-label="{% trans 'Vyberte datum' %}" style="display:flex;gap:var(--sp-sm);overflow-x:auto;padding-bottom:var(--sp-sm);margin-bottom:var(--sp-xl);-webkit-overflow-scrolling:touch">
-    {% for day in days %}
-    <button
-      class="schedule__day-btn{% if forloop.first %} is-active{% endif %}"
-      role="tab"
-      aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-      data-date="{{ day|date:'Y-m-d' }}"
-      hx-get="/api/schedule/slots/"
-      hx-vals='{"date": "{{ day|date:'Y-m-d' }}"}'
-      hx-target="#slots-container"
-      hx-indicator="#slots-loading"
-      hx-trigger="click">
-      <span class="schedule__day-name">{{ day|date:"D" }}</span>
-      <span class="schedule__day-num">{{ day|date:"j" }}</span>
-    </button>
-    {% endfor %}
+  <div class="schedule__legend" aria-label="{% trans 'Legenda stavů' %}">
+    <div class="schedule__legend-item">
+      <span class="schedule__legend-dot" style="background:var(--tiffany)" aria-hidden="true"></span>
+      {% trans "Volné" %}
+    </div>
+    <div class="schedule__legend-item">
+      <span class="schedule__legend-dot" style="background:var(--text-muted)" aria-hidden="true"></span>
+      {% trans "Obsazeno" %}
+    </div>
   </div>
 
-  <!-- Therapist filter -->
-  {% if therapists %}
-  <div style="display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-bottom:var(--sp-xl)" role="group" aria-label="{% trans 'Filtrovat podle masérky' %}">
-    <button class="schedule__therapist-chip is-active"
-      hx-get="/api/schedule/slots/"
-      hx-vals='{"date": "{{ today|date:'Y-m-d' }}"}'
-      hx-target="#slots-container"
-      hx-trigger="click">{% trans "Všechny" %}</button>
+  <div class="schedule__therapists" id="schedule-filter" role="group" aria-label="{% trans 'Filtr masérky' %}">
+    <button type="button" class="schedule__therapist-chip is-active" data-filter="all">{% trans "Všechny masérky" %}</button>
     {% for therapist in therapists %}
-    <button class="schedule__therapist-chip"
-      hx-get="/api/schedule/slots/"
-      hx-vals='{"date": "{{ today|date:'Y-m-d' }}", "therapist": "{{ therapist.pk }}"}'
-      hx-target="#slots-container"
-      hx-trigger="click">{{ therapist.name }}</button>
+    <button type="button" class="schedule__therapist-chip" data-filter="{{ therapist.id }}">{{ therapist.name }}</button>
     {% endfor %}
   </div>
-  {% endif %}
 
-  <!-- Loading indicator -->
-  <div id="slots-loading" class="htmx-indicator" style="text-align:center;padding:var(--sp-xl);color:var(--text-muted)">
-    <span>{% trans "Načítám..." %}</span>
+  <div class="schedule__table-wrap">
+    <table class="sched-table">
+      <thead>
+        <tr>
+          <th style="width:72px" aria-hidden="true"></th>
+          {% for day in days_short %}
+          <th class="{% if forloop.counter0 == today_idx %}today-col{% endif %}">
+            {{ day }}
+            {% if forloop.counter0 == today_idx %}
+            <span class="sched-table__today-dot" aria-hidden="true"></span>
+            {% endif %}
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td class="time-cell">{{ row.time }}</td>
+          {% for cell in row.cells %}
+          <td class="day-cell{% if cell.is_today %} day-cell--today{% endif %}">
+            {% for slot in cell.slots %}
+            {% if slot.is_booked %}
+            <div class="slot-chip booked" data-therapist="{{ slot.therapist_id }}">
+              <div class="slot-chip-name">{{ slot.therapist_name }}</div>
+              <div class="slot-chip-svc">{{ slot.service_name }}</div>
+            </div>
+            {% else %}
+            <a href="/{{ LANG }}/kontakty/" class="slot-chip" data-therapist="{{ slot.therapist_id }}">
+              <div class="slot-chip-name">{{ slot.therapist_name }}</div>
+              <div class="slot-chip-svc">{{ slot.service_name }}</div>
+            </a>
+            {% endif %}
+            {% endfor %}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 
-  <!-- Slots container -->
-  <div id="slots-container"
-    hx-get="/api/schedule/slots/"
-    hx-vals='{"date": "{{ today|date:'Y-m-d' }}"}'
-    hx-trigger="load">
-    <p style="text-align:center;color:var(--text-muted)">{% trans "Načítám rozvrh..." %}</p>
+  <p class="schedule__hint">{% trans "Klikněte na volný slot pro rezervaci." %}</p>
+
+  <div class="schedule__hours-bar" role="complementary" aria-label="{% trans 'Otevírací doba' %}">
+    {{ opening_hours.weekdays }}: <span>{{ opening_hours.weekdays_hours }}</span>
+    &nbsp;|&nbsp;
+    {{ opening_hours.weekend }}: <span>{{ opening_hours.weekend_hours }}</span>
+    &nbsp;|&nbsp;
+    <a href="tel:{{ SITE_PHONE|cut:' ' }}" style="color:var(--tiffany)">{{ SITE_PHONE }}</a>
   </div>
 
-  <!-- Contact CTA -->
   <div class="glass" style="margin-top:var(--sp-3xl);padding:var(--sp-xl);border-radius:var(--radius-xl);text-align:center">
     <p style="margin-bottom:var(--sp-lg);color:var(--text-secondary)">
       {% trans "Nenašli jste vhodný termín? Kontaktujte nás přímo." %}
@@ -79,4 +95,29 @@
   </div>
 
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+  var bar = document.getElementById('schedule-filter');
+  if (!bar) return;
+
+  bar.addEventListener('click', function (event) {
+    var btn = event.target.closest('[data-filter]');
+    if (!btn) return;
+
+    var filter = btn.getAttribute('data-filter');
+    bar.querySelectorAll('.schedule__therapist-chip').forEach(function (el) {
+      el.classList.toggle('is-active', el === btn);
+    });
+
+    document.querySelectorAll('.slot-chip').forEach(function (chip) {
+      var therapistId = chip.getAttribute('data-therapist');
+      var show = filter === 'all' || therapistId === filter;
+      chip.style.display = show ? '' : 'none';
+    });
+  });
+})();
+</script>
 {% endblock %}

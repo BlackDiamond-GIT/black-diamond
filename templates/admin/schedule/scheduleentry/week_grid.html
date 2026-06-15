@@ -1,0 +1,150 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+<style>
+  .week-grid-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+  }
+  .week-grid {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+  }
+  .week-grid th,
+  .week-grid td {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    padding: 0.5rem;
+    vertical-align: top;
+  }
+  .week-grid th {
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .week-grid__therapist {
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 120px;
+  }
+  .week-grid__slot {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #0ABAB5;
+    text-decoration: none;
+  }
+  .week-grid__slot:hover { text-decoration: underline; }
+  .week-grid__add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    min-height: 28px;
+    color: #00827F;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .week-grid-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .week-grid-nav__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .week-grid-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  .week-grid-nav__week {
+    font-weight: 600;
+  }
+</style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="px-4 py-3">
+  <div class="container mx-auto">
+    <ul class="flex flex-wrap gap-2 text-sm text-base-500">
+      <li><a href="{% url 'admin:index' %}">{% trans "Home" %}</a></li>
+      <li>/</li>
+      <li><a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a></li>
+      <li>/</li>
+      <li><a href="{% url 'admin:schedule_scheduleentry_changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a></li>
+      <li>/</li>
+      <li>{% trans "Week schedule grid" %}</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="px-4 pb-8">
+  <div class="container mx-auto">
+    <h1 class="text-xl font-semibold mb-4">{% trans "Week schedule grid" %}</h1>
+
+    <nav class="week-grid-nav" aria-label="{% trans 'Week navigation' %}">
+      <div class="week-grid-nav__links">
+        <a href="?week={{ prev_week|date:'Y-m-d' }}">‹ {% trans "Previous week" %}</a>
+        <span class="week-grid-nav__week">
+          {{ week_start|date:"j M" }} – {{ week_end|date:"j M Y" }}
+        </span>
+        <a href="?week={{ next_week|date:'Y-m-d' }}">{% trans "Next week" %} ›</a>
+      </div>
+      <div class="week-grid-nav__links">
+        <a href="{{ add_week_url }}" style="background:#0ABAB5;color:#fff">{% trans "Add schedule for week" %}</a>
+        <a href="{{ changelist_url }}" style="border:1px solid rgba(148,163,184,.4)">{% trans "All entries" %}</a>
+      </div>
+    </nav>
+
+    <div class="week-grid-wrap">
+      <table class="week-grid">
+        <thead>
+          <tr>
+            <th scope="col">{% trans "Therapist" %}</th>
+            {% for day in days %}
+              <th scope="col">{{ day|date:"D" }}<br>{{ day|date:"j.m." }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+          <tr>
+            <th scope="row" class="week-grid__therapist">{{ row.therapist.name }}</th>
+            {% for cell in row.cells %}
+              <td>
+                {% for slot in cell.slots %}
+                  <a href="{{ slot.change_url }}" class="week-grid__slot">{{ slot.label }}</a>
+                {% empty %}
+                  <a href="{{ cell.add_url }}" class="week-grid__add" title="{% trans 'Add slot' %}">+</a>
+                {% endfor %}
+                {% if cell.slots %}
+                  <a href="{{ cell.add_url }}" class="week-grid__add" title="{% trans 'Add slot' %}">+</a>
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="8">{% trans "No active therapists." %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block object-tools-items %}
+  {{ block.super }}
+  {% if availability_url %}
+    <li>
+      <a href="{{ availability_url }}" class="addlink">{% trans "Availability grid" %}</a>
+    </li>
+  {% endif %}
+  {% if stats_url and can_view_confidential %}
+    <li>
+      <a href="{{ stats_url }}">{% trans "Booking stats" %}</a>
+    </li>
+  {% endif %}
+{% endblock %}

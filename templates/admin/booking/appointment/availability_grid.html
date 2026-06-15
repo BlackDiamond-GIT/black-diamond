@@ -1,0 +1,42 @@
+{% load i18n %}
+<table class="booking-availability-table" aria-label="{% trans 'Therapist availability' %}">
+  <thead>
+    <tr>
+      <th scope="col">{% trans "Therapist" %}</th>
+      <th scope="col">{% trans "Schedule slots" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+      <tr>
+        <th scope="row">{{ row.therapist.name }}</th>
+        <td>
+          {% if row.slots %}
+            <div class="flex flex-wrap gap-2">
+              {% for slot in row.slots %}
+                {% if slot.is_available %}
+                  <a class="booking-availability-slot booking-availability-slot--free"
+                     href="{{ add_url }}?therapist={{ row.therapist.pk }}&date={{ target_date|date:'Y-m-d' }}&time_start={{ slot.time_from|time:'H:i' }}{% if branch_id %}&branch={{ branch_id }}{% endif %}">
+                    {{ slot.time_from|time:"H:i" }}–{{ slot.time_to|time:"H:i" }} · {% trans "Free" %}
+                  </a>
+                {% else %}
+                  <a class="booking-availability-slot booking-availability-slot--busy"
+                     href="{% url 'admin:booking_appointment_change' slot.appointment.pk %}">
+                    {{ slot.time_from|time:"H:i" }}–{{ slot.time_to|time:"H:i" }} · {{ slot.appointment.get_status_display }}
+                    {% if can_view_confidential and slot.appointment.client_name %} · {{ slot.appointment.client_name }}{% endif %}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <span class="booking-availability-slot--empty">{% trans "No schedule for this day." %}</span>
+          {% endif %}
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="2">{% trans "No active therapists found for the selected branch." %}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

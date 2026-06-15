@@ -6,6 +6,7 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('admin/media-library/', include('apps.media_library.urls')),
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('rosetta/', include('rosetta.urls')),
@@ -18,6 +19,7 @@ urlpatterns = [
     path('masazistky/', include('apps.therapists.urls', namespace='therapists')),
     path('rozvrh/', include('apps.schedule.urls', namespace='schedule')),
     path('blog/', include('apps.blog.urls', namespace='blog')),
+    path('booking/', include('apps.booking.urls', namespace='booking')),
     prefix_default_language=True,
 )
 

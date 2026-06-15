@@ -1,0 +1,71 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+<div class="px-4 py-3">
+  <div class="container mx-auto">
+    <ul class="flex flex-wrap gap-2 text-sm text-base-500">
+      <li><a href="{% url 'admin:index' %}">{% trans "Home" %}</a></li>
+      <li>/</li>
+      <li><a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a></li>
+      <li>/</li>
+      <li><a href="{% url 'admin:booking_appointment_changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a></li>
+      <li>/</li>
+      <li>{% trans "Availability grid" %}</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="px-4 pb-8">
+  <div class="container mx-auto">
+    <h1 class="text-xl font-semibold mb-4">{% trans "Availability grid" %}</h1>
+
+    <form method="get" class="booking-availability-filters mb-6 flex flex-wrap gap-4 items-end"
+          hx-get="{% url 'admin:booking_appointment_availability' %}"
+          hx-target="#availability-grid"
+          hx-trigger="change from:select, change from:input"
+          hx-push-url="true">
+      <div>
+        <label for="availability-date" class="block text-sm font-medium mb-1">{% trans "Date" %}</label>
+        <input id="availability-date" type="date" name="date" value="{{ target_date|date:'Y-m-d' }}" class="border rounded-default px-3 py-2">
+      </div>
+      <div>
+        <label for="availability-branch" class="block text-sm font-medium mb-1">{% trans "Branch" %}</label>
+        <select id="availability-branch" name="branch" class="border rounded-default px-3 py-2 min-w-48">
+          <option value="">{% trans "All branches" %}</option>
+          {% for branch in branches %}
+            <option value="{{ branch.pk }}"{% if branch_id == branch.pk %} selected{% endif %}>{{ branch.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <a href="{% url 'admin:booking_appointment_add' %}" class="px-4 py-2 bg-primary-600 text-white rounded-default inline-block">
+          {% trans "New appointment" %}
+        </a>
+      </div>
+    </form>
+
+    <div id="availability-grid">
+      {% include "admin/booking/appointment/availability_grid.html" %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  .booking-availability-table { width: 100%; border-collapse: collapse; }
+  .booking-availability-table th,
+  .booking-availability-table td { border: 1px solid rgba(148, 163, 184, 0.35); padding: 0.5rem; vertical-align: top; }
+  .booking-availability-slot { display: block; border-radius: 0.375rem; padding: 0.35rem 0.5rem; font-size: 0.8125rem; text-decoration: none; }
+  .booking-availability-slot--free { background: rgba(34, 197, 94, 0.12); color: #166534; }
+  .booking-availability-slot--busy { background: rgba(239, 68, 68, 0.12); color: #991b1b; }
+  .booking-availability-slot--empty { color: #64748b; font-size: 0.8125rem; }
+  @media (max-width: 768px) {
+    .booking-availability-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+</style>
+{% endblock %}

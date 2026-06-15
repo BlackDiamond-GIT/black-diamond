@@ -2,12 +2,44 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+class Language(models.Model):
+    code = models.CharField(_('ISO code'), max_length=5, unique=True)
+    name = models.CharField(_('Name'), max_length=50)
+    flag_emoji = models.CharField(_('Flag emoji'), max_length=10, blank=True)
+    order = models.IntegerField(_('Order'), default=0)
+
+    class Meta:
+        verbose_name = _('Language')
+        verbose_name_plural = _('Languages')
+        ordering = ['order', 'name']
+
+    def __str__(self):
+        return f'{self.flag_emoji} {self.name}'.strip()
+
+
+class HashTag(models.Model):
+    slug = models.SlugField(unique=True)
+    label_cs = models.CharField(_('Label (CS)'), max_length=50)
+    label_en = models.CharField(_('Label (EN)'), max_length=50, blank=True)
+    label_ru = models.CharField(_('Label (RU)'), max_length=50, blank=True)
+    order = models.IntegerField(_('Order'), default=0)
+
+    class Meta:
+        verbose_name = _('HashTag')
+        verbose_name_plural = _('HashTags')
+        ordering = ['order', 'slug']
+
+    def __str__(self):
+        return self.label_cs or self.slug
+
+
 class Service(models.Model):
     slug = models.SlugField(unique=True, max_length=80)
+    icon = models.CharField(_('Icon ID (SVG sprite)'), max_length=50, blank=True)
 
     title_cs = models.CharField(max_length=120)
-    title_en = models.CharField(max_length=120)
-    title_ru = models.CharField(max_length=120)
+    title_en = models.CharField(max_length=120, blank=True)
+    title_ru = models.CharField(max_length=120, blank=True)
 
     short_cs = models.CharField(max_length=200, blank=True)
     short_en = models.CharField(max_length=200, blank=True)
@@ -17,13 +49,24 @@ class Service(models.Model):
     description_en = models.TextField(blank=True)
     description_ru = models.TextField(blank=True)
 
-    duration = models.PositiveIntegerField(
-        help_text=_('Тривалість у хвилинах'), default=60
-    )
-    price = models.DecimalField(max_digits=8, decimal_places=0)
+    meta_title_cs = models.CharField(_('Meta title (CS)'), max_length=200, blank=True)
+    meta_title_en = models.CharField(_('Meta title (EN)'), max_length=200, blank=True)
+    meta_title_ru = models.CharField(_('Meta title (RU)'), max_length=200, blank=True)
+    meta_description_cs = models.CharField(_('Meta description (CS)'), max_length=300, blank=True)
+    meta_description_en = models.CharField(_('Meta description (EN)'), max_length=300, blank=True)
+    meta_description_ru = models.CharField(_('Meta description (RU)'), max_length=300, blank=True)
+
+    hero_image_url = models.URLField(_('Hero image URL'), blank=True)
+    hero_image = models.ImageField(_('Hero image (local)'), upload_to='services/heroes/', blank=True)
     image = models.ImageField(upload_to='services/', blank=True)
 
+    duration = models.PositiveIntegerField(help_text=_('Тривалість у хвилинах'), default=60)
+    price = models.DecimalField(max_digits=8, decimal_places=0, default=0)
+    base_price_czk = models.PositiveIntegerField(_('Base price (CZK)'), default=0)
+    base_duration_min = models.PositiveSmallIntegerField(_('Base duration (min)'), default=60)
+
     is_active = models.BooleanField(default=True)
+    is_extra = models.BooleanField(_('Is extra service'), default=False)
     order = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
@@ -39,3 +82,43 @@ class Service(models.Model):
 
     def get_description(self, lang='cs'):
         return getattr(self, f'description_{lang}', self.description_cs) or self.description_cs
+
+
+class Price(models.Model):
+    service = models.ForeignKey(
+        Service, on_delete=models.CASCADE, related_name='prices', verbose_name=_('Service'),
+    )
+    duration_min = models.PositiveSmallIntegerField(_('Duration (minutes)'))
+    price_czk = models.PositiveIntegerField(_('Price (CZK)'))
+    is_highlighted = models.BooleanField(_('Highlight (best value)'), default=False)
+    note_cs = models.CharField(_('Note (CS)'), max_length=100, blank=True)
+    note_en = models.CharField(_('Note (EN)'), max_length=100, blank=True)
+
+    class Meta:
+        verbose_name = _('Price')
+        verbose_name_plural = _('Prices')
+        ordering = ['service__order', 'duration_min']
+        unique_together = [('service', 'duration_min')]
+
+    def __str__(self):
+        return f'{self.service} — {self.duration_min} min — {self.price_czk} Kč'
+
+
+class Extra(models.Model):
+    slug = models.SlugField(unique=True)
+    name_cs = models.CharField(_('Name (CS)'), max_length=100)
+    name_en = models.CharField(_('Name (EN)'), max_length=100, blank=True)
+    name_ru = models.CharField(_('Name (RU)'), max_length=100, blank=True)
+    price_czk = models.PositiveIntegerField(_('Price (CZK)'), default=0)
+    price_note_cs = models.CharField(_('Price note (CS)'), max_length=100, blank=True)
+    price_note_en = models.CharField(_('Price note (EN)'), max_length=100, blank=True)
+    order = models.IntegerField(_('Order'), default=0)
+    is_active = models.BooleanField(_('Active'), default=True)
+
+    class Meta:
+        verbose_name = _('Extra Service')
+        verbose_name_plural = _('Extra Services')
+        ordering = ['order', 'slug']
+
+    def __str__(self):
+        return self.name_cs or self.slug

@@ -1,0 +1,92 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+<div class="px-4 py-3">
+  <div class="container mx-auto">
+    <ul class="flex flex-wrap gap-2 text-sm text-base-500">
+      <li><a href="{% url 'admin:index' %}">{% trans "Home" %}</a></li>
+      <li>/</li>
+      <li><a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a></li>
+      <li>/</li>
+      <li><a href="{% url 'admin:booking_appointment_changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a></li>
+      <li>/</li>
+      <li>{% trans "Booking statistics" %}</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="px-4 pb-8">
+  <div class="container mx-auto">
+    <h1 class="text-xl font-semibold mb-4">{% trans "Booking statistics" %}</h1>
+
+    <form method="get" class="mb-6 flex flex-wrap gap-3 items-end">
+      <div>
+        <label for="stats-days" class="block text-sm font-medium mb-1">{% trans "Period (days)" %}</label>
+        <input id="stats-days" type="number" min="1" max="365" name="days" value="{{ days }}" class="border rounded-default px-3 py-2 w-28">
+      </div>
+      <button type="submit" class="px-4 py-2 bg-primary-600 text-white rounded-default">{% trans "Apply" %}</button>
+    </form>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+      <div class="border rounded-default p-4"><div class="text-sm text-base-500">{% trans "Total" %}</div><div class="text-2xl font-semibold">{{ stats.total }}</div></div>
+      <div class="border rounded-default p-4"><div class="text-sm text-base-500">{% trans "Pending" %}</div><div class="text-2xl font-semibold">{{ stats.pending }}</div></div>
+      <div class="border rounded-default p-4"><div class="text-sm text-base-500">{% trans "Confirmed" %}</div><div class="text-2xl font-semibold">{{ stats.confirmed }}</div></div>
+      <div class="border rounded-default p-4"><div class="text-sm text-base-500">{% trans "Done" %}</div><div class="text-2xl font-semibold">{{ stats.done }}</div></div>
+      <div class="border rounded-default p-4"><div class="text-sm text-base-500">{% trans "Cancelled" %}</div><div class="text-2xl font-semibold">{{ stats.cancelled }}</div></div>
+    </div>
+
+    <h2 class="text-lg font-semibold mb-3">{% trans "Top therapists" %}</h2>
+    <ul class="mb-8 list-disc pl-5">
+      {% for item in stats.top_therapists %}
+        <li>{{ item.therapist__name }} — {{ item.total }}</li>
+      {% empty %}
+        <li>{% trans "No data for this period." %}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="text-lg font-semibold mb-3">{% trans "Recent appointments" %}</h2>
+    <div class="overflow-x-auto">
+      <table class="booking-availability-table">
+        <thead>
+          <tr>
+            <th>{% trans "Date" %}</th>
+            <th>{% trans "Time" %}</th>
+            <th>{% trans "Therapist" %}</th>
+            <th>{% trans "Service" %}</th>
+            <th>{% trans "Status" %}</th>
+            <th>{% trans "Client" %}</th>
+            <th>{% trans "Phone" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for appt in stats.recent %}
+            <tr>
+              <td>{{ appt.date|date:"Y-m-d" }}</td>
+              <td>{{ appt.time_start|time:"H:i" }}</td>
+              <td>{{ appt.therapist.name }}</td>
+              <td>{{ appt.service }}</td>
+              <td>{{ appt.get_status_display }}</td>
+              <td>{{ appt.client_name|default:"—" }}</td>
+              <td>{{ appt.client_phone|default:"—" }}</td>
+            </tr>
+          {% empty %}
+            <tr><td colspan="7">{% trans "No appointments in this period." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  .booking-availability-table { width: 100%; border-collapse: collapse; }
+  .booking-availability-table th,
+  .booking-availability-table td { border: 1px solid rgba(148, 163, 184, 0.35); padding: 0.5rem; }
+</style>
+{% endblock %}

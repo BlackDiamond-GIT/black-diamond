@@ -2,6 +2,27 @@ import os
 
 from django.conf import settings
 from django.http.request import validate_host
+from django.utils import translation
+
+from .admin_locale import ADMIN_LOCALE, ADMIN_PATH_PREFIXES
+
+
+class AdminUkrainianMiddleware:
+    """Force Ukrainian only inside Django admin routes.
+
+    Public site keeps cs / en / ru via LocaleMiddleware and i18n URL prefixes.
+    ``uk`` is intentionally absent from ``LANGUAGES`` so visitors cannot switch to it.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        if request.path.startswith(ADMIN_PATH_PREFIXES):
+            with translation.override(ADMIN_LOCALE):
+                response = self.get_response(request)
+                return response
+        return self.get_response(request)
 
 
 class RenderHostMiddleware:

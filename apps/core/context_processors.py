@@ -26,12 +26,12 @@ def site_settings(request):
     try:
         site = SiteSettings.load()
         base.update({
-            'SITE_STREET_ADDRESS': site.street_address,
-            'SITE_POSTAL_CODE': site.postal_code,
-            'SITE_ADDRESS_LOCALITY': site.city,
-            'SITE_ADDRESS_COUNTRY': site.country_code,
-            'SITE_ADDRESS': site.full_address,
-            'SITE_MAPS_URL': f'https://maps.google.com/?q={site.maps_query}',
+            'SITE_STREET_ADDRESS': site.address.split(',')[0].strip() if site.address else 'Soukenická',
+            'SITE_POSTAL_CODE': '110 00',
+            'SITE_ADDRESS_LOCALITY': 'Praha 1',
+            'SITE_ADDRESS_COUNTRY': 'CZ',
+            'SITE_ADDRESS': site.address or site.full_address,
+            'SITE_MAPS_URL': site.map_url or f'https://maps.google.com/?q={site.maps_query}',
         })
     except DatabaseError:
         base.update(_fallback_address())
