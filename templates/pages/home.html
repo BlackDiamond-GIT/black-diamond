@@ -21,10 +21,10 @@
   "email": "{{ SITE_EMAIL }}",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Opletalová 30",
-    "postalCode": "110 00",
-    "addressLocality": "Praha 1",
-    "addressCountry": "CZ"
+    "streetAddress": "{{ SITE_STREET_ADDRESS|escapejs }}",
+    "postalCode": "{{ SITE_POSTAL_CODE|escapejs }}",
+    "addressLocality": "{{ SITE_ADDRESS_LOCALITY|escapejs }}",
+    "addressCountry": "{{ SITE_ADDRESS_COUNTRY|escapejs }}"
   },
   "openingHoursSpecification": [
     {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "10:00","closes": "21:00"},

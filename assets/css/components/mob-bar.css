@@ -1,7 +1,9 @@
 /* Black Diamond Spa — Mobile sticky bottom bar */
 
-body.has-mob-bar {
-  padding-bottom: calc(54px + env(safe-area-inset-bottom));
+@media (max-width: 1023px) {
+  body.has-mob-bar .footer {
+    padding-bottom: calc(54px + env(safe-area-inset-bottom));
+  }
 }
 
 .mob-bar {

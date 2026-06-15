@@ -3,7 +3,7 @@
 {% get_current_language as LANG %}
 
 {% block title %}{% trans "Kontakt — Masáž Praha 1" %} | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{% trans "Kontaktujte Black Diamond Spa Praha. Adresa: Opletalová 30, Praha 1. Telefon: +420 797 669 633. Po–Pá 10–21, So–Ne 10–19." %}{% endblock %}
+{% block meta_description %}{% trans "Kontaktujte Black Diamond Spa Praha. Adresa:" %} {{ SITE_ADDRESS }}. {% trans "Telefon:" %} {{ SITE_PHONE }}. {% trans "Po–Pá 10–21, So–Ne 10–19." %}{% endblock %}
 
 {% block content %}
 <section style="padding-block:clamp(3rem,8vw,5rem)">
@@ -37,8 +37,8 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--tiffany)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
               <address style="font-style:normal" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                 <strong style="color:var(--text-primary);display:block;margin-bottom:4px">{% trans "Adresa" %}</strong>
-                <span itemprop="streetAddress">Opletalová 30</span><br>
-                <span itemprop="postalCode">110 00</span> <span itemprop="addressLocality">Praha 1</span><br>
+                <span itemprop="streetAddress">{{ SITE_STREET_ADDRESS }}</span><br>
+                <span itemprop="postalCode">{{ SITE_POSTAL_CODE }}</span> <span itemprop="addressLocality">{{ SITE_ADDRESS_LOCALITY }}</span><br>
                 <span itemprop="addressCountry">{% trans "Česká republika" %}</span>
               </address>
             </div>
@@ -80,8 +80,8 @@
 
         <div style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--glass-border);background:var(--bg-secondary);height:240px;display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--sp-xl)">
           <div>
-            <p style="color:var(--text-muted);font-size:var(--fs-sm);margin-bottom:var(--sp-md)">Opletalová 30, Praha 1</p>
-            <a href="https://maps.google.com/?q=Opletalová+30,+110+00+Praha+1" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">{% trans "Otevřít v Google Maps" %}</a>
+            <p style="color:var(--text-muted);font-size:var(--fs-sm);margin-bottom:var(--sp-md)">{{ SITE_STREET_ADDRESS }}, {{ SITE_ADDRESS_LOCALITY }}</p>
+            <a href="{{ SITE_MAPS_URL }}" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">{% trans "Otevřít v Google Maps" %}</a>
           </div>
         </div>
       </div>
