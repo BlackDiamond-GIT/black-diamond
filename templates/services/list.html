@@ -28,7 +28,7 @@
           <span class="tag tag--duration">{{ service.duration }} min</span>
           <span class="tag tag--price">{{ service.price|floatformat:0 }}&nbsp;Kč</span>
         </div>
-        <a href="/{{ PAGE_LANG }}/masaze/{{ service.slug }}/" class="btn btn--ghost">{% trans "Detail masáže" %}</a>
+        <a href="{% url 'services:detail' service.slug %}" class="btn btn--ghost">{% trans "Detail masáže" %}</a>
       </div>
     </article>
     {% empty %}
@@ -37,7 +37,7 @@
   </div>
 
   <div style="text-align:center;margin-top:var(--sp-3xl)">
-    <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--lg">{% trans "Rezervovat masáž" %}</a>
+    <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{% trans "Rezervovat masáž" %}</a>
   </div>
 </div>
 {% endblock %}

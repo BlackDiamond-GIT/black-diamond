@@ -8,9 +8,9 @@
 
   <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
     <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
-      <li><a href="/{{ PAGE_LANG }}/">{% trans "Domů" %}</a></li>
+      <li><a href="{% url 'pages:home' %}">{% trans "Domů" %}</a></li>
       <li aria-hidden="true">·</li>
-      <li><a href="/{{ PAGE_LANG }}/masazistky/">{% trans "Masérky" %}</a></li>
+      <li><a href="{% url 'therapists:list' %}">{% trans "Masérky" %}</a></li>
       <li aria-hidden="true">·</li>
       <li aria-current="page">{{ therapist.name }}</li>
     </ol>
@@ -44,8 +44,8 @@
         {% endif %}
 
         <div style="margin-top:var(--sp-2xl);display:flex;flex-wrap:wrap;gap:var(--sp-md)">
-          <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat u {{ therapist.name }}" %}</a>
-          <a href="/{{ PAGE_LANG }}/masazistky/" class="btn btn--secondary btn--lg">{% trans "Všechny masérky" %}</a>
+          <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat u {{ therapist.name }}" %}</a>
+          <a href="{% url 'therapists:list' %}" class="btn btn--secondary btn--lg">{% trans "Všechny masérky" %}</a>
         </div>
       </div>
     </div>

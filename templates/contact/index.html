@@ -9,7 +9,7 @@
 
     <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-2xl)">
       <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;font-size:var(--fs-sm);color:var(--text-muted)">
-        <li><a href="/{{ PAGE_LANG }}/" style="color:var(--text-muted)">{{ SITE_NAME }}</a></li>
+        <li><a href="{% url 'pages:home' %}" style="color:var(--text-muted)">{{ SITE_NAME }}</a></li>
         <li aria-hidden="true"> / </li>
         <li aria-current="page" style="color:var(--tiffany)">{% trans "Kontakt" %}</li>
       </ol>
@@ -69,7 +69,7 @@
             <p style="color:var(--tiffany);font-weight:600;font-size:var(--fs-md);margin:0" itemprop="openingHours">{{ SITE_OPENING_HOURS }}</p>
           </div>
           <div style="margin-top:var(--sp-xl)">
-            <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--full shimmer">{% trans "Zobrazit rozvrh & rezervovat" %}</a>
+            <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--full shimmer">{% trans "Zobrazit rozvrh & rezervovat" %}</a>
           </div>
         </div>
 
@@ -134,7 +134,7 @@
 
             <p style="font-size:var(--fs-xs);color:var(--text-muted);margin-top:var(--sp-md);text-align:center">
               {% trans "Odesláním souhlasíte se zpracováním osobních údajů dle" %}
-              <a href="/{{ PAGE_LANG }}/soukromi/">{% trans "Zásad soukromí" %}</a>.
+              <a href="{% url 'pages:privacy' %}">{% trans "Zásad soukromí" %}</a>.
             </p>
           </form>
         </div>

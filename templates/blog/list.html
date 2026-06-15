@@ -15,7 +15,7 @@
   <div class="grid-3" role="list">
     {% for article in articles %}
     <article class="blog-card" role="listitem" data-reveal itemscope itemtype="https://schema.org/Article">
-      <a href="/{{ PAGE_LANG }}/blog/{{ article.slug }}/" class="blog-card__image">
+      <a href="{% url 'blog:detail' article.slug %}" class="blog-card__image">
         <img src="{% asset_img 'blog' article.slug %}" alt="{{ article|trans_field:'title' }}"
           width="640" height="360" loading="lazy" decoding="async" itemprop="image">
       </a>
@@ -24,9 +24,9 @@
           {{ article.published_at|date:"j. n. Y" }}
         </time>
         <h2 class="blog-card__title" itemprop="headline">
-          <a href="/{{ PAGE_LANG }}/blog/{{ article.slug }}/">{{ article|trans_field:"title" }}</a>
+          <a href="{% url 'blog:detail' article.slug %}">{{ article|trans_field:"title" }}</a>
         </h2>
-        <a href="/{{ PAGE_LANG }}/blog/{{ article.slug }}/" class="btn btn--ghost btn--sm" style="margin-top:var(--sp-md)">
+        <a href="{% url 'blog:detail' article.slug %}" class="btn btn--ghost btn--sm" style="margin-top:var(--sp-md)">
           {% trans "Číst více" %}
         </a>
       </div>

@@ -16,7 +16,7 @@
 
   <div class="grid-4" role="list">
     {% for therapist in therapists %}
-    <a href="/{{ PAGE_LANG }}/masazistky/{{ therapist.slug }}/" class="masseuse-card" role="listitem" data-reveal
+    <a href="{% url 'therapists:detail' therapist.slug %}" class="masseuse-card" role="listitem" data-reveal
       itemscope itemtype="https://schema.org/Person">
       <div class="masseuse-card__portrait">
         <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }} Praha"

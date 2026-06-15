@@ -6,6 +6,30 @@
 (function () {
   'use strict';
 
+  // Fix malformed internal links (//masaze/... or masaze/... without lang prefix).
+  const SITE_SECTIONS = /^(masaze|masazistky|rozvrh|blog|kontakty|o-nas|pravidla-salonu|soukromi)(\/|$)/;
+  const pageLang = (document.documentElement.lang || 'cs').split('-')[0];
+
+  function normalizeInternalHref(href) {
+    if (!href || /^(https?:|mailto:|tel:|#|\/static\/|\/media\/|\/admin\/|\/api\/)/.test(href)) {
+      return href;
+    }
+    if (href.startsWith('//') && SITE_SECTIONS.test(href.slice(2))) {
+      return `/${pageLang}/${href.slice(2)}`.replace(/\/{2,}/g, '/');
+    }
+    if (!href.startsWith('/') && SITE_SECTIONS.test(href)) {
+      return `/${pageLang}/${href}`.replace(/\/{2,}/g, '/');
+    }
+    return href;
+  }
+
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const fixed = normalizeInternalHref(link.getAttribute('href'));
+    if (fixed && fixed !== link.getAttribute('href')) {
+      link.setAttribute('href', fixed);
+    }
+  });
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
