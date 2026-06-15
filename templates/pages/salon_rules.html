@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{% trans "Pravidla salonu" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Pravidla a podmínky návštěvy Black Diamond Spa Praha. Věk 18+. Zákaznická etiketa a provozní řád." %}{% endblock %}
 
@@ -10,7 +8,7 @@
 
   <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
     <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
-      <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
+      <li><a href="/{{ PAGE_LANG }}/">{% trans "Domů" %}</a></li>
       <li aria-hidden="true"> / </li>
       <li aria-current="page" style="color:var(--tiffany)">{% trans "Pravidla salonu" %}</li>
     </ol>

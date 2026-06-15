@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{{ service|trans_field:"short" }}{% endblock %}
 
@@ -10,9 +8,9 @@
 
   <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-2xl)">
     <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;font-size:var(--fs-sm);color:var(--text-muted)">
-      <li><a href="/{{ LANG }}/">{{ SITE_NAME }}</a></li>
+      <li><a href="/{{ PAGE_LANG }}/">{{ SITE_NAME }}</a></li>
       <li aria-hidden="true" style="color:var(--divider)"> / </li>
-      <li><a href="/{{ LANG }}/masaze/">{% trans "Masáže" %}</a></li>
+      <li><a href="/{{ PAGE_LANG }}/masaze/">{% trans "Masáže" %}</a></li>
       <li aria-hidden="true" style="color:var(--divider)"> / </li>
       <li aria-current="page" style="color:var(--tiffany)">{{ service|trans_field:"title" }}</li>
     </ol>
@@ -48,7 +46,7 @@
         </div>
       </div>
 
-      <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat tuto masáž" %}</a>
+      <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat tuto masáž" %}</a>
     </div>
   </div>
 
@@ -81,7 +79,7 @@
         {% endblocktrans %}
       </p>
       <div class="service-detail__actions">
-        <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary shimmer">{% trans "Rezervovat online" %}</a>
+        <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary shimmer">{% trans "Rezervovat online" %}</a>
         <a href="tel:{{ SITE_PHONE|cut:' ' }}" class="btn btn--secondary">{{ SITE_PHONE }}</a>
       </div>
     </section>
@@ -115,9 +113,9 @@
       {% trans "Další masáže" %}
     </h2>
     <div class="service-detail__links">
-      <a href="/{{ LANG }}/masaze/" class="btn btn--secondary">{% trans "Všechny masáže" %}</a>
-      <a href="/{{ LANG }}/masazistky/" class="btn btn--ghost">{% trans "Naše masérky" %}</a>
-      <a href="/{{ LANG }}/rozvrh/" class="btn btn--ghost">{% trans "Zobrazit rozvrh" %}</a>
+      <a href="/{{ PAGE_LANG }}/masaze/" class="btn btn--secondary">{% trans "Všechny masáže" %}</a>
+      <a href="/{{ PAGE_LANG }}/masazistky/" class="btn btn--ghost">{% trans "Naše masérky" %}</a>
+      <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--ghost">{% trans "Zobrazit rozvrh" %}</a>
     </div>
   </section>
 

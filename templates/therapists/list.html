@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{% trans "Naše masérky" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Poznajte naše certifikované masérky — Julia, Diana, Laura, Vanessa, Ella, Mira. Každá s vlastní specializací." %}{% endblock %}
 
@@ -18,7 +16,7 @@
 
   <div class="grid-4" role="list">
     {% for therapist in therapists %}
-    <a href="/{{ LANG }}/masazistky/{{ therapist.slug }}/" class="masseuse-card" role="listitem" data-reveal
+    <a href="/{{ PAGE_LANG }}/masazistky/{{ therapist.slug }}/" class="masseuse-card" role="listitem" data-reveal
       itemscope itemtype="https://schema.org/Person">
       <div class="masseuse-card__portrait">
         <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — {{ SITE_NAME }} Praha"

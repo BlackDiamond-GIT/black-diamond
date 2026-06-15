@@ -1,12 +1,10 @@
 {% load i18n bd_tags %}
-{% get_current_language as LANG %}
-
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
 
       <div class="footer__brand">
-        <a href="/{{ LANG }}/" class="footer__logo" aria-label="{{ SITE_NAME }}">
+        <a href="/{{ PAGE_LANG }}/" class="footer__logo" aria-label="{{ SITE_NAME }}">
           <span>Black Diamond</span>
         </a>
         <p class="footer__tagline">{% trans "Prémiový relaxační masážní salon v centru Prahy." %}</p>
@@ -74,21 +72,21 @@
       <div>
         <h3 class="footer__col-title">{% trans "Stránky" %}</h3>
         <ul class="footer__links">
-          <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
-          <li><a href="/{{ LANG }}/masazistky/">{% trans "Naše masérky" %}</a></li>
-          <li><a href="/{{ LANG }}/masaze/">{% trans "Masáže a ceny" %}</a></li>
-          <li><a href="/{{ LANG }}/rozvrh/">{% trans "Rozvrh" %}</a></li>
-          <li><a href="/{{ LANG }}/blog/">{% trans "Blog" %}</a></li>
-          <li><a href="/{{ LANG }}/kontakty/">{% trans "Kontakt" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/">{% trans "Domů" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/masazistky/">{% trans "Naše masérky" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/masaze/">{% trans "Masáže a ceny" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/rozvrh/">{% trans "Rozvrh" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/blog/">{% trans "Blog" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/kontakty/">{% trans "Kontakt" %}</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="footer__col-title">{% trans "Salon" %}</h3>
         <ul class="footer__links">
-          <li><a href="/{{ LANG }}/o-nas/">{% trans "O nás" %}</a></li>
-          <li><a href="/{{ LANG }}/pravidla-salonu/">{% trans "Pravidla salonu" %}</a></li>
-          <li><a href="/{{ LANG }}/soukromi/">{% trans "Soukromí & GDPR" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/o-nas/">{% trans "O nás" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/pravidla-salonu/">{% trans "Pravidla salonu" %}</a></li>
+          <li><a href="/{{ PAGE_LANG }}/soukromi/">{% trans "Soukromí & GDPR" %}</a></li>
         </ul>
       </div>
     </div>
@@ -102,9 +100,9 @@
     <div class="footer__bottom">
       <p class="footer__copy">© <span id="footer-year">2026</span> {{ SITE_NAME }}. {% trans "Všechna práva vyhrazena." %}</p>
       <ul class="footer__legal-links">
-        <li><a href="/{{ LANG }}/soukromi/">{% trans "Soukromí" %}</a></li>
-        <li><a href="/{{ LANG }}/pravidla-salonu/">{% trans "Pravidla" %}</a></li>
-        <li><a href="/{{ LANG }}/o-nas/">{% trans "O nás" %}</a></li>
+        <li><a href="/{{ PAGE_LANG }}/soukromi/">{% trans "Soukromí" %}</a></li>
+        <li><a href="/{{ PAGE_LANG }}/pravidla-salonu/">{% trans "Pravidla" %}</a></li>
+        <li><a href="/{{ PAGE_LANG }}/o-nas/">{% trans "O nás" %}</a></li>
       </ul>
     </div>
   </div>

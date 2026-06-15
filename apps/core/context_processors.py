@@ -6,6 +6,11 @@ from .models import SiteSettings
 from .opening_hours import DEFAULT_HOURS, get_opening_hours_display
 
 
+def _page_lang(request) -> str:
+    code = get_language() or getattr(request, 'LANGUAGE_CODE', None) or 'cs'
+    return code.split('-')[0].lower()
+
+
 def _fallback_address():
     return {
         'SITE_STREET_ADDRESS': 'Soukenická',
@@ -18,12 +23,13 @@ def _fallback_address():
 
 
 def site_settings(request):
-    lang = (get_language() or 'cs').split('-')[0].lower()
+    lang = _page_lang(request)
     base = {
         'SITE_NAME': settings.SITE_NAME,
         'SITE_URL': settings.SITE_URL,
         'SITE_PHONE': settings.SITE_PHONE,
         'SITE_EMAIL': settings.SITE_EMAIL,
+        'PAGE_LANG': lang,
         'SITE_OPENING_HOURS': DEFAULT_HOURS.get(lang, DEFAULT_HOURS['cs']),
         'SITE_INSTAGRAM_URL': 'https://instagram.com/blackdiamondspa',
         'SITE_TELEGRAM_URL': '',

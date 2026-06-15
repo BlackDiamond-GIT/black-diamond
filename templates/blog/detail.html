@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{{ article|trans_field:"title" }} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{{ article|trans_field:"meta_description" }}{% endblock %}
 
@@ -23,9 +21,9 @@
 
   <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
     <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
-      <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
+      <li><a href="/{{ PAGE_LANG }}/">{% trans "Domů" %}</a></li>
       <li aria-hidden="true">·</li>
-      <li><a href="/{{ LANG }}/blog/">Blog</a></li>
+      <li><a href="/{{ PAGE_LANG }}/blog/">Blog</a></li>
       <li aria-hidden="true">·</li>
       <li aria-current="page">{{ article|trans_field:"title"|truncatewords:6 }}</li>
     </ol>
@@ -59,7 +57,7 @@
       <article class="blog-card" role="listitem">
         <div class="blog-card__body">
           <time class="blog-card__date" datetime="{{ a.published_at|date:'Y-m-d' }}">{{ a.published_at|date:"j. n. Y" }}</time>
-          <h3 class="blog-card__title"><a href="/{{ LANG }}/blog/{{ a.slug }}/">{{ a|trans_field:"title" }}</a></h3>
+          <h3 class="blog-card__title"><a href="/{{ PAGE_LANG }}/blog/{{ a.slug }}/">{{ a|trans_field:"title" }}</a></h3>
         </div>
       </article>
       {% endfor %}

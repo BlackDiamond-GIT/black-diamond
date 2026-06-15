@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{% trans "O nás" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Black Diamond Spa — prémiový masážní salon v centru Prahy. Naše filozofie, tým a příběh." %}{% endblock %}
 
@@ -10,7 +8,7 @@
 
   <nav aria-label="{% trans 'Breadcrumb' %}" style="margin-bottom:var(--sp-xl)">
     <ol style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);list-style:none;color:var(--text-muted);font-size:var(--fs-sm)">
-      <li><a href="/{{ LANG }}/">{% trans "Domů" %}</a></li>
+      <li><a href="/{{ PAGE_LANG }}/">{% trans "Domů" %}</a></li>
       <li aria-hidden="true"> / </li>
       <li aria-current="page" style="color:var(--tiffany)">{% trans "O nás" %}</li>
     </ol>
@@ -42,8 +40,8 @@
   </div>
 
   <div style="display:flex;flex-wrap:wrap;gap:var(--sp-md)">
-    <a href="/{{ LANG }}/masazistky/" class="btn btn--primary btn--lg shimmer">{% trans "Poznat náš tým" %}</a>
-    <a href="/{{ LANG }}/kontakty/" class="btn btn--secondary btn--lg">{% trans "Kontaktovat nás" %}</a>
+    <a href="/{{ PAGE_LANG }}/masazistky/" class="btn btn--primary btn--lg shimmer">{% trans "Poznat náš tým" %}</a>
+    <a href="/{{ PAGE_LANG }}/kontakty/" class="btn btn--secondary btn--lg">{% trans "Kontaktovat nás" %}</a>
   </div>
 
 </div>

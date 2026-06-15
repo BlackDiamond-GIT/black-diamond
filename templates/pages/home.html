@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{{ home.hero_sub }}{% endblock %}
 {% block og_title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
@@ -46,8 +44,8 @@
       <h1 class="hero2__title">{{ home.hero_title|safe }}</h1>
       <p class="hero2__sub">{{ home.hero_sub }}</p>
       <div class="hero2__actions">
-        <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg">{{ home.hero_cta1 }}</a>
-        <a href="/{{ LANG }}/masaze/" class="btn btn--ghost btn--lg">{{ home.hero_cta2 }}</a>
+        <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--lg">{{ home.hero_cta1 }}</a>
+        <a href="/{{ PAGE_LANG }}/masaze/" class="btn btn--ghost btn--lg">{{ home.hero_cta2 }}</a>
       </div>
     </div>
   </section>
@@ -72,7 +70,7 @@
               <span class="tag tag--duration">{{ service.duration }} min</span>
               <span class="tag tag--price">{{ service.price|floatformat:0 }}&nbsp;Kč</span>
             </div>
-            <a href="/{{ LANG }}/masaze/{{ service.slug }}/" class="btn btn--ghost">{{ home.svc_btn }}</a>
+            <a href="/{{ PAGE_LANG }}/masaze/{{ service.slug }}/" class="btn btn--ghost">{{ home.svc_btn }}</a>
           </div>
         </article>
         {% empty %}
@@ -80,7 +78,7 @@
         {% endfor %}
       </div>
       <p class="sec__more">
-        <a href="/{{ LANG }}/masaze/" class="btn btn--secondary btn--lg">{{ home.all_svc }}</a>
+        <a href="/{{ PAGE_LANG }}/masaze/" class="btn btn--secondary btn--lg">{{ home.all_svc }}</a>
       </p>
     </div>
   </section>
@@ -115,7 +113,7 @@
         {% endfor %}
       </div>
       <p class="sec__more">
-        <a href="/{{ LANG }}/masazistky/" class="btn btn--secondary btn--lg">{{ home.all_team }}</a>
+        <a href="/{{ PAGE_LANG }}/masazistky/" class="btn btn--secondary btn--lg">{{ home.all_team }}</a>
       </p>
     </div>
   </section>
@@ -176,8 +174,8 @@
       <h2 class="sec__title cta-sec__title" id="cta-hd">{{ home.cta_title|safe }}</h2>
       <p class="sec__sub cta-sec__sub">{{ home.cta_sub }}</p>
       <div class="cta-sec__actions">
-        <a href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg">{{ home.cta_btn1 }}</a>
-        <a href="/{{ LANG }}/kontakty/" class="btn btn--ghost btn--lg">{{ home.cta_btn2 }}</a>
+        <a href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--lg">{{ home.cta_btn1 }}</a>
+        <a href="/{{ PAGE_LANG }}/kontakty/" class="btn btn--ghost btn--lg">{{ home.cta_btn2 }}</a>
       </div>
     </div>
   </section>
@@ -197,7 +195,7 @@
         <p id="modal-bio" class="th-modal__bio"></p>
         <p class="th-modal__svcs-title">{{ home.modal_svc_title }}</p>
         <ul id="modal-svcs" class="th-modal__svcs"></ul>
-        <a id="modal-cta" href="/{{ LANG }}/rozvrh/" class="btn btn--primary btn--lg">{{ home.modal_reserve }}</a>
+        <a id="modal-cta" href="/{{ PAGE_LANG }}/rozvrh/" class="btn btn--primary btn--lg">{{ home.modal_reserve }}</a>
       </div>
     </div>
   </div>

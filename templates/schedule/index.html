@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load i18n bd_tags %}
-{% get_current_language as LANG %}
-
 {% block title %}{% trans "Rozvrh masáží" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Aktuální dostupnost. Klikněte na volný slot pro rezervaci." %}{% endblock %}
 
@@ -60,7 +58,7 @@
               <div class="slot-chip-svc">{{ slot.service_name }}</div>
             </div>
             {% else %}
-            <a href="/{{ LANG }}/kontakty/" class="slot-chip" data-therapist="{{ slot.therapist_id }}">
+            <a href="/{{ PAGE_LANG }}/kontakty/" class="slot-chip" data-therapist="{{ slot.therapist_id }}">
               <div class="slot-chip-name">{{ slot.therapist_name }}</div>
               <div class="slot-chip-svc">{{ slot.service_name }}</div>
             </a>
@@ -92,7 +90,7 @@
     </p>
     <div style="display:flex;flex-wrap:wrap;gap:var(--sp-md);justify-content:center">
       <a href="tel:{{ SITE_PHONE|cut:' ' }}" class="btn btn--primary btn--lg">{{ SITE_PHONE }}</a>
-      <a href="/{{ LANG }}/kontakty/" class="btn btn--secondary btn--lg">{% trans "Napsat zprávu" %}</a>
+      <a href="/{{ PAGE_LANG }}/kontakty/" class="btn btn--secondary btn--lg">{% trans "Napsat zprávu" %}</a>
     </div>
   </div>
 

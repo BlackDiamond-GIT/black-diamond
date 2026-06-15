@@ -1,9 +1,7 @@
 {% load i18n %}
-{% get_current_language as LANG %}
-
 <nav class="mob-bar" aria-label="{% trans 'Rychlá navigace' %}">
-  <a href="/{{ LANG }}/masaze/" class="mob-bar__item{% if '/masaze/' in request.path and 'masazistky' not in request.path %} is-active{% endif %}"{% if '/masaze/' in request.path and 'masazistky' not in request.path %} aria-current="page"{% endif %}>{% trans "Masáže" %}</a>
-  <a href="/{{ LANG }}/masazistky/" class="mob-bar__item{% if 'masazistky' in request.path %} is-active{% endif %}"{% if 'masazistky' in request.path %} aria-current="page"{% endif %}>{% trans "Masérky" %}</a>
-  <a href="/{{ LANG }}/masaze/" class="mob-bar__item">{% trans "Ceny" %}</a>
-  <a href="/{{ LANG }}/rozvrh/" class="mob-bar__item mob-bar__item--cta{% if 'rozvrh' in request.path %} is-active{% endif %}"{% if 'rozvrh' in request.path %} aria-current="page"{% endif %}>{% trans "Rezervovat" %}</a>
+  <a href="/{{ PAGE_LANG }}/masaze/" class="mob-bar__item{% if '/masaze/' in request.path and 'masazistky' not in request.path %} is-active{% endif %}"{% if '/masaze/' in request.path and 'masazistky' not in request.path %} aria-current="page"{% endif %}>{% trans "Masáže" %}</a>
+  <a href="/{{ PAGE_LANG }}/masazistky/" class="mob-bar__item{% if 'masazistky' in request.path %} is-active{% endif %}"{% if 'masazistky' in request.path %} aria-current="page"{% endif %}>{% trans "Masérky" %}</a>
+  <a href="/{{ PAGE_LANG }}/masaze/" class="mob-bar__item">{% trans "Ceny" %}</a>
+  <a href="/{{ PAGE_LANG }}/rozvrh/" class="mob-bar__item mob-bar__item--cta{% if 'rozvrh' in request.path %} is-active{% endif %}"{% if 'rozvrh' in request.path %} aria-current="page"{% endif %}>{% trans "Rezervovat" %}</a>
 </nav>
