@@ -150,6 +150,30 @@ UNFOLD = {
     'SITE_HEADER': 'Black Diamond Spa',
     'SITE_URL': '/',
     'SITE_SYMBOL': 'diamond',
+    'SITE_FAVICONS': [
+        {
+            'rel': 'icon',
+            'type': 'image/svg+xml',
+            'href': lambda request: static('img/icons/favicon.svg'),
+            'sizes': 'any',
+        },
+        {
+            'rel': 'icon',
+            'type': 'image/png',
+            'href': lambda request: static('img/icons/favicon-32.png'),
+            'sizes': '32x32',
+        },
+        {
+            'rel': 'icon',
+            'href': lambda request: static('img/icons/favicon.ico'),
+            'sizes': '48x48',
+        },
+        {
+            'rel': 'apple-touch-icon',
+            'href': lambda request: static('img/icons/apple-touch-icon.png'),
+            'sizes': '180x180',
+        },
+    ],
     'SHOW_HISTORY': True,
     'THEME': 'dark',
     'COLORS': {

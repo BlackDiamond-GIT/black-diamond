@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% load i18n static unfold %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+    {% include "unfold/helpers/site_branding.html" %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+<meta name="theme-color" content="#1a1d21">
+<link rel="icon" href="{% static 'img/icons/favicon.svg' %}" type="image/svg+xml" sizes="any">
+<link rel="icon" href="{% static 'img/icons/favicon-32.png' %}" type="image/png" sizes="32x32">
+<link rel="icon" href="{% static 'img/icons/favicon.ico' %}" sizes="48x48">
+<link rel="apple-touch-icon" href="{% static 'img/icons/apple-touch-icon.png' %}" sizes="180x180">
+{% endblock %}

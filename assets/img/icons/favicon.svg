@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Black Diamond Spa">
+  <rect width="32" height="32" rx="6" fill="#1a1d21"/>
+  <polygon points="16,4 25.5,16 16,28 6.5,16" fill="#0ABAB5"/>
+  <polygon points="16,9 21.5,16 16,23 10.5,16" fill="#81D8D0"/>
+  <line x1="16" y1="4" x2="16" y2="28" stroke="#D4AF37" stroke-width="0.6"/>
+  <line x1="6.5" y1="16" x2="25.5" y2="16" stroke="#D4AF37" stroke-width="0.6"/>
+  <text x="5.5" y="18.5" font-family="Georgia, 'Times New Roman', serif" font-size="8.5" font-weight="700" fill="#F5F0EB">B</text>
+  <text x="23.5" y="18.5" font-family="Georgia, 'Times New Roman', serif" font-size="8.5" font-weight="700" fill="#F5F0EB" text-anchor="middle">D</text>
+</svg>

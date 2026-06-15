@@ -5,7 +5,11 @@ from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include
 from django.views.generic import RedirectView
 
+from apps.core.views_favicon import favicon
+
 urlpatterns = [
+    path('favicon.ico', favicon, name='favicon'),
+    path('admin/favicon.ico', favicon, name='admin_favicon'),
     path('admin/media-library/', include('apps.media_library.urls')),
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
