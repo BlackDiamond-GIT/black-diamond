@@ -115,7 +115,7 @@
               <select id="contact-service" name="service">
                 <option value="">— {% trans "Vyberte masáž" %} —</option>
                 {% for service in services %}
-                <option value="{{ service.slug }}">{{ service|trans_field:"title" }} ({{ service.duration }} min / {{ service.price|floatformat:0 }}&nbsp;Kč)</option>
+                <option value="{{ service.slug }}">{{ service|trans_field:"title" }} ({{ service.duration }} min / {% price_plain_tag service.price %})</option>
                 {% endfor %}
               </select>
             </div>

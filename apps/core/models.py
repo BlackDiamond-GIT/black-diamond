@@ -65,10 +65,10 @@ class SiteSettings(models.Model):
     default_meta_description = models.CharField(_('Default meta description'), max_length=300, blank=True)
     og_image_url = models.URLField(_('OG image URL'), blank=True)
     require_age_confirmation = models.BooleanField(_('Require age confirmation'), default=True)
-    eur_rate = models.DecimalField(_('EUR rate (1 EUR = X CZK)'), max_digits=8, decimal_places=4, default=25.0)
-    usd_rate = models.DecimalField(_('USD rate (1 USD = X CZK)'), max_digits=8, decimal_places=4, default=23.0)
+    eur_rate = models.DecimalField(_('EUR rate (1 EUR = X CZK)'), max_digits=8, decimal_places=4, default=22.09)
+    usd_rate = models.DecimalField(_('USD rate (1 USD = X CZK)'), max_digits=8, decimal_places=4, default=20.0)
     show_eur = models.BooleanField(_('Show prices in EUR'), default=True)
-    show_usd = models.BooleanField(_('Show prices in USD'), default=False)
+    show_usd = models.BooleanField(_('Show prices in USD'), default=True)
 
     class Meta:
         verbose_name = _('Site Settings')

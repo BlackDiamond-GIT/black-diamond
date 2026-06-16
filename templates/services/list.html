@@ -26,7 +26,7 @@
         <p class="service-card__description">{{ service|trans_field:"short" }}</p>
         <div class="service-card__meta">
           <span class="tag tag--duration">{{ service.duration }} min</span>
-          <span class="tag tag--price">{{ service.price|floatformat:0 }}&nbsp;Kč</span>
+          <span class="tag tag--price">{% price_multi service.price compact=True %}</span>
         </div>
         <a href="{% url 'services:detail' service.slug %}" class="btn btn--ghost">{% trans "Detail masáže" %}</a>
       </div>

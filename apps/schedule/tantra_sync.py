@@ -10,7 +10,7 @@ from dataclasses import dataclass
 
 from django.db import transaction
 
-from apps.branches.models import Branch
+from apps.schedule.addresses import WORK_ADDRESS
 from apps.schedule.models import ScheduleEntry
 from apps.schedule.shifts import infer_shift_type
 from apps.schedule.week import MAX_WEEKS, ROLLING_DAYS, business_date
@@ -95,18 +95,6 @@ def parse_schedule_html(html: str) -> list[ParsedEntry]:
     return entries
 
 
-def _branch_map() -> dict[str, Branch]:
-    branches = Branch.objects.filter(is_active=True)
-    mapping: dict[str, Branch] = {}
-    for branch in branches:
-        lowered = branch.name.lower()
-        if 'diamond' in lowered:
-            mapping['diamond'] = branch
-        elif 'velvet' in lowered:
-            mapping['velvet'] = branch
-    return mapping
-
-
 def _therapist_map() -> dict[str, Therapist]:
     return {
         therapist.slug: therapist
@@ -123,7 +111,6 @@ def sync_schedule_from_tantra(
     """Fetch rolling weeks from tantra-prague and upsert ScheduleEntry rows."""
     start_anchor = anchor or business_date()
     therapist_by_slug = _therapist_map()
-    branch_by_key = _branch_map()
 
     parsed: list[ParsedEntry] = []
     fetch_errors = 0
@@ -159,7 +146,6 @@ def sync_schedule_from_tantra(
     with transaction.atomic():
         for entry in matched:
             therapist = therapist_by_slug[entry.therapist_slug]
-            branch = branch_by_key.get(entry.branch_key)
             shift_type = (
                 ScheduleEntry.ShiftType.NIGHT
                 if entry.shift == 'night'
@@ -170,9 +156,9 @@ def sync_schedule_from_tantra(
 
             defaults = {
                 'time_to': entry.time_to,
-                'branch': branch,
+                'branch': None,
                 'shift_type': shift_type,
-                'location_address': branch.address if branch else '',
+                'location_address': WORK_ADDRESS,
             }
 
             obj, was_created = ScheduleEntry.objects.update_or_create(

@@ -1,0 +1,12 @@
+{% load i18n %}
+<span class="price-multi{% if compact %} price-multi--compact{% endif %}{% if class %} {{ class }}{% endif %}">
+  <span class="price-multi__czk">{{ price.czk }}&nbsp;Kč</span>
+  {% if price.eur is not None %}
+  <span class="price-multi__sep" aria-hidden="true">·</span>
+  <span class="price-multi__eur">€{{ price.eur }}</span>
+  {% endif %}
+  {% if price.usd is not None %}
+  <span class="price-multi__sep" aria-hidden="true">·</span>
+  <span class="price-multi__usd">${{ price.usd }}</span>
+  {% endif %}
+</span>

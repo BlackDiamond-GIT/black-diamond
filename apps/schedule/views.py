@@ -5,10 +5,10 @@ from django.shortcuts import render
 from django.utils.translation import get_language
 from django.views.generic import TemplateView
 
-from apps.branches.models import Branch
 from apps.core.mixins import ExtraCssMixin, HtmxMixin
 from apps.core.opening_hours import get_opening_hours_display
 
+from .addresses import WORK_ADDRESS
 from .models import TimeSlot
 from .week import build_week_context, parse_anchor_param
 
@@ -25,15 +25,13 @@ class SchedulePageView(HtmxMixin, ExtraCssMixin, TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         lang = (get_language() or 'cs')[:2]
-        branch_raw = self.request.GET.get('branch', '')
-        branch_id = int(branch_raw) if branch_raw.isdigit() else None
         anchor = parse_anchor_param(self.request.GET.get('from'))
 
-        ctx.update(build_week_context(anchor, branch_id=branch_id))
+        ctx.update(build_week_context(anchor))
         ctx.update({
-            'branches': Branch.objects.filter(is_active=True).order_by('order', 'name'),
             'opening_hours_text': get_opening_hours_display(lang),
             'schedule_path': self.request.path,
+            'work_address': WORK_ADDRESS,
         })
         return ctx
 

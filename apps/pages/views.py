@@ -15,6 +15,7 @@ class HomeView(ExtraCssMixin, TemplateView):
         'css/components/glass.css',
         'css/components/buttons.css',
         'css/components/mob-bar.css',
+        'css/components/price-multi.css',
         'css/pages/home-v4.css',
     ]
 

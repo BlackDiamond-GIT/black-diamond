@@ -12,6 +12,7 @@ class ServiceListView(ExtraCssMixin, ListView):
         'css/components/cards.css',
         'css/components/glass.css',
         'css/components/buttons.css',
+        'css/components/price-multi.css',
     ]
 
 
@@ -25,6 +26,7 @@ class ServiceDetailView(ExtraCssMixin, DetailView):
         'css/components/cards.css',
         'css/components/faq.css',
         'css/components/service-detail.css',
+        'css/components/price-multi.css',
     ]
 
     def get_context_data(self, **kwargs):

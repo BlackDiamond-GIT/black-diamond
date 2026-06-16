@@ -1,9 +1,11 @@
 from django.conf import settings
 from django.db import DatabaseError
+from decimal import Decimal
 from django.utils.translation import get_language
 
 from .models import SiteSettings
 from .opening_hours import DEFAULT_HOURS, get_opening_hours_display
+from .pricing import CurrencySettings
 
 
 def _page_lang(request) -> str:
@@ -33,6 +35,7 @@ def site_settings(request):
         'SITE_OPENING_HOURS': DEFAULT_HOURS.get(lang, DEFAULT_HOURS['cs']),
         'SITE_INSTAGRAM_URL': 'https://instagram.com/blackdiamondspa',
         'SITE_TELEGRAM_URL': '',
+        'currency_settings': CurrencySettings(),
     }
 
     try:
@@ -47,6 +50,12 @@ def site_settings(request):
             'SITE_OPENING_HOURS': site.get_hours_for_language(lang),
             'SITE_INSTAGRAM_URL': (site.instagram_url or '').strip() or 'https://instagram.com/blackdiamondspa',
             'SITE_TELEGRAM_URL': (site.telegram_url or '').strip(),
+            'currency_settings': CurrencySettings(
+                eur_rate=Decimal(str(site.eur_rate)),
+                usd_rate=Decimal(str(site.usd_rate)),
+                show_eur=site.show_eur,
+                show_usd=site.show_usd,
+            ),
         })
     except DatabaseError:
         base.update(_fallback_address())

@@ -12,6 +12,7 @@ from django.utils.translation import gettext_lazy as _
 from apps.therapists.models import Therapist
 
 from .models import ScheduleEntry
+from .addresses import WORK_ADDRESS
 from .shifts import infer_shift_type
 from .week import monday_of, week_dates
 
@@ -54,15 +55,16 @@ class ScheduleEntryAdminForm(forms.ModelForm):
     def clean(self) -> dict:
         cleaned = super().clean()
         time_from = cleaned.get("time_from")
-        if time_from and not cleaned.get("shift_type"):
-            cleaned["shift_type"] = infer_shift_type(time_from)
-        elif time_from:
+        if time_from:
             cleaned["shift_type"] = infer_shift_type(time_from)
         return cleaned
 
     class Meta:
         model = ScheduleEntry
-        fields = "__all__"
+        fields = (
+            'therapist', 'date', 'time_from', 'time_to',
+            'shift_type', 'note_cs', 'note_en',
+        )
 
 
 class ScheduleWeekBulkForm(forms.Form):
@@ -82,17 +84,6 @@ class ScheduleWeekBulkForm(forms.Form):
     )
     time_from = forms.ChoiceField(choices=TIME_CHOICES, label=_("From"))
     time_to = forms.ChoiceField(choices=TIME_CHOICES, label=_("To"))
-    location_address = forms.CharField(
-        required=False,
-        max_length=200,
-        label=_("Work address"),
-        help_text=_("Optional if branch is selected."),
-    )
-    branch = forms.ModelChoiceField(
-        queryset=None,
-        required=False,
-        label=_("Branch"),
-    )
     shift_type = forms.ChoiceField(
         choices=ScheduleEntry.ShiftType.choices,
         initial=ScheduleEntry.ShiftType.DAY,
@@ -103,9 +94,6 @@ class ScheduleWeekBulkForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        from apps.branches.models import Branch
-
-        self.fields["branch"].queryset = Branch.objects.filter(is_active=True).order_by("order", "name")
         if not self.is_bound:
             self.fields["week_start"].initial = monday_of(timezone.localdate())
 
@@ -125,8 +113,6 @@ class ScheduleWeekBulkForm(forms.Form):
         selected_offsets = {int(offset) for offset in self.cleaned_data["weekdays"]}
         time_from = self.cleaned_data["time_from"]
         time_to = self.cleaned_data["time_to"]
-        location_address = self.cleaned_data.get("location_address", "")
-        branch = self.cleaned_data.get("branch")
         shift_type = self.cleaned_data.get("shift_type") or infer_shift_type(time_from)
         note_cs = self.cleaned_data.get("note_cs", "")
         note_en = self.cleaned_data.get("note_en", "")
@@ -153,8 +139,7 @@ class ScheduleWeekBulkForm(forms.Form):
                         date=entry_date,
                         time_from=time_from,
                         time_to=time_to,
-                        location_address=location_address,
-                        branch=branch,
+                        location_address=WORK_ADDRESS,
                         shift_type=shift_type,
                         note_cs=note_cs,
                         note_en=note_en,

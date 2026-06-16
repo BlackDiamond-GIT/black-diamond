@@ -32,12 +32,53 @@ def max_anchor(today: datetime.date) -> datetime.date:
     return today + datetime.timedelta(days=(MAX_WEEKS - 1) * ROLLING_DAYS)
 
 
+def is_overnight_continuation(time_from: datetime.time) -> bool:
+    """Early-morning slots belong to the previous operational day."""
+    return time_from.hour < BUSINESS_DAY_CUTOFF_HOUR
+
+
+def operational_date_for_entry(entry_date: datetime.date, time_from: datetime.time) -> datetime.date:
+    """Map a DB row to the operational day shown in the public schedule."""
+    if is_overnight_continuation(time_from):
+        return entry_date - datetime.timedelta(days=1)
+    return entry_date
+
+
+def schedule_sort_key(entry: ScheduleEntry) -> int:
+    """Sort slots within a day: morning → evening → after-midnight."""
+    minutes = entry.time_from.hour * 60 + entry.time_from.minute
+    if is_overnight_continuation(entry.time_from):
+        minutes += 24 * 60
+    return minutes
+
+
+def entry_is_live_now(entry: ScheduleEntry, now: datetime.datetime | None = None) -> bool:
+    """True when the therapist is currently on this shift."""
+    now = now or timezone.localtime()
+    op_date = operational_date_for_entry(entry.date, entry.time_from)
+    if op_date != business_date():
+        return False
+
+    current = now.time()
+    start = entry.time_from
+    end = entry.time_to
+    if end > start:
+        return start <= current <= end
+    return current >= start or current <= end
+
+
+@dataclass(frozen=True)
+class ScheduleEntryDisplay:
+    entry: ScheduleEntry
+    is_live: bool = False
+
+
 @dataclass(frozen=True)
 class DaySchedule:
     date: datetime.date
     weekday_label: str
     is_today: bool
-    entries: list[ScheduleEntry]
+    entries: list[ScheduleEntryDisplay]
 
 
 def monday_of(d: datetime.date) -> datetime.date:
@@ -89,16 +130,14 @@ def week_dates(week_start: datetime.date) -> list[datetime.date]:
 def fetch_entries_for_range(
     start: datetime.date,
     end: datetime.date,
-    branch_id: int | None = None,
 ) -> QuerySet[ScheduleEntry]:
-    """Schedule entries between *start* and *end* inclusive."""
+    """Schedule entries for the range, including next-day overnight slots."""
     from .models import ScheduleEntry
 
-    qs = ScheduleEntry.objects.filter(date__range=(start, end))
-    if branch_id:
-        qs = qs.filter(branch_id=branch_id)
+    extended_end = end + datetime.timedelta(days=1)
+    qs = ScheduleEntry.objects.filter(date__range=(start, extended_end))
     return (
-        qs.select_related("therapist", "therapist__main_cloudinary_photo", "branch")
+        qs.select_related("therapist", "therapist__main_cloudinary_photo")
         .prefetch_related("therapist__gallery_cloudinary")
         .order_by("date", "time_from")
     )
@@ -114,39 +153,50 @@ def group_entries_by_day(
     dates: list[datetime.date],
     entries: QuerySet[ScheduleEntry] | list[ScheduleEntry],
 ) -> list[DaySchedule]:
-    """Group entries into day buckets for template rendering."""
+    """Group entries into operational day buckets for template rendering."""
     today = business_date()
+    now = timezone.localtime()
     by_date: dict[datetime.date, list[ScheduleEntry]] = {d: [] for d in dates}
     for entry in entries:
-        if entry.date in by_date:
-            by_date[entry.date].append(entry)
+        op_date = operational_date_for_entry(entry.date, entry.time_from)
+        if op_date in by_date:
+            by_date[op_date].append(entry)
 
     result: list[DaySchedule] = []
     for day in dates:
+        sorted_entries = sorted(by_date[day], key=schedule_sort_key)
+        displays = [
+            ScheduleEntryDisplay(
+                entry=entry,
+                is_live=entry_is_live_now(entry, now),
+            )
+            for entry in sorted_entries
+        ]
         result.append(
             DaySchedule(
                 date=day,
                 weekday_label=day.strftime("%A"),
                 is_today=day == today,
-                entries=by_date[day],
+                entries=displays,
             )
         )
     return result
 
 
-def build_week_context(anchor: datetime.date, branch_id: int | None = None) -> dict:
+def build_week_context(anchor: datetime.date) -> dict:
     """Shared context dict for public views and CMS plugin."""
+    from .addresses import WORK_ADDRESS
+
     today = business_date()
     anchor = min(max(anchor, today), max_anchor(today))
     dates = rolling_dates(anchor)
     start, end = dates[0], dates[-1]
-    entries = fetch_entries_for_range(start, end, branch_id=branch_id)
+    entries = fetch_entries_for_range(start, end)
     prev_anchor = anchor - datetime.timedelta(days=ROLLING_DAYS) if anchor > today else None
     forward = anchor + datetime.timedelta(days=ROLLING_DAYS)
     next_anchor = forward if forward <= max_anchor(today) else None
     return {
         "anchor": anchor,
-        "branch_id": branch_id,
         "week_start": start,
         "week_end": end,
         "prev_anchor": prev_anchor,
@@ -154,5 +204,6 @@ def build_week_context(anchor: datetime.date, branch_id: int | None = None) -> d
         "prev_week": prev_anchor,
         "next_week": next_anchor,
         "today": today,
+        "work_address": WORK_ADDRESS,
         "week_days": group_entries_by_day(dates, entries),
     }

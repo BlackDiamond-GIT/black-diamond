@@ -16,6 +16,7 @@ from django.utils.translation import gettext_lazy as _
 from apps.core.unfold_admin import BDModelAdmin
 from apps.therapists.models import Therapist
 
+from .addresses import WORK_ADDRESS
 from .forms import ScheduleEntryAdminForm, ScheduleWeekBulkForm
 from .models import ScheduleEntry
 from .week import fetch_week_entries, monday_of, parse_week_param, week_dates, week_range
@@ -40,12 +41,17 @@ class CurrentWeekFilter(SimpleListFilter):
 @admin.register(ScheduleEntry)
 class ScheduleEntryAdmin(BDModelAdmin):
     form = ScheduleEntryAdminForm
-    list_display = ("therapist", "date", "time_from", "time_to", "shift_type", "branch", "location_address")
-    list_filter = (CurrentWeekFilter, "date", "therapist")
+    list_display = ("therapist", "date", "time_from", "time_to", "shift_type")
+    list_filter = (CurrentWeekFilter, "date", "therapist", "shift_type")
     search_fields = ("therapist__name",)
     date_hierarchy = "date"
-    autocomplete_fields = ("therapist", "branch")
+    autocomplete_fields = ("therapist",)
     change_list_template = "admin/schedule/scheduleentry/change_list.html"
+    fieldsets = (
+        (None, {"fields": ("therapist", "date", "time_from", "time_to")}),
+        (_("Shift"), {"fields": ("shift_type",)}),
+        (_("Notes"), {"fields": ("note_cs", "note_en")}),
+    )
 
     def get_urls(self):
         urls = super().get_urls()
@@ -95,6 +101,7 @@ class ScheduleEntryAdmin(BDModelAdmin):
             "form": form,
             "title": _("Add schedule for week"),
             "opts": self.model._meta,
+            "work_address": WORK_ADDRESS,
         }
         return render(request, "admin/schedule/scheduleentry/add_week.html", context)
 
@@ -123,13 +130,12 @@ class ScheduleEntryAdmin(BDModelAdmin):
                 slot_links = []
                 for entry in day_entries:
                     shift_label = entry.get_shift_type_display()
-                    address_suffix = f" · {entry.location_address}" if entry.location_address else ""
                     slot_links.append(
                         {
                             "label": (
                                 f"{entry.time_from.strftime('%H:%M')}–"
                                 f"{entry.time_to.strftime('%H:%M')} "
-                                f"({shift_label}){address_suffix}"
+                                f"({shift_label})"
                             ),
                             "change_url": reverse(change_url_name, args=[entry.pk]),
                         }
@@ -162,6 +168,7 @@ class ScheduleEntryAdmin(BDModelAdmin):
             "rows": rows,
             "changelist_url": reverse("admin:schedule_scheduleentry_changelist"),
             "add_week_url": reverse("admin:schedule_scheduleentry_add_week"),
+            "work_address": WORK_ADDRESS,
         }
         return render(request, "admin/schedule/scheduleentry/week_grid.html", context)
 

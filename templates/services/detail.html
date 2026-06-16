@@ -104,8 +104,8 @@
 
       <div class="service-detail__stats">
         <div class="glass service-detail__stat">
-          <div class="service-detail__stat-value">{{ service.price|floatformat:0 }}</div>
-          <div class="service-detail__stat-label">Kč</div>
+          <div class="service-detail__stat-value">{% price_multi service.price %}</div>
+          <div class="service-detail__stat-label sr-only">{% trans "Cena" %}</div>
         </div>
         <div class="glass service-detail__stat">
           <div class="service-detail__stat-value">{{ service.duration }}</div>
@@ -141,9 +141,8 @@
         {% trans "Cena a rezervace" %}
       </h2>
       <p class="service-detail__section-text">
-        {% blocktrans with price=service.price|floatformat:0 duration=service.duration %}
-        {{ price }} Kč / {{ duration }} min. Oleje a relaxační zóna v ceně. Platba hotovostí nebo kartou.
-        {% endblocktrans %}
+        {% price_multi service.price %}
+        <span class="price-multi-duration"> / {{ service.duration }} {% trans "min" %}. {% trans "Oleje a relaxační zóna v ceně. Platba hotovostí nebo kartou." %}</span>
       </p>
       <div class="service-detail__actions">
         <a href="{% url 'schedule:index' %}" class="btn btn--primary shimmer">{% trans "Rezervovat online" %}</a>

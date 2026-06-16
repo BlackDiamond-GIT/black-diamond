@@ -21,6 +21,7 @@
 <div class="px-4 pb-8">
   <div class="container mx-auto max-w-2xl">
     <h1 class="text-xl font-semibold mb-6">{% trans "Add schedule for week" %}</h1>
+    <p class="text-sm text-base-500 mb-6">{% trans "Adresa" %}: {{ work_address }}</p>
 
     <form method="post" novalidate>
       {% csrf_token %}

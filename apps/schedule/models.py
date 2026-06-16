@@ -4,6 +4,8 @@ from django.utils.translation import gettext_lazy as _
 from apps.services.models import Service
 from apps.therapists.models import Therapist
 
+from .addresses import WORK_ADDRESS
+
 
 class ScheduleEntry(models.Model):
     class ShiftType(models.TextChoices):
@@ -36,6 +38,15 @@ class ScheduleEntry(models.Model):
 
     def __str__(self):
         return f'{self.therapist.name} — {self.date} {self.time_from}–{self.time_to}'
+
+    def save(self, *args, **kwargs):
+        self.location_address = WORK_ADDRESS
+        self.branch = None
+        super().save(*args, **kwargs)
+
+    @property
+    def work_address(self) -> str:
+        return WORK_ADDRESS
 
 
 class TimeSlot(models.Model):
