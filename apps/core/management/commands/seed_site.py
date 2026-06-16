@@ -167,6 +167,13 @@ class Command(BaseCommand):
                 obj, created = Article.objects.get_or_create(slug=slug, defaults=defaults)
             self.stdout.write(f'  article {slug}: {"created" if created else "exists"}')
 
+        if Therapist.objects.filter(is_active=True).exists():
+            from apps.schedule.seed_schedule import seed_schedule_entries
+            sched = seed_schedule_entries()
+            self.stdout.write(
+                f'  schedule: created {sched["created"]}, updated {sched["updated"]}'
+            )
+
         self.stdout.write(self.style.SUCCESS(
             f'Done: {Branch.objects.count()} branches, '
             f'{Service.objects.count()} services, '

@@ -102,18 +102,16 @@ def build_therapist_panels(
 ) -> list[TherapistPanel]:
     today = business_date()
     by_therapist: dict[int, dict[datetime.date, list[ScheduleEntry]]] = {}
-    therapist_ids: set[int] = set()
 
     for entry in entries:
         op_date = operational_date_for_entry(entry.date, entry.time_from)
         if op_date not in dates:
             continue
-        therapist_ids.add(entry.therapist_id)
         by_therapist.setdefault(entry.therapist_id, {day: [] for day in dates})
         by_therapist[entry.therapist_id][op_date].append(entry)
 
     therapists = list(
-        Therapist.objects.filter(is_active=True, pk__in=therapist_ids)
+        Therapist.objects.filter(is_active=True)
         .prefetch_related('specialties')
         .order_by('sort_order', 'name')
     )
