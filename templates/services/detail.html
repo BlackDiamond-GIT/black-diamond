@@ -102,17 +102,6 @@
         {{ service|trans_field:"description" }}
       </p>
 
-      <div class="service-detail__stats">
-        <div class="glass service-detail__stat">
-          <div class="service-detail__stat-value">{% price_multi service.catalog_price_czk %}</div>
-          <div class="service-detail__stat-label sr-only">{% trans "Cena" %}</div>
-        </div>
-        <div class="glass service-detail__stat">
-          <div class="service-detail__stat-value">{{ service.catalog_duration }}</div>
-          <div class="service-detail__stat-label">{% trans "minut" %}</div>
-        </div>
-      </div>
-
       <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat tuto masáž" %}</a>
     </div>
   </div>
