@@ -30,20 +30,13 @@
     </p>
   </header>
 
-  <div class="grid-3 masseuse-grid masseuse-grid--arch" role="list">
+  <div class="grid-3" role="list">
     {% for therapist in therapists %}
+    {% blocktrans with name=therapist.name site=SITE_NAME asvar gallery_alt %}{{ name }} — masérka {{ site }} Praha{% endblocktrans %}
     <a href="{% url 'therapists:detail' therapist.slug %}" class="masseuse-card" role="listitem" data-reveal
       itemscope itemtype="https://schema.org/Person">
-      <div class="masseuse-card__portrait">
-        {% if therapist.photo_url %}
-        <img src="{{ therapist.photo_url }}"
-          alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
-          width="300" height="400" loading="lazy" decoding="async" itemprop="image">
-        {% else %}
-        <img src="{% asset_img 'masseuses' therapist.slug %}"
-          alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
-          width="300" height="400" loading="lazy" decoding="async" itemprop="image">
-        {% endif %}
+      <div class="masseuse-card__media">
+        {% include "therapists/_media_gallery.html" with variant="card-team" photo_url=therapist.card_photo_url eager=True itemprop_image=True img_alt=gallery_alt %}
       </div>
       <div class="masseuse-card__body">
         <h2 class="masseuse-card__name" itemprop="name">{{ therapist.name }}</h2>
@@ -60,4 +53,8 @@
   </div>
 
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/media-gallery.js' %}" defer></script>
 {% endblock %}

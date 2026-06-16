@@ -49,6 +49,9 @@
 
 .therapist-detail__portrait-wrap {
   position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--bg-deep, #0e1115);
 }
 
 @media (min-width: 768px) {
@@ -58,8 +61,12 @@
   }
 }
 
-.therapist-detail__portrait-wrap .gallery-carousel {
+.therapist-detail__portrait-wrap .media-gallery {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
 }
 
 .therapist-detail__info {

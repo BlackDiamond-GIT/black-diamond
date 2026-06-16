@@ -12,7 +12,7 @@ class TherapistListView(ExtraCssMixin, ListView):
     ).select_related('main_cloudinary_photo')
     extra_css = [
         'css/components/cards.css',
-        'css/components/masseuse-grid-arch.css',
+        'css/components/media-gallery.css',
         'css/components/glass.css',
         'css/components/buttons.css',
     ]
@@ -24,7 +24,7 @@ class TherapistDetailView(ExtraCssMixin, DetailView):
     context_object_name = 'therapist'
     extra_css = [
         'css/pages/therapist-detail.css',
-        'css/components/gallery-carousel.css',
+        'css/components/media-gallery.css',
         'css/components/glass.css',
         'css/components/cards.css',
         'css/components/buttons.css',

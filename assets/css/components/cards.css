@@ -128,6 +128,21 @@
   color: inherit;
 }
 
+.masseuse-card__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--bg-deep, #0e1115);
+}
+
+.masseuse-card__media .media-gallery {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
 /* Portrait gallery (home) */
 .masseuse-gallery {
   display: flex;

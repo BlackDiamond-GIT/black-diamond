@@ -1,0 +1,49 @@
+{% load i18n %}
+<div class="media-gallery media-gallery--{{ variant }}" data-media-gallery>
+  <div class="media-gallery__viewport">
+    <div
+      class="media-gallery__track"
+      data-gallery-track
+      tabindex="0"
+      aria-label="{% trans 'Galerie fotografií' %}">
+      <div class="media-gallery__slide is-active" data-gallery-slide>
+        <img
+          src="{{ photo_url }}"
+          alt="{{ img_alt }}"
+          class="media-gallery__img"
+          width="600"
+          height="800"
+          {% if eager %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+          decoding="async"
+          draggable="false"
+          {% if itemprop_image %}itemprop="image"{% endif %}>
+      </div>
+      <div class="media-gallery__slide media-gallery__slide--blur" data-gallery-slide>
+        <img
+          src="{{ photo_url }}"
+          alt=""
+          class="media-gallery__img media-gallery__img--blur"
+          width="600"
+          height="800"
+          loading="lazy"
+          aria-hidden="true"
+          draggable="false">
+      </div>
+    </div>
+  </div>
+  <div class="media-gallery__dots" data-gallery-dots>
+    <span
+      role="button"
+      tabindex="0"
+      class="media-gallery__dot is-active"
+      data-gallery-dot
+      aria-label="{% trans 'Fotografie 1' %}"
+      aria-current="true"></span>
+    <span
+      role="button"
+      tabindex="0"
+      class="media-gallery__dot"
+      data-gallery-dot
+      aria-label="{% trans 'Fotografie 2' %}"></span>
+  </div>
+</div>
