@@ -11,10 +11,11 @@ from django.core.management.base import BaseCommand
 from django.utils.dateparse import parse_datetime
 
 from apps.blog.models import Article
+from apps.branches.models import Branch
 from apps.services.models import Service
 from apps.therapists.models import Therapist
 
-from apps.core.seed_data import BLOG_DATES, BLOG_SLUGS, SERVICES, THERAPISTS
+from apps.core.seed_data import BLOG_DATES, BLOG_SLUGS, BRANCHES, SERVICES, THERAPISTS
 
 ROOT = Path(__file__).resolve().parents[4]
 
@@ -83,6 +84,22 @@ class Command(BaseCommand):
         force = options['force']
         services_by_slug: dict[str, Service] = {}
 
+        branches_by_name: dict[str, Branch] = {}
+        for item in BRANCHES:
+            defaults = {k: v for k, v in item.items() if k != 'name'}
+            if force:
+                obj, created = Branch.objects.update_or_create(
+                    name=item['name'],
+                    defaults=defaults,
+                )
+            else:
+                obj, created = Branch.objects.get_or_create(
+                    name=item['name'],
+                    defaults=defaults,
+                )
+            branches_by_name[obj.name] = obj
+            self.stdout.write(f'  branch {obj.name}: {"created" if created else "exists"}')
+
         for item in SERVICES:
             slug = item['slug']
             defaults = {k: v for k, v in item.items() if k != 'slug'}
@@ -119,6 +136,8 @@ class Command(BaseCommand):
                 )
             obj.specialties.set([services_by_slug[s] for s in spec_slugs if s in services_by_slug])
             obj.offers.set([services_by_slug[s] for s in offer_slugs if s in services_by_slug])
+            if branches_by_name:
+                obj.branches.set(branches_by_name.values())
             self.stdout.write(f'  therapist {obj.name}: {"created" if created else "exists"}')
 
         for slug in BLOG_SLUGS:
@@ -147,7 +166,8 @@ class Command(BaseCommand):
             self.stdout.write(f'  article {slug}: {"created" if created else "exists"}')
 
         self.stdout.write(self.style.SUCCESS(
-            f'Done: {Service.objects.count()} services, '
+            f'Done: {Branch.objects.count()} branches, '
+            f'{Service.objects.count()} services, '
             f'{Therapist.objects.count()} therapists, '
             f'{Article.objects.count()} articles'
         ))

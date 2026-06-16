@@ -1,0 +1,190 @@
+/* Gallery carousel — therapist detail (tantra-style, tiffany theme) */
+
+.gallery-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-tiffany);
+}
+
+.gallery-carousel__track {
+  display: flex;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-carousel__slide {
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-carousel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .gallery-carousel__slide {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .gallery-carousel__img {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+.gallery-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(18, 20, 24, 0.88);
+  border: 1px solid rgba(10, 186, 181, 0.35);
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.gallery-carousel__btn:hover,
+.gallery-carousel__btn:focus-visible {
+  background: var(--tiffany);
+  color: var(--bg-primary);
+  border-color: var(--tiffany);
+  transform: translateY(-50%);
+}
+
+.gallery-carousel__btn--prev { left: var(--sp-md); }
+.gallery-carousel__btn--next { right: var(--sp-md); }
+
+.gallery-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-sm);
+  padding: var(--sp-md);
+}
+
+.gallery-carousel__dot {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(10, 186, 181, 0.35);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.gallery-carousel__dot--active {
+  background: var(--tiffany);
+  border-color: var(--tiffany);
+  transform: scale(1.2);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-xl);
+  padding-top: calc(var(--sp-xl) + env(safe-area-inset-top));
+  padding-bottom: calc(var(--sp-xl) + env(safe-area-inset-bottom));
+  background: rgba(14, 17, 21, 0.78);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox__img {
+  max-width: min(90vw, 720px);
+  max-height: 90dvh;
+  max-height: 90svh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(10, 186, 181, 0.2);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: calc(var(--sp-lg) + env(safe-area-inset-top));
+  right: calc(var(--sp-lg) + env(safe-area-inset-right));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(20, 23, 27, 0.9);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus-visible {
+  border-color: rgba(10, 186, 181, 0.5);
+  color: var(--tiffany);
+}
+
+@media (max-width: 767px) {
+  .lightbox {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(14, 17, 21, 0.96);
+  }
+
+  .gallery-carousel__btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-carousel__track {
+    transition: none;
+  }
+}

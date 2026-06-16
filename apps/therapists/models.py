@@ -106,3 +106,33 @@ class Therapist(models.Model):
         if self.photo:
             return self.photo.url
         return self.main_photo_url or ''
+
+    @property
+    def gallery_photos(self) -> list[dict]:
+        """Hero gallery slides: main photo + Cloudinary gallery items."""
+        from django.templatetags.static import static
+
+        photos: list[dict] = []
+        seen: set[str] = set()
+
+        def add(url: str, *, srcset: str = '', eager: bool = False) -> None:
+            if url and url not in seen:
+                seen.add(url)
+                photos.append({'url': url, 'srcset': srcset, 'eager': eager})
+
+        if self.main_cloudinary_photo_id:
+            img = self.main_cloudinary_photo
+            add(img.gallery_url, srcset=img.gallery_srcset, eager=True)
+        elif self.photo:
+            add(self.photo.url, eager=True)
+        elif self.main_photo_url:
+            add(self.main_photo_url, eager=True)
+        else:
+            add(static(f'img/masseuses/{self.slug}.webp'), eager=True)
+
+        for img in self.gallery_cloudinary.all():
+            if self.main_cloudinary_photo_id and img.pk == self.main_cloudinary_photo_id:
+                continue
+            add(img.gallery_url, srcset=img.gallery_srcset)
+
+        return photos

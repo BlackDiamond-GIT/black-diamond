@@ -1,5 +1,6 @@
 """Дані для seed_site — масажі, масажистки, мапінг спеціальностей."""
 
+from apps.core.seed_data_branches import BRANCHES
 from apps.core.seed_data_services import SERVICES as _SERVICES_1
 from apps.core.seed_data_services2 import SERVICES_PART2
 from apps.core.seed_data_therapists1 import THERAPISTS_PART1

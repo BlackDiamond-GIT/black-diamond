@@ -1,80 +1,20 @@
 {% extends "base.html" %}
 {% load i18n bd_tags %}
-{% block title %}{% trans "Rozvrh masáží" %} | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{% trans "Aktuální dostupnost. Klikněte na volný slot pro rezervaci." %}{% endblock %}
+{% block title %}{% trans "Týdenní rozvrh" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Aktuální dostupnost masérek. Rezervujte online podle týdenního rozvrhu." %}{% endblock %}
 
 {% block content %}
 <div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
 
   <header class="section-header section-header--center" style="margin-bottom:var(--sp-3xl)">
     <span class="section-label" aria-hidden="true">{% trans "Rezervace" %}</span>
-    <h1 class="section-title">{% trans "Rozvrh masáží" %}</h1>
-    <p class="section-subtitle">{% trans "Aktuální dostupnost. Klikněte na volný slot pro rezervaci." %}</p>
+    <h1 class="section-title">{% trans "Týdenní rozvrh" %}</h1>
+    <p class="section-subtitle">{% trans "Aktuální dostupnost masérek podle pobočky a směny." %}</p>
   </header>
 
-  <div class="schedule__legend" aria-label="{% trans 'Legenda stavů' %}">
-    <div class="schedule__legend-item">
-      <span class="schedule__legend-dot" style="background:var(--tiffany)" aria-hidden="true"></span>
-      {% trans "Volné" %}
-    </div>
-    <div class="schedule__legend-item">
-      <span class="schedule__legend-dot" style="background:var(--text-muted)" aria-hidden="true"></span>
-      {% trans "Obsazeno" %}
-    </div>
-  </div>
+  {% include "schedule/_week.html" %}
 
-  <div class="schedule__therapists" id="schedule-filter" role="group" aria-label="{% trans 'Filtr masérky' %}">
-    <button type="button" class="schedule__therapist-chip is-active" data-filter="all">{% trans "Všechny masérky" %}</button>
-    {% for therapist in therapists %}
-    <button type="button" class="schedule__therapist-chip" data-filter="{{ therapist.id }}">{{ therapist.name }}</button>
-    {% endfor %}
-  </div>
-
-  <div class="schedule__table-wrap">
-    <table class="sched-table">
-      <thead>
-        <tr>
-          <th style="width:72px" aria-hidden="true"></th>
-          {% for day in days_short %}
-          <th class="{% if forloop.counter0 == today_idx %}today-col{% endif %}">
-            {{ day }}
-            {% if forloop.counter0 == today_idx %}
-            <span class="sched-table__today-dot" aria-hidden="true"></span>
-            {% endif %}
-          </th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows %}
-        <tr>
-          <td class="time-cell">{{ row.time }}</td>
-          {% for cell in row.cells %}
-          <td class="day-cell{% if cell.is_today %} day-cell--today{% endif %}">
-            {% for slot in cell.slots %}
-            {% if slot.is_booked %}
-            <div class="slot-chip booked" data-therapist="{{ slot.therapist_id }}">
-              <div class="slot-chip-name">{{ slot.therapist_name }}</div>
-              <div class="slot-chip-svc">{{ slot.service_name }}</div>
-            </div>
-            {% else %}
-            <a href="{% url 'pages:contact' %}" class="slot-chip" data-therapist="{{ slot.therapist_id }}">
-              <div class="slot-chip-name">{{ slot.therapist_name }}</div>
-              <div class="slot-chip-svc">{{ slot.service_name }}</div>
-            </a>
-            {% endif %}
-            {% endfor %}
-          </td>
-          {% endfor %}
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-
-  <p class="schedule__hint">{% trans "Klikněte na volný slot pro rezervaci." %}</p>
-
-  <div class="schedule__hours-bar" role="complementary" aria-label="{% trans 'Otevírací doba' %}">
+  <div class="schedule__hours-bar" role="complementary" aria-label="{% trans 'Otevírací doba' %}" style="margin-top:var(--sp-3xl)">
     <svg class="schedule__hours-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
       <circle cx="12" cy="12" r="10"/>
       <polyline points="12 6 12 12 16 14"/>
@@ -95,29 +35,4 @@
   </div>
 
 </div>
-{% endblock %}
-
-{% block extra_js %}
-<script>
-(function () {
-  var bar = document.getElementById('schedule-filter');
-  if (!bar) return;
-
-  bar.addEventListener('click', function (event) {
-    var btn = event.target.closest('[data-filter]');
-    if (!btn) return;
-
-    var filter = btn.getAttribute('data-filter');
-    bar.querySelectorAll('.schedule__therapist-chip').forEach(function (el) {
-      el.classList.toggle('is-active', el === btn);
-    });
-
-    document.querySelectorAll('.slot-chip').forEach(function (chip) {
-      var therapistId = chip.getAttribute('data-therapist');
-      var show = filter === 'all' || therapistId === filter;
-      chip.style.display = show ? '' : 'none';
-    });
-  });
-})();
-</script>
 {% endblock %}

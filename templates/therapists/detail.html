@@ -79,10 +79,25 @@
 
   <div class="therapist-detail__hero">
     <div class="therapist-detail__portrait-wrap">
-      <div class="therapist-detail__portrait">
-        <img src="{% asset_img 'masseuses' therapist.slug %}"
-          alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
-          width="480" height="640" loading="eager" decoding="async" fetchpriority="high" itemprop="image">
+      <div class="gallery-carousel" id="therapist-gallery" role="region" aria-label="{% trans 'Fotografie' %}">
+        <div class="gallery-carousel__track">
+          {% for photo in therapist.gallery_photos %}
+          <div class="gallery-carousel__slide{% if forloop.first %} gallery-carousel__slide--main{% endif %}">
+            <img src="{{ photo.url }}"
+              {% if photo.srcset %}srcset="{{ photo.srcset }}" sizes="(max-width: 767px) 100vw, 480px"{% endif %}
+              alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
+              class="gallery-carousel__img"
+              width="480" height="640"
+              {% if photo.eager %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+              decoding="async"
+              {% if forloop.first %}itemprop="image"{% endif %}>
+          </div>
+          {% endfor %}
+        </div>
+        {% if therapist.gallery_photos|length > 1 %}
+        <button type="button" class="gallery-carousel__btn gallery-carousel__btn--prev" aria-label="{% trans 'Předchozí fotografie' %}" data-gallery-prev>‹</button>
+        <button type="button" class="gallery-carousel__btn gallery-carousel__btn--next" aria-label="{% trans 'Další fotografie' %}" data-gallery-next>›</button>
+        {% endif %}
       </div>
     </div>
 
@@ -216,20 +231,6 @@
   {% endif %}
   {% endwith %}
 
-  {% if therapist.gallery_cloudinary.all %}
-  <section class="therapist-detail__gallery" aria-labelledby="gallery-heading">
-    <h2 class="therapist-detail__gallery-title" id="gallery-heading">{% trans "Galerie" %}</h2>
-    <div class="therapist-detail__gallery-strip" role="list">
-      {% for img in therapist.gallery_cloudinary.all %}
-      <div class="therapist-detail__gallery-item" role="listitem">
-        <img src="{{ img.card_url }}" alt="{{ therapist.name }} — {% trans 'Galerie' %}, {{ SITE_NAME }} Praha"
-          width="240" height="320" loading="lazy" decoding="async">
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
   <div class="therapist-detail__sticky-cta">
     <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">
       {% blocktrans with name=therapist.name %}Rezervovat u {{ name }}{% endblocktrans %}
@@ -237,4 +238,8 @@
   </div>
 
 </article>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/gallery-carousel.js' %}" defer></script>
 {% endblock %}

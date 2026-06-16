@@ -30,14 +30,20 @@
     </p>
   </header>
 
-  <div class="grid-3" role="list">
+  <div class="grid-3 masseuse-grid masseuse-grid--arch" role="list">
     {% for therapist in therapists %}
     <a href="{% url 'therapists:detail' therapist.slug %}" class="masseuse-card" role="listitem" data-reveal
       itemscope itemtype="https://schema.org/Person">
       <div class="masseuse-card__portrait">
+        {% if therapist.photo_url %}
+        <img src="{{ therapist.photo_url }}"
+          alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
+          width="300" height="400" loading="lazy" decoding="async" itemprop="image">
+        {% else %}
         <img src="{% asset_img 'masseuses' therapist.slug %}"
           alt="{{ therapist.name }} — {% trans 'masérka' %} {{ therapist|trans_field:'tagline' }}, {{ SITE_NAME }} Praha"
           width="300" height="400" loading="lazy" decoding="async" itemprop="image">
+        {% endif %}
       </div>
       <div class="masseuse-card__body">
         <h2 class="masseuse-card__name" itemprop="name">{{ therapist.name }}</h2>

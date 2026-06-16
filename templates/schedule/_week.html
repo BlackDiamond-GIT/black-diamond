@@ -1,0 +1,95 @@
+{% load i18n static bd_tags booking_tags %}
+
+<div class="schedule-week" id="schedule-week">
+  <form class="schedule-branch-filter" method="get" aria-label="{% trans 'Filtr pobočky' %}">
+    <input type="hidden" name="from" value="{{ anchor|date:'Y-m-d' }}">
+    <label for="schedule-branch-select" class="schedule-branch-filter__label">{% trans "Pobočka" %}</label>
+    <select id="schedule-branch-select" name="branch" class="schedule-branch-filter__select" onchange="this.form.submit()">
+      <option value="">{% trans "Všechny pobočky" %}</option>
+      {% for branch in branches %}
+      <option value="{{ branch.pk }}"{% if branch_id == branch.pk %} selected{% endif %}>{{ branch.name }}</option>
+      {% endfor %}
+    </select>
+  </form>
+
+  <nav class="schedule-week-nav" aria-label="{% trans 'Navigace rozvrhem' %}">
+    {% if prev_anchor %}
+    <a href="?from={{ prev_anchor|date:'Y-m-d' }}{% if branch_id %}&amp;branch={{ branch_id }}{% endif %}"
+       class="schedule-week-nav__btn schedule-week-nav__btn--prev"
+       hx-get="?from={{ prev_anchor|date:'Y-m-d' }}{% if branch_id %}&amp;branch={{ branch_id }}{% endif %}"
+       hx-target="#schedule-week"
+       hx-swap="outerHTML"
+       hx-push-url="true">
+      <span class="schedule-week-nav__label">{% trans "Předchozích 7 dní" %}</span>
+      <span aria-hidden="true">‹</span>
+    </a>
+    {% endif %}
+
+    <p class="schedule-week-nav__range">
+      <time datetime="{{ week_start|date:'Y-m-d' }}">{{ week_start|date:"j M" }}</time>
+      <span aria-hidden="true">–</span>
+      <time datetime="{{ week_end|date:'Y-m-d' }}">{{ week_end|date:"j M Y" }}</time>
+    </p>
+
+    {% if next_anchor %}
+    <a href="?from={{ next_anchor|date:'Y-m-d' }}{% if branch_id %}&amp;branch={{ branch_id }}{% endif %}"
+       class="schedule-week-nav__btn schedule-week-nav__btn--next"
+       hx-get="?from={{ next_anchor|date:'Y-m-d' }}{% if branch_id %}&amp;branch={{ branch_id }}{% endif %}"
+       hx-target="#schedule-week"
+       hx-swap="outerHTML"
+       hx-push-url="true">
+      <span class="schedule-week-nav__label">{% trans "Dalších 7 dní" %}</span>
+      <span aria-hidden="true">›</span>
+    </a>
+    {% endif %}
+  </nav>
+
+  {% for day in week_days %}
+  <section class="schedule-week-day{% if day.is_today %} schedule-week-day--today{% endif %}"
+           aria-labelledby="schedule-day-{{ day.date|date:'Y-m-d' }}">
+    <header class="schedule-week-day__header">
+      <h2 class="schedule-week-day__title" id="schedule-day-{{ day.date|date:'Y-m-d' }}">
+        <time datetime="{{ day.date|date:'Y-m-d' }}">{{ day.date|date:"l, j F" }}</time>
+      </h2>
+      {% if day.is_today %}
+      <span class="schedule-week-day__badge">{% trans "Dnes" %}</span>
+      {% endif %}
+    </header>
+
+    <ul class="schedule-timeline" aria-label="{% trans 'Dostupnost' %} {{ day.date|date:'j F Y' }}">
+      {% for entry in day.entries %}
+      <li class="schedule-timeline__item">
+        <time class="schedule-timeline__time" datetime="{{ day.date|date:'Y-m-d' }}T{{ entry.time_from|time:'H:i' }}">
+          {{ entry.time_from|time:'H:i' }}–{{ entry.time_to|time:'H:i' }}
+        </time>
+        <div class="schedule-timeline__main">
+          <a href="{% url 'therapists:detail' entry.therapist.slug %}" class="schedule-timeline__masseuse">
+            {% if entry.therapist.photo_url %}
+            <img src="{{ entry.therapist.photo_url }}" alt="{{ entry.therapist.name }}" class="schedule-timeline__avatar" width="40" height="40" loading="lazy" decoding="async">
+            {% else %}
+            <img src="{% asset_img 'masseuses' entry.therapist.slug %}" alt="{{ entry.therapist.name }}" class="schedule-timeline__avatar" width="40" height="40" loading="lazy" decoding="async">
+            {% endif %}
+            <span class="schedule-timeline__name">{{ entry.therapist.name }}</span>
+          </a>
+          <div class="schedule-timeline__meta">
+            <span class="schedule-timeline__shift schedule-timeline__shift--{{ entry.shift_type }}">
+              {{ entry.get_shift_type_display }}
+            </span>
+            {% if entry.branch %}
+            <span class="schedule-timeline__address">{{ entry.branch.name }}</span>
+            {% elif entry.location_address %}
+            <span class="schedule-timeline__address">{{ entry.location_address }}</span>
+            {% endif %}
+          </div>
+        </div>
+        <a href="{% booking_out_link 'schedule_row' entry.therapist %}" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">
+          {% trans "Rezervovat" %}
+        </a>
+      </li>
+      {% empty %}
+      <li class="schedule-timeline__empty">{% trans "Pro tento den nejsou žádné záznamy." %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
