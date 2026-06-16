@@ -9,5 +9,6 @@ urlpatterns = [
     path('o-nas/', views.AboutView.as_view(), name='about'),
     path('pravidla-salonu/', views.SalonRulesView.as_view(), name='salon_rules'),
     path('soukromi/', views.PrivacyView.as_view(), name='privacy'),
+    path('cenik/', views.PricesView.as_view(), name='prices'),
     path('kontakty/', ContactPageView.as_view(), name='contact'),
 ]

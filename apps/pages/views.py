@@ -72,3 +72,24 @@ class SalonRulesView(ExtraCssMixin, TemplateView):
 class PrivacyView(ExtraCssMixin, TemplateView):
     template_name = 'pages/privacy.html'
     extra_css = ['css/components/glass.css']
+
+
+class PricesView(ExtraCssMixin, TemplateView):
+    template_name = 'pages/prices.html'
+    extra_css = [
+        'css/components/glass.css',
+        'css/components/buttons.css',
+        'css/components/price-multi.css',
+        'css/pages/prices.css',
+    ]
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        services = list(
+            Service.objects.filter(is_active=True).order_by('order', 'pk')
+        )
+        groups: dict[int, list] = {}
+        for service in services:
+            groups.setdefault(service.duration, []).append(service)
+        ctx['duration_groups'] = sorted(groups.items(), key=lambda item: item[0])
+        return ctx

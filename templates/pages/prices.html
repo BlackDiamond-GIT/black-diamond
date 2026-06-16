@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% block title %}{% trans "Ceník masáží Praha" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Transparentní ceny všech masáží v Black Diamond Spa. Délky 45, 60 a 90 minut. Platba hotovostí nebo kartou." %}{% endblock %}
+
+{% block content %}
+<div class="prices-page container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
+
+  <header class="prices-hero section-header section-header--center">
+    <span class="section-label" aria-hidden="true">{% trans "Ceník" %}</span>
+    <h1 class="section-title prices-hero__title">{% trans "Ceník masáží Praha" %}</h1>
+    <p class="section-subtitle prices-hero__intro">
+      {% trans "Transparentní ceny všech masáží v Black Diamond Spa. Oleje a relaxační zóna v ceně." %}
+    </p>
+  </header>
+
+  <section class="prices-toolbar glass" aria-label="{% trans 'Filtry ceníku' %}">
+    <div class="prices-toolbar__group" role="tablist" aria-label="{% trans 'Délka masáže' %}">
+      {% for duration, items in duration_groups %}
+      <button type="button"
+              class="prices-tab{% if forloop.first %} is-active{% endif %}"
+              role="tab"
+              id="duration-tab-{{ duration }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="duration-panel-{{ duration }}"
+              data-duration-tab="{{ duration }}">
+        {{ duration }} {% trans "min" %}
+      </button>
+      {% endfor %}
+    </div>
+
+    <div class="prices-toolbar__group prices-toolbar__group--currency" role="tablist" aria-label="{% trans 'Měna' %}">
+      <button type="button" class="prices-currency is-active" data-currency="czk" aria-selected="true">Kč</button>
+      {% if currency_settings.show_eur %}
+      <button type="button" class="prices-currency" data-currency="eur" aria-selected="false">€</button>
+      {% endif %}
+      {% if currency_settings.show_usd %}
+      <button type="button" class="prices-currency" data-currency="usd" aria-selected="false">$</button>
+      {% endif %}
+    </div>
+  </section>
+
+  <div class="prices-panels">
+    {% for duration, items in duration_groups %}
+    <div class="prices-panel{% if forloop.first %} is-active{% endif %}"
+         id="duration-panel-{{ duration }}"
+         role="tabpanel"
+         aria-labelledby="duration-tab-{{ duration }}"
+         data-duration-panel="{{ duration }}"
+         {% if not forloop.first %}hidden{% endif %}>
+      <ul class="price-list">
+        {% for service in items %}
+        <li class="price-row" data-reveal>
+          <div class="price-row__main">
+            <h2 class="price-row__name">
+              <a href="{% url 'services:detail' service.slug %}">{{ service|trans_field:"title" }}</a>
+            </h2>
+            <p class="price-row__desc">{{ service|trans_field:"short" }}</p>
+            <span class="price-row__duration">{{ service.duration }} {% trans "min" %}</span>
+          </div>
+          <div class="price-row__side">
+            {% price_multi service.price class_name="price-row__amount" %}
+            <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--sm price-row__cta">{% trans "Rezervovat" %}</a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+  <p class="prices-note">
+    {% trans "Všechny ceny jsou uvedeny za masáž jedné masérky. Platba hotovostí nebo kartou v salonu." %}
+  </p>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/prices-page.js' %}" defer></script>
+{% endblock %}

@@ -1,0 +1,225 @@
+/* Black Diamond Spa — Prices page (Ceník) */
+
+.prices-page {
+  max-width: 52rem;
+}
+
+.prices-hero {
+  margin-bottom: var(--sp-3xl);
+}
+
+.prices-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  padding: var(--sp-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--sp-2xl);
+}
+
+.prices-toolbar__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.prices-tab,
+.prices-currency {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition-base), border-color var(--transition-base), background-color var(--transition-base);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.prices-tab.is-active,
+.prices-currency.is-active {
+  color: var(--tiffany);
+  border-color: rgba(10, 186, 181, 0.45);
+  background: rgba(10, 186, 181, 0.1);
+}
+
+.price-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-md) var(--sp-xl);
+  align-items: center;
+  padding: var(--sp-lg) var(--sp-xl);
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base);
+}
+
+.price-row:hover {
+  border-color: rgba(10, 186, 181, 0.3);
+}
+
+.price-row__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  margin-bottom: var(--sp-xs);
+  line-height: var(--lh-snug);
+}
+
+.price-row__name a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.price-row__name a:hover {
+  color: var(--tiffany);
+}
+
+.price-row__desc {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-loose);
+  margin-bottom: var(--sp-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price-row__duration {
+  display: inline-flex;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+}
+
+.price-row__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--sp-md);
+  text-align: right;
+}
+
+.price-row__amount {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-variant-numeric: tabular-nums;
+}
+
+.price-row__amount .price-multi__czk {
+  color: var(--tiffany);
+  font-size: inherit;
+}
+
+.price-row__amount .price-multi__eur,
+.price-row__amount .price-multi__usd {
+  display: none;
+  font-size: var(--fs-lg);
+  color: var(--tiffany);
+}
+
+.prices-page[data-currency="eur"] .price-row__amount .price-multi__czk,
+.prices-page[data-currency="eur"] .price-row__amount .price-multi__usd,
+.prices-page[data-currency="eur"] .price-row__amount .price-multi__sep {
+  display: none;
+}
+
+.prices-page[data-currency="eur"] .price-row__amount .price-multi__eur {
+  display: inline;
+}
+
+.prices-page[data-currency="usd"] .price-row__amount .price-multi__czk,
+.prices-page[data-currency="usd"] .price-row__amount .price-multi__eur,
+.prices-page[data-currency="usd"] .price-row__amount .price-multi__sep {
+  display: none;
+}
+
+.prices-page[data-currency="usd"] .price-row__amount .price-multi__usd {
+  display: inline;
+}
+
+.prices-page[data-currency="czk"] .price-row__amount .price-multi__eur,
+.prices-page[data-currency="czk"] .price-row__amount .price-multi__usd,
+.prices-page[data-currency="czk"] .price-row__amount .price-multi__sep {
+  display: none;
+}
+
+.prices-page[data-currency="czk"] .price-row__amount .price-multi__czk {
+  display: inline;
+}
+
+.price-row__cta {
+  white-space: nowrap;
+}
+
+.prices-note {
+  margin-top: var(--sp-3xl);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-loose);
+}
+
+@media (max-width: 768px) {
+  .prices-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prices-toolbar__group {
+    justify-content: center;
+  }
+
+  .price-row {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .price-row__side {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .prices-tab,
+  .prices-currency {
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .price-row {
+    padding: var(--sp-md);
+  }
+
+  .price-row__amount {
+    font-size: var(--fs-xl);
+  }
+}
