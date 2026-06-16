@@ -110,6 +110,16 @@ class Service(models.Model):
         items = getattr(self, f'faq_{code}', None) or self.faq_cs
         return items if isinstance(items, list) else []
 
+    @property
+    def catalog_duration(self) -> int:
+        from apps.services.pricing_catalog import catalog_duration_for
+        return catalog_duration_for(self)
+
+    @property
+    def catalog_price_czk(self) -> int:
+        from apps.services.pricing_catalog import catalog_price_for
+        return catalog_price_for(self)
+
 
 class Price(models.Model):
     service = models.ForeignKey(

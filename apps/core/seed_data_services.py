@@ -133,20 +133,20 @@ SERVICES = [
         'description_cs': (
             'Relax masáž v centru Prahy je jemná relaxační technika s prémiovými oleji, která pomalu '
             'uvolňuje tělo i mysl v privátní atmosféře Black Diamond Spa. Pomalé, plynulé tahy masérky '
-            'navozují hluboký klid a pomáhají redukovat stres po náročném dni. Sezení trvá 75 minut '
+            'navozují hluboký klid a pomáhají redukovat stres po náročném dni. Sezení trvá 60 minut '
             'a probíhá v salonu na Soukenické v Praze 1, kde dbáme na diskrétnost, klid a individuální '
             'péči každého klienta.'
         ),
         'description_en': (
             'Relax massage in central Prague is a gentle technique with premium oils that slowly releases '
             'body and mind in the private atmosphere of Black Diamond Spa. Slow, flowing strokes induce '
-            'deep calm and help reduce stress after a demanding day. Sessions last 75 minutes at our salon '
+            'deep calm and help reduce stress after a demanding day. Sessions last 60 minutes at our salon '
             'on Soukenická in Prague 1, where we prioritise discretion, tranquillity and individual care.'
         ),
         'description_ru': (
             'Релакс-массаж в центре Праги — мягкая техника с премиальными маслами, которая постепенно '
             'расслабляет тело и разум в приватной атмосфере Black Diamond Spa. Медленные плавные движения '
-            'создают глубокое спокойствие и помогают снять стресс после тяжёлого дня. Сеанс длится 75 минут '
+            'создают глубокое спокойствие и помогают снять стресс после тяжёлого дня. Сеанс длится 60 минут '
             'в салоне на Soukenická в Praha 1, где мы ценим конфиденциальность и индивидуальный подход.'
         ),
         'what_cs': (
@@ -188,153 +188,144 @@ SERVICES = [
             'здоровьем. Не подходит тем, кто предпочитает интенсивный спортивный массаж. Беременным '
             'и аллергикам на масла сообщите об этом при записи.'
         ),
-        'meta_title_cs': 'Relax masáž Praha — 75 min od 1 700 Kč | Black Diamond Spa',
-        'meta_title_en': 'Relax Massage Prague — 75 min from 1,700 CZK | Black Diamond Spa',
-        'meta_title_ru': 'Релакс массаж Прага — 75 мин от 1 700 Kč | Black Diamond Spa',
+        'meta_title_cs': 'Relax masáž Praha — 60 min od 2 500 Kč | Black Diamond Spa',
+        'meta_title_en': 'Relax Massage Prague — 60 min from 2,500 CZK | Black Diamond Spa',
+        'meta_title_ru': 'Релакс массаж Прага — 60 мин от 2 500 Kč | Black Diamond Spa',
         'meta_description_cs': (
-            'Relax masáž v centru Prahy s prémiovými oleji. 75 min od 1 700 Kč. '
+            'Relax masáž v centru Prahy s prémiovými oleji. 60 min od 2 500 Kč. '
             'Rezervujte online — Black Diamond Spa, Soukenická, Praha 1.'
         ),
         'meta_description_en': (
-            'Relax massage in central Prague with premium oils. 75 min from 1,700 CZK. '
+            'Relax massage in central Prague with premium oils. 60 min from 2,500 CZK. '
             'Book online — Black Diamond Spa, Soukenická, Prague 1.'
         ),
         'meta_description_ru': (
-            'Релакс-массаж в центре Праги с премиальными маслами. 75 мин от 1 700 Kč. '
+            'Релакс-массаж в центре Праги с премиальными маслами. 60 мин от 2 500 Kč. '
             'Запись онлайн — Black Diamond Spa, Soukenická, Praha 1.'
         ),
         'faq_cs': [
             {'q': 'Čím se liší relax masáž od klasické?', 'a': 'Relax masáž je pomalejší, jemnější a déle trvá. Zaměřuje se na celkovou pohodu a uvolnění mysli, ne na hluboké uvolnění svalů.'},
-            {'q': 'Jak dlouho trvá sezení?', 'a': 'Relax masáž trvá 75 minut v privátním pokoji s prémiovými oleji.'},
-            {'q': 'Kolik stojí relax masáž?', 'a': 'Cena je 1 700 Kč. V ceně jsou oleje, prostěradla a relaxační zóna.'},
+            {'q': 'Jak dlouho trvá sezení?', 'a': 'Relax masáž trvá 60 minut v privátním pokoji s prémiovými oleji.'},
+            {'q': 'Kolik stojí relax masáž?', 'a': 'Cena je 2 500 Kč. V ceně jsou oleje, prostěradla a relaxační zóna.'},
             {'q': 'Jaké oleje používáte?', 'a': 'Prémiové masážní oleje bez parfemace nebo s jemnou vůní. Při alergii nás informujte při rezervaci.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Relax masáž, masérku a volný termín.'},
             {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1, centrum města.'},
         ],
         'faq_en': [
             {'q': 'How is relax massage different from classic?', 'a': 'Relax massage is slower, gentler and longer. It focuses on overall wellbeing and mental release rather than deep muscle work.'},
-            {'q': 'How long is the session?', 'a': 'Relax massage lasts 75 minutes in a private room with premium oils.'},
-            {'q': 'How much does it cost?', 'a': 'The price is 1,700 CZK, including oils, linens and the relaxation area.'},
+            {'q': 'How long is the session?', 'a': 'Relax massage lasts 60 minutes in a private room with premium oils.'},
+            {'q': 'How much does it cost?', 'a': 'The price is 2,500 CZK, including oils, linens and the relaxation area.'},
             {'q': 'What oils do you use?', 'a': 'Premium massage oils, unscented or lightly fragranced. Inform us of allergies when booking.'},
             {'q': 'How do I book?', 'a': 'Online via the schedule — choose Relax massage, masseuse and available time.'},
             {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Prague 1, city centre.'},
         ],
         'faq_ru': [
             {'q': 'Чем релакс-массаж отличается от классического?', 'a': 'Релакс-массаж медленнее, мягче и длиннее. Фокус на общем благополучии и расслаблении разума, а не на глубокой проработке мышц.'},
-            {'q': 'Сколько длится сеанс?', 'a': 'Релакс-массаж — 75 минут в приватном кабинете с премиальными маслами.'},
-            {'q': 'Сколько стоит?', 'a': 'Цена — 1 700 Kč, включая масла, бельё и зону релаксации.'},
+            {'q': 'Сколько длится сеанс?', 'a': 'Релакс-массаж — 60 минут в приватном кабинете с премиальными маслами.'},
+            {'q': 'Сколько стоит?', 'a': 'Цена — 2 500 Kč, включая масла, бельё и зону релаксации.'},
             {'q': 'Какие масла используете?', 'a': 'Премиальные масла без аромата или с лёгким запахом. Сообщите об аллергии при записи.'},
             {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите релакс-массаж, массажистку и время.'},
             {'q': 'Где салон?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1, центр города.'},
         ],
     },
     {
-        'slug': 'thajska-masaz',
+        'slug': 'hlubokotkaninni-masaz',
         'order': 3,
         'duration': 90,
         'price': 3000,
-        'title_cs': 'Uvolňující masáž',
-        'title_en': 'Relaxing massage',
-        'title_ru': 'Расслабляющий массаж',
-        'short_cs': 'Hluboká relaxace s pomalými technikami pro uvolnění celého těla a mysli.',
-        'short_en': 'Deep relaxation with slow techniques to release tension throughout body and mind.',
-        'short_ru': 'Глубокое расслабление медленными техниками для снятия напряжения.',
+        'title_cs': 'Hlubokotkaninní masáž',
+        'title_en': 'Deep tissue massage',
+        'title_ru': 'Глубокотканный массаж',
+        'short_cs': 'Cílená práce s hlubšími svalovými vrstvami pro uvolnění chronického napětí a ztuhlosti.',
+        'short_en': 'Targeted work on deeper muscle layers to release chronic tension and stiffness.',
+        'short_ru': 'Целенаправленная работа с глубокими слоями мышц для снятия хронического напряжения.',
         'description_cs': (
-            'Uvolňující masáž v centru Prahy kombinuje pomalé techniky z tradiční thajské masáže '
-            's evropským přístupem k relaxaci. V Black Diamond Spa na Soukenické masérka pracuje '
-            's celým tělem — protahuje svaly, uvolňuje klouby a navozuje hluboký klid. Sezení '
-            'trvá 90 minut a je ideální pro ty, kdo hledají regeneraci po náročném období, cestování '
-            'nebo fyzické zátěži v centru Prahy.'
+            'Hlubokotkaninní masáž v centru Prahy je technika zaměřená na hlubší svalové vrstvy, '
+            'šlachy a fascie. V Black Diamond Spa na Soukenické masérka pracuje pomalými, '
+            'cílenými hmaty tam, kde se hromadí chronické napětí — záda, šíje, ramena nebo '
+            'nohy. Sezení trvá 90 minut a pomáhá uvolnit ztuhlost po sezení, sportu nebo stresu.'
         ),
         'description_en': (
-            'Relaxing massage in central Prague combines slow techniques inspired by traditional Thai '
-            'massage with a European approach to relaxation. At Black Diamond Spa on Soukenická, '
-            'your masseuse works the whole body — stretching muscles, releasing joints and inducing '
-            'deep calm. The 90-minute session is ideal after demanding periods, travel or physical '
-            'exertion in Prague city centre.'
+            'Deep tissue massage in central Prague targets deeper muscle layers, tendons and fascia. '
+            'At Black Diamond Spa on Soukenická, your masseuse uses slow, focused strokes where '
+            'chronic tension builds — back, neck, shoulders or legs. The 90-minute session helps '
+            'release stiffness from desk work, sport or stress.'
         ),
         'description_ru': (
-            'Расслабляющий массаж в центре Праги сочетает медленные техники традиционного тайского '
-            'массажа с европейским подходом к релаксации. В Black Diamond Spa на Soukenická массажистка '
-            'работает со всем телом — растягивает мышцы, расслабляет суставы и создаёт глубокое '
-            'спокойствие. 90-минутный сеанс идеален после напряжённого периода, путешествия или '
-            'физической нагрузки в центре Праги.'
+            'Глубокотканный массаж в центре Праги направлен на глубокие мышечные слои, сухожилия '
+            'и фасции. В Black Diamond Spa на Soukenická массажистка медленными точечными движениями '
+            'прорабатывает зоны хронического напряжения — спина, шея, плечи или ноги. '
+            '90-минутный сеанс помогает снять скованность после сидячей работы, спорта или стресса.'
         ),
         'what_cs': (
-            'Uvolňující masáž využívá kombinaci jemného tlaku, protahování a hladivých technik. '
-            'Masérka postupuje od nohou k horní části těla, pracuje s dýcháním klienta a přizpůsobuje '
-            'intenzitu aktuálnímu stavu. Na rozdíl od klasické masáže zahrnuje více práce s klouby '
-            'a fasciemi. Používáme kvalitní oleje a teplé prostředí privátního pokoje pro maximální '
-            'pohodlí během 90minutového sezení.'
+            'Hlubokotkaninní masáž využívá pomalý tlak, hluboké hnětání a práci s trigger pointy '
+            'v problematických oblastech. Masérka postupuje podle vaší zpětné vazby a přizpůsobuje '
+            'intenzitu — hluboká práce střídá uvolňující tahy pro regeneraci tkání. '
+            'Používáme kvalitní oleje v teplém privátním pokoji po celých 90 minut.'
         ),
         'what_en': (
-            'Relaxing massage uses a combination of gentle pressure, stretching and flowing strokes. '
-            'The masseuse works from feet to upper body, coordinating with the client breathing and '
-            'adjusting intensity to current condition. Unlike classic massage, it includes more joint '
-            'and fascia work. Quality oils and a warm private room ensure comfort throughout the '
-            '90-minute session.'
+            'Deep tissue massage uses slow pressure, deep kneading and trigger point work in problem '
+            'areas. Your masseuse follows your feedback and adjusts intensity — deep work alternates '
+            'with releasing strokes for tissue recovery. Quality oils in a warm private room throughout '
+            'the full 90 minutes.'
         ),
         'what_ru': (
-            'Расслабляющий массаж использует мягкое давление, растяжку и поглаживания. Массажистка '
-            'работает от ног к верхней части тела, синхронизируясь с дыханием клиента и подстраивая '
-            'интенсивность. В отличие от классического, больше работы с суставами и фасциями. '
-            'Качественные масла и тёплый приватный кабинет обеспечивают комфорт на протяжении 90 минут.'
+            'Глубокотканный массаж использует медленное давление, глубокое разминание и триггерные точки '
+            'в проблемных зонах. Массажистка учитывает вашу обратную связь и чередует глубокую работу '
+            'с расслабляющими движениями. Качественные масла в тёплом приватном кабинете все 90 минут.'
         ),
         'who_cs': (
-            'Uvolňující masáž je vhodná pro klienty s celkovým napětím, ztuhlostí po sezení nebo '
-            'dlouhých cestách. Ocení ji lidé hledající delší, pomalejší sezení s důrazem na flexibilitu. '
-            'Není vhodná při akutních bolestech kloubů nebo po operacích — konzultujte s námi předem. '
-            'Ideální kombinace s aromamasáží u našich specialistek Diany, Laury nebo Miry.'
+            'Hlubokotkaninní masáž je vhodná pro klienty s chronickým napětím zad, šíje nebo ramen, '
+            'po dlouhém sezení či fyzické zátěži. Není určena při akutních zánětech nebo horečce — '
+            'v takových případech konzultujte předem. Ideální pro ty, kdo potřebují hlubší práci než u klasické masáže.'
         ),
         'who_en': (
-            'Relaxing massage suits clients with overall tension, stiffness from sitting or long travel. '
-            'Those seeking a longer, slower session with emphasis on flexibility will appreciate it. '
-            'Not recommended for acute joint pain or post-surgery — consult us beforehand. '
-            'Pairs well with aroma massage from specialists Diana, Laura or Mira.'
+            'Deep tissue massage suits clients with chronic back, neck or shoulder tension, after long '
+            'sitting or physical load. Not recommended during acute inflammation or fever — consult us '
+            'beforehand. Ideal for those who need deeper work than classic massage.'
         ),
         'who_ru': (
-            'Расслабляющий массаж подходит при общем напряжении, скованности от сидячей работы или '
-            'долгих поездок. Оценят те, кто ищет длинный медленный сеанс с акцентом на гибкость. '
-            'Не рекомендуется при острой боли в суставах или после операций. Хорошо сочетается '
-            'с аромамассажем у специалисток Diana, Laura или Mira.'
+            'Глубокотканный массаж подходит при хроническом напряжении спины, шеи или плеч, после '
+            'длительного сидения или нагрузки. Не рекомендуется при остром воспалении или температуре. '
+            'Идеален тем, кому нужна более глубокая работа, чем классический массаж.'
         ),
-        'meta_title_cs': 'Uvolňující masáž Praha — 90 min od 1 600 Kč | Black Diamond Spa',
-        'meta_title_en': 'Relaxing Massage Prague — 90 min from 1,600 CZK | Black Diamond Spa',
-        'meta_title_ru': 'Расслабляющий массаж Прага — 90 мин от 1 600 Kč | Black Diamond Spa',
+        'meta_title_cs': 'Hlubokotkaninní masáž Praha — 90 min od 3 000 Kč | Black Diamond Spa',
+        'meta_title_en': 'Deep Tissue Massage Prague — 90 min from 3,000 CZK | Black Diamond Spa',
+        'meta_title_ru': 'Глубокотканный массаж Прага — 90 мин от 3 000 Kč | Black Diamond Spa',
         'meta_description_cs': (
-            'Uvolňující masáž v centru Prahy. 90 min od 1 600 Kč. Hluboká relaxace těla i mysli. '
+            'Hlubokotkaninní masáž v centru Prahy. 90 min od 3 000 Kč. Cílené uvolnění hlubokých svalů. '
             'Rezervujte online — Black Diamond Spa, Soukenická, Praha 1.'
         ),
         'meta_description_en': (
-            'Relaxing massage in central Prague. 90 min from 1,600 CZK. Deep body and mind release. '
+            'Deep tissue massage in central Prague. 90 min from 3,000 CZK. Targeted release of deep muscles. '
             'Book online — Black Diamond Spa, Soukenická, Prague 1.'
         ),
         'meta_description_ru': (
-            'Расслабляющий массаж в центре Праги. 90 мин от 1 600 Kč. Глубокое расслабление. '
+            'Глубокотканный массаж в центре Праги. 90 мин от 3 000 Kč. Целенаправленное снятие глубокого напряжения. '
             'Запись онлайн — Black Diamond Spa, Soukenická, Praha 1.'
         ),
         'faq_cs': [
-            {'q': 'Co je uvolňující masáž?', 'a': 'Kombinace pomalých technik inspirovaných thajskou masáží a evropským relaxačním přístupem pro uvolnění celého těla.'},
-            {'q': 'Jak dlouho trvá?', 'a': '90 minut v privátním pokoji — delší sezení umožňuje hlubší relaxaci.'},
-            {'q': 'Kolik stojí?', 'a': '1 600 Kč. V ceně oleje, prostěradla a relaxační zóna.'},
-            {'q': 'Pro koho je vhodná?', 'a': 'Pro klienty s celkovým napětím, po cestování nebo náročném období.'},
-            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Uvolňující masáž a volný termín.'},
+            {'q': 'Co je hlubokotkaninní masáž?', 'a': 'Technika zaměřená na hlubší svalové vrstvy a fascie pomocí pomalého cíleného tlaku.'},
+            {'q': 'Jak dlouho trvá?', 'a': '90 minut v privátním pokoji — dostatek času na důkladnou práci s problematickými oblastmi.'},
+            {'q': 'Kolik stojí?', 'a': '3 000 Kč. V ceně oleje, prostěradla a relaxační zóna.'},
+            {'q': 'Pro koho je vhodná?', 'a': 'Pro chronické napětí zad, šíje a ramen po sezení, sportu nebo stresu.'},
+            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Hlubokotkaninní masáž a volný termín.'},
             {'q': 'Kde salon?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
         ],
         'faq_en': [
-            {'q': 'What is relaxing massage?', 'a': 'A blend of slow techniques inspired by Thai massage and European relaxation for full-body release.'},
-            {'q': 'How long is it?', 'a': '90 minutes in a private room — the longer session allows deeper relaxation.'},
-            {'q': 'How much?', 'a': '1,600 CZK including oils, linens and relaxation area.'},
-            {'q': 'Who is it for?', 'a': 'Clients with overall tension, after travel or demanding periods.'},
-            {'q': 'How to book?', 'a': 'Online via schedule — choose Relaxing massage and available time.'},
+            {'q': 'What is deep tissue massage?', 'a': 'A technique focused on deeper muscle layers and fascia using slow, targeted pressure.'},
+            {'q': 'How long is it?', 'a': '90 minutes in a private room — enough time for thorough work on problem areas.'},
+            {'q': 'How much?', 'a': '3,000 CZK including oils, linens and relaxation area.'},
+            {'q': 'Who is it for?', 'a': 'Chronic tension in back, neck and shoulders from sitting, sport or stress.'},
+            {'q': 'How to book?', 'a': 'Online via schedule — choose Deep tissue massage and available time.'},
             {'q': 'Where?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Prague 1.'},
         ],
         'faq_ru': [
-            {'q': 'Что такое расслабляющий массаж?', 'a': 'Сочетание медленных техник тайского массажа и европейского релакса для расслабления всего тела.'},
-            {'q': 'Сколько длится?', 'a': '90 минут в приватном кабинете — длинный сеанс для глубокого расслабления.'},
-            {'q': 'Сколько стоит?', 'a': '1 600 Kč, включая масла, бельё и зону релаксации.'},
-            {'q': 'Для кого?', 'a': 'При общем напряжении, после путешествий или напряжённого периода.'},
-            {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите расслабляющий массаж и время.'},
+            {'q': 'Что такое глубокотканный массаж?', 'a': 'Техника для глубоких мышечных слоёв и фасций с медленным целенаправленным давлением.'},
+            {'q': 'Сколько длится?', 'a': '90 минут в приватном кабинете — достаточно времени для тщательной проработки.'},
+            {'q': 'Сколько стоит?', 'a': '3 000 Kč, включая масла, бельё и зону релаксации.'},
+            {'q': 'Для кого?', 'a': 'При хроническом напряжении спины, шеи и плеч после сидячей работы, спорта или стресса.'},
+            {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите глубокотканный массаж и время.'},
             {'q': 'Где салон?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
         ],
     },

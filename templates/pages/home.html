@@ -67,8 +67,8 @@
             <h3 class="svc-card__name">{{ service|trans_field:"title" }}</h3>
             <p class="svc-card__desc">{{ service|trans_field:"short" }}</p>
             <div class="svc-card__tags">
-              <span class="tag tag--duration">{{ service.duration }} min</span>
-              <span class="tag tag--price">{% price_multi service.price compact=True %}</span>
+              <span class="tag tag--duration">{{ service.catalog_duration }} min</span>
+              <span class="tag tag--price">{% price_multi service.catalog_price_czk compact=True %}</span>
             </div>
             <a href="{% url 'services:detail' service.slug %}" class="btn btn--ghost">{{ home.svc_btn }}</a>
           </div>

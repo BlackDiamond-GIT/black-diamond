@@ -10,25 +10,12 @@
     <span class="section-label" aria-hidden="true">{% trans "Ceník" %}</span>
     <h1 class="section-title prices-hero__title">{% trans "Ceník masáží Praha" %}</h1>
     <p class="section-subtitle prices-hero__intro">
-      {% trans "Transparentní ceny všech masáží v Black Diamond Spa. Oleje a relaxační zóna v ceně." %}
+      {% trans "Všechny typy masáží a délky na jednom místě. Oleje a relaxační zóna v ceně." %}
     </p>
   </header>
 
-  <section class="prices-toolbar glass" aria-label="{% trans 'Filtry ceníku' %}">
-    <div class="prices-toolbar__group" role="tablist" aria-label="{% trans 'Délka masáže' %}">
-      {% for duration, items in duration_groups %}
-      <button type="button"
-              class="prices-tab{% if forloop.first %} is-active{% endif %}"
-              role="tab"
-              id="duration-tab-{{ duration }}"
-              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-              aria-controls="duration-panel-{{ duration }}"
-              data-duration-tab="{{ duration }}">
-        {{ duration }} {% trans "min" %}
-      </button>
-      {% endfor %}
-    </div>
-
+  <section class="prices-toolbar glass" aria-label="{% trans 'Měna' %}">
+    <p class="prices-toolbar__hint">{% trans "Délky masáží: 45, 60 a 90 minut" %}</p>
     <div class="prices-toolbar__group prices-toolbar__group--currency" role="tablist" aria-label="{% trans 'Měna' %}">
       <button type="button" class="prices-currency is-active" data-currency="czk" aria-selected="true">Kč</button>
       {% if currency_settings.show_eur %}
@@ -40,32 +27,40 @@
     </div>
   </section>
 
-  <div class="prices-panels">
-    {% for duration, items in duration_groups %}
-    <div class="prices-panel{% if forloop.first %} is-active{% endif %}"
-         id="duration-panel-{{ duration }}"
-         role="tabpanel"
-         aria-labelledby="duration-tab-{{ duration }}"
-         data-duration-panel="{{ duration }}"
-         {% if not forloop.first %}hidden{% endif %}>
-      <ul class="price-list">
-        {% for service in items %}
-        <li class="price-row" data-reveal>
-          <div class="price-row__main">
-            <h2 class="price-row__name">
-              <a href="{% url 'services:detail' service.slug %}">{{ service|trans_field:"title" }}</a>
-            </h2>
-            <p class="price-row__desc">{{ service|trans_field:"short" }}</p>
-            <span class="price-row__duration">{{ service.duration }} {% trans "min" %}</span>
-          </div>
-          <div class="price-row__side">
-            {% price_multi service.price class_name="price-row__amount" %}
-            <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--sm price-row__cta">{% trans "Rezervovat" %}</a>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
+  <div class="prices-catalog">
+    {% for entry in catalog %}
+    <section class="price-category" data-reveal aria-labelledby="price-cat-{{ entry.service.slug }}">
+      <header class="price-category__head">
+        <h2 class="price-category__title" id="price-cat-{{ entry.service.slug }}">
+          <a href="{% url 'services:detail' entry.service.slug %}">{{ entry.service|trans_field:"title" }}</a>
+        </h2>
+        <p class="price-category__desc">{{ entry.service|trans_field:"short" }}</p>
+      </header>
+
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <caption class="sr-only">{% blocktrans with name=entry.service|trans_field:"title" %}Ceny — {{ name }}{% endblocktrans %}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{% trans "Délka" %}</th>
+              <th scope="col">{% trans "1 masérka" %}</th>
+              <th scope="col" class="price-table__action-col"><span class="sr-only">{% trans "Rezervace" %}</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="price-table__duration">{{ entry.duration_min }} {% trans "min" %}</td>
+              <td class="price-table__amount">{% price_multi entry.price_czk class_name="price-table__price" %}</td>
+              <td class="price-table__action">
+                <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--sm">{% trans "Rezervovat" %}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {% empty %}
+    <p class="prices-note">{% trans "Brzy přidáme ceník masáží." %}</p>
     {% endfor %}
   </div>
 

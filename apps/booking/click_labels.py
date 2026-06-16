@@ -28,6 +28,7 @@ PLACEMENT_LABELS: dict[str, str] = {
     "service_detail_cta": _("Service page — CTA"),
     "price_card": _("Price card button"),
     "schedule_row": _("Schedule row"),
+    "schedule_slot": _("Schedule slot"),
     "direct": _("Direct /rezervace/ link"),
     "unknown": _("Other"),
 }

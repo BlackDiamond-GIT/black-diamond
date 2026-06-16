@@ -1,38 +1,43 @@
 {% extends "base.html" %}
-{% load i18n bd_tags %}
-{% block title %}{% trans "Týdenní rozvrh" %} | {{ SITE_NAME }}{% endblock %}
-{% block meta_description %}{% trans "Aktuální dostupnost masérek. Rezervujte online podle týdenního rozvrhu." %}{% endblock %}
+{% load i18n static bd_tags %}
+{% block title %}{% trans "Rozvrh masáží" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Prohlédněte si týdenní směny masérek. Volné termíny rezervujte jedním kliknutím." %}{% endblock %}
 
 {% block content %}
-<div class="container" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
+<div class="container schedule-page" style="padding-top:calc(var(--nav-height) + var(--sp-3xl));padding-bottom:var(--sp-4xl)">
 
-  <header class="section-header section-header--center" style="margin-bottom:var(--sp-3xl)">
-    <span class="section-label" aria-hidden="true">{% trans "Rezervace" %}</span>
-    <h1 class="section-title">{% trans "Týdenní rozvrh" %}</h1>
-    <p class="section-subtitle">{% trans "Aktuální dostupnost masérek na Soukenické podle směny." %}</p>
+  <header class="schedule-hero">
+    <h1 class="schedule-hero__title">{% trans "Rozvrh masáží" %}</h1>
+    <p class="schedule-hero__intro">{% trans "Vyberte masérku a prohlédněte si její týdenní směny. Volné termíny rezervujte jedním kliknutím." %}</p>
+    <p class="schedule-hero__address">{{ work_address }}</p>
   </header>
 
-  {% include "schedule/_week.html" %}
+  {% include "schedule/_on_shift.html" %}
+  {% include "schedule/_week_grid.html" %}
 
-  <div class="schedule__hours-bar" role="complementary" aria-label="{% trans 'Otevírací doba' %}" style="margin-top:var(--sp-3xl)">
+  <p class="schedule-hint">{% trans "Klikněte na volný termín pro přechod k rezervaci." %}</p>
+
+  <div class="schedule__hours-bar" role="complementary" aria-label="{% trans 'Otevírací doba' %}">
     <svg class="schedule__hours-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
       <circle cx="12" cy="12" r="10"/>
       <polyline points="12 6 12 12 16 14"/>
     </svg>
     <span class="schedule__hours-text">{{ opening_hours_text }}</span>
     &nbsp;|&nbsp;
-    <a href="tel:{{ SITE_PHONE|cut:' ' }}" style="color:var(--tiffany)">{{ SITE_PHONE }}</a>
+    <a href="tel:{{ SITE_PHONE|cut:' ' }}" class="schedule__hours-phone">{{ SITE_PHONE }}</a>
   </div>
 
-  <div class="glass" style="margin-top:var(--sp-3xl);padding:var(--sp-xl);border-radius:var(--radius-xl);text-align:center">
-    <p style="margin-bottom:var(--sp-lg);color:var(--text-secondary)">
-      {% trans "Nenašli jste vhodný termín? Kontaktujte nás přímo." %}
-    </p>
-    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-md);justify-content:center">
+  <div class="glass schedule-cta">
+    <p class="schedule-cta__text">{% trans "Nenašli jste vhodný termín? Kontaktujte nás přímo." %}</p>
+    <div class="schedule-cta__actions">
       <a href="tel:{{ SITE_PHONE|cut:' ' }}" class="btn btn--primary btn--lg">{{ SITE_PHONE }}</a>
       <a href="{% url 'pages:contact' %}" class="btn btn--secondary btn--lg">{% trans "Napsat zprávu" %}</a>
     </div>
   </div>
 
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/schedule-page.js' %}" defer></script>
 {% endblock %}

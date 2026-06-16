@@ -1,0 +1,30 @@
+{% load i18n %}
+<section class="schedule-now" aria-labelledby="schedule-now-title">
+  <div class="schedule-now__head">
+    <h2 id="schedule-now-title" class="schedule-section__title">{% trans "Právě na směně" %}</h2>
+    <span class="schedule-now__time" data-schedule-clock aria-live="polite"></span>
+  </div>
+
+  {% if live_entries %}
+  <ul class="schedule-now__list">
+    {% for item in live_entries %}
+    {% with entry=item.entry %}
+    <li class="schedule-now__item">
+      <div class="schedule-now__main">
+        <span class="schedule-now__name">{{ entry.therapist.name }}</span>
+        <span class="schedule-now__time-range">{{ entry.time_from|time:'H:i' }}–{{ entry.time_to|time:'H:i' }}</span>
+      </div>
+      <div class="schedule-now__meta">
+        <span class="week-slot__period week-slot__period--{% if entry.shift_type == 'night' %}night{% else %}day{% endif %}">
+          {{ entry.get_shift_type_display }}
+        </span>
+        <span class="schedule-now__location">{{ work_address }}</span>
+      </div>
+    </li>
+    {% endwith %}
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="schedule-empty">{% trans "Nikdo momentálně není na směně." %}</p>
+  {% endif %}
+</section>

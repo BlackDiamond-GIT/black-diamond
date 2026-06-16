@@ -6,7 +6,7 @@ THERAPISTS_PART2 = [
         'name': 'Vanessa',
         'order': 4,
         'specialties': ['klasicka-masaz', 'sportovni-masaz'],
-        'offers': ['klasicka-masaz', 'sportovni-masaz', 'thajska-masaz'],
+        'offers': ['klasicka-masaz', 'sportovni-masaz', 'hlubokotkaninni-masaz'],
         'tagline_cs': 'Klasická & Sportovní masáž',
         'tagline_en': 'Classic & Sports massage',
         'tagline_ru': 'Классический & спортивный массаж',
@@ -61,14 +61,14 @@ THERAPISTS_PART2 = [
             'запись онлайн в Black Diamond Spa. Soukenická, Praha 1.'
         ),
         'faq_cs': [
-            {'q': 'Jaké masáže nabízí Vanessa?', 'a': 'Klasickou, Sportovní a Uvolňující masáž. Detail v sekci Nabízené masáže.'},
+            {'q': 'Jaké masáže nabízí Vanessa?', 'a': 'Klasickou, Sportovní a Hlubokotkaninní masáž. Detail v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Vanessa?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Vanessa a volný termín.'},
             {'q': 'Pro koho je Vanessa vhodná?', 'a': 'Pro sportovce, běžce, fitness nadšence i klienty s bolestmi zad.'},
             {'q': 'Kolik let má Vanessa praxe?', 'a': 'Deset let v klasické a sportovní masáži v Praze.'},
             {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
         ],
         'faq_en': [
-            {'q': 'What does Vanessa offer?', 'a': 'Classic, Sports and Relaxing massage. See Offered massages section.'},
+            {'q': 'What does Vanessa offer?', 'a': 'Classic, Sports and Deep tissue massage. See Offered massages section.'},
             {'q': 'How to book with Vanessa?', 'a': 'Online via schedule — choose massage, select Vanessa and available time.'},
             {'q': 'Who is Vanessa best for?', 'a': 'Athletes, runners, fitness enthusiasts and clients with back pain.'},
             {'q': 'How much experience?', 'a': 'Ten years in classic and sports massage in Prague.'},

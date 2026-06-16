@@ -103,6 +103,8 @@ class Command(BaseCommand):
         for item in SERVICES:
             slug = item['slug']
             defaults = {k: v for k, v in item.items() if k != 'slug'}
+            defaults['base_price_czk'] = defaults.get('price', 0)
+            defaults['base_duration_min'] = defaults.get('duration', 60)
 
             if force:
                 obj, created = Service.objects.update_or_create(

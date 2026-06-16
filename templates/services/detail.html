@@ -29,7 +29,7 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "{{ service.price|floatformat:0 }}",
+    "price": "{{ service.catalog_price_czk }}",
     "priceCurrency": "CZK",
     "availability": "https://schema.org/InStock",
     "url": "{{ SITE_URL }}{{ request.path }}"
@@ -104,11 +104,11 @@
 
       <div class="service-detail__stats">
         <div class="glass service-detail__stat">
-          <div class="service-detail__stat-value">{% price_multi service.price %}</div>
+          <div class="service-detail__stat-value">{% price_multi service.catalog_price_czk %}</div>
           <div class="service-detail__stat-label sr-only">{% trans "Cena" %}</div>
         </div>
         <div class="glass service-detail__stat">
-          <div class="service-detail__stat-value">{{ service.duration }}</div>
+          <div class="service-detail__stat-value">{{ service.catalog_duration }}</div>
           <div class="service-detail__stat-label">{% trans "minut" %}</div>
         </div>
       </div>
@@ -141,8 +141,8 @@
         {% trans "Cena a rezervace" %}
       </h2>
       <p class="service-detail__section-text">
-        {% price_multi service.price %}
-        <span class="price-multi-duration"> / {{ service.duration }} {% trans "min" %}. {% trans "Oleje a relaxační zóna v ceně. Platba hotovostí nebo kartou." %}</span>
+        {% price_multi service.catalog_price_czk %}
+        <span class="price-multi-duration"> / {{ service.catalog_duration }} {% trans "min" %}. {% trans "Oleje a relaxační zóna v ceně. Platba hotovostí nebo kartou." %}</span>
       </p>
       <div class="service-detail__actions">
         <a href="{% url 'schedule:index' %}" class="btn btn--primary shimmer">{% trans "Rezervovat online" %}</a>

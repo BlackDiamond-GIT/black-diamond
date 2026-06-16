@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 
 from apps.core.mixins import ExtraCssMixin
 from apps.services.models import Service
+from apps.services.pricing_catalog import build_price_catalog
 from apps.therapists.models import Therapist
 
 from .home_copy import FEATURED_SERVICE_SLUGS, get_home_copy
@@ -85,11 +86,5 @@ class PricesView(ExtraCssMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        services = list(
-            Service.objects.filter(is_active=True).order_by('order', 'pk')
-        )
-        groups: dict[int, list] = {}
-        for service in services:
-            groups.setdefault(service.duration, []).append(service)
-        ctx['duration_groups'] = sorted(groups.items(), key=lambda item: item[0])
+        ctx['catalog'] = build_price_catalog()
         return ctx

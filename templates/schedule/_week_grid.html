@@ -1,0 +1,112 @@
+{% load i18n bd_tags booking_tags %}
+
+<section class="schedule-week" aria-labelledby="schedule-week-title">
+  <div class="schedule-week__head">
+    <h2 id="schedule-week-title" class="schedule-section__title">{% trans "Týdenní rozvrh" %}</h2>
+    <div class="schedule-legend" aria-label="{% trans 'Legenda stavů' %}">
+      <div class="schedule-legend__item">
+        <span class="schedule-legend__swatch schedule-legend__swatch--avail" aria-hidden="true"></span>
+        <span>{% trans "Volný termín" %}</span>
+      </div>
+      <div class="schedule-legend__item">
+        <span class="schedule-legend__swatch schedule-legend__swatch--booked" aria-hidden="true"></span>
+        <span>{% trans "Obsazeno" %}</span>
+      </div>
+      <div class="schedule-legend__item">
+        <span class="schedule-legend__swatch schedule-legend__swatch--night" aria-hidden="true"></span>
+        <span>{% trans "Noční směna" %}</span>
+      </div>
+    </div>
+  </div>
+
+  {% if therapist_panels %}
+  <div class="masseuse-tabs" role="tablist" aria-label="{% trans 'Masérky' %}">
+    {% for panel in therapist_panels %}
+    <button type="button"
+            class="masseuse-tabs__btn{% if forloop.first %} is-active{% endif %}"
+            role="tab"
+            id="masseuse-tab-{{ panel.therapist.pk }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-controls="masseuse-panel-{{ panel.therapist.pk }}"
+            data-masseuse-tab="{{ panel.therapist.pk }}">
+      {{ panel.therapist.name }}
+    </button>
+    {% endfor %}
+  </div>
+
+  <div class="masseuse-panels">
+    {% for panel in therapist_panels %}
+    <article class="masseuse-panel{% if forloop.first %} is-active{% endif %}"
+             id="masseuse-panel-{{ panel.therapist.pk }}"
+             role="tabpanel"
+             aria-labelledby="masseuse-tab-{{ panel.therapist.pk }}"
+             data-masseuse-panel="{{ panel.therapist.pk }}"
+             {% if not forloop.first %}hidden{% endif %}>
+      <header class="masseuse-panel__head">
+        <div class="masseuse-panel__info">
+          <h3 class="masseuse-panel__name">{{ panel.therapist.name }}</h3>
+          {% if panel.specialty_labels %}
+          <p class="masseuse-panel__spec">{{ panel.specialty_labels|join:" & " }}</p>
+          {% endif %}
+        </div>
+        <a href="{% url 'therapists:detail' panel.therapist.slug %}" class="btn btn--ghost masseuse-panel__profile">
+          {% trans "Profil masérky" %}
+        </a>
+      </header>
+
+      <div class="week-grid">
+        {% for day in panel.days %}
+        <section class="week-day{% if day.is_today %} week-day--today{% endif %}">
+          <header class="week-day__head">
+            <span class="week-day__label">{{ day.weekday_short }}</span>
+            {% if day.is_today %}
+            <span class="week-day__badge">{% trans "Dnes" %}</span>
+            {% endif %}
+          </header>
+
+          {% if day.slots %}
+          <ul class="week-day__slots">
+            {% for slot in day.slots %}
+            {% with entry=slot.entry %}
+            <li class="week-slot{% if slot.is_night %} week-slot--overnight{% endif %}{% if slot.status == 'booked' %} week-slot--booked{% endif %}">
+              {% if slot.status == 'available' %}
+              <a href="{% booking_out_link 'schedule_slot' entry.therapist %}"
+                 class="week-slot__inner week-slot__link"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <span class="week-slot__time">{{ entry.time_from|time:'H:i' }}–{{ entry.time_to|time:'H:i' }}</span>
+                <span class="week-slot__svc">
+                  <span class="week-slot__period week-slot__period--{% if slot.is_night %}night{% else %}day{% endif %}">
+                    {{ entry.get_shift_type_display }}
+                  </span>
+                </span>
+                <span class="week-slot__status week-slot__status--avail">{% trans "Rezervovat" %}</span>
+              </a>
+              {% else %}
+              <div class="week-slot__inner">
+                <span class="week-slot__time">{{ entry.time_from|time:'H:i' }}–{{ entry.time_to|time:'H:i' }}</span>
+                <span class="week-slot__svc">
+                  <span class="week-slot__period week-slot__period--{% if slot.is_night %}night{% else %}day{% endif %}">
+                    {{ entry.get_shift_type_display }}
+                  </span>
+                </span>
+                <span class="week-slot__status">{% trans "Obsazeno" %}</span>
+              </div>
+              {% endif %}
+            </li>
+            {% endwith %}
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="week-day__empty">{% trans "Volno" %}</p>
+          {% endif %}
+        </section>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="schedule-empty">{% trans "Pro tento týden nejsou k dispozici žádné směny." %}</p>
+  {% endif %}
+</section>

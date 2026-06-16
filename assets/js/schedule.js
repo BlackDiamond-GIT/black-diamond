@@ -17,8 +17,8 @@
   };
 
   const THERAPISTS = [
-    { id: 1, slug: 'julia',   name: 'Julia',   services: { cs: ['Klasická masáž', 'Relax masáž', 'Uvolňující masáž'], en: ['Classic massage', 'Relax massage', 'Relaxing massage'], ru: ['Классический массаж', 'Релакс массаж', 'Расслабляющий массаж'] } },
-    { id: 2, slug: 'diana',   name: 'Diana',   services: { cs: ['Uvolňující masáž', 'Aromamasáž'], en: ['Relaxing massage', 'Aroma massage'], ru: ['Расслабляющий массаж', 'Аромамассаж'] } },
+    { id: 1, slug: 'julia',   name: 'Julia',   services: { cs: ['Klasická masáž', 'Relax masáž', 'Hlubokotkaninní masáž'], en: ['Classic massage', 'Relax massage', 'Deep tissue massage'], ru: ['Классический массаж', 'Релакс массаж', 'Глубокотканный массаж'] } },
+    { id: 2, slug: 'diana',   name: 'Diana',   services: { cs: ['Hlubokotkaninní masáž', 'Aromamasáž'], en: ['Deep tissue massage', 'Aroma massage'], ru: ['Глубокотканный массаж', 'Аромамассаж'] } },
     { id: 3, slug: 'laura',   name: 'Laura',   services: { cs: ['Aromamasáž', 'Relax masáž'], en: ['Aroma massage', 'Relax massage'], ru: ['Аромамассаж', 'Релакс массаж'] } },
     { id: 4, slug: 'vanessa', name: 'Vanessa', services: { cs: ['Klasická masáž', 'Sportovní masáž'], en: ['Classic massage', 'Sports massage'], ru: ['Классический массаж', 'Спортивный массаж'] } },
     { id: 5, slug: 'ella',    name: 'Ella',    services: { cs: ['Sportovní masáž', 'Klasická masáž'], en: ['Sports massage', 'Classic massage'], ru: ['Спортивный массаж', 'Классический массаж'] } },

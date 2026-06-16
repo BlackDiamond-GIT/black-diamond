@@ -5,8 +5,8 @@ THERAPISTS_PART1 = [
         'slug': 'julia',
         'name': 'Julia',
         'order': 1,
-        'specialties': ['klasicka-masaz', 'cbd-relaxacni-masaz', 'thajska-masaz'],
-        'offers': ['klasicka-masaz', 'cbd-relaxacni-masaz', 'thajska-masaz'],
+        'specialties': ['klasicka-masaz', 'cbd-relaxacni-masaz', 'hlubokotkaninni-masaz'],
+        'offers': ['klasicka-masaz', 'cbd-relaxacni-masaz', 'hlubokotkaninni-masaz'],
         'tagline_cs': 'Klasická & Relax masáž',
         'tagline_en': 'Classic & Relax massage',
         'tagline_ru': 'Классический & релакс массаж',
@@ -61,14 +61,14 @@ THERAPISTS_PART1 = [
             'запись онлайн в Black Diamond Spa. Soukenická, Praha 1.'
         ),
         'faq_cs': [
-            {'q': 'Jaké masáže nabízí Julia?', 'a': 'Julia specializuje se na Klasickou, Relax a Uvolňující masáž. Kompletní seznam najdete v sekci Nabízené masáže.'},
+            {'q': 'Jaké masáže nabízí Julia?', 'a': 'Julia specializuje se na Klasickou, Relax a Hlubokotkaninní masáž. Kompletní seznam najdete v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Julia?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Julia a volný termín. Potvrzení obdržíte e-mailem.'},
             {'q': 'Pro koho je Julia vhodná?', 'a': 'Pro klienty hledající klasickou masáž, relaxaci po stresu nebo péči o záda a krk.'},
             {'q': 'Jak dlouho trvá sezení?', 'a': 'Podle zvolené masáže 60–90 minut v privátním pokoji v centru Prahy.'},
             {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1 — snadno dostupné MHD.'},
         ],
         'faq_en': [
-            {'q': 'What massages does Julia offer?', 'a': 'Julia specializes in Classic, Relax and Relaxing massage. See the Offered massages section for details.'},
+            {'q': 'What massages does Julia offer?', 'a': 'Julia specializes in Classic, Relax and Deep tissue massage. See the Offered massages section for details.'},
             {'q': 'How to book with Julia?', 'a': 'Online via schedule — choose massage, select Julia and available time. Email confirmation follows.'},
             {'q': 'Who is Julia best for?', 'a': 'Clients seeking classic massage, post-stress relaxation or back and neck care.'},
             {'q': 'How long is a session?', 'a': 'Depending on massage type, 60–90 minutes in a private room in central Prague.'},
@@ -86,16 +86,16 @@ THERAPISTS_PART1 = [
         'slug': 'diana',
         'name': 'Diana',
         'order': 2,
-        'specialties': ['thajska-masaz', 'aromaterapie'],
-        'offers': ['thajska-masaz', 'aromaterapie', 'cbd-relaxacni-masaz'],
-        'tagline_cs': 'Uvolňující & Aromamasáž',
-        'tagline_en': 'Relaxing & Aroma massage',
+        'specialties': ['hlubokotkaninni-masaz', 'aromaterapie'],
+        'offers': ['hlubokotkaninni-masaz', 'aromaterapie', 'cbd-relaxacni-masaz'],
+        'tagline_cs': 'Hlubokotkaninní & Aromamasáž',
+        'tagline_en': 'Deep tissue & Aroma massage',
         'tagline_ru': 'Расслабляющий & аромамассаж',
         'bio_cs': (
             'Diana je masérka v centru Prahy se specializací na uvolňující a aromamasáž v Black Diamond Spa '
             'na Soukenické. Její přístup je klidný, citlivý a zaměřený na hluboký odpočinek těla i mysli. '
             'Při aromamasáži vybírá éterické oleje podle nálady klienta — levandule pro klid, eukalyptus '
-            'pro osvěžení nebo ylang-ylang pro emoční uvolnění. Uvolňující masáž provádí pomalými technikami '
+            'pro osvěžení nebo ylang-ylang pro emoční uvolnění. Hlubokotkaninní masáž provádí pomalými technikami '
             'inspirovanými tradičními přístupy, které uvolňují svaly i klouby. Klienti oceňují Diana '
             'jemný hlas, diskrétnost a schopnost vytvořit bezpečný prostor pro relaxaci. Pracuje v privátním '
             'pokoji salonu v Praze 1 s prémiovými produkty. Ideální volba pro ty, kdo hledají smyslový '
@@ -105,7 +105,7 @@ THERAPISTS_PART1 = [
             'Diana is a masseuse in central Prague specializing in relaxing and aroma massage at Black Diamond '
             'Spa on Soukenická. Her approach is calm, sensitive and focused on deep rest for body and mind. '
             'During aroma massage she selects essential oils to match client mood — lavender for calm, '
-            'eucalyptus for refreshment or ylang-ylang for emotional release. Relaxing massage uses slow '
+            'eucalyptus for refreshment or ylang-ylang for emotional release. Deep tissue massage uses slow '
             'techniques inspired by traditional approaches that release muscles and joints. Clients value '
             'Diana\'s gentle manner, discretion and ability to create a safe space for relaxation. She works '
             'in a private room at our Prague 1 salon with premium products. Ideal for those seeking a sensory '
@@ -124,15 +124,15 @@ THERAPISTS_PART1 = [
         'loves_text_cs': '„Vůně a dotek — to je pro mě jeden celek, který dokáže změnit celý den klienta."',
         'loves_text_en': '"Scent and touch — for me they are one whole that can change a client entire day."',
         'loves_text_ru': '«Аромат и прикосновение — для меня это единое целое, способное изменить весь день клиента.»',
-        'meta_title_cs': 'Diana — Masérka Uvolňující & Aromamasáž Praha | Black Diamond Spa',
-        'meta_title_en': 'Diana — Relaxing & Aroma Masseuse Prague | Black Diamond Spa',
+        'meta_title_cs': 'Diana — Masérka Hlubokotkaninní & Aromamasáž Praha | Black Diamond Spa',
+        'meta_title_en': 'Diana — Deep Tissue & Aroma Masseuse Prague | Black Diamond Spa',
         'meta_title_ru': 'Diana — Расслабляющий & аромамассаж Прага | Black Diamond Spa',
         'meta_description_cs': (
-            'Diana — Uvolňující & Aromamasáž v centru Prahy. Citlivý přístup, '
+            'Diana — Hlubokotkaninní & Aromamasáž v centru Prahy. Citlivý přístup, '
             'rezervujte online v Black Diamond Spa. Soukenická, Praha 1.'
         ),
         'meta_description_en': (
-            'Diana — Relaxing & Aroma massage in central Prague. Sensitive approach, '
+            'Diana — Deep tissue & Aroma massage in central Prague. Sensitive approach, '
             'book online at Black Diamond Spa. Soukenická, Prague 1.'
         ),
         'meta_description_ru': (
@@ -140,14 +140,14 @@ THERAPISTS_PART1 = [
             'запись онлайн в Black Diamond Spa. Soukenická, Praha 1.'
         ),
         'faq_cs': [
-            {'q': 'Jaké masáže nabízí Diana?', 'a': 'Uvolňující masáž, Aromamasáž a Relax masáž. Detail v sekci Nabízené masáže.'},
+            {'q': 'Jaké masáže nabízí Diana?', 'a': 'Hlubokotkaninní masáž, Aromamasáž a Relax masáž. Detail v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Diana?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Diana a volný termín.'},
             {'q': 'Pro koho je Diana vhodná?', 'a': 'Pro klienty hledající aromaterapii, emoční uvolnění a pomalou relaxaci.'},
             {'q': 'Jaké oleje používá?', 'a': 'Prémiové éterické oleje — levandule, eukalyptus, ylang-ylang a další dle preference.'},
             {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
         ],
         'faq_en': [
-            {'q': 'What does Diana offer?', 'a': 'Relaxing massage, Aroma massage and Relax massage. See Offered massages section.'},
+            {'q': 'What does Diana offer?', 'a': 'Deep tissue massage, Aroma massage and Relax massage. See Offered massages section.'},
             {'q': 'How to book with Diana?', 'a': 'Online via schedule — choose massage, select Diana and available time.'},
             {'q': 'Who is Diana best for?', 'a': 'Clients seeking aromatherapy, emotional release and slow relaxation.'},
             {'q': 'What oils does she use?', 'a': 'Premium essential oils — lavender, eucalyptus, ylang-ylang and more by preference.'},
@@ -166,7 +166,7 @@ THERAPISTS_PART1 = [
         'name': 'Laura',
         'order': 3,
         'specialties': ['aromaterapie', 'cbd-relaxacni-masaz'],
-        'offers': ['aromaterapie', 'cbd-relaxacni-masaz', 'thajska-masaz'],
+        'offers': ['aromaterapie', 'cbd-relaxacni-masaz', 'hlubokotkaninni-masaz'],
         'tagline_cs': 'Aromamasáž & Relax masáž',
         'tagline_en': 'Aroma & Relax massage',
         'tagline_ru': 'Аромамассаж & релакс массаж',
@@ -218,14 +218,14 @@ THERAPISTS_PART1 = [
             'запись онлайн в Black Diamond Spa. Soukenická, Praha 1.'
         ),
         'faq_cs': [
-            {'q': 'Jaké masáže nabízí Laura?', 'a': 'Aromamasáž, Relax masáž a Uvolňující masáž. Viz sekce Nabízené masáže.'},
+            {'q': 'Jaké masáže nabízí Laura?', 'a': 'Aromamasáž, Relax masáž a Hlubokotkaninní masáž. Viz sekce Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Laura?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Laura a volný termín.'},
             {'q': 'Pro koho je Laura vhodná?', 'a': 'Pro klienty hledající aromaterapii, relaxaci a péči o harmonii těla a mysli.'},
             {'q': 'Jak dlouho trvá sezení?', 'a': '75–90 minut podle zvolené masáže v privátním pokoji.'},
             {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
         ],
         'faq_en': [
-            {'q': 'What does Laura offer?', 'a': 'Aroma massage, Relax massage and Relaxing massage. See Offered massages.'},
+            {'q': 'What does Laura offer?', 'a': 'Aroma massage, Relax massage and Deep tissue massage. See Offered massages.'},
             {'q': 'How to book with Laura?', 'a': 'Online via schedule — choose massage, select Laura and available time.'},
             {'q': 'Who is Laura best for?', 'a': 'Clients seeking aromatherapy, relaxation and body-mind harmony.'},
             {'q': 'How long is a session?', 'a': '75–90 minutes depending on massage type in a private room.'},

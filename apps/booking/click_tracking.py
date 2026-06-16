@@ -39,6 +39,7 @@ PLACEMENTS: frozenset[str] = frozenset(
         "service_detail_cta",
         "price_card",
         "schedule_row",
+        "schedule_slot",
         "direct",
         "unknown",
     }

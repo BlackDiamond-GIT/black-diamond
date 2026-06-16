@@ -36,7 +36,7 @@ HOME_COPY = {
         'faqs': [
             ('Jak se připravit na masáž?', 'Doporučujeme přijít 10 minut předem, čistí a hydratovaní. Vyhněte se jídlu hodinu před masáží.'),
             ('Jak rezervovat masáž?', 'Online v sekci <a href="/cs/rozvrh/">Rozvrh</a> — vyberte masáž, masérku a volný termín. Potvrzení obdržíte e-mailem.'),
-            ('Jak dlouho masáž trvá?', 'Závisí na zvoleném typu: od 60 minut (klasická, sportovní) do 90 minut (uvolňující masáž).'),
+            ('Jak dlouho masáž trvá?', 'Závisí na zvoleném typu: od 45 minut (aromamasáž) přes 60 minut (klasická, relax, sportovní) do 90 minut (hlubokotkaninní masáž).'),
             ('Jak probíhá platba?', 'Přijímáme hotovost i platební karty. Platba probíhá na místě po skončení masáže.'),
             ('Nabízíte párovou masáž?', 'Ano, párová masáž je možná po domluvě. Kontaktujte nás pro rezervaci pro dvě osoby.'),
             ('Co je zahrnuto v ceně?', 'Masážní oleje, prostěradla a přístup do relaxační zóny jsou součástí každé masáže.'),
