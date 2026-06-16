@@ -124,20 +124,6 @@
       <p class="service-detail__section-text">{{ service|trans_field:"who" }}</p>
     </section>
     {% endif %}
-
-    <section aria-labelledby="price-heading" class="glass service-detail__price-box">
-      <h2 id="price-heading" style="font-family:var(--font-display);font-size:var(--fs-h2);margin-bottom:var(--sp-lg)">
-        {% trans "Cena a rezervace" %}
-      </h2>
-      <p class="service-detail__section-text">
-        {% price_multi service.catalog_price_czk %}
-        <span class="price-multi-duration"> / {{ service.catalog_duration }} {% trans "min" %}. {% trans "Oleje a relaxační zóna v ceně. Platba hotovostí nebo kartou." %}</span>
-      </p>
-      <div class="service-detail__actions">
-        <a href="{% url 'schedule:index' %}" class="btn btn--primary shimmer">{% trans "Rezervovat online" %}</a>
-        <a href="tel:{{ SITE_PHONE|cut:' ' }}" class="btn btn--secondary">{{ SITE_PHONE }}</a>
-      </div>
-    </section>
   </div>
 
   {% with faq=service|faq_items %}
