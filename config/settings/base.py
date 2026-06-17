@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.faq',
     'apps.media_library',
     'apps.booking',
+    'apps.hub_client',
 ]
 
 MIDDLEWARE = [
@@ -323,3 +324,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'skin': 'oxide-dark',
     'content_css': 'dark',
 }
+
+# ─── Hub API (tantra-prague.com) ──────────────────────────────────────────────
+HUB_API_URL = env('HUB_API_URL', default='https://tantra-prague.com')
+HUB_API_KEY = env('HUB_API_KEY', default='')
+HUB_SITE_SLUG = 'black-diamond'

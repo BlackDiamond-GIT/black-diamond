@@ -5,6 +5,12 @@ from django.utils.translation import gettext_lazy as _
 class Therapist(models.Model):
     slug = models.SlugField(unique=True, max_length=60)
     name = models.CharField(max_length=80)
+    hub_slug = models.SlugField(
+        max_length=80,
+        blank=True,
+        db_index=True,
+        help_text="Slug масажистки на tantra-prague.com (для синхронізації розкладу)",
+    )
     sort_order = models.IntegerField(_('Sort order'), default=0, db_index=True)
 
     is_active = models.BooleanField(default=True)

@@ -24,6 +24,32 @@ services:
           property: connectionString
       - key: WEB_CONCURRENCY
         value: "2"
+      - key: HUB_API_URL
+        value: https://tantra-prague.com
+      - key: HUB_API_KEY
+        sync: false
+
+  - type: cron
+    name: black-diamond-schedule-sync
+    runtime: python
+    plan: starter
+    branch: main
+    buildCommand: ./build.sh
+    schedule: "*/30 * * * *"
+    startCommand: python manage.py sync_schedule_from_tantra --days=35
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings.prod
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: black-diamond-db
+          property: connectionString
+      - key: HUB_API_URL
+        value: https://tantra-prague.com
+      - key: HUB_API_KEY
+        sync: false
 
 databases:
   - name: black-diamond-db

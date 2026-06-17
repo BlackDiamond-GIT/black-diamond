@@ -1,67 +1,56 @@
-"""Синхронізує розклад з tantra-prague.com/cs/rozvrh/."""
+"""Sync schedule from tantra-prague.com Hub API (replaces HTML scraper)."""
 
 from __future__ import annotations
 
 from django.core.management.base import BaseCommand
 
-from apps.branches.models import Branch
-from apps.schedule.tantra_sync import sync_schedule_from_tantra
+from apps.schedule.tantra_sync import sync_schedule_from_hub
 from apps.schedule.week import business_date, parse_anchor_param
 
 
 class Command(BaseCommand):
-    help = 'Імпортує розклад з tantra-prague.com для масажисток, що є в БД.'
+    help = "Sync schedule from tantra-prague.com Hub API for therapists in the local DB."
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '--from',
-            dest='from_date',
-            default='',
-            help='Початкова дата (YYYY-MM-DD), за замовчуванням — сьогодні',
+            "--from",
+            dest="from_date",
+            default="",
+            help="Start date YYYY-MM-DD (default: today)",
         )
         parser.add_argument(
-            '--weeks',
+            "--days",
             type=int,
-            default=5,
-            help='Скільки тижнів (по 7 днів) завантажити',
+            default=35,
+            help="Number of days to fetch (default: 35)",
         )
         parser.add_argument(
-            '--dry-run',
-            action='store_true',
-            help='Лише підрахунок без запису в БД',
+            "--dry-run",
+            action="store_true",
+            help="Count only — do not write to DB",
         )
 
     def handle(self, *args, **options):
-        if not Branch.objects.filter(is_active=True).exists():
-            self.stderr.write(
-                self.style.ERROR(
-                    'Немає філій у БД. Спочатку запустіть: python manage.py seed_site --force'
-                )
-            )
-            return
-
-        anchor = (
-            parse_anchor_param(options['from_date'])
-            if options['from_date']
+        from_date = (
+            parse_anchor_param(options["from_date"])
+            if options["from_date"]
             else business_date()
         )
-        stats = sync_schedule_from_tantra(
-            weeks=options['weeks'],
-            anchor=anchor,
-            dry_run=options['dry_run'],
+        stats = sync_schedule_from_hub(
+            from_date=from_date,
+            days=options["days"],
+            dry_run=options["dry_run"],
         )
 
-        prefix = '[dry-run] ' if options['dry_run'] else ''
+        if "error" in stats:
+            self.stderr.write(self.style.ERROR(f"Hub API error: {stats['error']}"))
+            return
+
+        prefix = "[dry-run] " if options["dry_run"] else ""
         self.stdout.write(
-            f'{prefix}Завантажено: {stats["fetched"]}, '
-            f'зіставлено: {stats["matched"]}, '
-            f'створено: {stats["created"]}, '
-            f'оновлено: {stats["updated"]}, '
-            f'пропущено: {stats["skipped"]}'
+            f"{prefix}Fetched: {stats['fetched']}, matched: {stats['matched']}, "
+            f"created: {stats['created']}, updated: {stats['updated']}, "
+            f"skipped (unknown slug): {stats['skipped']}"
         )
-        if stats['fetch_errors']:
-            self.stdout.write(
-                self.style.WARNING(f'Помилки завантаження тижнів: {stats["fetch_errors"]}')
-            )
-        if not options['dry_run']:
-            self.stdout.write(self.style.SUCCESS('Розклад синхронізовано.'))
+        if not options["dry_run"]:
+            self.stdout.write(self.style.SUCCESS("Schedule synced from hub API."))
