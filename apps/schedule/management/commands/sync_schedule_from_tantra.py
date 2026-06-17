@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from django.core.management.base import BaseCommand
+from django.conf import settings
+from django.core.management.base import BaseCommand, CommandError
 
 from apps.schedule.tantra_sync import sync_schedule_from_hub
 from apps.schedule.week import business_date, parse_anchor_param
@@ -31,6 +32,12 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        if not settings.HUB_API_KEY:
+            raise CommandError(
+                "HUB_API_KEY is empty. In Render → black-diamond-schedule-sync → "
+                "Environment, set the same HUB_API_KEY as on the web service."
+            )
+
         from_date = (
             parse_anchor_param(options["from_date"])
             if options["from_date"]
@@ -43,8 +50,7 @@ class Command(BaseCommand):
         )
 
         if "error" in stats:
-            self.stderr.write(self.style.ERROR(f"Hub API error: {stats['error']}"))
-            return
+            raise CommandError(f"Hub API error: {stats['error']}")
 
         prefix = "[dry-run] " if options["dry_run"] else ""
         self.stdout.write(

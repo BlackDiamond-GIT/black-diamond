@@ -53,7 +53,10 @@ services:
       - key: HUB_API_URL
         value: https://tantra-prague.com
       - key: HUB_API_KEY
-        sync: false
+        fromService:
+          type: web
+          name: black-diamond
+          envVarKey: HUB_API_KEY
 
 databases:
   - name: black-diamond-db

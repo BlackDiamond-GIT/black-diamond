@@ -11,7 +11,7 @@ import datetime
 from django.db import transaction
 
 from apps.hub_client.client import HubClient
-from apps.hub_client.exceptions import HubUnavailableError
+from apps.hub_client.exceptions import HubAPIError, HubUnavailableError
 from apps.schedule.models import ScheduleEntry
 from apps.schedule.shifts import infer_shift_type
 from apps.therapists.models import Therapist
@@ -40,6 +40,25 @@ def sync_schedule_from_hub(
 
     try:
         raw_entries = client.fetch_schedule_json(from_date=from_date, days=days)
+    except HubAPIError as exc:
+        if exc.status_code == 401:
+            return {
+                "error": (
+                    "Hub API rejected the site key (401). "
+                    "Set HUB_API_KEY on the cron service to match the web service."
+                ),
+                "fetched": 0,
+                "created": 0,
+                "updated": 0,
+                "skipped": 0,
+            }
+        return {
+            "error": str(exc),
+            "fetched": 0,
+            "created": 0,
+            "updated": 0,
+            "skipped": 0,
+        }
     except HubUnavailableError as exc:
         return {"error": str(exc), "fetched": 0, "created": 0, "updated": 0, "skipped": 0}
 
