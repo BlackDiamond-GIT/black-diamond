@@ -15,21 +15,21 @@ SERVICES = [
         'description_cs': (
             'Klasická masáž v centru Prahy je tradiční švédská technika, která pomocí hladivých a hnětacích '
             'hmatů uvolňuje svalové napětí a navozuje hlubokou relaxaci celého těla. V Black Diamond Spa '
-            'na Soukenické v Praze 1 ji provádějí certifikované masérky v privátním pokoji s prémiovými oleji. '
+            'na Opletalově v Praze 1 ji provádějí certifikované masérky v privátním pokoji s prémiovými oleji. '
             'Sezení trvá 60 minut a je ideálním startem pro nováčky i pravidelné klienty, kteří hledají '
             'profesionální péči o pohybový aparát v klidném relaxačním salonu.'
         ),
         'description_en': (
             'Classic massage in central Prague is a traditional Swedish technique that uses flowing and '
             'kneading strokes to release muscle tension and deeply relax the whole body. At Black Diamond Spa '
-            'on Soukenická in Prague 1, certified masseuses perform each session in a private room with premium '
+            'on Opletalova 1566/30 in Nové Město, certified masseuses perform each session in a private room with premium '
             'oils. The 60-minute session is an ideal starting point for first-time visitors and regular clients '
             'seeking professional musculoskeletal care in a calm wellness salon.'
         ),
         'description_ru': (
             'Классический массаж в центре Праги — традиционная шведская техника, которая плавными и '
             'разминательными движениями снимает мышечное напряжение и глубоко расслабляет всё тело. '
-            'В Black Diamond Spa на Soukenická в Praha 1 сеансы проводят сертифицированные массажистки '
+            'В Black Diamond Spa на Opletalova 1566/30 в Nové Město сеансы проводят сертифицированные массажистки '
             'в приватном кабинете с премиальными маслами. 60-минутный сеанс — отличный старт для новичков '
             'и постоянных клиентов, ищущих профессиональный уход за опорно-двигательным аппаратом.'
         ),
@@ -84,15 +84,15 @@ SERVICES = [
         'meta_title_ru': 'Классический массаж Прага — 60 мин от 1 200 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Klasická masáž v centru Prahy. Profesionální péče, 60 min od 1 200 Kč. '
-            'Rezervujte online v Black Diamond Spa. Soukenická, Praha 1.'
+            'Rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
             'Classic massage in central Prague. Professional care, 60 min from 1,200 CZK. '
-            'Book online at Black Diamond Spa. Soukenická, Prague 1.'
+            'Book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
             'Классический массаж в центре Праги. Профессиональный уход, 60 мин от 1 200 Kč. '
-            'Запишитесь онлайн в Black Diamond Spa. Soukenická, Praha 1.'
+            'Запишитесь онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
             {'q': 'Co je klasická masáž?', 'a': 'Klasická masáž je tradiční švédská technika kombinující hladivé, hnětací a vibrační pohyby pro uvolnění svalů a zlepšení krevního oběhu.'},
@@ -100,7 +100,7 @@ SERVICES = [
             {'q': 'Kolik stojí klasická masáž?', 'a': 'Cena je 1 200 Kč. V ceně jsou masážní oleje, prostěradla a přístup do relaxační zóny salonu.'},
             {'q': 'Pro koho je vhodná?', 'a': 'Pro každého, kdo hledá uvolnění svalů a relaxaci. Při zdravotních pochybnostech nás kontaktujte před rezervací.'},
             {'q': 'Jak se rezervovat?', 'a': 'Rezervaci provedete online v rozvrhu — vyberte masáž, masérku a volný termín. Potvrzení obdržíte e-mailem.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1 — v centru města, snadno dostupné MHD i pěšky.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — v centru města, snadno dostupné MHD i pěšky.'},
         ],
         'faq_en': [
             {'q': 'What is classic massage?', 'a': 'Classic massage is a traditional Swedish technique combining flowing, kneading and vibration strokes to release muscles and improve circulation.'},
@@ -108,7 +108,7 @@ SERVICES = [
             {'q': 'How much does it cost?', 'a': 'The price is 1,200 CZK, including massage oils, linens and access to the salon relaxation area.'},
             {'q': 'Who is it for?', 'a': 'Anyone seeking muscle release and relaxation. Contact us before booking if you have health concerns.'},
             {'q': 'How do I book?', 'a': 'Book online via the schedule — choose the massage, masseuse and available time. You will receive email confirmation.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Prague 1 — central location, easily reachable by public transport.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — central location, easily reachable by public transport.'},
         ],
         'faq_ru': [
             {'q': 'Что такое классический массаж?', 'a': 'Классический массаж — традиционная шведская техника с поглаживанием, разминанием и вибрацией для расслабления мышц и улучшения кровообращения.'},
@@ -116,7 +116,7 @@ SERVICES = [
             {'q': 'Сколько стоит?', 'a': 'Цена — 1 200 Kč. Включены масла, бельё и доступ в зону релаксации салона.'},
             {'q': 'Для кого подходит?', 'a': 'Для всех, кто ищет расслабление мышц. При сомнениях по здоровью свяжитесь с нами перед записью.'},
             {'q': 'Как записаться?', 'a': 'Запись онлайн в расписании — выберите массаж, массажистку и время. Подтверждение придёт на email.'},
-            {'q': 'Где находится салон?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1 — в центре города, удобно на общественном транспорте.'},
+            {'q': 'Где находится салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — в центре города, удобно на общественном транспорте.'},
         ],
     },
     {
@@ -134,20 +134,20 @@ SERVICES = [
             'Relax masáž v centru Prahy je jemná relaxační technika s prémiovými oleji, která pomalu '
             'uvolňuje tělo i mysl v privátní atmosféře Black Diamond Spa. Pomalé, plynulé tahy masérky '
             'navozují hluboký klid a pomáhají redukovat stres po náročném dni. Sezení trvá 60 minut '
-            'a probíhá v salonu na Soukenické v Praze 1, kde dbáme na diskrétnost, klid a individuální '
+            'a probíhá v salonu na Opletalově v Praze 1, kde dbáme na diskrétnost, klid a individuální '
             'péči každého klienta.'
         ),
         'description_en': (
             'Relax massage in central Prague is a gentle technique with premium oils that slowly releases '
             'body and mind in the private atmosphere of Black Diamond Spa. Slow, flowing strokes induce '
             'deep calm and help reduce stress after a demanding day. Sessions last 60 minutes at our salon '
-            'on Soukenická in Prague 1, where we prioritise discretion, tranquillity and individual care.'
+            'on Opletalova 1566/30 in Nové Město, where we prioritise discretion, tranquillity and individual care.'
         ),
         'description_ru': (
             'Релакс-массаж в центре Праги — мягкая техника с премиальными маслами, которая постепенно '
             'расслабляет тело и разум в приватной атмосфере Black Diamond Spa. Медленные плавные движения '
             'создают глубокое спокойствие и помогают снять стресс после тяжёлого дня. Сеанс длится 60 минут '
-            'в салоне на Soukenická в Praha 1, где мы ценим конфиденциальность и индивидуальный подход.'
+            'в салоне на Opletalova 1566/30 в Nové Město, где мы ценим конфиденциальность и индивидуальный подход.'
         ),
         'what_cs': (
             'Relax masáž kombinuje jemné hladivé techniky s aromaterapeutickými oleji pro maximální '
@@ -193,15 +193,15 @@ SERVICES = [
         'meta_title_ru': 'Релакс массаж Прага — 60 мин от 2 500 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Relax masáž v centru Prahy s prémiovými oleji. 60 min od 2 500 Kč. '
-            'Rezervujte online — Black Diamond Spa, Soukenická, Praha 1.'
+            'Rezervujte online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
             'Relax massage in central Prague with premium oils. 60 min from 2,500 CZK. '
-            'Book online — Black Diamond Spa, Soukenická, Prague 1.'
+            'Book online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
             'Релакс-массаж в центре Праги с премиальными маслами. 60 мин от 2 500 Kč. '
-            'Запись онлайн — Black Diamond Spa, Soukenická, Praha 1.'
+            'Запись онлайн — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
             {'q': 'Čím se liší relax masáž od klasické?', 'a': 'Relax masáž je pomalejší, jemnější a déle trvá. Zaměřuje se na celkovou pohodu a uvolnění mysli, ne na hluboké uvolnění svalů.'},
@@ -209,7 +209,7 @@ SERVICES = [
             {'q': 'Kolik stojí relax masáž?', 'a': 'Cena je 2 500 Kč. V ceně jsou oleje, prostěradla a relaxační zóna.'},
             {'q': 'Jaké oleje používáte?', 'a': 'Prémiové masážní oleje bez parfemace nebo s jemnou vůní. Při alergii nás informujte při rezervaci.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Relax masáž, masérku a volný termín.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1, centrum města.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, centrum města.'},
         ],
         'faq_en': [
             {'q': 'How is relax massage different from classic?', 'a': 'Relax massage is slower, gentler and longer. It focuses on overall wellbeing and mental release rather than deep muscle work.'},
@@ -217,7 +217,7 @@ SERVICES = [
             {'q': 'How much does it cost?', 'a': 'The price is 2,500 CZK, including oils, linens and the relaxation area.'},
             {'q': 'What oils do you use?', 'a': 'Premium massage oils, unscented or lightly fragranced. Inform us of allergies when booking.'},
             {'q': 'How do I book?', 'a': 'Online via the schedule — choose Relax massage, masseuse and available time.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Prague 1, city centre.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, city centre.'},
         ],
         'faq_ru': [
             {'q': 'Чем релакс-массаж отличается от классического?', 'a': 'Релакс-массаж медленнее, мягче и длиннее. Фокус на общем благополучии и расслаблении разума, а не на глубокой проработке мышц.'},
@@ -225,7 +225,7 @@ SERVICES = [
             {'q': 'Сколько стоит?', 'a': 'Цена — 2 500 Kč, включая масла, бельё и зону релаксации.'},
             {'q': 'Какие масла используете?', 'a': 'Премиальные масла без аромата или с лёгким запахом. Сообщите об аллергии при записи.'},
             {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите релакс-массаж, массажистку и время.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1, центр города.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, центр города.'},
         ],
     },
     {
@@ -241,19 +241,19 @@ SERVICES = [
         'short_ru': 'Целенаправленная работа с глубокими слоями мышц для снятия хронического напряжения.',
         'description_cs': (
             'Hlubokotkaninní masáž v centru Prahy je technika zaměřená na hlubší svalové vrstvy, '
-            'šlachy a fascie. V Black Diamond Spa na Soukenické masérka pracuje pomalými, '
+            'šlachy a fascie. V Black Diamond Spa na Opletalově masérka pracuje pomalými, '
             'cílenými hmaty tam, kde se hromadí chronické napětí — záda, šíje, ramena nebo '
             'nohy. Sezení trvá 90 minut a pomáhá uvolnit ztuhlost po sezení, sportu nebo stresu.'
         ),
         'description_en': (
             'Deep tissue massage in central Prague targets deeper muscle layers, tendons and fascia. '
-            'At Black Diamond Spa on Soukenická, your masseuse uses slow, focused strokes where '
+            'At Black Diamond Spa on Opletalova 1566/30, your masseuse uses slow, focused strokes where '
             'chronic tension builds — back, neck, shoulders or legs. The 90-minute session helps '
             'release stiffness from desk work, sport or stress.'
         ),
         'description_ru': (
             'Глубокотканный массаж в центре Праги направлен на глубокие мышечные слои, сухожилия '
-            'и фасции. В Black Diamond Spa на Soukenická массажистка медленными точечными движениями '
+            'и фасции. В Black Diamond Spa на Opletalova 1566/30 массажистка медленными точечными движениями '
             'прорабатывает зоны хронического напряжения — спина, шея, плечи или ноги. '
             '90-минутный сеанс помогает снять скованность после сидячей работы, спорта или стресса.'
         ),
@@ -294,15 +294,15 @@ SERVICES = [
         'meta_title_ru': 'Глубокотканный массаж Прага — 90 мин от 3 000 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Hlubokotkaninní masáž v centru Prahy. 90 min od 3 000 Kč. Cílené uvolnění hlubokých svalů. '
-            'Rezervujte online — Black Diamond Spa, Soukenická, Praha 1.'
+            'Rezervujte online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
             'Deep tissue massage in central Prague. 90 min from 3,000 CZK. Targeted release of deep muscles. '
-            'Book online — Black Diamond Spa, Soukenická, Prague 1.'
+            'Book online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
             'Глубокотканный массаж в центре Праги. 90 мин от 3 000 Kč. Целенаправленное снятие глубокого напряжения. '
-            'Запись онлайн — Black Diamond Spa, Soukenická, Praha 1.'
+            'Запись онлайн — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
             {'q': 'Co je hlubokotkaninní masáž?', 'a': 'Technika zaměřená na hlubší svalové vrstvy a fascie pomocí pomalého cíleného tlaku.'},
@@ -310,7 +310,7 @@ SERVICES = [
             {'q': 'Kolik stojí?', 'a': '3 000 Kč. V ceně oleje, prostěradla a relaxační zóna.'},
             {'q': 'Pro koho je vhodná?', 'a': 'Pro chronické napětí zad, šíje a ramen po sezení, sportu nebo stresu.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Hlubokotkaninní masáž a volný termín.'},
-            {'q': 'Kde salon?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
+            {'q': 'Kde salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
         ],
         'faq_en': [
             {'q': 'What is deep tissue massage?', 'a': 'A technique focused on deeper muscle layers and fascia using slow, targeted pressure.'},
@@ -318,7 +318,7 @@ SERVICES = [
             {'q': 'How much?', 'a': '3,000 CZK including oils, linens and relaxation area.'},
             {'q': 'Who is it for?', 'a': 'Chronic tension in back, neck and shoulders from sitting, sport or stress.'},
             {'q': 'How to book?', 'a': 'Online via schedule — choose Deep tissue massage and available time.'},
-            {'q': 'Where?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Prague 1.'},
+            {'q': 'Where?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
         ],
         'faq_ru': [
             {'q': 'Что такое глубокотканный массаж?', 'a': 'Техника для глубоких мышечных слоёв и фасций с медленным целенаправленным давлением.'},
@@ -326,7 +326,7 @@ SERVICES = [
             {'q': 'Сколько стоит?', 'a': '3 000 Kč, включая масла, бельё и зону релаксации.'},
             {'q': 'Для кого?', 'a': 'При хроническом напряжении спины, шеи и плеч после сидячей работы, спорта или стресса.'},
             {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите глубокотканный массаж и время.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Soukenická, 110 00 Praha 1.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
         ],
     },
 ]

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags %}
-{% block title %}{% trans "Kontakt — Masáž Praha 1" %} | {{ SITE_NAME }}{% endblock %}
+{% block title %}{% trans "Kontakt — Masáž Nové Město" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Kontaktujte Black Diamond Spa Praha. Adresa:" %} {{ SITE_ADDRESS }}. {% trans "Telefon:" %} {{ SITE_PHONE }}. {% trans "Po–Pá 10–21, So–Ne 10–19." %}{% endblock %}
 
 {% block content %}
@@ -73,9 +73,19 @@
           </div>
         </div>
 
-        <div style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--glass-border);background:var(--bg-secondary);height:240px;display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--sp-xl)">
-          <div>
-            <p style="color:var(--text-muted);font-size:var(--fs-sm);margin-bottom:var(--sp-md)">{{ SITE_STREET_ADDRESS }}, {{ SITE_ADDRESS_LOCALITY }}</p>
+        <div class="contact-map">
+          <div class="contact-map__frame">
+            <iframe
+              class="contact-map__iframe"
+              title="{% trans 'Mapa — Black Diamond Spa' %}, {{ SITE_ADDRESS }}"
+              src="{{ SITE_MAPS_EMBED_URL }}"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="contact-map__footer">
+            <p class="contact-map__address">{{ SITE_STREET_ADDRESS }}, {{ SITE_POSTAL_CODE }} {{ SITE_ADDRESS_LOCALITY }}</p>
             <a href="{{ SITE_MAPS_URL }}" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">{% trans "Otevřít v Google Maps" %}</a>
           </div>
         </div>

@@ -14,7 +14,7 @@ SERVICES_PART2 = [
         'short_ru': 'Целенаправленный массаж для спортсменов — снятие напряжения после тренировки.',
         'description_cs': (
             'Sportovní masáž v centru Prahy je cílená technika pro sportovce a aktivní lidi, kteří '
-            'potřebují uvolnit svaly po tréninku nebo fyzické zátěži. V Black Diamond Spa na Soukenické '
+            'potřebují uvolnit svaly po tréninku nebo fyzické zátěži. V Black Diamond Spa na Opletalově '
             'masérky Vanessa a Ella aplikují hlubší hmaty na problematické svalové skupiny — záda, '
             'nohy, ramena. Sezení trvá 60 minut a podporuje regeneraci, flexibilitu i prevenci '
             'přetížení pohybového aparátu.'
@@ -22,13 +22,13 @@ SERVICES_PART2 = [
         'description_en': (
             'Sports massage in central Prague is a targeted technique for athletes and active people '
             'who need to release muscles after training or physical exertion. At Black Diamond Spa on '
-            'Soukenická, masseuses Vanessa and Ella apply deeper strokes to problem muscle groups — '
+            'Opletalova 1566/30, masseuses Vanessa and Ella apply deeper strokes to problem muscle groups — '
             'back, legs, shoulders. The 60-minute session supports recovery, flexibility and prevention '
             'of musculoskeletal overload.'
         ),
         'description_ru': (
             'Спортивный массаж в центре Праги — целенаправленная техника для спортсменов и активных людей, '
-            'которым нужно снять напряжение мышц после тренировки. В Black Diamond Spa на Soukenická '
+            'которым нужно снять напряжение мышц после тренировки. В Black Diamond Spa на Opletalova 1566/30 '
             'Vanessa и Ella применяют более глубокие движения к проблемным группам — спина, ноги, плечи. '
             '60-минутный сеанс поддерживает восстановление, гибкость и профилактику перегрузок.'
         ),
@@ -76,15 +76,15 @@ SERVICES_PART2 = [
         'meta_title_ru': 'Спортивный массаж Прага — 60 мин от 1 500 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Sportovní masáž v centru Prahy pro sportovce. 60 min od 1 500 Kč. '
-            'Rezervujte u Vanessy nebo Eli — Black Diamond Spa, Soukenická, Praha 1.'
+            'Rezervujte u Vanessy nebo Eli — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
             'Sports massage in central Prague for athletes. 60 min from 1,500 CZK. '
-            'Book with Vanessa or Ella — Black Diamond Spa, Soukenická, Prague 1.'
+            'Book with Vanessa or Ella — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
             'Спортивный массаж в центре Праги для спортсменов. 60 мин от 1 500 Kč. '
-            'Запись к Vanessa или Ella — Black Diamond Spa, Soukenická, Praha 1.'
+            'Запись к Vanessa или Ella — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
             {'q': 'Co je sportovní masáž?', 'a': 'Cílená masáž s hlubšími hmaty pro uvolnění svalů po sportu a prevenci přetížení.'},
@@ -124,21 +124,21 @@ SERVICES_PART2 = [
         'short_ru': 'Мягкая техника для лимфатической системы, детокса и уменьшения отёков.',
         'description_cs': (
             'Lymfatická masáž v centru Prahy je jemná technika podporující lymfatický systém, '
-            'detoxikaci těla a redukci otoků. V Black Diamond Spa na Soukenické masérka Mira '
+            'detoxikaci těla a redukci otoků. V Black Diamond Spa na Opletalově masérka Mira '
             'aplikuje pomalé, rytmické hmaty ve směru lymfatického toku. Sezení trvá 60 minut '
             'a je vhodné pro klienty hledající regeneraci, lehčí pocit v těle a podporu '
             'přirozených detoxikačních procesů v relaxačním salonu v centru města.'
         ),
         'description_en': (
             'Lymphatic massage in central Prague is a gentle technique supporting the lymphatic system, '
-            'body detox and swelling reduction. At Black Diamond Spa on Soukenická, masseuse Mira '
+            'body detox and swelling reduction. At Black Diamond Spa on Opletalova 1566/30, masseuse Mira '
             'applies slow, rhythmic strokes following lymph flow direction. The 60-minute session '
             'suits clients seeking regeneration, a lighter body feeling and support for natural '
             'detox processes in a city-centre wellness salon.'
         ),
         'description_ru': (
             'Лимфатический массаж в центре Праги — мягкая техника для поддержки лимфатической системы, '
-            'детокса и уменьшения отёков. В Black Diamond Spa на Soukenická Mira применяет медленные '
+            'детокса и уменьшения отёков. В Black Diamond Spa на Opletalova 1566/30 Mira применяет медленные '
             'ритмичные движения по направлению лимфотока. 60-минутный сеанс подходит тем, кто ищет '
             'регенерацию, лёгкость в теле и поддержку естественных процессов детокса в салоне в центре города.'
         ),
@@ -186,15 +186,15 @@ SERVICES_PART2 = [
         'meta_title_ru': 'Лимфатический массаж Прага — 60 мин от 1 600 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Lymfatická masáž v centru Prahy. Jemná detoxikace, 60 min od 1 600 Kč. '
-            'Rezervujte u Miry — Black Diamond Spa, Soukenická, Praha 1.'
+            'Rezervujte u Miry — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
             'Lymphatic massage in central Prague. Gentle detox, 60 min from 1,600 CZK. '
-            'Book with Mira — Black Diamond Spa, Soukenická, Prague 1.'
+            'Book with Mira — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
             'Лимфатический массаж в центре Праги. Мягкий детокс, 60 мин от 1 600 Kč. '
-            'Запись к Mira — Black Diamond Spa, Soukenická, Praha 1.'
+            'Запись к Mira — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
             {'q': 'Co je lymfatická masáž?', 'a': 'Jemná technika podporující tok lymfy, detoxikaci a redukci otoků pomalými hmaty.'},
@@ -234,21 +234,21 @@ SERVICES_PART2 = [
         'short_ru': 'Аромамасаж с премиальными эфирными маслами для глубокого расслабления.',
         'description_cs': (
             'Aromamasáž v centru Prahy spojuje masážní techniky s prémiálními éterickými oleji '
-            'pro harmonii těla a mysli. V Black Diamond Spa na Soukenické masérky Diana, Laura '
+            'pro harmonii těla a mysli. V Black Diamond Spa na Opletalově masérky Diana, Laura '
             'a Mira vybírají vůně podle vašich preferencí — levandule pro klid, eukalyptus pro '
             'osvěžení nebo ylang-ylang pro hlubokou relaxaci. Sezení trvá 75 minut v privátním '
             'pokoji a je jednou z nejoblíbenějších služeb našeho salonu.'
         ),
         'description_en': (
             'Aroma massage in central Prague combines massage techniques with premium essential oils '
-            'for body and mind harmony. At Black Diamond Spa on Soukenická, masseuses Diana, Laura '
+            'for body and mind harmony. At Black Diamond Spa on Opletalova 1566/30, masseuses Diana, Laura '
             'and Mira select scents to your preference — lavender for calm, eucalyptus for refreshment '
             'or ylang-ylang for deep relaxation. The 75-minute session in a private room is one of '
             'our salon most popular services.'
         ),
         'description_ru': (
             'Аромамассаж в центре Праги сочетает массажные техники с премиальными эфирными маслами '
-            'для гармонии тела и разума. В Black Diamond Spa на Soukenická Diana, Laura и Mira '
+            'для гармонии тела и разума. В Black Diamond Spa на Opletalova 1566/30 Diana, Laura и Mira '
             'подбирают ароматы по вашим предпочтениям — лаванда для спокойствия, эвкалипт для '
             'освежения или иланг-иланг для глубокого расслабления. 75-минутный сеанс в приватном '
             'кабинете — одна из самых популярных услуг салона.'
@@ -298,15 +298,15 @@ SERVICES_PART2 = [
         'meta_title_ru': 'Аромамасаж Прага — 75 мин от 1 400 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Aromamasáž s éterickými oleji v centru Prahy. 75 min od 1 400 Kč. '
-            'Rezervujte u Diany, Laury nebo Miry — Black Diamond Spa, Soukenická, Praha 1.'
+            'Rezervujte u Diany, Laury nebo Miry — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
             'Aroma massage with essential oils in central Prague. 75 min from 1,400 CZK. '
-            'Book with Diana, Laura or Mira — Black Diamond Spa, Soukenická, Prague 1.'
+            'Book with Diana, Laura or Mira — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
             'Аромамассаж с эфирными маслами в центре Праги. 75 мин от 1 400 Kč. '
-            'Запись к Diana, Laura или Mira — Black Diamond Spa, Soukenická, Praha 1.'
+            'Запись к Diana, Laura или Mira — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
             {'q': 'Co je aromamasáž?', 'a': 'Masáž kombinující hladivé techniky s éterickými oleji pro relaxaci těla i mysli.'},

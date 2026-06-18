@@ -38,7 +38,7 @@ class SiteSettings(models.Model):
     )
     email = models.EmailField(_('Contact email'), default='info@blackdiamond.cz')
     address = models.CharField(
-        _('Address (studio 1)'), max_length=200, default='Soukenická, 110 00 Praha 1',
+        _('Address (studio 1)'), max_length=200, default='Opletalova 1566/30, 110 00 Nové Město',
     )
     location_phone_1 = models.CharField(_('Phone (studio 1)'), max_length=30, default='+420 797 669 633')
     map_url = models.URLField(_('Map URL (studio 1)'), max_length=500, blank=True)
@@ -112,6 +112,16 @@ class SiteSettings(models.Model):
     def maps_query(self):
         from urllib.parse import quote_plus
         return quote_plus(self.address)
+
+    @property
+    def maps_embed(self):
+        if (self.maps_embed_url or '').strip():
+            return self.maps_embed_url.strip()
+        from urllib.parse import quote_plus
+        return (
+            f'https://www.google.com/maps?q={quote_plus(self.address)}'
+            f'&hl=cs&z=16&output=embed'
+        )
 
     def get_rotation_phones(self):
         return [

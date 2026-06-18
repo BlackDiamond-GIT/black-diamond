@@ -283,7 +283,7 @@ def build_main(lang: str) -> str:
 LANG_TEXTS = {
     'cs': {
         'hero_aria': 'Uvítací sekce',
-        'eyebrow': 'Praha 1 · Prémiový salon',
+        'eyebrow': 'Nové Město · Prémiový salon',
         'hero_title': 'Umění<br><em>relaxace</em><br>ve vašich<br>rukou',
         'hero_subtitle': 'Certifikované masérky, privátní kabinety a luxusní atmosféra v srdci Prahy. Dopřejte si klid a regeneraci, které si zasloužíte.',
         'hero_cta': 'Rezervovat masáž',

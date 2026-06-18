@@ -15,12 +15,17 @@ def _page_lang(request) -> str:
 
 def _fallback_address():
     return {
-        'SITE_STREET_ADDRESS': 'Soukenická',
+        'SITE_STREET_ADDRESS': 'Opletalova 1566/30',
         'SITE_POSTAL_CODE': '110 00',
-        'SITE_ADDRESS_LOCALITY': 'Praha 1',
+        'SITE_ADDRESS_LOCALITY': 'Nové Město',
         'SITE_ADDRESS_COUNTRY': 'CZ',
-        'SITE_ADDRESS': getattr(settings, 'SITE_ADDRESS', 'Soukenická, 110 00 Praha 1'),
-        'SITE_MAPS_URL': 'https://maps.google.com/?q=Soukenick%C3%A1,+110+00+Praha+1',
+        'SITE_ADDRESS': getattr(settings, 'SITE_ADDRESS', 'Opletalova 1566/30, 110 00 Nové Město'),
+        'SITE_MAPS_URL': 'https://maps.google.com/?q=Opletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto',
+        'SITE_MAPS_EMBED_URL': (
+            'https://www.google.com/maps/embed?origin=mfe'
+            '&pb=!1m3!2m1!1sOpletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto'
+            '!6i16!3m1!1scs!5m1!1scs'
+        ),
     }
 
 
@@ -41,12 +46,13 @@ def site_settings(request):
     try:
         site = SiteSettings.load()
         base.update({
-            'SITE_STREET_ADDRESS': site.address.split(',')[0].strip() if site.address else 'Soukenická',
+            'SITE_STREET_ADDRESS': site.address.split(',')[0].strip() if site.address else 'Opletalova 1566/30',
             'SITE_POSTAL_CODE': '110 00',
-            'SITE_ADDRESS_LOCALITY': 'Praha 1',
+            'SITE_ADDRESS_LOCALITY': 'Nové Město',
             'SITE_ADDRESS_COUNTRY': 'CZ',
             'SITE_ADDRESS': site.address or site.full_address,
             'SITE_MAPS_URL': site.map_url or f'https://maps.google.com/?q={site.maps_query}',
+            'SITE_MAPS_EMBED_URL': site.maps_embed,
             'SITE_OPENING_HOURS': site.get_hours_for_language(lang),
             'SITE_INSTAGRAM_URL': (site.instagram_url or '').strip() or 'https://instagram.com/blackdiamondspa',
             'SITE_TELEGRAM_URL': (site.telegram_url or '').strip(),

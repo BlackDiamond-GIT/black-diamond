@@ -125,7 +125,7 @@ SITE_NAME = 'Black Diamond Spa'
 SITE_URL = 'https://blackdiamond.cz'
 SITE_PHONE = '+420 797 669 633'
 SITE_EMAIL = 'info@blackdiamond.cz'
-SITE_ADDRESS = 'Soukenická, 110 00 Praha 1'
+SITE_ADDRESS = 'Opletalova 1566/30, 110 00 Nové Město'
 
 CLOUDINARY_URL = env('CLOUDINARY_URL', default='')
 

@@ -1,0 +1,65 @@
+/* Black Diamond Spa — Contact page map */
+
+.contact-map {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-secondary);
+}
+
+.contact-map__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 220px;
+  max-height: 360px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.contact-map__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact-map__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-sm) var(--sp-md);
+  padding: var(--sp-md) var(--sp-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.contact-map__address {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .contact-map__frame {
+    min-height: 260px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-map__frame {
+    min-height: 300px;
+    max-height: 400px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .contact-map__frame {
+    min-height: 240px;
+  }
+
+  .contact-map__iframe {
+    -webkit-overflow-scrolling: touch;
+  }
+}

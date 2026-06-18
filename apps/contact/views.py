@@ -14,6 +14,7 @@ class ContactPageView(ExtraCssMixin, TemplateView):
         'css/components/forms.css',
         'css/components/glass.css',
         'css/components/buttons.css',
+        'css/pages/contact.css',
     ]
 
     def get_context_data(self, **kwargs):
