@@ -135,13 +135,17 @@
   font-weight: 500;
 }
 
-/* Disclaimer — full width, outside container */
+/* Disclaimer — full width strip above footer */
 .footer__disclaimer {
   width: 100%;
   border-top: 1px solid var(--divider);
   border-bottom: 1px solid var(--divider);
   background: var(--bg-primary);
   padding: 1.125rem var(--container-pad);
+}
+
+.footer__disclaimer + .footer {
+  border-top: none;
 }
 
 .footer__disclaimer-text {
