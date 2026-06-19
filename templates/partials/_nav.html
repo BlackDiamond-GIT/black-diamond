@@ -3,7 +3,11 @@
   <nav class="nav__inner" aria-label="{% trans 'Hlavní navigace' %}">
 
     <a href="{% url 'pages:home' %}" class="nav__logo" aria-label="{{ SITE_NAME }} — {% trans 'Domů' %}">
-      <span>Black Diamond</span>
+      <span class="nav__logo-text">
+        <span class="nav__logo-word">Black</span>
+        <span class="nav__logo-gap" aria-hidden="true"></span>
+        <span class="nav__logo-word">Diamond</span>
+      </span>
     </a>
 
     <ul class="nav__links" role="list">
