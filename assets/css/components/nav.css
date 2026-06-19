@@ -42,9 +42,12 @@
 
 /* Logo */
 .nav__logo {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   gap: var(--sp-sm);
+  padding: 0.35em 0.65em;
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-display);
@@ -54,7 +57,42 @@
   text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
+  overflow: visible;
   transition: color var(--transition-base);
+}
+
+.nav__logo::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  border-radius: var(--radius-sm);
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--tiffany) 42deg,
+    transparent 84deg,
+    var(--gold) 126deg,
+    transparent 168deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+  animation: nav-ring-spin 16s linear infinite;
+  transition: opacity var(--transition-base);
+}
+
+.nav__logo:hover::before {
+  opacity: 0.78;
 }
 
 @media (min-width: 1024px) {
@@ -67,6 +105,8 @@
 .nav__logo:hover { color: var(--tiffany); }
 
 .nav__logo span {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   background: linear-gradient(
     105deg,
@@ -99,6 +139,10 @@
 @keyframes nav-logo-shine {
   0%, 78%, 100% { background-position: 120% center; }
   88%           { background-position: -20% center; }
+}
+
+@keyframes nav-ring-spin {
+  to { transform: rotate(360deg); }
 }
 
 .nav__logo-diamond,
@@ -385,6 +429,13 @@
     letter-spacing: 0.08em;
     min-width: 0;
     flex: 1;
+    padding: 0.3em 0.5em;
+  }
+
+  .nav__logo::before {
+    inset: -1px;
+    opacity: 0.3;
+    animation-duration: 22s;
   }
 
   .nav__logo span {
@@ -405,7 +456,19 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav__logo::before {
+    opacity: 0.42;
+    animation-duration: 18s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .nav__logo::before {
+    animation: none;
+    opacity: 0.38;
+  }
+
   .nav__logo span {
     animation: none;
     background: none;
