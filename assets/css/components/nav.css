@@ -47,7 +47,8 @@
   display: flex;
   align-items: center;
   gap: var(--sp-sm);
-  padding: 0.35em 0.65em;
+  padding-block: 0.2em;
+  padding-inline: 0.45em;
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-display);
@@ -59,40 +60,40 @@
   flex-shrink: 0;
   overflow: visible;
   transition: color var(--transition-base);
+  --orbit-radius: 1.15em;
+  --orbit-size: 3px;
 }
 
-.nav__logo::before {
+.nav__logo::before,
+.nav__logo::after {
   content: "";
   position: absolute;
-  inset: -2px;
-  z-index: 0;
-  border-radius: var(--radius-sm);
-  padding: 1px;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    var(--tiffany) 42deg,
-    transparent 84deg,
-    var(--gold) 126deg,
-    transparent 168deg,
-    transparent 360deg
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0.55;
+  top: 50%;
+  left: 50%;
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  border-radius: 1px;
   pointer-events: none;
-  animation: nav-ring-spin 16s linear infinite;
+  z-index: 0;
+  opacity: 0.8;
+  animation: nav-orbit 9s linear infinite;
   transition: opacity var(--transition-base);
 }
 
-.nav__logo:hover::before {
-  opacity: 0.78;
+.nav__logo::before {
+  background: var(--tiffany-light);
+  box-shadow: 0 0 6px var(--tiffany-glow-strong);
+}
+
+.nav__logo::after {
+  background: var(--gold-light);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.45);
+  animation-delay: -4.5s;
+}
+
+.nav__logo:hover::before,
+.nav__logo:hover::after {
+  opacity: 1;
 }
 
 @media (min-width: 1024px) {
@@ -141,8 +142,23 @@
   88%           { background-position: -20% center; }
 }
 
-@keyframes nav-ring-spin {
-  to { transform: rotate(360deg); }
+@keyframes nav-orbit {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg)
+      translateX(var(--orbit-radius))
+      rotate(0deg)
+      rotate(45deg);
+  }
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg)
+      translateX(var(--orbit-radius))
+      rotate(-360deg)
+      rotate(45deg);
+  }
 }
 
 .nav__logo-diamond,
@@ -429,13 +445,7 @@
     letter-spacing: 0.08em;
     min-width: 0;
     flex: 1;
-    padding: 0.3em 0.5em;
-  }
-
-  .nav__logo::before {
-    inset: -1px;
-    opacity: 0.3;
-    animation-duration: 22s;
+    padding-inline: 0.3em;
   }
 
   .nav__logo span {
@@ -457,16 +467,28 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .nav__logo::before {
-    opacity: 0.42;
-    animation-duration: 18s;
+  .nav__logo {
+    --orbit-radius: 0.95em;
+    --orbit-size: 2.5px;
+  }
+
+  .nav__logo::before,
+  .nav__logo::after {
+    opacity: 0.65;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav__logo::before,
+  .nav__logo::after {
+    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav__logo::before {
-    animation: none;
-    opacity: 0.38;
+  .nav__logo::before,
+  .nav__logo::after {
+    display: none;
   }
 
   .nav__logo span {
