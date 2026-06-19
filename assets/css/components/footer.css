@@ -168,6 +168,20 @@
 
 .footer__links a:hover { color: var(--tiffany); }
 
+.footer__link-item--contact-mobile {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .footer__link-item--contact-desktop {
+    display: none;
+  }
+
+  .footer__link-item--contact-mobile {
+    display: list-item;
+  }
+}
+
 /* Hours */
 .footer__hours {
   display: flex;

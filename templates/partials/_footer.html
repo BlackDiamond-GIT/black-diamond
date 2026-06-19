@@ -78,7 +78,7 @@
           <li><a href="{% url 'pages:prices' %}">{% trans "Ceník" %}</a></li>
           <li><a href="{% url 'schedule:index' %}">{% trans "Rozvrh" %}</a></li>
           <li><a href="{% url 'blog:list' %}">{% trans "Blog" %}</a></li>
-          <li><a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a></li>
+          <li class="footer__link-item footer__link-item--contact-desktop"><a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a></li>
         </ul>
       </div>
 
@@ -89,6 +89,7 @@
           <li><a href="{% url 'pages:faq' %}">{% trans "Časté otázky" %}</a></li>
           <li><a href="{% url 'pages:salon_rules' %}">{% trans "Pravidla salonu" %}</a></li>
           <li><a href="{% url 'pages:privacy' %}">{% trans "Soukromí & GDPR" %}</a></li>
+          <li class="footer__link-item footer__link-item--contact-mobile"><a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a></li>
         </ul>
       </div>
     </div>

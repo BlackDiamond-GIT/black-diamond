@@ -284,6 +284,7 @@
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-inline: max(1.5rem, var(--container-pad));
+  --drawer-head-offset: 0.65rem;
 }
 
 .nav__drawer.is-open {
@@ -292,7 +293,7 @@
 
 .nav__drawer-head {
   position: absolute;
-  top: env(safe-area-inset-top);
+  top: calc(env(safe-area-inset-top) + var(--drawer-head-offset));
   right: 0;
   left: 0;
   z-index: 2;
@@ -330,7 +331,7 @@
   margin: 0;
   padding: 0;
   padding-inline: 0.35rem;
-  padding-top: calc(44px + 0.35rem);
+  padding-top: calc(44px + var(--drawer-head-offset) + 0.35rem);
 }
 
 .nav__drawer-links li + li {
