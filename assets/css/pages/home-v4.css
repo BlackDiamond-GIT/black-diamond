@@ -307,6 +307,37 @@
   .sec__title--large br {
     display: none;
   }
+
+  .sec--how .container,
+  .proc-layout,
+  .proc-intro,
+  .proc-acc {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .proc-intro .sec__title--large {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .proc-acc__trigger {
+    padding: 1.15rem 1rem;
+    font-size: 1.15rem;
+    gap: 0.75rem;
+    touch-action: manipulation;
+  }
+
+  .proc-acc__panel.is-open {
+    max-height: 320px;
+  }
+
+  .faq__question {
+    touch-action: manipulation;
+  }
 }
 
 /* ── Service cards (compact thumbs) ──────────────── */

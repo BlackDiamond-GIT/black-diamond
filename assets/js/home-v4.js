@@ -13,7 +13,11 @@
     let bodyScrollY = 0;
 
     function lockBody() {
-      bodyScrollY = window.scrollY;
+      if (document.body.style.position === 'fixed') {
+        bodyScrollY = Math.abs(parseInt(document.body.style.top, 10)) || window.scrollY;
+      } else {
+        bodyScrollY = window.scrollY;
+      }
       document.body.style.position = 'fixed';
       document.body.style.top = '-' + bodyScrollY + 'px';
       document.body.style.width = '100%';
@@ -23,6 +27,7 @@
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
+      document.body.style.overflow = '';
       window.scrollTo(0, bodyScrollY);
     }
 
@@ -93,7 +98,8 @@
     root.querySelectorAll(itemSel).forEach((item) => {
       const trigger = item.querySelector(triggerSel);
       const panel = item.querySelector(panelSel);
-      if (!trigger || !panel) return;
+      if (!trigger || !panel || trigger.dataset.accordionBound) return;
+      trigger.dataset.accordionBound = '1';
       trigger.addEventListener('click', () => {
         const open = trigger.getAttribute('aria-expanded') === 'true';
         root.querySelectorAll(triggerSel).forEach((t) => {

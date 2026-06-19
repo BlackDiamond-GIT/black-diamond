@@ -6,7 +6,8 @@
     root.querySelectorAll(itemSel).forEach((item) => {
       const trigger = item.querySelector(triggerSel);
       const panel = item.querySelector(panelSel);
-      if (!trigger || !panel) return;
+      if (!trigger || !panel || trigger.dataset.accordionBound) return;
+      trigger.dataset.accordionBound = '1';
       trigger.addEventListener('click', () => {
         const open = trigger.getAttribute('aria-expanded') === 'true';
         root.querySelectorAll(triggerSel).forEach((t) => {

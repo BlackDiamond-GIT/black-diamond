@@ -62,12 +62,13 @@
   }
 
   function unlockBody() {
-    if (!bodyLocked) return;
+    const scrollY = savedScrollY;
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    window.scrollTo(0, savedScrollY);
+    document.body.style.overflow = '';
     bodyLocked = false;
+    window.scrollTo(0, scrollY);
   }
 
   // ── Mobile drawer ──────────────────────────────
@@ -107,29 +108,36 @@
     });
   }
 
-  // ── FAQ Accordion ──────────────────────────────
-  const faqItems = document.querySelectorAll('.faq__item');
+  // ── FAQ Accordion (service/therapist pages only) ──
+  const hasDedicatedAccordion =
+    document.querySelector('.proc-acc') ||
+    document.querySelector('.faq-page');
 
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq__question');
-    const answer   = item.querySelector('.faq__answer');
-    if (!question || !answer) return;
+  if (!hasDedicatedAccordion) {
+    const faqItems = document.querySelectorAll('.faq__item');
 
-    question.addEventListener('click', () => {
-      const isExpanded = question.getAttribute('aria-expanded') === 'true';
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq__question');
+      const answer   = item.querySelector('.faq__answer');
+      if (!question || !answer || question.dataset.accordionBound) return;
 
-      faqItems.forEach(other => {
-        if (other === item) return;
-        const otherQ = other.querySelector('.faq__question');
-        const otherA = other.querySelector('.faq__answer');
-        if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
-        if (otherA) otherA.classList.remove('is-open');
+      question.dataset.accordionBound = '1';
+      question.addEventListener('click', () => {
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+        faqItems.forEach(other => {
+          if (other === item) return;
+          const otherQ = other.querySelector('.faq__question');
+          const otherA = other.querySelector('.faq__answer');
+          if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
+          if (otherA) otherA.classList.remove('is-open');
+        });
+
+        question.setAttribute('aria-expanded', String(!isExpanded));
+        answer.classList.toggle('is-open', !isExpanded);
       });
-
-      question.setAttribute('aria-expanded', String(!isExpanded));
-      answer.classList.toggle('is-open', !isExpanded);
     });
-  });
+  }
 
   // ── Ink reveal + line draw ─────────────────────
   function revealInkElement(el) {
