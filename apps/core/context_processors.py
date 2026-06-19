@@ -20,12 +20,12 @@ def _fallback_address():
         'SITE_ADDRESS_LOCALITY': 'Nové Město',
         'SITE_ADDRESS_COUNTRY': 'CZ',
         'SITE_ADDRESS': getattr(settings, 'SITE_ADDRESS', 'Opletalova 1566/30, 110 00 Nové Město'),
-        'SITE_MAPS_URL': 'https://maps.google.com/?q=Opletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto',
-        'SITE_MAPS_EMBED_URL': (
-            'https://www.google.com/maps/embed?origin=mfe'
-            '&pb=!1m3!2m1!1sOpletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto'
-            '!6i16!3m1!1scs!5m1!1scs'
+        'SITE_MAPS_URL': getattr(
+            settings,
+            'SITE_MAPS_URL',
+            'https://maps.google.com/?q=Opletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto',
         ),
+        'SITE_MAPS_EMBED_URL': getattr(settings, 'SITE_MAPS_EMBED_URL', ''),
     }
 
 
@@ -51,7 +51,11 @@ def site_settings(request):
             'SITE_ADDRESS_LOCALITY': 'Nové Město',
             'SITE_ADDRESS_COUNTRY': 'CZ',
             'SITE_ADDRESS': site.address or site.full_address,
-            'SITE_MAPS_URL': site.map_url or f'https://maps.google.com/?q={site.maps_query}',
+            'SITE_MAPS_URL': site.map_url or getattr(
+                settings,
+                'SITE_MAPS_URL',
+                f'https://maps.google.com/?q={site.maps_query}',
+            ),
             'SITE_MAPS_EMBED_URL': site.maps_embed,
             'SITE_OPENING_HOURS': site.get_hours_for_language(lang),
             'SITE_INSTAGRAM_URL': (site.instagram_url or '').strip() or 'https://instagram.com/blackdiamondspa',

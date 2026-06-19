@@ -117,11 +117,8 @@ class SiteSettings(models.Model):
     def maps_embed(self):
         if (self.maps_embed_url or '').strip():
             return self.maps_embed_url.strip()
-        from urllib.parse import quote_plus
-        return (
-            f'https://www.google.com/maps?q={quote_plus(self.address)}'
-            f'&hl=cs&z=16&output=embed'
-        )
+        from django.conf import settings
+        return getattr(settings, 'SITE_MAPS_EMBED_URL', '')
 
     def get_rotation_phones(self):
         return [

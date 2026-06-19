@@ -126,6 +126,17 @@ SITE_URL = 'https://blackdiamond.cz'
 SITE_PHONE = '+420 797 669 633'
 SITE_EMAIL = 'info@blackdiamond.cz'
 SITE_ADDRESS = 'Opletalova 1566/30, 110 00 Nové Město'
+SITE_MAPS_EMBED_URL = (
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2560.2094122242142'
+    '!2d14.4289516!3d50.082366!3m2!1i1024!2i768!4f13.1!3m3!1m2'
+    '!1s0x470b95f3d3849a1f%3A0xa55ddc497485ffc6!2sBlack%20Diamond'
+    '!5e0!3m2!1scs!2sua!4v1781872448444!5m2!1scs!2sua'
+)
+SITE_MAPS_URL = (
+    'https://www.google.com/maps/place/Black+Diamond/'
+    '@50.082366,14.4289516,17z/data=!3m1!4b1!4m6!3m5!1s0x470b95f3d3849a1f:0xa55ddc497485ffc6'
+    '!8m2!3d50.082366!4d14.4289516'
+)
 
 CLOUDINARY_URL = env('CLOUDINARY_URL', default='')
 

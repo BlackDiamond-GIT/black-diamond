@@ -1,18 +1,157 @@
-/* Black Diamond Spa — Contact page map */
+/* Black Diamond Spa — Contact page */
 
-.contact-map {
+.contact-page {
+  padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+.contact-breadcrumb {
+  margin-bottom: var(--sp-2xl);
+}
+
+.contact-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-xs);
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.contact-breadcrumb__list a {
+  color: var(--text-muted);
+}
+
+.contact-breadcrumb__list [aria-current="page"] {
+  color: var(--tiffany);
+}
+
+.contact-header {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .contact-form-wrap {
+    position: sticky;
+    top: calc(var(--nav-height, 72px) + 1.5rem);
+  }
+}
+
+/* Info card */
+.contact-card {
+  padding: 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+}
+
+.contact-card__head {
+  padding: var(--sp-2xl) var(--sp-2xl) 0;
+}
+
+.contact-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, var(--fs-h2));
+  margin: 0;
+  line-height: 1.2;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+  list-style: none;
+  margin: 0;
+  padding: var(--sp-xl) var(--sp-2xl) var(--sp-2xl);
+}
+
+@media (min-width: 640px) {
+  .contact-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-item--address {
+    grid-column: 1 / -1;
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-md);
+  min-width: 0;
+}
+
+.contact-item__icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--tiffany);
+}
+
+.contact-item__body {
+  min-width: 0;
+}
+
+.contact-item__label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+
+.contact-item__value {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--fs-base);
+  line-height: 1.55;
+}
+
+.contact-item__value address {
+  font-style: normal;
+}
+
+.contact-item__link {
+  color: var(--tiffany);
+  font-size: var(--fs-lg);
+  word-break: break-word;
+}
+
+.contact-item__link--email {
+  font-size: var(--fs-base);
+}
+
+.contact-item--hours .contact-item__value {
+  color: var(--tiffany);
+  font-weight: 600;
+}
+
+.contact-card__actions {
+  padding: 0 var(--sp-2xl) var(--sp-2xl);
+}
+
+/* Map block — full width at card bottom */
+.contact-map {
+  border-top: 1px solid var(--glass-border);
   background: var(--bg-secondary);
 }
 
 .contact-map__frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  min-height: 220px;
-  max-height: 360px;
+  aspect-ratio: 16 / 9;
+  min-height: 240px;
+  max-height: 420px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -24,13 +163,13 @@
   border: 0;
 }
 
-.contact-map__footer {
+.contact-map__bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-sm) var(--sp-md);
-  padding: var(--sp-md) var(--sp-lg);
+  padding: var(--sp-md) var(--sp-2xl);
   border-top: 1px solid var(--glass-border);
 }
 
@@ -41,22 +180,34 @@
   line-height: 1.5;
 }
 
-@media (min-width: 640px) {
-  .contact-map__frame {
-    min-height: 260px;
-  }
+/* Form card */
+.contact-form-card {
+  padding: var(--sp-2xl);
+  border-radius: var(--radius-xl);
 }
 
-@media (min-width: 1024px) {
+.contact-form-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--sp-2xl);
+}
+
+.contact-form-card__privacy {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-top: var(--sp-md);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
   .contact-map__frame {
-    min-height: 300px;
-    max-height: 400px;
+    min-height: 280px;
   }
 }
 
 @supports (-webkit-touch-callout: none) {
   .contact-map__frame {
-    min-height: 240px;
+    min-height: 260px;
   }
 
   .contact-map__iframe {
