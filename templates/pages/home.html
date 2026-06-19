@@ -28,7 +28,7 @@
     {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "10:00","closes": "21:00"},
     {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday","Sunday"],"opens": "10:00","closes": "19:00"}
   ],
-  "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "87","bestRating": "5"}
+  "aggregateRating": {% if reviews_meta.rating and reviews_meta.count %}{"@type": "AggregateRating","ratingValue": "{{ reviews_meta.rating }}","reviewCount": "{{ reviews_meta.count }}","bestRating": "5"}{% else %}{"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "87","bestRating": "5"}{% endif %}
 }
 </script>
 {% endblock %}
@@ -142,6 +142,8 @@
     </div>
   </section>
 
+  {% include "partials/_reviews_section.html" %}
+
   <section class="sec sec--alt" aria-labelledby="faq-hd">
     <div class="container container--md">
       <header class="sec__hd sec__hd--center">
@@ -161,6 +163,9 @@
         </div>
         {% endfor %}
       </div>
+      <p class="sec__more">
+        <a href="{% url 'pages:faq' %}" class="btn btn--secondary btn--lg">{{ home.faq_all }}</a>
+      </p>
     </div>
   </section>
 
@@ -203,5 +208,6 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="{% static 'js/reviews-carousel.js' %}" defer></script>
 <script src="{% static 'js/home-v4.js' %}" defer></script>
 {% endblock %}

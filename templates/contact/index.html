@@ -18,138 +18,76 @@
     <header class="section-header contact-header">
       <span class="section-label" aria-hidden="true">{% trans "Jsme tu pro vás" %}</span>
       <h1 class="section-title">{% trans "Kontakt" %}</h1>
-      <p class="section-subtitle">{% trans "Máte dotaz nebo chcete rezervovat? Kontaktujte nás telefonicky, e-mailem nebo vyplňte formulář." %}</p>
+      <p class="section-subtitle">{% trans "Máte dotaz nebo chcete rezervovat? Kontaktujte nás telefonicky nebo e-mailem." %}</p>
     </header>
 
-    <div class="contact-grid">
+    <div class="contact-layout">
+      <div class="glass contact-card" itemscope itemtype="https://schema.org/MassageParlor">
+        <meta itemprop="name" content="{{ SITE_NAME }}">
 
-      <aside class="contact-aside">
-        <div class="glass contact-card" itemscope itemtype="https://schema.org/MassageParlor">
-          <meta itemprop="name" content="{{ SITE_NAME }}">
+        <header class="contact-card__head">
+          <h2 class="contact-card__title">{{ SITE_NAME }}</h2>
+        </header>
 
-          <header class="contact-card__head">
-            <h2 class="contact-card__title">{{ SITE_NAME }}</h2>
-          </header>
-
-          <ul class="contact-list">
-            <li class="contact-item contact-item--address">
-              <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              <div class="contact-item__body">
-                <strong class="contact-item__label">{% trans "Adresa" %}</strong>
-                <address class="contact-item__value" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                  <span itemprop="streetAddress">{{ SITE_STREET_ADDRESS }}</span><br>
-                  <span itemprop="postalCode">{{ SITE_POSTAL_CODE }}</span> <span itemprop="addressLocality">{{ SITE_ADDRESS_LOCALITY }}</span><br>
-                  <span itemprop="addressCountry">{% trans "Česká republika" %}</span>
-                </address>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <div class="contact-item__body">
-                <strong class="contact-item__label">{% trans "Telefon" %}</strong>
-                <a href="tel:+420797669633" class="contact-item__link" itemprop="telephone">{{ SITE_PHONE }}</a>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <div class="contact-item__body">
-                <strong class="contact-item__label">E-mail</strong>
-                <a href="mailto:{{ SITE_EMAIL }}" class="contact-item__link contact-item__link--email" itemprop="email">{{ SITE_EMAIL }}</a>
-              </div>
-            </li>
-
-            <li class="contact-item contact-item--hours">
-              <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <div class="contact-item__body">
-                <strong class="contact-item__label">{% trans "Otevírací doba" %}</strong>
-                <p class="contact-item__value" itemprop="openingHours">{{ SITE_OPENING_HOURS }}</p>
-              </div>
-            </li>
-          </ul>
-
-          <div class="contact-card__actions">
-            <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--full shimmer">{% trans "Zobrazit rozvrh & rezervovat" %}</a>
-          </div>
-
-          <div class="contact-map">
-            <div class="contact-map__frame">
-              <iframe
-                class="contact-map__iframe"
-                title="{% trans 'Mapa — Black Diamond Spa' %}, {{ SITE_ADDRESS }}"
-                src="{{ SITE_MAPS_EMBED_URL }}"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen>
-              </iframe>
+        <ul class="contact-list">
+          <li class="contact-item contact-item--address">
+            <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div class="contact-item__body">
+              <strong class="contact-item__label">{% trans "Adresa" %}</strong>
+              <address class="contact-item__value" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <span itemprop="streetAddress">{{ SITE_STREET_ADDRESS }}</span><br>
+                <span itemprop="postalCode">{{ SITE_POSTAL_CODE }}</span> <span itemprop="addressLocality">{{ SITE_ADDRESS_LOCALITY }}</span><br>
+                <span itemprop="addressCountry">{% trans "Česká republika" %}</span>
+              </address>
             </div>
-            <div class="contact-map__bar">
-              <p class="contact-map__address">{{ SITE_ADDRESS }}</p>
-              <a href="{{ SITE_MAPS_URL }}" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">{% trans "Otevřít v Google Maps" %}</a>
+          </li>
+
+          <li class="contact-item">
+            <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div class="contact-item__body">
+              <strong class="contact-item__label">{% trans "Telefon" %}</strong>
+              <a href="tel:+420797669633" class="contact-item__link" itemprop="telephone">{{ SITE_PHONE }}</a>
             </div>
-          </div>
+          </li>
+
+          <li class="contact-item">
+            <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div class="contact-item__body">
+              <strong class="contact-item__label">E-mail</strong>
+              <a href="mailto:{{ SITE_EMAIL }}" class="contact-item__link contact-item__link--email" itemprop="email">{{ SITE_EMAIL }}</a>
+            </div>
+          </li>
+
+          <li class="contact-item contact-item--hours">
+            <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div class="contact-item__body">
+              <strong class="contact-item__label">{% trans "Otevírací doba" %}</strong>
+              <p class="contact-item__value" itemprop="openingHours">{{ SITE_OPENING_HOURS }}</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="contact-card__actions">
+          <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--full shimmer">{% trans "Zobrazit rozvrh & rezervovat" %}</a>
         </div>
-      </aside>
 
-      <div class="contact-form-wrap">
-        <div class="glass contact-form-card">
-          <h2 class="contact-form-card__title">{% trans "Napište nám" %}</h2>
-          <form
-            action="/api/contact/"
-            method="POST"
-            hx-post="/api/contact/"
-            hx-target="#form-response"
-            hx-swap="innerHTML"
-            hx-indicator="#form-spinner"
-            aria-label="{% trans 'Kontaktní formulář' %}">
-            {% csrf_token %}
-
-            <div class="form-field">
-              <label for="contact-name">{% trans "Jméno a příjmení" %}</label>
-              <input type="text" id="contact-name" name="name" placeholder="{% trans 'Jana Nováková' %}" required autocomplete="name">
-            </div>
-
-            <div class="form-field">
-              <label for="contact-email">E-mail</label>
-              <input type="email" id="contact-email" name="email" placeholder="jana@example.com" required autocomplete="email">
-            </div>
-
-            <div class="form-field">
-              <label for="contact-phone">{% trans "Telefon" %} ({% trans "nepovinné" %})</label>
-              <input type="tel" id="contact-phone" name="phone" placeholder="+420 xxx xxx xxx" autocomplete="tel" inputmode="tel">
-            </div>
-
-            <div class="form-field">
-              <label for="contact-service">{% trans "Typ masáže" %} ({% trans "nepovinné" %})</label>
-              <select id="contact-service" name="service">
-                <option value="">— {% trans "Vyberte masáž" %} —</option>
-                {% for service in services %}
-                <option value="{{ service.slug }}">{{ service|trans_field:"title" }} ({{ service.catalog_duration }} min / {% price_plain_tag service.catalog_price_czk %})</option>
-                {% endfor %}
-              </select>
-            </div>
-
-            <div class="form-field">
-              <label for="contact-message">{% trans "Zpráva" %}</label>
-              <textarea id="contact-message" name="message" placeholder="{% trans 'Váš dotaz nebo požadavek...' %}" rows="5"></textarea>
-            </div>
-
-            <div id="form-response" role="status" aria-live="polite"></div>
-
-            <button type="submit" class="btn btn--primary btn--full btn--lg shimmer">
-              <span id="form-spinner" class="htmx-indicator">{% trans "Odesílání..." %}</span>
-              <span id="form-label">{% trans "Odeslat zprávu" %}</span>
-            </button>
-
-            <p class="contact-form-card__privacy">
-              {% trans "Odesláním souhlasíte se zpracováním osobních údajů dle" %}
-              <a href="{% url 'pages:privacy' %}">{% trans "Zásad soukromí" %}</a>.
-            </p>
-          </form>
+        <div class="contact-map">
+          <div class="contact-map__frame">
+            <iframe
+              class="contact-map__iframe"
+              title="{% trans 'Mapa — Black Diamond Spa' %}, {{ SITE_ADDRESS }}"
+              src="{{ SITE_MAPS_EMBED_URL }}"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="contact-map__bar">
+            <p class="contact-map__address">{{ SITE_ADDRESS }}</p>
+            <a href="{{ SITE_MAPS_URL }}" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">{% trans "Otevřít v Google Maps" %}</a>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>

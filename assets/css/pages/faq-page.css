@@ -1,0 +1,29 @@
+/* Black Diamond Spa — FAQ page */
+
+.faq-page {
+  padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+.faq-page__header {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.faq-page__intro {
+  max-width: 42rem;
+}
+
+.faq-page__cta {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.faq-page__cta .sec__sub {
+  margin-inline: auto;
+  margin-bottom: var(--sp-xl);
+}
+
+@media (min-width: 768px) {
+  .faq-page .faq {
+    max-width: 52rem;
+  }
+}

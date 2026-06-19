@@ -1,0 +1,196 @@
+/* Black Diamond Spa — guest reviews carousel */
+
+.reviews-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs) var(--sp-sm);
+}
+
+.reviews-summary__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--tiffany);
+}
+
+.reviews-summary__rating strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.reviews-summary__star,
+.reviews-slide__star {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.reviews-summary__star.is-filled,
+.reviews-slide__star.is-filled {
+  color: var(--tiffany);
+}
+
+.reviews-carousel {
+  position: relative;
+  z-index: 1;
+  --reviews-gap: clamp(1.25rem, 3vw, 2rem);
+  --reviews-arrow-space: clamp(2rem, 5vw, 2.75rem);
+  --reviews-slide-w: 100%;
+}
+
+.reviews-carousel__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  min-width: 0;
+  padding-block: 0.25rem;
+  padding-inline: var(--reviews-arrow-space);
+  scroll-padding-inline: var(--reviews-arrow-space);
+  touch-action: pan-x;
+}
+
+.reviews-carousel__viewport::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}
+
+.reviews-carousel__track {
+  display: flex;
+  gap: var(--reviews-gap);
+  width: max-content;
+  min-height: 100%;
+}
+
+.reviews-carousel__slide {
+  flex: 0 0 var(--reviews-slide-w, 100%);
+  width: var(--reviews-slide-w, 100%);
+  max-width: var(--reviews-slide-w, 100%);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  margin: 0;
+  border-top: 1px solid var(--divider);
+  padding-top: var(--sp-xl);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.reviews-slide__stars {
+  display: flex;
+  gap: 0.15rem;
+  margin-bottom: var(--sp-md);
+}
+
+.reviews-slide__text {
+  margin: 0 0 var(--sp-md);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.reviews-slide__meta {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.reviews-carousel__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: var(--reviews-arrow-space);
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--tiffany);
+  font-size: 1.75rem;
+  font-weight: 200;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.reviews-carousel__btn span {
+  display: block;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.reviews-carousel__btn--prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-inline-start: 0.125rem;
+}
+
+.reviews-carousel__btn--next {
+  right: 0;
+  justify-content: flex-end;
+  padding-inline-end: 0.125rem;
+}
+
+.reviews-carousel__btn:disabled,
+.reviews-carousel__btn[aria-disabled='true'] {
+  opacity: 0.28;
+  cursor: default;
+  pointer-events: none;
+}
+
+.reviews-carousel__btn:not(:disabled):active {
+  opacity: 1;
+}
+
+.reviews-carousel.is-static .reviews-carousel__btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .reviews-carousel {
+    --reviews-arrow-space: 1.75rem;
+  }
+
+  .reviews-carousel__btn {
+    font-size: 1.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .reviews-carousel__slide {
+    padding-inline: var(--sp-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-carousel__viewport {
+    scroll-behavior: auto;
+  }
+
+  .reviews-carousel__btn {
+    transition: none;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .reviews-carousel__slide {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

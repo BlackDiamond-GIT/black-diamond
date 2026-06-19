@@ -37,6 +37,13 @@ class SiteSettingsAdmin(BDModelAdmin):
         (_('Currency display'), {
             'fields': ('eur_rate', 'usd_rate', 'show_eur', 'show_usd'),
         }),
+        (_('Google reviews'), {
+            'fields': (
+                'google_rating', 'google_review_count',
+                'google_maps_reviews_url', 'google_reviews_synced_at',
+            ),
+            'classes': ('collapse',),
+        }),
         (_('Settings'), {'fields': ('require_age_confirmation',)}),
     )
 

@@ -138,6 +138,13 @@ SITE_MAPS_URL = (
     '!8m2!3d50.082366!4d14.4289516'
 )
 
+GOOGLE_PLACES_API_KEY = env('GOOGLE_PLACES_API_KEY', default='')
+GOOGLE_PLACE_ID = env('GOOGLE_PLACE_ID', default='')
+GOOGLE_PLACE_QUERY = env(
+    'GOOGLE_PLACE_QUERY',
+    default='Erotic massage Black Diamond Opletalova 1566/30 Praha 1',
+)
+
 CLOUDINARY_URL = env('CLOUDINARY_URL', default='')
 
 if CLOUDINARY_URL:

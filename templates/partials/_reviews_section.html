@@ -1,0 +1,58 @@
+{% load i18n bd_tags %}
+{% if guest_reviews %}
+<section class="sec sec--alt" aria-labelledby="reviews-hd">
+  <div class="container">
+    <header class="sec__hd sec__hd--center">
+      <span class="sec__label">{{ home.reviews_label }}</span>
+      <h2 class="sec__title" id="reviews-hd">{{ home.reviews_title }}</h2>
+      {% if reviews_meta.count %}
+      <p class="sec__sub reviews-summary">
+        <span class="reviews-summary__rating" aria-label="{% trans 'Hodnocení' %} {{ reviews_meta.rating }} / 5">
+          {% for i in "12345" %}
+          <span class="reviews-summary__star{% if forloop.counter <= reviews_meta.rating_stars %} is-filled{% endif %}" aria-hidden="true">★</span>
+          {% endfor %}
+          <strong>{{ reviews_meta.rating }}</strong>
+        </span>
+        · {{ reviews_meta.count }} {% trans "recenzí na Google" %}
+      </p>
+      {% else %}
+      <p class="sec__sub">{{ home.reviews_sub }}</p>
+      {% endif %}
+    </header>
+
+    <div class="reviews-carousel" data-reviews-carousel>
+      <button type="button" class="reviews-carousel__btn reviews-carousel__btn--prev" data-reviews-prev aria-label="{% trans 'Předchozí recenze' %}">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <div class="reviews-carousel__viewport" data-reviews-viewport tabindex="0" aria-live="polite">
+        <div class="reviews-carousel__track">
+          {% for review in guest_reviews %}
+          <blockquote class="reviews-slide reviews-carousel__slide">
+            {% if review.rating %}
+            <div class="reviews-slide__stars" aria-label="{% trans 'Hodnocení' %} {{ review.rating }} / 5">
+              {% for i in "12345" %}
+              <span class="reviews-slide__star{% if forloop.counter <= review.rating %} is-filled{% endif %}" aria-hidden="true">★</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <p class="reviews-slide__text">"{{ review|trans_field:'text' }}"</p>
+            <footer class="reviews-slide__meta">{{ review.author_label }}{% if review.city %} · {{ review.city }}{% endif %}</footer>
+          </blockquote>
+          {% endfor %}
+        </div>
+      </div>
+      <button type="button" class="reviews-carousel__btn reviews-carousel__btn--next" data-reviews-next aria-label="{% trans 'Další recenze' %}">
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    {% if reviews_meta.maps_url %}
+    <p class="sec__more">
+      <a href="{{ reviews_meta.maps_url }}" class="btn btn--secondary btn--lg" rel="noopener noreferrer" target="_blank">
+        {{ home.reviews_all }}
+      </a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

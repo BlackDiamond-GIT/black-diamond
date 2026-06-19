@@ -152,7 +152,7 @@
         <header class="section-header" style="margin-bottom:var(--sp-3xl)">
           <span class="section-label" aria-hidden="true">Jsme tu pro vás</span>
           <h1 class="section-title">Kontakt</h1>
-          <p class="section-subtitle">Máte dotaz nebo chcete rezervovat? Kontaktujte nás telefonicky, e-mailem nebo vyplňte formulář níže.</p>
+          <p class="section-subtitle">Máte dotaz nebo chcete rezervovat? Kontaktujte nás telefonicky nebo e-mailem.</p>
         </header>
 
         <div style="display:grid;grid-template-columns:1fr;gap:var(--sp-3xl);align-items:start">
@@ -231,70 +231,10 @@
                   allowfullscreen>
                 </iframe>
               </div>
-              <div class="contact-map__footer">
+              <div class="contact-map__bar">
                 <p class="contact-map__address">Opletalova 1566/30, 110 00 Nové Město</p>
                 <a href="https://maps.google.com/?q=Opletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto" rel="noopener noreferrer" target="_blank" class="btn btn--secondary btn--sm">Open in Google Maps</a>
               </div>
-            </div>
-          </div>
-
-          <!-- Contact form -->
-          <div>
-            <div class="glass" style="padding:var(--sp-2xl);border-radius:var(--radius-xl)">
-              <h2 style="font-family:var(--font-display);font-size:var(--fs-xl);margin-bottom:var(--sp-2xl)">Napište nám</h2>
-              <form
-                action="/api/contact/"
-                method="POST"
-                hx-post="/api/contact/"
-                hx-target="#form-response"
-                hx-swap="innerHTML"
-                hx-indicator="#form-spinner"
-                aria-label="Kontaktní formulář">
-
-                <div class="form-field">
-                  <label for="contact-name">Jméno a příjmení</label>
-                  <input type="text" id="contact-name" name="name" placeholder="Jana Nováková" required autocomplete="name">
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-email">E-mail</label>
-                  <input type="email" id="contact-email" name="email" placeholder="jana@example.com" required autocomplete="email">
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-phone">Telefon (nepovinné)</label>
-                  <input type="tel" id="contact-phone" name="phone" placeholder="+420 xxx xxx xxx" autocomplete="tel">
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-service">Typ masáže (nepovinné)</label>
-                  <select id="contact-service" name="service">
-                    <option value="">— Vyberte masáž —</option>
-                    <option value="klasicka-masaz">Klasická masáž (60 min / 1 200 Kč)</option>
-                    <option value="cbd-relaxacni-masaz">Relax masáž (75 min / 1 700 Kč)</option>
-                    <option value="thajska-masaz">Uvolňující masáž (90 min / 1 600 Kč)</option>
-                    <option value="sportovni-masaz">Sportovní masáž (60 min / 1 500 Kč)</option>
-                    <option value="lymfaticka-masaz">Lymfatická masáž (75 min / 1 600 Kč)</option>
-                    <option value="aromaterapie">Aromamasáž (75 min / 1 400 Kč)</option>
-                  </select>
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-message">Zpráva</label>
-                  <textarea id="contact-message" name="message" placeholder="Váš dotaz nebo požadavek..." rows="5"></textarea>
-                </div>
-
-                <div id="form-response" role="status" aria-live="polite"></div>
-
-                <button type="submit" class="btn btn--primary btn--full btn--lg shimmer" style="margin-top:var(--sp-md)">
-                  <span id="form-spinner" style="display:none">Odesílání...</span>
-                  <span id="form-label">Odeslat zprávu</span>
-                </button>
-
-                <p style="font-size:var(--fs-xs);color:var(--text-muted);margin-top:var(--sp-md);text-align:center">
-                  Odesláním souhlasíte se zpracováním osobních údajů dle <a href="/en/soukromi/">Zásad soukromí</a>.
-                </p>
-              </form>
             </div>
           </div>
         </div>
@@ -314,12 +254,7 @@
         <div><h3 class="footer__col-title">Stránky</h3><ul class="footer__links"><li><a href="/en/">Domů</a></li><li><a href="/en/masazistky/">Masérky</a></li><li><a href="/en/masaze/">Masáže</a></li><li><a href="/en/rozvrh/">Rozvrh</a></li><li><a href="/en/blog/">Blog</a></li><li><a href="/en/kontakty/">Kontakt</a></li></ul></div>
         <div><h3 class="footer__col-title">Salon</h3><ul class="footer__links"><li><a href="/en/o-nas/">O nás</a></li><li><a href="/en/pravidla-salonu/">Pravidla</a></li><li><a href="/en/soukromi/">Soukromí</a></li></ul></div></div>
       </div>
-      <div class="footer__bottom"><p class="footer__copy">© <span class="footer-year">2026</span> Black Diamond Spa.</p><ul class="footer__legal-links"><li><a href="/en/soukromi/">Soukromí</a></li><li><a href="/en/pravidla-salonu/">Pravidla</a></li></ul></div>
-    </div>
-    <div class="footer__disclaimer">
-    <p class="footer__disclaimer-text">Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě. Vstup povolen osobám starším 18 let.</p>
-  </div>
-  </footer>
+</footer>
 
   <nav class="mob-bar" aria-label="Navigation">
   <a href="/en/masaze/" class="mob-bar__item">Massages</a>

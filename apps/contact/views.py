@@ -11,18 +11,10 @@ from .models import ContactRequest
 class ContactPageView(ExtraCssMixin, TemplateView):
     template_name = 'contact/index.html'
     extra_css = [
-        'css/components/forms.css',
         'css/components/glass.css',
         'css/components/buttons.css',
         'css/pages/contact.css',
     ]
-
-    def get_context_data(self, **kwargs):
-        from apps.services.models import Service
-        ctx = super().get_context_data(**kwargs)
-        ctx['form'] = ContactForm()
-        ctx['services'] = Service.objects.filter(is_active=True)
-        return ctx
 
 
 def contact_submit(request):

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n static bd_tags %}
+{% block title %}{% trans "Časté otázky" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Odpovědi na nejčastější otázky o masážích, rezervaci a provozu Black Diamond Spa v Praze." %}{% endblock %}
+
+{% block schema %}
+{% if faq_schema_json %}
+<script type="application/ld+json">{{ faq_schema_json }}</script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<section class="faq-page">
+  <div class="container container--md">
+
+    <nav class="contact-breadcrumb" aria-label="{% trans 'Breadcrumb' %}">
+      <ol class="contact-breadcrumb__list">
+        <li><a href="{% url 'pages:home' %}">{% trans "Domů" %}</a></li>
+        <li aria-hidden="true"> / </li>
+        <li aria-current="page">{% trans "Časté otázky" %}</li>
+      </ol>
+    </nav>
+
+    <header class="section-header faq-page__header">
+      <span class="section-label" aria-hidden="true">FAQ</span>
+      <h1 class="section-title">{% trans "Časté otázky" %}</h1>
+      <p class="section-subtitle faq-page__intro">
+        {% trans "Odpovědi na nejčastější dotazy k masážím, rezervaci, platbě a provozu salonu." %}
+      </p>
+    </header>
+
+    <div class="faq" role="list">
+      {% for item in faq_items %}
+      <div class="faq__item">
+        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-page-{{ forloop.counter }}">
+          {{ item.q }}
+          <span class="faq__mark" aria-hidden="true"></span>
+        </button>
+        <div id="faq-page-{{ forloop.counter }}" class="faq__answer">
+          <div class="faq__answer-inner">{{ item.a|safe }}</div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="section-subtitle">{% trans "Otázky brzy doplníme." %}</p>
+      {% endfor %}
+    </div>
+
+    <div class="faq-page__cta">
+      <p class="sec__sub">{% trans "Nenašli jste odpověď? Kontaktujte nás nebo rovnou rezervujte termín." %}</p>
+      <div class="cta-sec__actions" style="justify-content:center;display:flex;flex-wrap:wrap;gap:var(--sp-md)">
+        <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{% trans "Rezervovat masáž" %}</a>
+        <a href="{% url 'pages:contact' %}" class="btn btn--secondary btn--lg">{% trans "Kontakt" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/faq.js' %}" defer></script>
+{% endblock %}

@@ -69,6 +69,18 @@ class SiteSettings(models.Model):
     usd_rate = models.DecimalField(_('USD rate (1 USD = X CZK)'), max_digits=8, decimal_places=4, default=20.0)
     show_eur = models.BooleanField(_('Show prices in EUR'), default=True)
     show_usd = models.BooleanField(_('Show prices in USD'), default=True)
+    google_rating = models.DecimalField(
+        _('Google rating'), max_digits=2, decimal_places=1, null=True, blank=True,
+    )
+    google_review_count = models.PositiveIntegerField(
+        _('Google review count'), null=True, blank=True,
+    )
+    google_maps_reviews_url = models.URLField(
+        _('Google Maps reviews URL'), max_length=500, blank=True,
+    )
+    google_reviews_synced_at = models.DateTimeField(
+        _('Google reviews synced at'), null=True, blank=True,
+    )
 
     class Meta:
         verbose_name = _('Site Settings')
@@ -253,6 +265,7 @@ class GuestReview(models.Model):
     city = models.CharField(_('City'), max_length=80, blank=True)
     google_review_id = models.CharField(_('Google review ID'), max_length=120, blank=True, null=True, unique=True)
     rating = models.PositiveSmallIntegerField(_('Rating'), null=True, blank=True)
+    published_at = models.DateTimeField(_('Published at'), null=True, blank=True)
     order = models.IntegerField(_('Order'), default=0)
     is_active = models.BooleanField(_('Active'), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -260,10 +273,17 @@ class GuestReview(models.Model):
     class Meta:
         verbose_name = _('Guest review')
         verbose_name_plural = _('Guest reviews')
-        ordering = ['order', 'pk']
+        ordering = ['order', '-published_at', 'pk']
 
     def __str__(self):
         return f'{self.author_label} — {self.text_cs[:60]}'
+
+    def get_text(self, lang: str = 'cs') -> str:
+        code = (lang or 'cs').split('-')[0].lower()
+        val = (getattr(self, f'text_{code}', '') or '').strip()
+        if val:
+            return val
+        return (self.text_cs or '').strip()
 
 
 class EtiquetteRule(models.Model):
