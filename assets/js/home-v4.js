@@ -20,15 +20,42 @@
       }
       document.body.style.position = 'fixed';
       document.body.style.top = '-' + bodyScrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
       document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
     }
 
     function unlockBody() {
+      const scrollY = bodyScrollY;
+      const root = document.documentElement;
+      const prevBehavior = root.style.scrollBehavior;
+
+      root.style.scrollBehavior = 'auto';
       document.body.style.position = '';
       document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.width = '';
       document.body.style.overflow = '';
-      window.scrollTo(0, bodyScrollY);
+
+      root.scrollTop = scrollY;
+      document.body.scrollTop = scrollY;
+      window.scrollTo(0, scrollY);
+
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+        root.style.scrollBehavior = prevBehavior;
+      });
+    }
+
+    function restoreFocus() {
+      if (!lastFocus) return;
+      try {
+        lastFocus.focus({ preventScroll: true });
+      } catch (err) {
+        lastFocus.focus();
+      }
     }
 
     function openModal(trigger) {
@@ -74,11 +101,14 @@
     function closeModal() {
       modal.classList.remove('is-open');
       modal.setAttribute('aria-hidden', 'true');
-      unlockBody();
       const panel = modal.querySelector('.th-modal__panel');
+      let finished = false;
       const onEnd = () => {
+        if (finished) return;
+        finished = true;
+        unlockBody();
         modal.hidden = true;
-        if (lastFocus) lastFocus.focus();
+        restoreFocus();
       };
       if (panel) panel.addEventListener('transitionend', onEnd, { once: true });
       setTimeout(onEnd, 500);
