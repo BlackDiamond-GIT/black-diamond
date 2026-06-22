@@ -9,8 +9,8 @@ from .addresses import WORK_ADDRESS
 
 class ScheduleEntry(models.Model):
     class ShiftType(models.TextChoices):
-        DAY = 'day', _('Day')
-        NIGHT = 'night', _('Night')
+        DAY = 'day', _('Denní')
+        NIGHT = 'night', _('Noční')
 
     therapist = models.ForeignKey(
         Therapist, on_delete=models.CASCADE,

@@ -1,0 +1,799 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Black Diamond Spa\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "1 masérka"
+msgstr "1 массажистка"
+
+msgid "Active"
+msgstr "Активные"
+
+msgid "Add schedule for week"
+msgstr "Добавить расписание на неделю"
+
+msgid "Add slot"
+msgstr "Добавить слот"
+
+msgid "Adresa"
+msgstr "Адрес"
+
+msgid "Aktualizováno"
+msgstr "Обновлено"
+
+msgid "All branches"
+msgstr "Все филиалы"
+
+msgid "All entries"
+msgstr "Все записи"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "Audience"
+msgstr "Аудитория"
+
+msgid "Availability grid"
+msgstr "Сетка доступности"
+
+msgid "Avg per day"
+msgstr "В среднем за день"
+
+msgid "Avg per hour"
+msgstr "В среднем за час"
+
+msgid ""
+"Black Diamond Spa je prémiový relaxační masážní salon v srdci Prahy, "
+"zaměřený na luxusní zážitek a péči o tělo i mysl."
+msgstr ""
+"Black Diamond Spa — премиальный релаксационный массажный салон в сердце "
+"Праги, ориентированный на роскошный опыт и заботу о теле и духе."
+
+msgid ""
+"Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě a "
+"slouží pouze jako inzerce pro individuální masérky. Podmínkou inzerce je "
+"pronájem prostorů v masážním salonu. Vstup povolen osobám starším 18 let."
+msgstr ""
+"Black Diamond Spa не предоставляет сексуальные услуги в любой форме и служит"
+" только рекламой для индивидуальных массажисток. Условие размещения — аренда"
+" помещений в массажном салоне. Вход разрешён лицам старше 18 лет."
+
+msgid ""
+"Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě a "
+"slouží výhradně jako profesionální relaxační a masážní salon."
+msgstr ""
+"Black Diamond Spa не предоставляет сексуальные услуги в любой форме и служит"
+" исключительно профессиональным релаксационным и массажным салоном."
+
+msgid ""
+"Black Diamond Spa — prémiový masážní salon v centru Prahy. Naše filozofie, "
+"tým a příběh."
+msgstr ""
+"Black Diamond Spa — премиальный массажный салон в центре Праги. Наша "
+"философия, команда и история."
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Booking statistics"
+msgstr "Статистика бронирований"
+
+msgid "Booking stats"
+msgstr "Статистика бронирований"
+
+msgid "Bot clicks"
+msgstr "Клики ботов"
+
+msgid "Bot clicks (excluded)"
+msgstr "Клики ботов (исключены)"
+
+msgid "Branch"
+msgstr "Филиал"
+
+msgid "Breadcrumb"
+msgstr "Навигационная цепочка"
+
+msgid "Brzy"
+msgstr "Скоро"
+
+msgid "Brzy přidáme ceník masáží."
+msgstr "Прайс-лист скоро появится."
+
+msgid "Brzy přidáme masáže."
+msgstr "Массажи скоро появятся."
+
+msgid "Brzy přidáme masérky."
+msgstr "Массажистки скоро появятся."
+
+msgid "Brzy přidáme články."
+msgstr "Статьи скоро появятся."
+
+msgid "Busiest time"
+msgstr "Самое загруженное время"
+
+msgid "Button"
+msgstr "Кнопка"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Cancelled"
+msgstr "Отменено"
+
+msgid "Ceny"
+msgstr "Цены"
+
+msgid "Ceník"
+msgstr "Прайс-лист"
+
+msgid "Ceník masáží Praha"
+msgstr "Прайс-лист массажей Прага"
+
+msgid "Certifikované masérky"
+msgstr "Сертифицированные массажистки"
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "Chart type"
+msgstr "Тип графика"
+
+msgid "Chování v salonu"
+msgstr "Поведение в салоне"
+
+msgid "Click trend"
+msgstr "Динамика кликов"
+
+msgid "Client"
+msgstr "Клиент"
+
+msgid "Confirmed"
+msgstr "Подтверждено"
+
+msgid "Další"
+msgstr "Следующая"
+
+msgid "Další masáže"
+msgstr "Другие массажи"
+
+msgid "Další recenze"
+msgstr "Следующий отзыв"
+
+msgid "Další články"
+msgstr "Другие статьи"
+
+msgid "Dalších 7 dní"
+msgstr "Следующие 7 дней"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Day"
+msgstr "День"
+
+msgid "Denní"
+msgstr "Дневная"
+
+msgid "Detail masáže"
+msgstr "Подробнее о массаже"
+
+msgid "Dnes"
+msgstr "Сегодня"
+
+msgid "Domů"
+msgstr "Главная"
+
+msgid "Done"
+msgstr "Выполнено"
+
+msgid "Doplňkové služby"
+msgstr "Дополнительные услуги"
+
+msgid "Dostupnost"
+msgstr "Доступность"
+
+msgid "Délka"
+msgstr "Длительность"
+
+msgid "Délky masáží: 45, 60 a 90 minut"
+msgstr "Длительность массажа: 45, 60 и 90 минут"
+
+msgid "Filters"
+msgstr "Фильтры"
+
+msgid "Fotografie 1"
+msgstr "Фото 1"
+
+msgid "Fotografie 2"
+msgstr "Фото 2"
+
+msgid "Free"
+msgstr "Свободно"
+
+msgid "From"
+msgstr "С"
+
+msgid "Galerie fotografií"
+msgstr "Фотогалерея"
+
+msgid "Hlavní navigace"
+msgstr "Главная навигация"
+
+msgid "Hodnocení"
+msgstr "Рейтинг"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Jaké údaje shromažďujeme"
+msgstr "Какие данные мы собираем"
+
+msgid "Jazyky"
+msgstr "Языки"
+
+msgid "Kde nás najdete"
+msgstr "Где нас найти"
+
+msgid "Klikněte na volný termín pro přechod k rezervaci."
+msgstr "Нажмите на свободный слот, чтобы перейти к бронированию."
+
+msgid "Kontakt"
+msgstr "Контакты"
+
+msgid "Kontakt — Masáž Nové Město"
+msgstr "Контакты — Массаж Нове Место"
+
+msgid "Kontaktovat nás"
+msgstr "Связаться с нами"
+
+msgid "Kontaktujte Black Diamond Spa Praha. Adresa:"
+msgstr "Свяжитесь с Black Diamond Spa Прага. Адрес:"
+
+msgid "Legenda stavů"
+msgstr "Легенда статусов"
+
+msgid "Mapa — Black Diamond Spa"
+msgstr "Карта — Black Diamond Spa"
+
+msgid "Masáž"
+msgstr "Массаж"
+
+msgid "Masáž Praha — Prémiový relaxační salon"
+msgstr "Массаж Прага — Премиальный релаксационный салон"
+
+msgid "Masáže"
+msgstr "Массажи"
+
+msgid "Masáže a ceny"
+msgstr "Массажи и цены"
+
+msgid "Masérka"
+msgstr "Массажистка"
+
+msgid "Masérky"
+msgstr "Массажистки"
+
+msgid "Masérky Praha — Certifikované specialistky"
+msgstr "Массажистки Прага — Сертифицированные специалистки"
+
+msgid "Mobilní menu"
+msgstr "Мобильное меню"
+
+msgid ""
+"Máte právo na přístup, opravu, výmaz svých osobních údajů. Kontaktujte nás "
+"na výše uvedeném e-mailu."
+msgstr ""
+"Вы имеете право на доступ, исправление и удаление своих персональных данных."
+" Свяжитесь с нами по указанному выше e-mail."
+
+msgid "Měna"
+msgstr "Валюта"
+
+msgid ""
+"Nabídka masáží Black Diamond Spa — klasická, relaxační, hlubokotkaninní, "
+"sportovní, lymfatická, aromaterapie. Ceny a délky trvání."
+msgstr ""
+"Меню массажей Black Diamond Spa — классический, релаксационный, "
+"глубокотканный, спортивный, лимфодренажный, ароматерапия. Цены и "
+"длительность."
+
+msgid "Nabízené masáže"
+msgstr "Предлагаемые массажи"
+
+msgid "Napsat zprávu"
+msgstr "Написать сообщение"
+
+msgid "Navigace rozvrhem"
+msgstr "Навигация по расписанию"
+
+msgid "Naše filozofie"
+msgstr "Наша философия"
+
+msgid "Naše masérky"
+msgstr "Наши массажистки"
+
+msgid "Naše služby"
+msgstr "Наши услуги"
+
+msgid "Nenašli jste odpověď? Kontaktujte nás nebo rovnou rezervujte termín."
+msgstr "Не нашли ответ? Свяжитесь с нами или сразу забронируйте визит."
+
+msgid "Nenašli jste vhodný termín? Kontaktujte nás přímo."
+msgstr "Не нашли подходящий слот? Свяжитесь с нами напрямую."
+
+msgid "New appointment"
+msgstr "Новая запись"
+
+msgid "Next week"
+msgstr "Следующая неделя"
+
+msgid "Night"
+msgstr "Ночь"
+
+msgid "Nikdo momentálně není na směně."
+msgstr "Сейчас никто не на смене."
+
+msgid "No active therapists found for the selected branch."
+msgstr "Активные массажистки для выбранного филиала не найдены."
+
+msgid "No active therapists."
+msgstr "Нет активных массажисток."
+
+msgid "No appointments in this period."
+msgstr "За этот период записей нет."
+
+msgid "No clicks for the selected filters."
+msgstr "Нет кликов для выбранных фильтров."
+
+msgid "No data for this period."
+msgstr "Нет данных за этот период."
+
+msgid "No schedule for this day."
+msgstr "На этот день расписания нет."
+
+msgid "Noční"
+msgstr "Ночная"
+
+msgid "Noční směna"
+msgstr "Ночная смена"
+
+msgid "Náš příběh"
+msgstr "Наша история"
+
+msgid "Náš tým"
+msgstr "Наша команда"
+
+msgid "O nás"
+msgstr "О нас"
+
+msgid "Oblíbené techniky"
+msgstr "Любимые техники"
+
+msgid "Obsazeno"
+msgstr "Занято"
+
+msgid ""
+"Odpovědi na nejčastější dotazy k masážím, rezervaci, platbě a provozu "
+"salonu."
+msgstr ""
+"Ответы на самые частые вопросы о массажах, бронировании, оплате и работе "
+"салона."
+
+msgid ""
+"Odpovědi na nejčastější otázky o masážích, rezervaci a provozu Black Diamond"
+" Spa v Praze."
+msgstr ""
+"Ответы на самые частые вопросы о массажах, бронировании и работе Black "
+"Diamond Spa в Праге."
+
+msgid "Omlouváme se, požadovaná stránka neexistuje."
+msgstr "Извините, запрошенная страница не существует."
+
+msgid "Otevírací doba"
+msgstr "Часы работы"
+
+msgid "Otevřít menu"
+msgstr "Открыть меню"
+
+msgid "Otevřít v Google Maps"
+msgstr "Открыть в Google Maps"
+
+msgid "Otázky brzy doplníme."
+msgstr "Вопросы скоро появятся."
+
+msgid "Pending"
+msgstr "Ожидает"
+
+msgid "People clicks"
+msgstr "Клики людей"
+
+msgid "Period"
+msgstr "Период"
+
+msgid "Period (days)"
+msgstr "Период (дни)"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Pick a date"
+msgstr "Выберите дату"
+
+msgid "Platba"
+msgstr "Оплата"
+
+msgid "Povaha služeb"
+msgstr "Характер услуг"
+
+msgid ""
+"Poznajte certifikované masérky Black Diamond Spa v centru Prahy — Julia, "
+"Diana, Laura, Vanessa, Ella, Mira. Každá s vlastní specializací. Rezervujte "
+"online."
+msgstr ""
+"Познакомьтесь с сертифицированными массажистками Black Diamond Spa в центре "
+"Праги — Julia, Diana, Laura, Vanessa, Ella, Mira. У каждой своя "
+"специализация. Бронируйте онлайн."
+
+msgid "Poznat náš tým"
+msgstr "Познакомиться с командой"
+
+msgid "Po–Pá 10–21, So–Ne 10–19."
+msgstr "Пн–Пт 10–21, Сб–Вс 10–19."
+
+msgid ""
+"Pravidla a podmínky návštěvy Black Diamond Spa Praha. Věk 18+. Zákaznická "
+"etiketa a provozní řád."
+msgstr ""
+"Правила и условия посещения Black Diamond Spa Прага. Возраст 18+. Этикет "
+"клиентов и правила салона."
+
+msgid "Pravidla salonu"
+msgstr "Правила салона"
+
+msgid "Previous week"
+msgstr "Предыдущая неделя"
+
+msgid "Pro koho je vhodná?"
+msgstr "Для кого подходит?"
+
+msgid "Pro tento den nejsou dostupné žádné termíny."
+msgstr "На этот день нет доступных слотов."
+
+msgid "Pro tento den nejsou žádné záznamy."
+msgstr "На этот день записей нет."
+
+msgid "Pro tento týden nejsou k dispozici žádné směny."
+msgstr "На эту неделю смены недоступны."
+
+msgid "Profil masérky"
+msgstr "Профиль массажистки"
+
+msgid ""
+"Prohlédněte si týdenní směny masérek. Volné termíny rezervujte jedním "
+"kliknutím."
+msgstr ""
+"Просмотрите недельные смены массажисток. Свободные слоты бронируйте в один "
+"клик."
+
+msgid "Prosím opravte chyby:"
+msgstr "Пожалуйста, исправьте ошибки:"
+
+msgid ""
+"Prosíme o příchod nejméně 10 minut před dohodnutým termínem. V případě "
+"zpoždění se prosím předem ozvěte telefonicky."
+msgstr ""
+"Просим приходить минимум за 10 минут до назначенного времени. В случае "
+"опоздания заранее позвоните нам."
+
+msgid "Právě na směně"
+msgstr "Сейчас на смене"
+
+msgid "Prémiový relaxační masážní salon v centru Prahy."
+msgstr "Премиальный релаксационный массажный салон в центре Праги."
+
+msgid "Předchozí"
+msgstr "Предыдущая"
+
+msgid "Předchozí recenze"
+msgstr "Предыдущий отзыв"
+
+msgid "Předchozích 7 dní"
+msgstr "Предыдущие 7 дней"
+
+msgid "Přepínač jazyka"
+msgstr "Переключатель языка"
+
+msgid ""
+"Při odeslání kontaktního formuláře shromažďujeme: jméno, e-mail, telefonní "
+"číslo (nepovinné) a obsah zprávy. Tyto údaje slouží výhradně k zodpovězení "
+"vašeho dotazu a jsou uchovávány po dobu nezbytně nutnou."
+msgstr ""
+"При отправке контактной формы мы собираем: имя, e-mail, телефон "
+"(необязательно) и текст сообщения. Эти данные используются исключительно для"
+" ответа на ваш запрос и хранятся только необходимое время."
+
+msgid ""
+"Přijímáme hotovost a platební karty. Platba probíhá na místě po dokončení "
+"masáže."
+msgstr ""
+"Принимаем наличные и банковские карты. Оплата на месте после завершения "
+"массажа."
+
+msgid "Recent appointments"
+msgstr "Недавние записи"
+
+msgid "Reservation links"
+msgstr "Ссылки на бронирование"
+
+msgid "Reset all"
+msgstr "Сбросить всё"
+
+msgid "Rezervace"
+msgstr "Бронирование"
+
+msgid "Rezervace a příchod"
+msgstr "Бронирование и приход"
+
+msgid "Rezervovat"
+msgstr "Забронировать"
+
+msgid "Rezervovat masáž"
+msgstr "Забронировать массаж"
+
+msgid "Rezervovat tuto masáž"
+msgstr "Забронировать этот массаж"
+
+msgid "Rozvrh"
+msgstr "Расписание"
+
+msgid "Rozvrh masáží"
+msgstr "Расписание массажей"
+
+msgid "Rychlá navigace"
+msgstr "Быстрая навигация"
+
+msgid "Salon"
+msgstr "Салон"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Schedule slots"
+msgstr "Слоты расписания"
+
+msgid "Service"
+msgstr "Услуга"
+
+msgid "Shift"
+msgstr "Смена"
+
+msgid "Sociální sítě"
+msgstr "Соцсети"
+
+msgid "Soukromí & GDPR"
+msgstr "Конфиденциальность и GDPR"
+
+msgid "Správce osobních údajů"
+msgstr "Контролёр персональных данных"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Stránka nenalezena"
+msgstr "Страница не найдена"
+
+msgid "Stránkování"
+msgstr "Пагинация"
+
+msgid "Stránky"
+msgstr "Страницы"
+
+msgid "Telefon"
+msgstr "Телефон"
+
+msgid "Telefon:"
+msgstr "Телефон:"
+
+msgid "Therapist"
+msgstr "Массажистка"
+
+msgid "Therapist availability"
+msgstr "Доступность массажисток"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Tipy a rady"
+msgstr "Советы и рекомендации"
+
+msgid ""
+"Tipy pro relaxaci, zdraví a péči o sebe od expertů Black Diamond Spa Praha."
+msgstr ""
+"Советы по релаксации, здоровью и уходу за собой от экспертов Black Diamond "
+"Spa Прага."
+
+msgid "To"
+msgstr "До"
+
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "Top buttons"
+msgstr "Топ кнопок"
+
+msgid "Top therapists"
+msgstr "Топ массажисток"
+
+msgid "Total"
+msgstr "Всего"
+
+msgid "Total clicks"
+msgstr "Всего кликов"
+
+msgid ""
+"Transparentní ceny všech masáží v Black Diamond Spa. Délky 45, 60 a 90 "
+"minut. Platba hotovostí nebo kartou."
+msgstr ""
+"Прозрачные цены на все массажи в Black Diamond Spa. Длительность 45, 60 и 90"
+" минут. Оплата наличными или картой."
+
+msgid "Try a different period, audience, or channel."
+msgstr "Попробуйте другой период, аудиторию или канал."
+
+msgid "Týdenní rozvrh"
+msgstr "Недельное расписание"
+
+msgid "Uvítací sekce"
+msgstr "Приветственная секция"
+
+msgid "Vaše práva"
+msgstr "Ваши права"
+
+msgid "Vlastnosti"
+msgstr "Характеристики"
+
+msgid "Volno"
+msgstr "Выходной"
+
+msgid "Volný termín"
+msgstr "Свободный слот"
+
+msgid ""
+"Vstup povolen pouze osobám starším 18 let. Tento požadavek bude ověřen při "
+"každé návštěvě."
+msgstr ""
+"Вход разрешён только лицам старше 18 лет. Это требование проверяется при "
+"каждом посещении."
+
+msgid ""
+"Vyberte masáž, která nejlépe odpovídá vašim potřebám. Každá masáž je "
+"prováděna certifikovanými masérkami."
+msgstr ""
+"Выберите массаж, который лучше всего соответствует вашим потребностям. "
+"Каждый массаж выполняют сертифицированные массажистки."
+
+msgid ""
+"Vyberte masérku a prohlédněte si její týdenní směny. Volné termíny "
+"rezervujte jedním kliknutím."
+msgstr ""
+"Выберите массажистку и просмотрите её недельные смены. Свободные слоты "
+"бронируйте в один клик."
+
+msgid "Věkové omezení"
+msgstr "Возрастное ограничение"
+
+msgid ""
+"Věříme, že relaxace je základem zdravého životního stylu. Naše certifikované"
+" masérky přistupují ke každému klientovi individuálně, s respektem a "
+"profesionalitou. Používáme výhradně prémiové masážní oleje a vybavení."
+msgstr ""
+"Мы верим, что релаксация — основа здорового образа жизни. Наши "
+"сертифицированные массажистки подходят к каждому клиенту индивидуально, с "
+"уважением и профессионализмом. Используем только премиальные массажные масла"
+" и оборудование."
+
+msgid "Vše, co potřebujete vědět o masážích, relaxaci a péči o sebe."
+msgstr "Всё, что нужно знать о массаже, релаксации и уходе за собой."
+
+msgid ""
+"Všechny ceny jsou uvedeny za masáž jedné masérky. Platba hotovostí nebo "
+"kartou v salonu."
+msgstr ""
+"Все цены указаны за массаж одной массажистки. Оплата наличными или картой в "
+"салоне."
+
+msgid "Všechny masáže"
+msgstr "Все массажи"
+
+msgid "Všechny masérky"
+msgstr "Все массажистки"
+
+msgid ""
+"Všechny typy masáží a délky na jednom místě. Oleje a relaxační zóna v ceně."
+msgstr ""
+"Все виды массажей и длительности в одном месте. Масла и зона релаксации "
+"включены."
+
+msgid "Week navigation"
+msgstr "Навигация по неделям"
+
+msgid "Week schedule grid"
+msgstr "Сетка расписания на неделю"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "WhatsApp buttons"
+msgstr "Кнопки WhatsApp"
+
+msgid "Work address"
+msgstr "Адрес работы"
+
+msgid "Yesterday"
+msgstr "Вчера"
+
+msgid "Zavřít menu"
+msgstr "Закрыть меню"
+
+msgid "Zobrazit rozvrh"
+msgstr "Смотреть расписание"
+
+msgid "Zobrazit rozvrh & rezervovat"
+msgstr "Смотреть расписание и забронировать"
+
+msgid "Zpráva odeslána!"
+msgstr "Сообщение отправлено!"
+
+msgid "Zpět na hlavní stránku"
+msgstr "На главную страницу"
+
+msgid "Zásady ochrany osobních údajů"
+msgstr "Политика конфиденциальности"
+
+msgid ""
+"Zásady ochrany osobních údajů Black Diamond Spa Praha v souladu s GDPR."
+msgstr ""
+"Политика конфиденциальности Black Diamond Spa Прага в соответствии с GDPR."
+
+msgid "masérka"
+msgstr "массажистка"
+
+msgid "min"
+msgstr "мин"
+
+msgid "recenzí na Google"
+msgstr "отзывов в Google"
+
+msgid "Časté otázky"
+msgstr "Частые вопросы"
+
+msgid "Česká republika"
+msgstr "Чехия"
+
+msgid "Číst více"
+msgstr "Читать далее"
+
+msgid ""
+"Šest zkušených masérek v centru Prahy. Klasická, relax, sportovní a "
+"aromamasáž. Rezervujte online."
+msgstr ""
+"Шесть опытных массажисток в центре Праги. Классический, релакс, спортивный и"
+" аромамассаж. Бронируйте онлайн."
+
+msgid ""
+"Šest zkušených specialistek, každá s vlastním přístupem a hlubokými "
+"znalostmi masážních technik."
+msgstr ""
+"Шесть опытных специалисток, каждая со своим подходом и глубокими знаниями "
+"массажных техник."
+
+msgid ""
+"Žádáme naše klienty o respektování soukromí ostatních návštěvníků a "
+"zaměstnanců. Jakékoliv nevhodné chování nebo požadavky povede k okamžitému "
+"ukončení návštěvy."
+msgstr ""
+"Просим клиентов уважать приватность других посетителей и сотрудников. Любое "
+"неподобающее поведение или просьбы приведут к немедленному прекращению "
+"визита."
