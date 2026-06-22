@@ -3,20 +3,6 @@
 <section class="schedule-week" aria-labelledby="schedule-week-title">
   <div class="schedule-week__head">
     <h2 id="schedule-week-title" class="schedule-section__title">{% trans "Týdenní rozvrh" %}</h2>
-    <div class="schedule-legend" aria-label="{% trans 'Legenda stavů' %}">
-      <div class="schedule-legend__item">
-        <span class="schedule-legend__swatch schedule-legend__swatch--avail" aria-hidden="true"></span>
-        <span>{% trans "Volný termín" %}</span>
-      </div>
-      <div class="schedule-legend__item">
-        <span class="schedule-legend__swatch schedule-legend__swatch--booked" aria-hidden="true"></span>
-        <span>{% trans "Obsazeno" %}</span>
-      </div>
-      <div class="schedule-legend__item">
-        <span class="schedule-legend__swatch schedule-legend__swatch--night" aria-hidden="true"></span>
-        <span>{% trans "Noční směna" %}</span>
-      </div>
-    </div>
   </div>
 
   {% if therapist_panels %}
