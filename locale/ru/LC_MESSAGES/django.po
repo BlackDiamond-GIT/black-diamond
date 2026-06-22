@@ -126,7 +126,7 @@ msgid "Ceny"
 msgstr "Цены"
 
 msgid "Ceník"
-msgstr "Прайс-лист"
+msgstr "Цена"
 
 msgid "Ceník masáží Praha"
 msgstr "Прайс-лист массажей Прага"
