@@ -171,14 +171,16 @@ class SiteSettings(models.Model):
         }
 
     def get_hours_for_language(self, language_code: str) -> str:
+        from .opening_hours import DEFAULT_HOURS
+
         code = (language_code or 'cs').split('-')[0].lower()
         if code == 'en':
             t = (self.hours_en or '').strip()
-            return t if t else self.hours
+            return t if t else DEFAULT_HOURS['en']
         if code == 'ru':
             t = (self.hours_ru or '').strip()
-            return t if t else self.hours
-        return self.hours
+            return t if t else DEFAULT_HOURS['ru']
+        return (self.hours or '').strip() or DEFAULT_HOURS['cs']
 
 
 class LegacyRedirect(models.Model):

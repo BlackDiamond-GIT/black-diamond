@@ -5,9 +5,9 @@ from __future__ import annotations
 from django.utils.translation import get_language
 
 DEFAULT_HOURS = {
-    'cs': 'Od 9 ráno do 4 ráno',
-    'en': 'From 9 am to 4 am',
-    'ru': 'С 9 утра до 4 утра',
+    'cs': 'Od 11 ráno do 4 ráno',
+    'en': 'From 11 am to 4 am',
+    'ru': 'С 11 утра до 4 утра',
 }
 
 
@@ -24,6 +24,22 @@ def get_opening_hours_display(language_code: str | None = None) -> str:
     lang = _lang_code(language_code)
     try:
         site = SiteSettings.load()
+        ensure_hours_i18n(site)
         return site.get_hours_for_language(lang)
     except DatabaseError:
         return DEFAULT_HOURS[lang]
+
+
+def ensure_hours_i18n(site) -> bool:
+    """Fill empty EN/RU opening hours from defaults (once)."""
+    updated_fields: list[str] = []
+    if not (site.hours_en or '').strip():
+        site.hours_en = DEFAULT_HOURS['en']
+        updated_fields.append('hours_en')
+    if not (site.hours_ru or '').strip():
+        site.hours_ru = DEFAULT_HOURS['ru']
+        updated_fields.append('hours_ru')
+    if updated_fields:
+        site.save(update_fields=updated_fields)
+        return True
+    return False

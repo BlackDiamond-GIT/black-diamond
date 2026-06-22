@@ -45,6 +45,8 @@ def site_settings(request):
 
     try:
         site = SiteSettings.load()
+        from .opening_hours import ensure_hours_i18n
+        ensure_hours_i18n(site)
         base.update({
             'SITE_STREET_ADDRESS': site.address.split(',')[0].strip() if site.address else 'Opletalova 1566/30',
             'SITE_POSTAL_CODE': '110 00',

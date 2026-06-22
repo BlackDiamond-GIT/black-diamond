@@ -174,6 +174,13 @@ class Command(BaseCommand):
                 f'  schedule: created {sched["created"]}, updated {sched["updated"]}'
             )
 
+        from apps.core.models import SiteSettings
+        from apps.core.opening_hours import ensure_hours_i18n
+
+        site = SiteSettings.load()
+        if ensure_hours_i18n(site):
+            self.stdout.write('  site hours: filled EN/RU defaults')
+
         self.stdout.write(self.style.SUCCESS(
             f'Done: {Branch.objects.count()} branches, '
             f'{Service.objects.count()} services, '
