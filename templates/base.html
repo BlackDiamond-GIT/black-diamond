@@ -49,6 +49,15 @@
   {% block extra_head %}{% endblock %}
 
   {% block schema %}{% endblock %}
+
+  <!-- Google tag (gtag.js) — Google Ads AW-18232185016 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18232185016"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18232185016');
+  </script>
 </head>
 <body {% block body_attrs %}class="has-mob-bar"{% endblock %}>
 
