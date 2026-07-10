@@ -18,7 +18,7 @@ OPENING_HOURS_SCHEMA = [
             'Friday', 'Saturday', 'Sunday',
         ],
         'opens': '09:00',
-        'closes': '04:00',
+        'closes': '05:00',
     },
 ]
 

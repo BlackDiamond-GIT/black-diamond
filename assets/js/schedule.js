@@ -11,9 +11,9 @@
   const DAYS_RU = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
   const OPENING_HOURS = {
-    cs: 'Od 9 ráno do 4 ráno',
-    en: 'From 9 am to 4 am',
-    ru: 'С 9 утра до 4 утра',
+    cs: 'Denně od 9:00 do 5:00 ráno',
+    en: 'Daily from 9 AM to 5 AM',
+    ru: 'Ежедневно с 9:00 до 5:00 утра',
   };
 
   const THERAPISTS = [

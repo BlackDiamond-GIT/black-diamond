@@ -438,8 +438,8 @@ msgstr ""
 msgid "Poznat náš tým"
 msgstr "Meet our team"
 
-msgid "Po–Pá 10–21, So–Ne 10–19."
-msgstr "Mon–Fri 10–21, Sat–Sun 10–19."
+msgid "Denně 9:00–5:00 ráno."
+msgstr "Daily 9:00–5:00 AM."
 
 msgid ""
 "Pravidla a podmínky návštěvy Black Diamond Spa Praha. Věk 18+. Zákaznická "

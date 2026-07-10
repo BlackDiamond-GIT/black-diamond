@@ -62,7 +62,7 @@ SCHEMA_NEW = '''"openingHoursSpecification": [
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens": "09:00",
-        "closes": "04:00"
+        "closes": "05:00"
       }
     ]'''
 
@@ -146,8 +146,8 @@ def patch_html(content: str, lang: str, telegram_url: str, instagram_url: str) -
 
 def main() -> None:
     site = SiteSettings.load()
-    if site.hours == 'Od 11 ráno do 4 ráno':
-        site.hours = 'Od 9 ráno do 4 ráno'
+    if site.hours in ('Od 11 ráno do 4 ráno', 'Od 9 ráno do 4 ráno'):
+        site.hours = 'Denně od 9:00 do 5:00 ráno'
         site.save(update_fields=['hours'])
     if not site.hours_en:
         site.hours_en = DEFAULT_HOURS['en']

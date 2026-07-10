@@ -5,9 +5,9 @@ from __future__ import annotations
 from django.utils.translation import get_language
 
 DEFAULT_HOURS = {
-    'cs': 'Od 11 ráno do 4 ráno',
-    'en': 'From 11 am to 4 am',
-    'ru': 'С 11 утра до 4 утра',
+    'cs': 'Denně od 9:00 do 5:00 ráno',
+    'en': 'Daily from 9 AM to 5 AM',
+    'ru': 'Ежедневно с 9:00 до 5:00 утра',
 }
 
 
