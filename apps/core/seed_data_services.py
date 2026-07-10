@@ -172,20 +172,20 @@ SERVICES = [
         'who_cs': (
             'Relax masáž doporučujeme klientům s vysokým stresem, nespavostí, únavou nebo emočním '
             'napětím. Je ideální po pracovním týdnu, před důležitou událostí nebo jako pravidelná '
-            'péče o duševní pohodu. Nehodí se pro ty, kdo preferují intenzivní sportovní masáž — '
-            'v takovém případě zvolte sportovní masáž. Těhotné klientky a osoby s alergií na oleje '
+            'péče o duševní pohodu. Nehodí se pro ty, kdo hledají intenzivní nebo hlubokou práci '
+            'se svaly. Těhotné klientky a osoby s alergií na oleje '
             'nás prosím informujte při rezervaci.'
         ),
         'who_en': (
             'We recommend relax massage for clients with high stress, insomnia, fatigue or emotional tension. '
             'It is ideal after a work week, before an important event or as regular mental wellbeing care. '
-            'Not suitable for those preferring intensive sports massage — choose sports massage instead. '
+            'Not suitable for those seeking intensive or deep-muscle work. '
             'Pregnant clients and those with oil allergies should inform us when booking.'
         ),
         'who_ru': (
             'Релакс-массаж рекомендуем при высоком стрессе, бессоннице, усталости или эмоциональном напряжении. '
             'Идеален после рабочей недели, перед важным событием или как регулярный уход за психическим '
-            'здоровьем. Не подходит тем, кто предпочитает интенсивный спортивный массаж. Беременным '
+            'здоровьем. Не подходит тем, кто ищет интенсивную или глубокую работу с мышцами. Беременным '
             'и аллергикам на масла сообщите об этом при записи.'
         ),
         'meta_title_cs': 'Relax masáž Praha — 60 min od 2 500 Kč | Black Diamond Spa',
