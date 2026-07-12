@@ -1,332 +1,428 @@
-"""SEO-контент для сторінок масажів (cs / en / ru)."""
+"""SEO-kontеnt pro stránky masáží (cs / en / ru) — 4 cílové služby."""
 
 SERVICES = [
     {
-        'slug': 'klasicka-masaz',
+        'slug': 'vip-masaz',
         'order': 1,
-        'duration': 60,
-        'price': 1900,
-        'title_cs': 'Klasická masáž',
-        'title_en': 'Classic massage',
-        'title_ru': 'Классический массаж',
-        'short_cs': 'Tradiční švédská masáž pro uvolnění svalového napětí a celkovou relaxaci celého těla.',
-        'short_en': 'Traditional Swedish massage to release muscle tension and relax the whole body.',
-        'short_ru': 'Традиционный шведский массаж для снятия мышечного напряжения и общего расслабления.',
+        'duration': 30,
+        'price': 1800,
+        'title_cs': 'VIP masáž',
+        'title_en': 'VIP Massage',
+        'title_ru': 'VIP-массаж',
+        'short_cs': 'Luxusní VIP masáž s plnou pozorností masérky, prémiálními oleji a individuálním přístupem od začátku do konce.',
+        'short_en': 'Luxury VIP massage with full masseuse attention, premium oils and individual care from start to finish.',
+        'short_ru': 'Роскошный VIP-массаж с полным вниманием массажистки, премиальными маслами и индивидуальным подходом.',
         'description_cs': (
-            'Klasická masáž v centru Prahy je tradiční švédská technika, která pomocí hladivých a hnětacích '
-            'hmatů uvolňuje svalové napětí a navozuje hlubokou relaxaci celého těla. V Black Diamond Spa '
-            'na Opletalově v Praze 1 ji provádějí zkušené masérky v privátním pokoji s prémiovými oleji. '
-            'Sezení trvá 60 minut a je ideálním startem pro nováčky i pravidelné klienty, kteří hledají '
-            'profesionální péči o pohybový aparát v klidném relaxačním salonu.'
+            'VIP masáž v centru Prahy je exkluzivní sezení navržené pro klienty, kteří hledají '
+            'nadstandardní péči a maximální komfort. V Black Diamond Spa na Opletalově vám masérka '
+            'věnuje plnou pozornost — od uvítání přes výběr prémiálních olejů až po samotnou masáž '
+            'přizpůsobenou vašim přáním. Dostupné délky: 30, 45, 60 a 90 minut.'
         ),
         'description_en': (
-            'Classic massage in central Prague is a traditional Swedish technique that uses flowing and '
-            'kneading strokes to release muscle tension and deeply relax the whole body. At Black Diamond Spa '
-            'on Opletalova 1566/30 in Nové Město, experienced masseuses perform each session in a private room with premium '
-            'oils. The 60-minute session is an ideal starting point for first-time visitors and regular clients '
-            'seeking professional musculoskeletal care in a calm wellness salon.'
+            'VIP massage in central Prague is an exclusive session designed for clients seeking '
+            'premium care and maximum comfort. At Black Diamond Spa on Opletalova 1566/30, your '
+            'masseuse gives you her full attention — from welcome through premium oil selection to '
+            'a massage tailored entirely to your wishes. Available durations: 30, 45, 60 and 90 minutes.'
         ),
         'description_ru': (
-            'Классический массаж в центре Праги — традиционная шведская техника, которая плавными и '
-            'разминательными движениями снимает мышечное напряжение и глубоко расслабляет всё тело. '
-            'В Black Diamond Spa на Opletalova 1566/30 в Nové Město сеансы проводят опытные массажистки '
-            'в приватном кабинете с премиальными маслами. 60-минутный сеанс — отличный старт для новичков '
-            'и постоянных клиентов, ищущих профессиональный уход за опорно-двигательным аппаратом.'
+            'VIP-массаж в центре Праги — эксклюзивный сеанс для тех, кто ищет максимальный комфорт '
+            'и первоклассный уход. В Black Diamond Spa на Opletalova 1566/30 массажистка уделяет вам '
+            'полное внимание — от приветствия до выбора премиальных масел и массажа по вашим пожеланиям. '
+            'Доступные продолжительности: 30, 45, 60 и 90 минут.'
         ),
         'what_cs': (
-            'Klasická masáž využívá švédské masážní techniky — efleuráž (hladivé tahy), pétrissage (hnětací '
-            'pohyby) a vibrační techniky — pro uvolnění svalů, zlepšení krevního oběhu a navození celkové '
-            'relaxace. Masérka začíná konzultací o vašich potřebách, poté postupně pracuje na zádách, krku, '
-            'ramenou a končetinách podle vašich preferencí. Teplota místnosti, tlak hmatů i délka sezení '
-            'se přizpůsobují vašemu komfortu. V Black Diamond Spa používáme kvalitní masážní oleje bez '
-            'parfemace nebo s jemnou vůní dle vašeho výběru.'
+            'VIP masáž kombinuje nejlepší prvky relaxační a hlubokotkaninní masáže s individuálním '
+            'přístupem a prémiovými oleji. Masérka konzultuje vaše preference a přizpůsobuje každý '
+            'moment sezení vašemu komfortu. Intenzita, tempo i zaměření jsou plně ve vašich rukou. '
+            'Sezení probíhá v soukromém pokoji s tlumeným osvětlením a klidnou hudbou.'
         ),
         'what_en': (
-            'Classic massage uses Swedish techniques — effleurage (flowing strokes), petrissage (kneading) '
-            'and vibration — to release muscles, improve circulation and induce full-body relaxation. '
-            'Your masseuse begins with a brief consultation, then works through the back, neck, shoulders '
-            'and limbs according to your preferences. Room temperature, pressure and session pace are '
-            'adjusted to your comfort. At Black Diamond Spa we use quality massage oils, unscented or '
-            'with a subtle fragrance of your choice.'
+            'VIP massage combines the best elements of relaxation and deep-tissue work with a '
+            'personalised approach and premium oils. Your masseuse consults your preferences and '
+            'adapts every moment to your comfort. Intensity, pace and focus are entirely in your '
+            'hands. Sessions take place in a private room with dimmed lighting and calm music.'
         ),
         'what_ru': (
-            'Классический массаж использует шведские техники — effleurage (поглаживание), petrissage '
-            '(разминание) и вибрацию — для расслабления мышц, улучшения кровообращения и общего '
-            'расслабления. Массажистка начинает с короткой консультации, затем работает со спиной, '
-            'шеей, плечами и конечностями по вашим пожеланиям. Температура, давление и темп сеанса '
-            'подстраиваются под ваш комфорт. В Black Diamond Spa мы используем качественные масла '
-            'без аромата или с лёгким запахом на ваш выбор.'
+            'VIP-массаж сочетает лучшие элементы расслабляющего и глубокотканного массажа с '
+            'персонализированным подходом и премиальными маслами. Массажистка уточняет ваши '
+            'предпочтения и адаптирует каждый момент сеанса под ваш комфорт. Интенсивность, '
+            'темп и направленность — полностью в ваших руках. Сеансы проходят в приватном '
+            'кабинете с приглушённым светом и тихой музыкой.'
         ),
         'who_cs': (
-            'Klasická masáž je vhodná pro každého, kdo hledá uvolnění od každodenního stresu, svalového '
-            'napětí nebo bolestí zad a krku. Ocení ji kancelářský pracovníci, sportovci po lehkém tréninku, '
-            'turisté po dlouhém dni v Praze i klienti, kteří poprvé navštíví masážní salon. Není vhodná '
-            'při akutních zánětech, horečce nebo čerstvých poraněních — v takovém případě nás prosím '
-            'kontaktujte před rezervací. Doporučujeme pravidelné sezení jednou za 2–4 týdny pro udržení '
-            'pohody pohybového aparátu.'
+            'VIP masáž je ideální pro klienty, kteří si přejí mimořádný zážitek a individuální '
+            'přístup bez kompromisů. Vhodná jako dárek pro sebe nebo blízkého, při oslavě, '
+            'obchodní cestě nebo jako prémium po náročném týdnu. Masérka se přizpůsobí vašim '
+            'potřebám — ať hledáte hlubokou relaxaci nebo cílenou práci se svaly.'
         ),
         'who_en': (
-            'Classic massage suits anyone seeking relief from daily stress, muscle tension or back and neck '
-            'discomfort. Office workers, athletes after light training, tourists after a long day in Prague '
-            'and first-time spa visitors all benefit. It is not recommended during acute inflammation, fever '
-            'or fresh injuries — please contact us before booking in such cases. We recommend sessions every '
-            '2–4 weeks to maintain musculoskeletal wellbeing.'
+            'VIP massage is ideal for clients who want an exceptional experience and personalised '
+            'care without compromise. Perfect as a gift for yourself or a loved one, for a '
+            'celebration, business trip or as a premium reward after a demanding week. Your '
+            'masseuse adapts to your needs — whether you seek deep relaxation or targeted muscle work.'
         ),
         'who_ru': (
-            'Классический массаж подходит всем, кто ищет снятие ежедневного стресса, мышечного напряжения '
-            'или дискомфорта в спине и шее. Его оценят офисные работники, спортсмены после лёгкой тренировки, '
-            'туристы после долгого дня в Праге и те, кто впервые приходит в салон. Не рекомендуется при '
-            'остром воспалении, лихорадке или свежих травмах — свяжитесь с нами перед записью. '
-            'Рекомendуем сеансы раз в 2–4 недели для поддержания здоровья опорно-двигательного аппарата.'
+            'VIP-массаж идеален для тех, кто хочет исключительного опыта и персонального подхода '
+            'без компромиссов. Подходит в качестве подарка себе или близким, для праздника, '
+            'деловой поездки или как премиальная награда после насыщенной недели. Массажистка '
+            'адаптируется под ваши потребности — будь то глубокая релаксация или целенаправленная '
+            'работа с мышцами.'
         ),
-        'meta_title_cs': 'Klasická masáž Praha — 60 min od 1 200 Kč | Black Diamond Spa',
-        'meta_title_en': 'Classic Massage Prague — 60 min from 1,200 CZK | Black Diamond Spa',
-        'meta_title_ru': 'Классический массаж Прага — 60 мин от 1 200 Kč | Black Diamond Spa',
+        'meta_title_cs': 'VIP masáž Praha — od 30 min / 1 800 Kč | Black Diamond Spa',
+        'meta_title_en': 'VIP Massage Prague — from 30 min / 1,800 CZK | Black Diamond Spa',
+        'meta_title_ru': 'VIP-массаж Прага — от 30 мин / 1 800 Kč | Black Diamond Spa',
         'meta_description_cs': (
-            'Klasická masáž v centru Prahy. Profesionální péče, 60 min od 1 200 Kč. '
-            'Rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'VIP masáž v centru Prahy — individuální péče, prémiální oleje, soukromý pokoj. '
+            'Od 30 min / 1 800 Kč. Rezervujte online — Black Diamond Spa, Opletalova 1566/30.'
         ),
         'meta_description_en': (
-            'Classic massage in central Prague. Professional care, 60 min from 1,200 CZK. '
-            'Book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'VIP massage in central Prague — individual care, premium oils, private room. '
+            'From 30 min / 1,800 CZK. Book online — Black Diamond Spa, Opletalova 1566/30.'
         ),
         'meta_description_ru': (
-            'Классический массаж в центре Праги. Профессиональный уход, 60 мин от 1 200 Kč. '
-            'Запишитесь онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'VIP-массаж в центре Праги — индивидуальный уход, премиальные масла, приватный кабинет. '
+            'От 30 мин / 1 800 Kč. Запись онлайн — Black Diamond Spa, Opletalova 1566/30.'
         ),
         'faq_cs': [
-            {'q': 'Co je klasická masáž?', 'a': 'Klasická masáž je tradiční švédská technika kombinující hladivé, hnětací a vibrační pohyby pro uvolnění svalů a zlepšení krevního oběhu.'},
-            {'q': 'Jak dlouho trvá sezení?', 'a': 'Standardní délka je 60 minut v privátním pokoji. Prodloužení na 90 minut lze domluvit při rezervaci.'},
-            {'q': 'Kolik stojí klasická masáž?', 'a': 'Cena je 1 200 Kč. V ceně jsou masážní oleje, prostěradla a přístup do relaxační zóny salonu.'},
-            {'q': 'Pro koho je vhodná?', 'a': 'Pro každého, kdo hledá uvolnění svalů a relaxaci. Při zdravotních pochybnostech nás kontaktujte před rezervací.'},
-            {'q': 'Jak se rezervovat?', 'a': 'Rezervaci provedete online v rozvrhu — vyberte masáž, masérku a volný termín. Potvrzení obdržíte e-mailem.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — v centru města, snadno dostupné MHD i pěšky.'},
+            {'q': 'Co je VIP masáž?', 'a': 'Exkluzivní sezení s plnou pozorností masérky, prémiálními oleji a individuálním přizpůsobením.'},
+            {'q': 'Jaké délky jsou k dispozici?', 'a': '30, 45, 60 a 90 minut — vyberte dle svých potřeb.'},
+            {'q': 'Kolik stojí VIP masáž?', 'a': '30 min 1 800 Kč, 45 min 2 200 Kč, 60 min 2 500 Kč, 90 min 3 800 Kč. Ceny za 1 osobu.'},
+            {'q': 'Co je zahrnuto?', 'a': 'Prémiální masážní oleje, prostěradla, privátní pokoj a plná pozornost masérky.'},
+            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte VIP masáž a volný termín.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
         ],
         'faq_en': [
-            {'q': 'What is classic massage?', 'a': 'Classic massage is a traditional Swedish technique combining flowing, kneading and vibration strokes to release muscles and improve circulation.'},
-            {'q': 'How long is a session?', 'a': 'The standard session is 60 minutes in a private room. A 90-minute extension can be arranged when booking.'},
-            {'q': 'How much does it cost?', 'a': 'The price is 1,200 CZK, including massage oils, linens and access to the salon relaxation area.'},
-            {'q': 'Who is it for?', 'a': 'Anyone seeking muscle release and relaxation. Contact us before booking if you have health concerns.'},
-            {'q': 'How do I book?', 'a': 'Book online via the schedule — choose the massage, masseuse and available time. You will receive email confirmation.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — central location, easily reachable by public transport.'},
+            {'q': 'What is VIP massage?', 'a': 'An exclusive session with full masseuse attention, premium oils and individual personalisation.'},
+            {'q': 'What durations are available?', 'a': '30, 45, 60 and 90 minutes — choose based on your needs.'},
+            {'q': 'How much does VIP massage cost?', 'a': '30 min 1,800 CZK, 45 min 2,200 CZK, 60 min 2,500 CZK, 90 min 3,800 CZK. Prices per person.'},
+            {'q': 'What is included?', 'a': 'Premium massage oils, linens, private room and full masseuse attention.'},
+            {'q': 'How to book?', 'a': 'Online via schedule — choose VIP massage and available slot.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
         ],
         'faq_ru': [
-            {'q': 'Что такое классический массаж?', 'a': 'Классический массаж — традиционная шведская техника с поглаживанием, разминанием и вибрацией для расслабления мышц и улучшения кровообращения.'},
-            {'q': 'Сколько длится сеанс?', 'a': 'Стандартный сеанс — 60 минут в приватном кабинете. Продление до 90 минут можно согласовать при записи.'},
-            {'q': 'Сколько стоит?', 'a': 'Цена — 1 200 Kč. Включены масла, бельё и доступ в зону релаксации салона.'},
-            {'q': 'Для кого подходит?', 'a': 'Для всех, кто ищет расслабление мышц. При сомнениях по здоровью свяжитесь с нами перед записью.'},
-            {'q': 'Как записаться?', 'a': 'Запись онлайн в расписании — выберите массаж, массажистку и время. Подтверждение придёт на email.'},
-            {'q': 'Где находится салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — в центре города, удобно на общественном транспорте.'},
+            {'q': 'Что такое VIP-массаж?', 'a': 'Эксклюзивный сеанс с полным вниманием массажистки, премиальными маслами и индивидуальной настройкой.'},
+            {'q': 'Какая продолжительность доступна?', 'a': '30, 45, 60 и 90 минут — выберите по своим потребностям.'},
+            {'q': 'Сколько стоит VIP-массаж?', 'a': '30 мин 1 800 Kč, 45 мин 2 200 Kč, 60 мин 2 500 Kč, 90 мин 3 800 Kč. Цены за 1 человека.'},
+            {'q': 'Что включено?', 'a': 'Премиальные масла, бельё, приватный кабинет и полное внимание массажистки.'},
+            {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите VIP-массаж и свободный слот.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
         ],
     },
     {
-        'slug': 'cbd-relaxacni-masaz',
+        'slug': 'relaxacni-masaz',
         'order': 2,
-        'duration': 60,
-        'price': 2500,
-        'title_cs': 'Relax masáž',
-        'title_en': 'Relax massage',
-        'title_ru': 'Релакс массаж',
-        'short_cs': 'Jemná relaxační masáž s prémiálními oleji pro hluboké uvolnění těla i mysli.',
-        'short_en': 'Gentle relaxation massage with premium oils for deep release of body and mind.',
-        'short_ru': 'Мягкий релакс-массаж с премиальными маслами для глубокого расслабления.',
+        'duration': 30,
+        'price': 1600,
+        'title_cs': 'Relaxační masáž',
+        'title_en': 'Relaxation Massage',
+        'title_ru': 'Расслабляющий массаж',
+        'short_cs': 'Jemná relaxační masáž s prémiálními oleji pro hluboké uvolnění těla i mysli v klidné privátní atmosféře.',
+        'short_en': 'Gentle relaxation massage with premium oils for deep release of body and mind in a calm private atmosphere.',
+        'short_ru': 'Мягкий расслабляющий массаж с премиальными маслами для глубокого снятия напряжения в тихой приватной атмосфере.',
         'description_cs': (
-            'Relax masáž v centru Prahy je jemná relaxační technika s prémiovými oleji, která pomalu '
-            'uvolňuje tělo i mysl v privátní atmosféře Black Diamond Spa. Pomalé, plynulé tahy masérky '
-            'navozují hluboký klid a pomáhají redukovat stres po náročném dni. Sezení trvá 60 minut '
-            'a probíhá v salonu na Opletalově v Praze 1, kde dbáme na diskrétnost, klid a individuální '
-            'péči každého klienta.'
+            'Relaxační masáž v centru Prahy je jemná technika s prémiálními oleji, která pomalu '
+            'uvolňuje tělo i mysl v privátní atmosféře Black Diamond Spa. Pomalé, plynulé tahy '
+            'navozují hluboký klid a pomáhají redukovat stres. Dostupné délky: 30, 45, 60 a '
+            '90 minut v salonu na Opletalově.'
         ),
         'description_en': (
-            'Relax massage in central Prague is a gentle technique with premium oils that slowly releases '
-            'body and mind in the private atmosphere of Black Diamond Spa. Slow, flowing strokes induce '
-            'deep calm and help reduce stress after a demanding day. Sessions last 60 minutes at our salon '
-            'on Opletalova 1566/30 in Nové Město, where we prioritise discretion, tranquillity and individual care.'
+            'Relaxation massage in central Prague is a gentle technique with premium oils that '
+            'slowly releases body and mind in the private atmosphere of Black Diamond Spa. Slow, '
+            'flowing strokes induce deep calm and reduce stress. Available durations: 30, 45, 60 '
+            'and 90 minutes at our salon on Opletalova 1566/30.'
         ),
         'description_ru': (
-            'Релакс-массаж в центре Праги — мягкая техника с премиальными маслами, которая постепенно '
-            'расслабляет тело и разум в приватной атмосфере Black Diamond Spa. Медленные плавные движения '
-            'создают глубокое спокойствие и помогают снять стресс после тяжёлого дня. Сеанс длится 60 минут '
-            'в салоне на Opletalova 1566/30 в Nové Město, где мы ценим конфиденциальность и индивидуальный подход.'
+            'Расслабляющий массаж в центре Праги — мягкая техника с премиальными маслами, которая '
+            'постепенно расслабляет тело и разум в приватной атмосфере Black Diamond Spa. Медленные '
+            'плавные движения создают глубокое спокойствие и снижают стресс. Продолжительность: '
+            '30, 45, 60 или 90 минут на Opletalova 1566/30.'
         ),
         'what_cs': (
-            'Relax masáž kombinuje jemné hladivé techniky s aromaterapeutickými oleji pro maximální '
-            'uvolnění. Masérka pracuje s pomalým tempem, bez hlubokého tlaku, což umožňuje tělu '
-            'postupně přejít do parasympatického režimu. Zaměřujeme se na oblasti, kde se hromadí '
-            'stres — záda, krk, spánky a končetiny. Světlo v pokoji je tlumené, hudba jemná. '
-            'Klienti často popisují pocit, jako by „vypnuli" po celém dni v Praze.'
+            'Relaxační masáž kombinuje jemné hladivé techniky s aromaterapeutickými oleji pro '
+            'maximální uvolnění. Masérka pracuje s pomalým tempem bez hlubokého tlaku, což '
+            'umožňuje tělu přejít do parasympatického režimu. Zaměřujeme se na záda, krk, '
+            'spánky a končetiny. Světlo je tlumené, hudba jemná — ideální pro odpočinek po '
+            'náročném dni nebo týdnu.'
         ),
         'what_en': (
-            'Relax massage combines gentle flowing techniques with aromatherapy oils for maximum release. '
-            'The masseuse works at a slow pace without deep pressure, allowing the body to shift into '
-            'a parasympathetic state. We focus on stress-prone areas — back, neck, temples and limbs. '
-            'Lighting is dimmed and music is soft. Clients often describe the feeling of finally '
-            'switching off after a day in Prague.'
+            'Relaxation massage combines gentle flowing techniques with aromatherapy oils for '
+            'maximum release. The masseuse works at a slow pace without deep pressure, allowing '
+            'the body to shift into a parasympathetic state. We focus on the back, neck, temples '
+            'and limbs. Lighting is dimmed and music is soft — ideal for unwinding after a '
+            'demanding day or week.'
         ),
         'what_ru': (
-            'Релакс-массаж сочетает мягкие поглаживания с ароматерапевтическими маслами для максимального '
-            'расслабления. Массажистка работает медленно, без глубокого давления, позволяя телу перейти '
-            'в парасимпатический режим. Фокус — на зонах стресса: спина, шея, виски, конечности. '
-            'Приглушённый свет и тихая музыка. Клиенты часто говорят, что наконец «выключаются» после дня в Праге.'
+            'Расслабляющий массаж сочетает мягкие поглаживания с ароматерапевтическими маслами '
+            'для максимального расслабления. Массажистка работает медленно, без глубокого давления, '
+            'позволяя телу перейти в парасимпатический режим. Фокус — на спине, шее, висках и '
+            'конечностях. Приглушённый свет и тихая музыка — идеально для отдыха после насыщенного дня.'
         ),
         'who_cs': (
-            'Relax masáž doporučujeme klientům s vysokým stresem, nespavostí, únavou nebo emočním '
-            'napětím. Je ideální po pracovním týdnu, před důležitou událostí nebo jako pravidelná '
-            'péče o duševní pohodu. Nehodí se pro ty, kdo hledají intenzivní nebo hlubokou práci '
-            'se svaly. Těhotné klientky a osoby s alergií na oleje '
-            'nás prosím informujte při rezervaci.'
+            'Relaxační masáž doporučujeme klientům s vysokým stresem, nespavostí, únavou nebo '
+            'emočním napětím. Je ideální po pracovním týdnu, před důležitou událostí nebo jako '
+            'pravidelná péče o duševní pohodu. Vhodná pro prvonávštěvníky i pravidelné klienty. '
+            'Těhotné klientky a osoby s alergií na oleje nás prosím informujte při rezervaci.'
         ),
         'who_en': (
-            'We recommend relax massage for clients with high stress, insomnia, fatigue or emotional tension. '
-            'It is ideal after a work week, before an important event or as regular mental wellbeing care. '
-            'Not suitable for those seeking intensive or deep-muscle work. '
+            'We recommend relaxation massage for clients with high stress, insomnia, fatigue or '
+            'emotional tension. Ideal after a work week, before an important event or as regular '
+            'mental wellbeing care. Suitable for first-time visitors and regular clients alike. '
             'Pregnant clients and those with oil allergies should inform us when booking.'
         ),
         'who_ru': (
-            'Релакс-массаж рекомендуем при высоком стрессе, бессоннице, усталости или эмоциональном напряжении. '
-            'Идеален после рабочей недели, перед важным событием или как регулярный уход за психическим '
-            'здоровьем. Не подходит тем, кто ищет интенсивную или глубокую работу с мышцами. Беременным '
-            'и аллергикам на масла сообщите об этом при записи.'
+            'Расслабляющий массаж рекомендуем при высоком стрессе, бессоннице, усталости или '
+            'эмоциональном напряжении. Идеален после рабочей недели, перед важным событием или '
+            'как регулярный уход за психическим здоровьем. Подходит как для первого визита, так '
+            'и для постоянных клиентов. Беременным и аллергикам на масла сообщите при записи.'
         ),
-        'meta_title_cs': 'Relax masáž Praha — 60 min od 2 500 Kč | Black Diamond Spa',
-        'meta_title_en': 'Relax Massage Prague — 60 min from 2,500 CZK | Black Diamond Spa',
-        'meta_title_ru': 'Релакс массаж Прага — 60 мин от 2 500 Kč | Black Diamond Spa',
+        'meta_title_cs': 'Relaxační masáž Praha — od 30 min / 1 600 Kč | Black Diamond Spa',
+        'meta_title_en': 'Relaxation Massage Prague — from 30 min / 1,600 CZK | Black Diamond Spa',
+        'meta_title_ru': 'Расслабляющий массаж Прага — от 30 мин / 1 600 Kč | Black Diamond Spa',
         'meta_description_cs': (
-            'Relax masáž v centru Prahy s prémiovými oleji. 60 min od 2 500 Kč. '
+            'Relaxační masáž v centru Prahy s prémiálními oleji. Od 30 min / 1 600 Kč. '
             'Rezervujte online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
-            'Relax massage in central Prague with premium oils. 60 min from 2,500 CZK. '
+            'Relaxation massage in central Prague with premium oils. From 30 min / 1,600 CZK. '
             'Book online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
-            'Релакс-массаж в центре Праги с премиальными маслами. 60 мин от 2 500 Kč. '
+            'Расслабляющий массаж в центре Праги с премиальными маслами. От 30 мин / 1 600 Kč. '
             'Запись онлайн — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [
-            {'q': 'Čím se liší relax masáž od klasické?', 'a': 'Relax masáž je pomalejší, jemnější a déle trvá. Zaměřuje se na celkovou pohodu a uvolnění mysli, ne na hluboké uvolnění svalů.'},
-            {'q': 'Jak dlouho trvá sezení?', 'a': 'Relax masáž trvá 60 minut v privátním pokoji s prémiovými oleji.'},
-            {'q': 'Kolik stojí relax masáž?', 'a': 'Cena je 2 500 Kč. V ceně jsou oleje, prostěradla a relaxační zóna.'},
-            {'q': 'Jaké oleje používáte?', 'a': 'Prémiové masážní oleje bez parfemace nebo s jemnou vůní. Při alergii nás informujte při rezervaci.'},
-            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Relax masáž, masérku a volný termín.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, centrum města.'},
+            {'q': 'Co je relaxační masáž?', 'a': 'Jemná masáž s prémiovými oleji zaměřená na celkové uvolnění těla a mysli.'},
+            {'q': 'Jaké délky jsou k dispozici?', 'a': '30, 45, 60 a 90 minut v privátním pokoji.'},
+            {'q': 'Kolik stojí?', 'a': '30 min 1 600 Kč, 45 min 1 800 Kč, 60 min 2 000 Kč, 90 min 3 000 Kč. Ceny za 1 osobu.'},
+            {'q': 'Pro koho je vhodná?', 'a': 'Pro každého, kdo hledá uvolnění od stresu, únavy nebo každodenního napětí.'},
+            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Relaxační masáž a volný termín.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
         ],
         'faq_en': [
-            {'q': 'How is relax massage different from classic?', 'a': 'Relax massage is slower, gentler and longer. It focuses on overall wellbeing and mental release rather than deep muscle work.'},
-            {'q': 'How long is the session?', 'a': 'Relax massage lasts 60 minutes in a private room with premium oils.'},
-            {'q': 'How much does it cost?', 'a': 'The price is 2,500 CZK, including oils, linens and the relaxation area.'},
-            {'q': 'What oils do you use?', 'a': 'Premium massage oils, unscented or lightly fragranced. Inform us of allergies when booking.'},
-            {'q': 'How do I book?', 'a': 'Online via the schedule — choose Relax massage, masseuse and available time.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, city centre.'},
+            {'q': 'What is relaxation massage?', 'a': 'A gentle massage with premium oils focused on full-body and mind release.'},
+            {'q': 'What durations are available?', 'a': '30, 45, 60 and 90 minutes in a private room.'},
+            {'q': 'How much does it cost?', 'a': '30 min 1,600 CZK, 45 min 1,800 CZK, 60 min 2,000 CZK, 90 min 3,000 CZK. Prices per person.'},
+            {'q': 'Who is it for?', 'a': 'Anyone seeking relief from stress, fatigue or everyday tension.'},
+            {'q': 'How to book?', 'a': 'Online via schedule — choose Relaxation Massage and available slot.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
         ],
         'faq_ru': [
-            {'q': 'Чем релакс-массаж отличается от классического?', 'a': 'Релакс-массаж медленнее, мягче и длиннее. Фокус на общем благополучии и расслаблении разума, а не на глубокой проработке мышц.'},
-            {'q': 'Сколько длится сеанс?', 'a': 'Релакс-массаж — 60 минут в приватном кабинете с премиальными маслами.'},
-            {'q': 'Сколько стоит?', 'a': 'Цена — 2 500 Kč, включая масла, бельё и зону релаксации.'},
-            {'q': 'Какие масла используете?', 'a': 'Премиальные масла без аромата или с лёгким запахом. Сообщите об аллергии при записи.'},
-            {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите релакс-массаж, массажистку и время.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, центр города.'},
+            {'q': 'Что такое расслабляющий массаж?', 'a': 'Мягкий массаж с премиальными маслами для полного снятия напряжения тела и разума.'},
+            {'q': 'Какая продолжительность доступна?', 'a': '30, 45, 60 и 90 минут в приватном кабинете.'},
+            {'q': 'Сколько стоит?', 'a': '30 мин 1 600 Kč, 45 мин 1 800 Kč, 60 мин 2 000 Kč, 90 мин 3 000 Kč. Цены за 1 человека.'},
+            {'q': 'Для кого подходит?', 'a': 'Для всех, кто ищет снятие стресса, усталости или ежедневного напряжения.'},
+            {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите расслабляющий массаж и свободный слот.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
         ],
     },
     {
-        'slug': 'hlubokotkaninni-masaz',
+        'slug': 'masaz-pro-zeny',
         'order': 3,
-        'duration': 90,
-        'price': 3000,
-        'title_cs': 'Hlubokotkaninní masáž',
-        'title_en': 'Deep tissue massage',
-        'title_ru': 'Глубокотканный массаж',
-        'short_cs': 'Cílená práce s hlubšími svalovými vrstvami pro uvolnění chronického napětí a ztuhlosti.',
-        'short_en': 'Targeted work on deeper muscle layers to release chronic tension and stiffness.',
-        'short_ru': 'Целенаправленная работа с глубокими слоями мышц для снятия хронического напряжения.',
+        'duration': 45,
+        'price': 3200,
+        'title_cs': 'Masáž pro ženy',
+        'title_en': 'Massage for Women',
+        'title_ru': 'Массаж для женщин',
+        'short_cs': 'Masáž navržená speciálně pro potřeby ženského těla — jemná, bezpečná a zcela privátní.',
+        'short_en': 'Massage designed specifically for women\'s needs — gentle, safe and fully private.',
+        'short_ru': 'Массаж, разработанный специально для потребностей женского тела — мягкий, безопасный и полностью приватный.',
         'description_cs': (
-            'Hlubokotkaninní masáž v centru Prahy je technika zaměřená na hlubší svalové vrstvy, '
-            'šlachy a fascie. V Black Diamond Spa na Opletalově masérka pracuje pomalými, '
-            'cílenými hmaty tam, kde se hromadí chronické napětí — záda, šíje, ramena nebo '
-            'nohy. Sezení trvá 90 minut a pomáhá uvolnit ztuhlost po sezení, sportu nebo stresu.'
+            'Masáž pro ženy v centru Prahy je sezení navržené speciálně s ohledem na potřeby '
+            'a komfort žen. V Black Diamond Spa na Opletalově probíhá každé sezení v plně '
+            'privátním prostředí se zkušenou masérkou. Dostupné délky: 45, 60 a 90 minut. '
+            'Bezpečný, respektující přístup zaručen.'
         ),
         'description_en': (
-            'Deep tissue massage in central Prague targets deeper muscle layers, tendons and fascia. '
-            'At Black Diamond Spa on Opletalova 1566/30, your masseuse uses slow, focused strokes where '
-            'chronic tension builds — back, neck, shoulders or legs. The 90-minute session helps '
-            'release stiffness from desk work, sport or stress.'
+            'Massage for women in central Prague is a session designed specifically with women\'s '
+            'needs and comfort in mind. At Black Diamond Spa on Opletalova 1566/30, every session '
+            'takes place in a fully private setting with an experienced masseuse. Available '
+            'durations: 45, 60 and 90 minutes. Safe, respectful approach guaranteed.'
         ),
         'description_ru': (
-            'Глубокотканный массаж в центре Праги направлен на глубокие мышечные слои, сухожилия '
-            'и фасции. В Black Diamond Spa на Opletalova 1566/30 массажистка медленными точечными движениями '
-            'прорабатывает зоны хронического напряжения — спина, шея, плечи или ноги. '
-            '90-минутный сеанс помогает снять скованность после сидячей работы, спорта или стресса.'
+            'Массаж для женщин в центре Праги — сеанс, разработанный с учётом потребностей '
+            'и комфорта женщин. В Black Diamond Spa на Opletalova 1566/30 каждый сеанс '
+            'проходит в полностью приватной обстановке с опытной массажисткой. Доступные '
+            'продолжительности: 45, 60 и 90 минут. Гарантирован безопасный и уважительный подход.'
         ),
         'what_cs': (
-            'Hlubokotkaninní masáž využívá pomalý tlak, hluboké hnětání a práci s trigger pointy '
-            'v problematických oblastech. Masérka postupuje podle vaší zpětné vazby a přizpůsobuje '
-            'intenzitu — hluboká práce střídá uvolňující tahy pro regeneraci tkání. '
-            'Používáme kvalitní oleje v teplém privátním pokoji po celých 90 minut.'
+            'Masáž pro ženy kombinuje jemné relaxační techniky s citlivým přístupem k ženskému '
+            'tělu. Masérka přizpůsobuje intenzitu a zaměření podle vašich přání. Sezení probíhá '
+            'v klidu, s prémiálními oleji a diskrétním přístupem. Ideální pro první masáž i pro '
+            'pravidelnou péči o tělo.'
         ),
         'what_en': (
-            'Deep tissue massage uses slow pressure, deep kneading and trigger point work in problem '
-            'areas. Your masseuse follows your feedback and adjusts intensity — deep work alternates '
-            'with releasing strokes for tissue recovery. Quality oils in a warm private room throughout '
-            'the full 90 minutes.'
+            'Massage for women combines gentle relaxation techniques with a sensitive approach to '
+            'the female body. Your masseuse adapts intensity and focus to your wishes. Sessions '
+            'take place in quiet privacy with premium oils and discreet care. Ideal for a first '
+            'massage and for regular body care.'
         ),
         'what_ru': (
-            'Глубокотканный массаж использует медленное давление, глубокое разминание и триггерные точки '
-            'в проблемных зонах. Массажистка учитывает вашу обратную связь и чередует глубокую работу '
-            'с расслабляющими движениями. Качественные масла в тёплом приватном кабинете все 90 минут.'
+            'Массаж для женщин сочетает мягкие расслабляющие техники с чутким подходом к '
+            'женскому телу. Массажистка адаптирует интенсивность и направление по вашим пожеланиям. '
+            'Сеансы проходят в тишине и приватности с премиальными маслами. Идеален для первого '
+            'визита и регулярного ухода за телом.'
         ),
         'who_cs': (
-            'Hlubokotkaninní masáž je vhodná pro klienty s chronickým napětím zad, šíje nebo ramen, '
-            'po dlouhém sezení či fyzické zátěži. Není určena při akutních zánětech nebo horečce — '
-            'v takových případech konzultujte předem. Ideální pro ty, kdo potřebují hlubší práci než u klasické masáže.'
+            'Masáž pro ženy je vhodná pro každou ženu, která hledá bezpečné, respektující a '
+            'plně privátní sezení. Ocení ji ženy hledající úlevu od stresu, napětí nebo únava '
+            'po práci. Těhotné klientky a osoby s alergií na oleje nás prosím informujte při '
+            'rezervaci — přizpůsobíme přístup vašim potřebám.'
         ),
         'who_en': (
-            'Deep tissue massage suits clients with chronic back, neck or shoulder tension, after long '
-            'sitting or physical load. Not recommended during acute inflammation or fever — consult us '
-            'beforehand. Ideal for those who need deeper work than classic massage.'
+            'Massage for women suits any woman seeking a safe, respectful and fully private '
+            'session. Appreciated by women looking for relief from stress, tension or post-work '
+            'fatigue. Pregnant clients and those with oil allergies should inform us when booking '
+            '— we will adapt the approach to your needs.'
         ),
         'who_ru': (
-            'Глубокотканный массаж подходит при хроническом напряжении спины, шеи или плеч, после '
-            'длительного сидения или нагрузки. Не рекомендуется при остром воспалении или температуре. '
-            'Идеален тем, кому нужна более глубокая работа, чем классический массаж.'
+            'Массаж для женщин подходит любой женщине, ищущей безопасный, уважительный и '
+            'полностью приватный сеанс. Оценят женщины, стремящиеся снять стресс, напряжение '
+            'или усталость после работы. Беременным и аллергикам на масла сообщите при записи — '
+            'мы адаптируем подход под ваши потребности.'
         ),
-        'meta_title_cs': 'Hlubokotkaninní masáž Praha — 90 min od 3 000 Kč | Black Diamond Spa',
-        'meta_title_en': 'Deep Tissue Massage Prague — 90 min from 3,000 CZK | Black Diamond Spa',
-        'meta_title_ru': 'Глубокотканный массаж Прага — 90 мин от 3 000 Kč | Black Diamond Spa',
+        'meta_title_cs': 'Masáž pro ženy Praha — od 45 min / 3 200 Kč | Black Diamond Spa',
+        'meta_title_en': 'Massage for Women Prague — from 45 min / 3,200 CZK | Black Diamond Spa',
+        'meta_title_ru': 'Массаж для женщин Прага — от 45 мин / 3 200 Kč | Black Diamond Spa',
         'meta_description_cs': (
-            'Hlubokotkaninní masáž v centru Prahy. 90 min od 3 000 Kč. Cílené uvolnění hlubokých svalů. '
-            'Rezervujte online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
+            'Masáž pro ženy v centru Prahy — bezpečné, privátní sezení se zkušenou masérkou. '
+            'Od 45 min / 3 200 Kč. Rezervujte online — Black Diamond Spa, Opletalova 1566/30.'
         ),
         'meta_description_en': (
-            'Deep tissue massage in central Prague. 90 min from 3,000 CZK. Targeted release of deep muscles. '
-            'Book online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
+            'Massage for women in central Prague — safe, private session with an experienced masseuse. '
+            'From 45 min / 3,200 CZK. Book online — Black Diamond Spa, Opletalova 1566/30.'
         ),
         'meta_description_ru': (
-            'Глубокотканный массаж в центре Праги. 90 мин от 3 000 Kč. Целенаправленное снятие глубокого напряжения. '
-            'Запись онлайн — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
+            'Массаж для женщин в центре Праги — безопасный, приватный сеанс с опытной массажисткой. '
+            'От 45 мин / 3 200 Kč. Запись онлайн — Black Diamond Spa, Opletalova 1566/30.'
         ),
         'faq_cs': [
-            {'q': 'Co je hlubokotkaninní masáž?', 'a': 'Technika zaměřená na hlubší svalové vrstvy a fascie pomocí pomalého cíleného tlaku.'},
-            {'q': 'Jak dlouho trvá?', 'a': '90 minut v privátním pokoji — dostatek času na důkladnou práci s problematickými oblastmi.'},
-            {'q': 'Kolik stojí?', 'a': '3 000 Kč. V ceně oleje, prostěradla a relaxační zóna.'},
-            {'q': 'Pro koho je vhodná?', 'a': 'Pro chronické napětí zad, šíje a ramen po sezení, sportu nebo stresu.'},
-            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Hlubokotkaninní masáž a volný termín.'},
-            {'q': 'Kde salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Co je masáž pro ženy?', 'a': 'Speciálně navržené sezení s ohledem na komfort a potřeby ženského těla.'},
+            {'q': 'Jaké délky jsou k dispozici?', 'a': '45, 60 a 90 minut v plně privátním pokoji.'},
+            {'q': 'Kolik stojí?', 'a': '45 min 3 200 Kč, 60 min 4 000 Kč, 90 min 5 200 Kč. Ceny za 1 osobu.'},
+            {'q': 'Je masáž bezpečná?', 'a': 'Ano — sezení probíhá v plně privátním prostředí se zkušenou masérkou a respektujícím přístupem.'},
+            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Masáž pro ženy a volný termín.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
         ],
         'faq_en': [
-            {'q': 'What is deep tissue massage?', 'a': 'A technique focused on deeper muscle layers and fascia using slow, targeted pressure.'},
-            {'q': 'How long is it?', 'a': '90 minutes in a private room — enough time for thorough work on problem areas.'},
-            {'q': 'How much?', 'a': '3,000 CZK including oils, linens and relaxation area.'},
-            {'q': 'Who is it for?', 'a': 'Chronic tension in back, neck and shoulders from sitting, sport or stress.'},
-            {'q': 'How to book?', 'a': 'Online via schedule — choose Deep tissue massage and available time.'},
-            {'q': 'Where?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'What is massage for women?', 'a': 'A specially designed session with women\'s comfort and needs in mind.'},
+            {'q': 'What durations are available?', 'a': '45, 60 and 90 minutes in a fully private room.'},
+            {'q': 'How much does it cost?', 'a': '45 min 3,200 CZK, 60 min 4,000 CZK, 90 min 5,200 CZK. Prices per person.'},
+            {'q': 'Is the massage safe?', 'a': 'Yes — sessions take place in a fully private setting with an experienced masseuse and a respectful approach.'},
+            {'q': 'How to book?', 'a': 'Online via schedule — choose Massage for Women and available slot.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
         ],
         'faq_ru': [
-            {'q': 'Что такое глубокотканный массаж?', 'a': 'Техника для глубоких мышечных слоёв и фасций с медленным целенаправленным давлением.'},
-            {'q': 'Сколько длится?', 'a': '90 минут в приватном кабинете — достаточно времени для тщательной проработки.'},
-            {'q': 'Сколько стоит?', 'a': '3 000 Kč, включая масла, бельё и зону релаксации.'},
-            {'q': 'Для кого?', 'a': 'При хроническом напряжении спины, шеи и плеч после сидячей работы, спорта или стресса.'},
-            {'q': 'Как записаться?', 'a': 'Онлайн в расписании — выберите глубокотканный массаж и время.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Что такое массаж для женщин?', 'a': 'Специально разработанный сеанс с учётом комфорта и потребностей женского тела.'},
+            {'q': 'Какая продолжительность доступна?', 'a': '45, 60 и 90 минут в полностью приватном кабинете.'},
+            {'q': 'Сколько стоит?', 'a': '45 мин 3 200 Kč, 60 мин 4 000 Kč, 90 мин 5 200 Kč. Цены за 1 человека.'},
+            {'q': 'Безопасно ли?', 'a': 'Да — сеансы проходят в полностью приватной обстановке с опытной массажисткой и уважительным подходом.'},
+            {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите массаж для женщин и свободный слот.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
+        ],
+    },
+    {
+        'slug': 'masaz-pro-pary',
+        'order': 4,
+        'duration': 30,
+        'price': 1400,
+        'title_cs': 'Masáž pro páry',
+        'title_en': 'Couples Massage',
+        'title_ru': 'Массаж для пар',
+        'short_cs': 'Párová masáž pro dvě osoby ve společném prostoru — sdílená relaxace a společný zážitek.',
+        'short_en': 'Couples massage for two in a shared space — shared relaxation and a joint experience.',
+        'short_ru': 'Массаж для двоих в общем пространстве — совместная релаксация и общий опыт.',
+        'description_cs': (
+            'Masáž pro páry v centru Prahy je sdílené sezení pro dvě osoby ve společném privátním '
+            'prostoru. Dvě masérky Black Diamond Spa na Opletalově pečují o každou osobu '
+            'individuálně ve stejnou dobu — ideální pro páry, přátele nebo kolegy. '
+            'Dostupné délky: 30, 45, 60 a 90 minut.'
+        ),
+        'description_en': (
+            'Couples massage in central Prague is a shared session for two in a common private '
+            'space. Two Black Diamond Spa masseuses on Opletalova 1566/30 care for each person '
+            'individually at the same time — ideal for couples, friends or colleagues. '
+            'Available durations: 30, 45, 60 and 90 minutes.'
+        ),
+        'description_ru': (
+            'Массаж для пар в центре Праги — совместный сеанс для двоих в общем приватном '
+            'пространстве. Две массажистки Black Diamond Spa на Opletalova 1566/30 ухаживают '
+            'за каждым индивидуально одновременно — идеально для пар, друзей или коллег. '
+            'Доступные продолжительности: 30, 45, 60 и 90 минут.'
+        ),
+        'what_cs': (
+            'Masáž pro páry probíhá ve společné místnosti, kde dvě masérky pracují paralelně. '
+            'Každá osoba si může zvolit intenzitu a zaměření masáže podle svých přání. '
+            'Sezení je vhodné jako romantický dárek nebo sdílený zážitek. Ceny jsou za osobu '
+            '— u nás platí oba zúčastnění zvlášť.'
+        ),
+        'what_en': (
+            'Couples massage takes place in a shared room where two masseuses work in parallel. '
+            'Each person may choose the intensity and focus of the massage according to their wishes. '
+            'The session is perfect as a romantic gift or shared experience. Prices are per person '
+            '— each participant pays separately.'
+        ),
+        'what_ru': (
+            'Массаж для пар проходит в общей комнате, где две массажистки работают параллельно. '
+            'Каждый может выбрать интенсивность и направление по своим пожеланиям. Сеанс идеален '
+            'как романтический подарок или совместный опыт. Цены — за одного человека, '
+            'каждый участник оплачивает отдельно.'
+        ),
+        'who_cs': (
+            'Masáž pro páry je ideální pro romantické páry, přátele nebo blízké, kteří si chtějí '
+            'dopřát společný relaxační zážitek. Vhodná jako dárek k narozeninám, výročí nebo '
+            'Valentýnu. Každá osoba dostane individuální přístup, takže mohou mít různé typy '
+            'masáže ve stejnou dobu.'
+        ),
+        'who_en': (
+            'Couples massage is ideal for romantic couples, friends or loved ones who want to '
+            'share a relaxing experience together. Perfect as a gift for a birthday, anniversary '
+            'or Valentine\'s Day. Each person receives individual attention, so both may have '
+            'different massage types at the same time.'
+        ),
+        'who_ru': (
+            'Массаж для пар идеален для романтических пар, друзей или близких, желающих разделить '
+            'расслабляющий опыт вместе. Отличный подарок на день рождения, годовщину или '
+            'День святого Валентина. Каждый получает индивидуальный подход — оба могут выбрать '
+            'разные виды массажа одновременно.'
+        ),
+        'meta_title_cs': 'Masáž pro páry Praha — od 30 min / 1 400 Kč/os. | Black Diamond Spa',
+        'meta_title_en': 'Couples Massage Prague — from 30 min / 1,400 CZK/p.p. | Black Diamond Spa',
+        'meta_title_ru': 'Массаж для пар Прага — от 30 мин / 1 400 Kč/чел. | Black Diamond Spa',
+        'meta_description_cs': (
+            'Párová masáž v centru Prahy — společné sezení pro dvě osoby s individuálním přístupem. '
+            'Od 30 min / 1 400 Kč za osobu. Rezervujte online — Black Diamond Spa, Opletalova 1566/30.'
+        ),
+        'meta_description_en': (
+            'Couples massage in central Prague — shared session for two with individual attention. '
+            'From 30 min / 1,400 CZK per person. Book online — Black Diamond Spa, Opletalova 1566/30.'
+        ),
+        'meta_description_ru': (
+            'Массаж для пар в центре Праги — совместный сеанс для двоих с индивидуальным подходом. '
+            'От 30 мин / 1 400 Kč за человека. Запись онлайн — Black Diamond Spa, Opletalova 1566/30.'
+        ),
+        'faq_cs': [
+            {'q': 'Co je masáž pro páry?', 'a': 'Společné sezení pro dvě osoby ve sdíleném privátním prostoru — každá s vlastní masérkou.'},
+            {'q': 'Jaké délky jsou k dispozici?', 'a': '30, 45, 60 a 90 minut.'},
+            {'q': 'Kolik stojí?', 'a': '30 min 1 400 Kč, 45 min 1 700 Kč, 60 min 1 900 Kč, 90 min 3 500 Kč — cena za jednu osobu.'},
+            {'q': 'Musí mít obě osoby stejnou masáž?', 'a': 'Ne — každá osoba si může zvolit vlastní typ masáže a intenzitu.'},
+            {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Masáž pro páry a uveďte počet osob.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
+        ],
+        'faq_en': [
+            {'q': 'What is couples massage?', 'a': 'A shared session for two in a common private space — each with their own masseuse.'},
+            {'q': 'What durations are available?', 'a': '30, 45, 60 and 90 minutes.'},
+            {'q': 'How much does it cost?', 'a': '30 min 1,400 CZK, 45 min 1,700 CZK, 60 min 1,900 CZK, 90 min 3,500 CZK — price per person.'},
+            {'q': 'Do both people need the same massage?', 'a': 'No — each person may choose their own massage type and intensity.'},
+            {'q': 'How to book?', 'a': 'Online via schedule — choose Couples Massage and indicate number of people.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
+        ],
+        'faq_ru': [
+            {'q': 'Что такое массаж для пар?', 'a': 'Совместный сеанс для двоих в общем приватном пространстве — каждый со своей массажисткой.'},
+            {'q': 'Какая продолжительность доступна?', 'a': '30, 45, 60 и 90 минут.'},
+            {'q': 'Сколько стоит?', 'a': '30 мин 1 400 Kč, 45 мин 1 700 Kč, 60 мин 1 900 Kč, 90 мин 3 500 Kč — цена за одного человека.'},
+            {'q': 'Должны ли оба делать одинаковый массаж?', 'a': 'Нет — каждый может выбрать свой тип и интенсивность.'},
+            {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите массаж для пар и укажите количество человек.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
         ],
     },
 ]

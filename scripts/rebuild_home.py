@@ -13,7 +13,7 @@ T = {
         'hero_cta1': 'Rezervovat masáž', 'hero_cta1_href': '/cs/rozvrh/',
         'hero_cta2': 'Naše masáže',      'hero_cta2_href': '/cs/masaze/',
         'svc_label': 'Naše masáže', 'svc_title': 'Relaxace pro každý moment',
-        'svc_sub': 'Šest druhů masáže přizpůsobených vašemu tělu i mysli — od klasické švédské po aromaterapii.',
+        'svc_sub': 'Čtyři druhy masáže přizpůsobených vašemu tělu i mysli — VIP, relaxační, pro ženy nebo pro páry.',
         'svc_btn': 'Zjistit více', 'all_svc': 'Všechny masáže',
         'team_label': 'Náš tým', 'team_title': 'Masérky',
         'team_sub': 'Zkušené specialistky s individuálním přístupem a hlubokými znalostmi masážních technik.',
@@ -50,7 +50,7 @@ T = {
         'hero_cta1': 'Book a massage', 'hero_cta1_href': '/en/rozvrh/',
         'hero_cta2': 'Our massages',   'hero_cta2_href': '/en/masaze/',
         'svc_label': 'Our massages', 'svc_title': 'Relaxation for every moment',
-        'svc_sub': 'Six types of massage tailored to your body and mind — from classic Swedish to aromatherapy.',
+        'svc_sub': 'Four types of massage tailored to your body and mind — VIP, relaxation, for women or for couples.',
         'svc_btn': 'Learn more', 'all_svc': 'All massages',
         'team_label': 'Our team', 'team_title': 'Masseuses',
         'team_sub': 'Experienced specialists with an individual approach and deep knowledge of massage techniques.',
@@ -87,7 +87,7 @@ T = {
         'hero_cta1': 'Записаться на массаж', 'hero_cta1_href': '/ru/rozvrh/',
         'hero_cta2': 'Наши массажи',          'hero_cta2_href': '/ru/masaze/',
         'svc_label': 'Наши массажи', 'svc_title': 'Расслабление для каждого момента',
-        'svc_sub': 'Шесть видов массажа, подобранных для вашего тела и разума — от классического шведского до ароматерапии.',
+        'svc_sub': 'Четыре вида массажа для вашего тела и разума — VIP, расслабляющий, для женщин или для пар.',
         'svc_btn': 'Подробнее', 'all_svc': 'Все массажи',
         'team_label': 'Наша команда', 'team_title': 'Массажистки',
         'team_sub': 'Сертифицированные специалистки с индивидуальным подходом и глубокими знаниями массажных техник.',
@@ -122,19 +122,22 @@ T = {
 
 SERVICES = {
     'cs': [
-        {'slug': 'klasicka-masaz',    'title': 'Klasická masáž',  'short': 'Tradiční švédská masáž pro uvolnění svalového napětí a celkovou relaxaci celého těla. Ideální pro každodenní stres.', 'duration': '60 min', 'price': '1 200 Kč', 'img': '/assets/img/services/klasicka-masaz.webp'},
-        {'slug': 'cbd-relaxacni-masaz','title': 'Relax masáž',    'short': 'Jemná relaxační masáž s prémiálními oleji. Hluboké uvolnění těla i mysli v klidné a privátní atmosféře salonu.', 'duration': '75 min', 'price': '1 700 Kč', 'img': '/assets/img/services/cbd-relaxacni-masaz.webp'},
-        {'slug': 'aromaterapie',       'title': 'Aromamasáž',      'short': 'Aromaterapeutická masáž s éterickými oleji pro harmonii těla a mysli. Vůně a dotek jako jeden celek.', 'duration': '75 min', 'price': '1 400 Kč', 'img': '/assets/img/services/aromaterapie.webp'},
+        {'slug': 'vip-masaz',      'title': 'VIP masáž',        'short': 'Luxusní VIP masáž s plnou pozorností masérky, prémiálními oleji a individuálním přístupem od začátku do konce.', 'duration': 'od 30 min', 'price': 'od 1 800 Kč', 'img': '/assets/img/services/vip-masaz.webp'},
+        {'slug': 'relaxacni-masaz','title': 'Relaxační masáž',  'short': 'Jemná relaxační masáž s prémiálními oleji pro hluboké uvolnění těla i mysli v klidné privátní atmosféře.', 'duration': 'od 30 min', 'price': 'od 1 600 Kč', 'img': '/assets/img/services/relaxacni-masaz.webp'},
+        {'slug': 'masaz-pro-zeny', 'title': 'Masáž pro ženy',   'short': 'Masáž navržená speciálně pro potřeby ženského těla — jemná, bezpečná a zcela privátní.', 'duration': 'od 45 min', 'price': 'od 3 200 Kč', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
+        {'slug': 'masaz-pro-pary', 'title': 'Masáž pro páry',   'short': 'Párová masáž pro dvě osoby ve společném prostoru — sdílená relaxace a společný zážitek.', 'duration': 'od 30 min', 'price': 'od 1 400 Kč', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
     'en': [
-        {'slug': 'klasicka-masaz',    'title': 'Classic Massage', 'short': 'Traditional Swedish massage to release muscle tension and deeply relax the entire body. Perfect for everyday stress.', 'duration': '60 min', 'price': '1 200 CZK', 'img': '/assets/img/services/klasicka-masaz.webp'},
-        {'slug': 'cbd-relaxacni-masaz','title': 'Relax Massage',  'short': 'Gentle relaxation massage with premium oils for deep release of body and mind in a calm and private setting.', 'duration': '75 min', 'price': '1 700 CZK', 'img': '/assets/img/services/cbd-relaxacni-masaz.webp'},
-        {'slug': 'aromaterapie',       'title': 'Aroma Massage',   'short': 'Aromatherapy massage with essential oils for body and mind harmony. Scent and touch as one experience.', 'duration': '75 min', 'price': '1 400 CZK', 'img': '/assets/img/services/aromaterapie.webp'},
+        {'slug': 'vip-masaz',      'title': 'VIP Massage',          'short': 'Luxury VIP massage with full masseuse attention, premium oils and individual care from start to finish.', 'duration': 'from 30 min', 'price': 'from 1,800 CZK', 'img': '/assets/img/services/vip-masaz.webp'},
+        {'slug': 'relaxacni-masaz','title': 'Relaxation Massage',   'short': 'Gentle relaxation massage with premium oils for deep release of body and mind in a calm private atmosphere.', 'duration': 'from 30 min', 'price': 'from 1,600 CZK', 'img': '/assets/img/services/relaxacni-masaz.webp'},
+        {'slug': 'masaz-pro-zeny', 'title': 'Massage for Women',    'short': 'Massage designed specifically for women\'s needs — gentle, safe and fully private.', 'duration': 'from 45 min', 'price': 'from 3,200 CZK', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
+        {'slug': 'masaz-pro-pary', 'title': 'Couples Massage',      'short': 'Couples massage for two in a shared space — shared relaxation and a joint experience.', 'duration': 'from 30 min', 'price': 'from 1,400 CZK', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
     'ru': [
-        {'slug': 'klasicka-masaz',    'title': 'Классический массаж', 'short': 'Традиционный шведский массаж для снятия мышечного напряжения и глубокого расслабления. Идеально при ежедневном стрессе.', 'duration': '60 мин', 'price': '1 200 CZK', 'img': '/assets/img/services/klasicka-masaz.webp'},
-        {'slug': 'cbd-relaxacni-masaz','title': 'Релакс массаж',      'short': 'Мягкий расслабляющий массаж с премиальными маслами для глубокого освобождения тела и разума.', 'duration': '75 мин', 'price': '1 700 CZK', 'img': '/assets/img/services/cbd-relaxacni-masaz.webp'},
-        {'slug': 'aromaterapie',       'title': 'Аромамассаж',         'short': 'Ароматерапевтический массаж с эфирными маслами для гармонии тела и разума. Аромат и прикосновение как одно целое.', 'duration': '75 мин', 'price': '1 400 CZK', 'img': '/assets/img/services/aromaterapie.webp'},
+        {'slug': 'vip-masaz',      'title': 'VIP-массаж',              'short': 'Роскошный VIP-массаж с полным вниманием массажистки, премиальными маслами и индивидуальным подходом.', 'duration': 'от 30 мин', 'price': 'от 1 800 Kč', 'img': '/assets/img/services/vip-masaz.webp'},
+        {'slug': 'relaxacni-masaz','title': 'Расслабляющий массаж',   'short': 'Мягкий расслабляющий массаж с премиальными маслами для глубокого снятия напряжения в приватной атмосфере.', 'duration': 'от 30 мин', 'price': 'от 1 600 Kč', 'img': '/assets/img/services/relaxacni-masaz.webp'},
+        {'slug': 'masaz-pro-zeny', 'title': 'Массаж для женщин',       'short': 'Массаж, разработанный специально для потребностей женского тела — мягкий, безопасный и полностью приватный.', 'duration': 'от 45 мин', 'price': 'от 3 200 Kč', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
+        {'slug': 'masaz-pro-pary', 'title': 'Массаж для пар',          'short': 'Массаж для двоих в общем пространстве — совместная релаксация и общий опыт.', 'duration': 'от 30 мин', 'price': 'от 1 400 Kč', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
 }
 
