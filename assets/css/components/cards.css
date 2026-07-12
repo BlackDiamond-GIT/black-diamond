@@ -23,6 +23,7 @@
 
 .service-card__image {
   aspect-ratio: 16 / 9;
+  max-height: 220px;
   overflow: hidden;
   background: var(--bg-tertiary);
 }
