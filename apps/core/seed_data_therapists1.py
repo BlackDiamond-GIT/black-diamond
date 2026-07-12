@@ -11,7 +11,7 @@ THERAPISTS_PART1 = [
         'tagline_en': 'Classic & Relax massage',
         'tagline_ru': 'Классический & релакс массаж',
         'bio_cs': (
-            'Julia je certifikovaná masérka v centru Prahy, specializující se na klasickou a relax masáž '
+            'Julia je zkušená masérka v centru Prahy, specializující se na klasickou a relax masáž '
             'v Black Diamond Spa na Opletalově. Každé sezení přizpůsobuje potřebám klienta a aktuálnímu '
             'stavu těla — ať už přicházíte po náročném pracovním dni, nebo hledáte pravidelnou péči '
             'o pohybový aparát. Její přístup spojuje odborné švédské techniky s klidnou, empatickou péčí, '
@@ -22,7 +22,7 @@ THERAPISTS_PART1 = [
             'v rozvrhu — vyberte Julia a volný termín.'
         ),
         'bio_en': (
-            'Julia is a certified masseuse in central Prague, specializing in classic and relax massage '
+            'Julia is an experienced masseuse in central Prague, specializing in classic and relax massage '
             'at Black Diamond Spa on Opletalova 1566/30. She tailors each session to client needs and current '
             'body condition — whether you arrive after a demanding workday or seek regular musculoskeletal '
             'care. Her approach combines professional Swedish techniques with calm, empathetic care that '
@@ -32,7 +32,7 @@ THERAPISTS_PART1 = [
             'oils in a private room with a discreet, professional atmosphere. Book online via the schedule.'
         ),
         'bio_ru': (
-            'Julia — сертифицированная массажистка в центре Праги, специализирующаяся на классическом '
+            'Julia — опытная массажистка в центре Праги, специализирующаяся на классическом '
             'и релакс-массаже в Black Diamond Spa на Opletalova 1566/30. Каждый сеанс она подстраивает под '
             'потребности клиента и текущее состояние тела — после тяжёлого рабочего дня или для '
             'регулярного ухода за опорно-двигательным аппаратом. Её подход сочетает профессиональные '
@@ -49,15 +49,15 @@ THERAPISTS_PART1 = [
         'meta_title_en': 'Julia — Classic & Relax Masseuse Prague | Black Diamond Spa',
         'meta_title_ru': 'Julia — Массажистка классический & релакс Прага | Black Diamond Spa',
         'meta_description_cs': (
-            'Julia — Klasická & Relax masáž v centru Prahy. Certifikovaná masérka, '
+            'Julia — Klasická & Relax masáž v centru Prahy. Zkušená masérka, '
             'rezervujte sezení online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_en': (
-            'Julia — Classic & Relax massage in central Prague. Certified masseuse, '
+            'Julia — Classic & Relax massage in central Prague. Experienced masseuse, '
             'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
         ),
         'meta_description_ru': (
-            'Julia — классический и релакс массаж в центре Праги. Сертифицированная массажистка, '
+            'Julia — классический и релакс массаж в центре Праги. Опытная массажистка, '
             'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
         ),
         'faq_cs': [

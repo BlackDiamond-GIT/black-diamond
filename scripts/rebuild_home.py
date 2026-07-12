@@ -16,7 +16,7 @@ T = {
         'svc_sub': 'Šest druhů masáže přizpůsobených vašemu tělu i mysli — od klasické švédské po aromaterapii.',
         'svc_btn': 'Zjistit více', 'all_svc': 'Všechny masáže',
         'team_label': 'Náš tým', 'team_title': 'Masérky',
-        'team_sub': 'Certifikované specialistky s individuálním přístupem a hlubokými znalostmi masážních technik.',
+        'team_sub': 'Zkušené specialistky s individuálním přístupem a hlubokými znalostmi masážních technik.',
         'all_team': 'Seznámit se s týmem',
         'proc_label': 'Vaše cesta k relaxaci',
         'proc_title': 'Každý detail<br>myslíme za vás',
@@ -53,7 +53,7 @@ T = {
         'svc_sub': 'Six types of massage tailored to your body and mind — from classic Swedish to aromatherapy.',
         'svc_btn': 'Learn more', 'all_svc': 'All massages',
         'team_label': 'Our team', 'team_title': 'Masseuses',
-        'team_sub': 'Certified specialists with an individual approach and deep knowledge of massage techniques.',
+        'team_sub': 'Experienced specialists with an individual approach and deep knowledge of massage techniques.',
         'all_team': 'Meet our team',
         'proc_label': 'Your path to relaxation',
         'proc_title': 'Every detail<br>thought through for you',
@@ -140,7 +140,7 @@ SERVICES = {
 
 THERAPISTS = {
     'cs': [
-        {'slug': 'julia',   'name': 'Julia',   'spec': 'Klasická & Relax masáž',       'svcs': 'Klasická masáž|Relax masáž|Uvolňující masáž', 'bio': 'Julia je certifikovaná masérka specializující se na klasickou a relax masáž. Každé sezení přizpůsobuje potřebám klienta a vytváří prostor pro skutečné uvolnění.'},
+        {'slug': 'julia',   'name': 'Julia',   'spec': 'Klasická & Relax masáž',       'svcs': 'Klasická masáž|Relax masáž|Uvolňující masáž', 'bio': 'Julia je zkušená masérka specializující se na klasickou a relax masáž. Každé sezení přizpůsobuje potřebám klienta a vytváří prostor pro skutečné uvolnění.'},
         {'slug': 'diana',   'name': 'Diana',   'spec': 'Uvolňující & Aromamasáž',       'svcs': 'Uvolňující masáž|Aromamasáž', 'bio': 'Diana se zaměřuje na uvolňující a aromaterapeutické masáže. Její klidný přístup je ideální pro hluboký odpočinek a celkovou regeneraci.'},
         {'slug': 'laura',   'name': 'Laura',   'spec': 'Aromaterapie & Relax',           'svcs': 'Aromamasáž|Relax masáž', 'bio': 'Laura kombinuje aromamasáž a relaxační techniky s prémiálními éterickými oleji pro harmonii těla a mysli.'},
         {'slug': 'vanessa', 'name': 'Vanessa', 'spec': 'Klasická & Sportovní masáž',    'svcs': 'Klasická masáž|Sportovní masáž', 'bio': 'Vanessa se specializuje na klasickou a sportovní masáž. Pomáhá uvolnit napětí po sportu i v každodenním životě.'},
@@ -148,7 +148,7 @@ THERAPISTS = {
         {'slug': 'mira',    'name': 'Mira',    'spec': 'Lymfatická & Aromaterapie',      'svcs': 'Lymfatická masáž|Aromamasáž', 'bio': 'Mira nabízí lymfatickou a aromamasáž s jemným a uvědomělým přístupem, který podporuje detoxikaci a hlubokou relaxaci.'},
     ],
     'en': [
-        {'slug': 'julia',   'name': 'Julia',   'spec': 'Classic & Relax Massage',       'svcs': 'Classic massage|Relax massage|Relaxing massage', 'bio': 'Julia is a certified masseuse specializing in classic and relax massage, tailoring each session to the client\'s individual needs.'},
+        {'slug': 'julia',   'name': 'Julia',   'spec': 'Classic & Relax Massage',       'svcs': 'Classic massage|Relax massage|Relaxing massage', 'bio': 'Julia is an experienced masseuse specializing in classic and relax massage, tailoring each session to the client\'s individual needs.'},
         {'slug': 'diana',   'name': 'Diana',   'spec': 'Relaxing & Aroma Massage',       'svcs': 'Relaxing massage|Aroma massage', 'bio': 'Diana focuses on relaxing and aromatherapy massages with a calm, sensitive approach for deep rest and regeneration.'},
         {'slug': 'laura',   'name': 'Laura',   'spec': 'Aromatherapy & Relax',           'svcs': 'Aroma massage|Relax massage', 'bio': 'Laura combines aroma and relax massage with premium essential oils for body and mind harmony.'},
         {'slug': 'vanessa', 'name': 'Vanessa', 'spec': 'Classic & Sports Massage',      'svcs': 'Classic massage|Sports massage', 'bio': 'Vanessa specializes in classic and sports massage, helping release tension after sport and in daily life.'},
@@ -156,7 +156,7 @@ THERAPISTS = {
         {'slug': 'mira',    'name': 'Mira',    'spec': 'Lymphatic & Aromatherapy',      'svcs': 'Lymphatic massage|Aroma massage', 'bio': 'Mira offers lymphatic and aroma massage with a gentle, mindful approach that supports detox and deep relaxation.'},
     ],
     'ru': [
-        {'slug': 'julia',   'name': 'Julia',   'spec': 'Классический & Релакс',          'svcs': 'Классический массаж|Релакс массаж', 'bio': 'Julia — сертифицированная массажистка, специализирующаяся на классическом и релакс-массаже с индивидуальным подходом.'},
+        {'slug': 'julia',   'name': 'Julia',   'spec': 'Классический & Релакс',          'svcs': 'Классический массаж|Релакс массаж', 'bio': 'Julia — опытная массажистка, специализирующаяся на классическом и релакс-массаже с индивидуальным подходом.'},
         {'slug': 'diana',   'name': 'Diana',   'spec': 'Расслабляющий & Арома',           'svcs': 'Расслабляющий массаж|Аромамассаж', 'bio': 'Diana специализируется на расслабляющем и аромамассаже с чутким подходом для глубокого отдыха.'},
         {'slug': 'laura',   'name': 'Laura',   'spec': 'Ароматерапия & Релакс',           'svcs': 'Аромамассаж|Релакс массаж', 'bio': 'Laura сочетает арома и релакс-массаж с эфирными маслами для гармонии тела и разума.'},
         {'slug': 'vanessa', 'name': 'Vanessa', 'spec': 'Классический & Спортивный',       'svcs': 'Классический массаж|Спортивный массаж', 'bio': 'Vanessa специализируется на классическом и спортивном массаже, снимая напряжение после спорта и в повседневной жизни.'},

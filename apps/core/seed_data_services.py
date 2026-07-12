@@ -15,21 +15,21 @@ SERVICES = [
         'description_cs': (
             'Klasická masáž v centru Prahy je tradiční švédská technika, která pomocí hladivých a hnětacích '
             'hmatů uvolňuje svalové napětí a navozuje hlubokou relaxaci celého těla. V Black Diamond Spa '
-            'na Opletalově v Praze 1 ji provádějí certifikované masérky v privátním pokoji s prémiovými oleji. '
+            'na Opletalově v Praze 1 ji provádějí zkušené masérky v privátním pokoji s prémiovými oleji. '
             'Sezení trvá 60 minut a je ideálním startem pro nováčky i pravidelné klienty, kteří hledají '
             'profesionální péči o pohybový aparát v klidném relaxačním salonu.'
         ),
         'description_en': (
             'Classic massage in central Prague is a traditional Swedish technique that uses flowing and '
             'kneading strokes to release muscle tension and deeply relax the whole body. At Black Diamond Spa '
-            'on Opletalova 1566/30 in Nové Město, certified masseuses perform each session in a private room with premium '
+            'on Opletalova 1566/30 in Nové Město, experienced masseuses perform each session in a private room with premium '
             'oils. The 60-minute session is an ideal starting point for first-time visitors and regular clients '
             'seeking professional musculoskeletal care in a calm wellness salon.'
         ),
         'description_ru': (
             'Классический массаж в центре Праги — традиционная шведская техника, которая плавными и '
             'разминательными движениями снимает мышечное напряжение и глубоко расслабляет всё тело. '
-            'В Black Diamond Spa на Opletalova 1566/30 в Nové Město сеансы проводят сертифицированные массажистки '
+            'В Black Diamond Spa на Opletalova 1566/30 в Nové Město сеансы проводят опытные массажистки '
             'в приватном кабинете с премиальными маслами. 60-минутный сеанс — отличный старт для новичков '
             'и постоянных клиентов, ищущих профессиональный уход за опорно-двигательным аппаратом.'
         ),
