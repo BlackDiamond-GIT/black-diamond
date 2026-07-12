@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% trans "Kontakt — Masáž Nové Město" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Kontaktujte Black Diamond Spa Praha. Adresa:" %} {{ SITE_ADDRESS }}. {% trans "Telefon:" %} {{ SITE_PHONE }}. {% trans "Denně 9:00–5:00 ráno." %}{% endblock %}
 
@@ -62,7 +62,7 @@
         </ul>
 
         <div class="contact-card__actions">
-          <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--full shimmer">{% trans "Zobrazit rozvrh & rezervovat" %}</a>
+          <a href="{% whatsapp_url placement='contact-page' %}" class="btn btn--primary btn--full shimmer" rel="noopener noreferrer">{% trans "Rezervovat přes WhatsApp" %}</a>
         </div>
 
         <div class="contact-map">

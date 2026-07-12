@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{{ home.hero_sub }}{% endblock %}
 {% block og_title %}{% trans "Masáž Praha — Prémiový relaxační salon" %} | {{ SITE_NAME }}{% endblock %}
@@ -43,7 +43,7 @@
       <h1 class="hero2__title">{{ home.hero_title|safe }}</h1>
       <p class="hero2__sub">{{ home.hero_sub }}</p>
       <div class="hero2__actions">
-        <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{{ home.hero_cta1 }}</a>
+        <a href="{% whatsapp_url placement='hero' %}" class="btn btn--primary btn--lg" rel="noopener noreferrer">{{ home.hero_cta1 }}</a>
         <a href="{% url 'services:list' %}" class="btn btn--ghost btn--lg">{{ home.hero_cta2 }}</a>
       </div>
     </div>
@@ -78,41 +78,6 @@
       </div>
       <p class="sec__more">
         <a href="{% url 'services:list' %}" class="btn btn--secondary btn--lg">{{ home.all_svc }}</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="sec sec--alt" aria-labelledby="team-hd">
-    <div class="container">
-      <header class="sec__hd sec__hd--center">
-        <span class="sec__label">{{ home.team_label }}</span>
-        <h2 class="sec__title" id="team-hd">{{ home.team_title }}</h2>
-        <p class="sec__sub">{{ home.team_sub }}</p>
-      </header>
-      <div class="th-grid" role="list">
-        {% for therapist in featured_therapists %}
-        <button type="button" class="th-card" data-modal-trigger role="listitem"
-          data-name="{{ therapist.name }}"
-          data-spec="{% for spec in therapist.specialties.all|slice:':2' %}{{ spec|trans_field:'title' }}{% if not forloop.last %} & {% endif %}{% endfor %}"
-          data-bio="{{ therapist|trans_field:'bio'|truncatewords:40 }}"
-          data-svcs="{% for spec in therapist.specialties.all %}{{ spec|trans_field:'title' }}{% if not forloop.last %}|{% endif %}{% endfor %}"
-          data-photo="{% asset_img 'masseuses' therapist.slug %}"
-          aria-label="{{ therapist.name }}">
-          <div class="th-card__img">
-            <img src="{% asset_img 'masseuses' therapist.slug %}" alt="{{ therapist.name }} — Black Diamond Spa" width="80" height="80" loading="lazy" decoding="async">
-          </div>
-          <div class="th-card__info">
-            <span class="th-card__name">{{ therapist.name }}</span>
-            <span class="th-card__spec">{% for spec in therapist.specialties.all|slice:":2" %}{{ spec|trans_field:"title" }}{% if not forloop.last %} & {% endif %}{% endfor %}</span>
-          </div>
-          <span class="th-card__hint" aria-hidden="true">+</span>
-        </button>
-        {% empty %}
-        <p class="sec__sub" style="text-align:center">{{ home.team_sub }}</p>
-        {% endfor %}
-      </div>
-      <p class="sec__more">
-        <a href="{% url 'therapists:list' %}" class="btn btn--secondary btn--lg">{{ home.all_team }}</a>
       </p>
     </div>
   </section>
@@ -178,31 +143,11 @@
       <h2 class="sec__title cta-sec__title" id="cta-hd">{{ home.cta_title|safe }}</h2>
       <p class="sec__sub cta-sec__sub">{{ home.cta_sub }}</p>
       <div class="cta-sec__actions">
-        <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{{ home.cta_btn1 }}</a>
+        <a href="{% whatsapp_url placement='cta-bottom' %}" class="btn btn--primary btn--lg" rel="noopener noreferrer">{{ home.cta_btn1 }}</a>
         <a href="{% url 'pages:contact' %}" class="btn btn--ghost btn--lg">{{ home.cta_btn2 }}</a>
       </div>
     </div>
   </section>
-
-  <div id="th-modal" class="th-modal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
-    <div class="th-modal__bd" data-close-modal></div>
-    <div class="th-modal__panel">
-      <button type="button" class="th-modal__close" data-close-modal aria-label="{{ home.modal_close }}">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="th-modal__photo-wrap">
-        <img id="modal-photo" class="th-modal__photo" src="" alt="" width="480" height="600" decoding="async">
-      </div>
-      <div class="th-modal__info">
-        <h2 id="modal-name" class="th-modal__name"></h2>
-        <div id="modal-tags" class="th-modal__tags"></div>
-        <p id="modal-bio" class="th-modal__bio"></p>
-        <p class="th-modal__svcs-title">{{ home.modal_svc_title }}</p>
-        <ul id="modal-svcs" class="th-modal__svcs"></ul>
-        <a id="modal-cta" href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{{ home.modal_reserve }}</a>
-      </div>
-    </div>
-  </div>
 
 {% endblock %}
 

@@ -132,9 +132,6 @@ msgstr "Price list"
 msgid "Ceník masáží Praha"
 msgstr "Massage price list Prague"
 
-msgid "Certifikované masérky"
-msgstr "Experienced masseuses"
-
 msgid "Channel"
 msgstr "Channel"
 
@@ -176,6 +173,9 @@ msgstr "Day"
 
 msgid "Denní"
 msgstr "Day"
+
+msgid "Denně 9:00–5:00 ráno."
+msgstr "Daily 9:00–5:00 AM."
 
 msgid "Detail masáže"
 msgstr "Massage details"
@@ -252,9 +252,6 @@ msgstr "Contact us"
 msgid "Kontaktujte Black Diamond Spa Praha. Adresa:"
 msgstr "Contact Black Diamond Spa Prague. Address:"
 
-msgid "Legenda stavů"
-msgstr "Status legend"
-
 msgid "Mapa — Black Diamond Spa"
 msgstr "Map — Black Diamond Spa"
 
@@ -276,7 +273,7 @@ msgstr "Masseuse"
 msgid "Masérky"
 msgstr "Masseuses"
 
-msgid "Masérky Praha — Certifikované specialistky"
+msgid "Masérky Praha — Zkušené specialistky"
 msgstr "Masseuses Prague — Experienced specialists"
 
 msgid "Mobilní menu"
@@ -352,9 +349,6 @@ msgstr "No schedule for this day."
 msgid "Noční"
 msgstr "Night"
 
-msgid "Noční směna"
-msgstr "Night shift"
-
 msgid "Náš příběh"
 msgstr "Our story"
 
@@ -424,18 +418,14 @@ msgid "Povaha služeb"
 msgstr "Nature of services"
 
 msgid ""
-"Poznajte certifikované masérky Black Diamond Spa v centru Prahy — Julia, "
-"Diana, Laura, Vanessa, Ella, Mira. Každá s vlastní specializací. Rezervujte "
-"online."
+"Poznajte zkušené masérky Black Diamond Spa v centru Prahy — Julia, Diana, "
+"Laura, Vanessa, Ella, Mira. Každá s vlastní specializací. Rezervujte online."
 msgstr ""
 "Meet experienced masseuses at Black Diamond Spa in central Prague — Julia, "
 "Diana, Laura, Vanessa, Ella, Mira. Each with her own specialty. Book online."
 
 msgid "Poznat náš tým"
 msgstr "Meet our team"
-
-msgid "Denně 9:00–5:00 ráno."
-msgstr "Daily 9:00–5:00 AM."
 
 msgid ""
 "Pravidla a podmínky návštěvy Black Diamond Spa Praha. Věk 18+. Zákaznická "
@@ -649,9 +639,6 @@ msgstr "Attributes"
 msgid "Volno"
 msgstr "Day off"
 
-msgid "Volný termín"
-msgstr "Available slot"
-
 msgid ""
 "Vstup povolen pouze osobám starším 18 let. Tento požadavek bude ověřen při "
 "každé návštěvě."
@@ -661,7 +648,7 @@ msgstr ""
 
 msgid ""
 "Vyberte masáž, která nejlépe odpovídá vašim potřebám. Každá masáž je "
-"prováděna certifikovanými masérkami."
+"prováděna zkušenými masérkami."
 msgstr ""
 "Choose the massage that best suits your needs. Every massage is performed by"
 " experienced masseuses."
@@ -677,8 +664,8 @@ msgid "Věkové omezení"
 msgstr "Age restriction"
 
 msgid ""
-"Věříme, že relaxace je základem zdravého životního stylu. Naše certifikované"
-" masérky přistupují ke každému klientovi individuálně, s respektem a "
+"Věříme, že relaxace je základem zdravého životního stylu. Naše zkušené "
+"masérky přistupují ke každému klientovi individuálně, s respektem a "
 "profesionalitou. Používáme výhradně prémiové masážní oleje a vybavení."
 msgstr ""
 "We believe relaxation is the foundation of a healthy lifestyle. Our "
@@ -728,6 +715,9 @@ msgstr "Yesterday"
 msgid "Zavřít menu"
 msgstr "Close menu"
 
+msgid "Zkušené masérky"
+msgstr "Experienced masseuses"
+
 msgid "Zobrazit rozvrh"
 msgstr "View schedule"
 
@@ -769,8 +759,8 @@ msgid ""
 "Šest zkušených masérek v centru Prahy. Klasická, relax, sportovní a "
 "aromamasáž. Rezervujte online."
 msgstr ""
-"Six experienced masseuses in central Prague. VIP, relaxation, women's and"
-" couples massage. Book online."
+"Six experienced masseuses in central Prague. VIP, relaxation, women's and "
+"couples massage. Book online."
 
 msgid ""
 "Šest zkušených specialistek, každá s vlastním přístupem a hlubokými "

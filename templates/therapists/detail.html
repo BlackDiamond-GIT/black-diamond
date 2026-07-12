@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% if therapist|trans_field:"meta_title" %}{{ therapist|trans_field:"meta_title" }}{% else %}{{ therapist.name }} — {% trans "masérka" %} {{ therapist|trans_field:"tagline" }} Praha | {{ SITE_NAME }}{% endif %}{% endblock %}
 {% block meta_description %}{% if therapist|trans_field:"meta_description" %}{{ therapist|trans_field:"meta_description" }}{% else %}{{ therapist|trans_field:"bio"|truncatewords:25 }}{% endif %}{% endblock %}
 {% block og_type %}profile{% endblock %}
@@ -71,7 +71,7 @@
     <ol>
       <li><a href="{% url 'pages:home' %}">{{ SITE_NAME }}</a></li>
       <li class="therapist-detail__breadcrumb-sep" aria-hidden="true"> / </li>
-      <li><a href="{% url 'therapists:list' %}">{% trans "Masérky" %}</a></li>
+      <li><a href="{% url 'pages:home' %}">{% trans "Domů" %}</a></li>
       <li class="therapist-detail__breadcrumb-sep" aria-hidden="true"> / </li>
       <li aria-current="page">{{ therapist.name }}</li>
     </ol>
@@ -110,10 +110,9 @@
       {% endif %}
 
       <div class="therapist-detail__cta-row">
-        <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">
+        <a href="{% whatsapp_url placement='therapist-detail-hero' %}" class="btn btn--primary btn--lg shimmer" rel="noopener noreferrer">
           {% blocktrans with name=therapist.name %}Rezervovat u {{ name }}{% endblocktrans %}
         </a>
-        <a href="{% url 'therapists:list' %}" class="btn btn--secondary btn--lg">{% trans "Všechny masérky" %}</a>
       </div>
     </div>
   </div>
@@ -214,7 +213,7 @@
   {% endwith %}
 
   <div class="therapist-detail__sticky-cta">
-    <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">
+    <a href="{% whatsapp_url placement='therapist-detail-sticky' %}" class="btn btn--primary btn--lg shimmer" rel="noopener noreferrer">
       {% blocktrans with name=therapist.name %}Rezervovat u {{ name }}{% endblocktrans %}
     </a>
   </div>

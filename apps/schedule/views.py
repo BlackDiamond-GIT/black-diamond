@@ -2,35 +2,14 @@ import datetime
 
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render
-from django.utils.translation import get_language
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView
 
-from apps.core.mixins import ExtraCssMixin
-from apps.core.opening_hours import get_opening_hours_display
-
-from .addresses import WORK_ADDRESS
 from .models import TimeSlot
-from .public_grid import build_schedule_page_context
 
 
-class SchedulePageView(ExtraCssMixin, TemplateView):
-    template_name = 'schedule/index.html'
-    extra_css = [
-        'css/components/buttons.css',
-        'css/components/glass.css',
-        'css/pages/schedule.css',
-    ]
-
-    def get_context_data(self, **kwargs):
-        ctx = super().get_context_data(**kwargs)
-        lang = (get_language() or 'cs')[:2]
-        ctx.update(build_schedule_page_context())
-        ctx.update({
-            'opening_hours_text': get_opening_hours_display(lang),
-            'schedule_path': self.request.path,
-            'work_address': WORK_ADDRESS,
-        })
-        return ctx
+class SchedulePageView(RedirectView):
+    permanent = False
+    pattern_name = 'pages:home'
 
 
 def slots_fragment(request):

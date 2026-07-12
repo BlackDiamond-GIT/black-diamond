@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% trans "Ceník masáží Praha" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Transparentní ceny všech masáží v Black Diamond Spa. Délky 45, 60 a 90 minut. Platba hotovostí nebo kartou." %}{% endblock %}
 
@@ -52,7 +52,7 @@
               <td class="price-table__duration">{{ entry.duration_min }} {% trans "min" %}</td>
               <td class="price-table__amount">{% price_multi entry.price_czk class_name="price-table__price" %}</td>
               <td class="price-table__action">
-                <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--sm">{% trans "Rezervovat" %}</a>
+                <a href="{% whatsapp_url placement='price-table' %}" class="btn btn--primary btn--sm" rel="noopener noreferrer">{% trans "Rezervovat" %}</a>
               </td>
             </tr>
           </tbody>

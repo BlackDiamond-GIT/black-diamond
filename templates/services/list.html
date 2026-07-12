@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% trans "Masáže a ceny" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Nabídka relaxačních masáží Black Diamond Spa. Ceny a délky trvání." %}{% endblock %}
 
@@ -37,7 +37,7 @@
   </div>
 
   <div style="text-align:center;margin-top:var(--sp-3xl)">
-    <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{% trans "Rezervovat masáž" %}</a>
+    <a href="{% whatsapp_url placement='services-list-cta' %}" class="btn btn--primary btn--lg" rel="noopener noreferrer">{% trans "Rezervovat masáž" %}</a>
   </div>
 </div>
 {% endblock %}

@@ -73,10 +73,8 @@
         <h3 class="footer__col-title">{% trans "Stránky" %}</h3>
         <ul class="footer__links">
           <li><a href="{% url 'pages:home' %}">{% trans "Domů" %}</a></li>
-          <li><a href="{% url 'therapists:list' %}">{% trans "Naše masérky" %}</a></li>
           <li><a href="{% url 'services:list' %}">{% trans "Masáže" %}</a></li>
           <li><a href="{% url 'pages:prices' %}">{% trans "Ceník" %}</a></li>
-          <li><a href="{% url 'schedule:index' %}">{% trans "Rozvrh" %}</a></li>
           <li><a href="{% url 'blog:list' %}">{% trans "Blog" %}</a></li>
           <li class="footer__link-item footer__link-item--contact-desktop"><a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a></li>
         </ul>

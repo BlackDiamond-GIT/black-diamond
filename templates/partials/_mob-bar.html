@@ -1,7 +1,6 @@
-{% load i18n %}
+{% load i18n booking_tags %}
 <nav class="mob-bar" aria-label="{% trans 'Rychlá navigace' %}">
-  <a href="{% url 'services:list' %}" class="mob-bar__item{% if '/masaze/' in request.path and 'masazistky' not in request.path %} is-active{% endif %}"{% if '/masaze/' in request.path and 'masazistky' not in request.path %} aria-current="page"{% endif %}>{% trans "Masáže" %}</a>
-  <a href="{% url 'therapists:list' %}" class="mob-bar__item{% if 'masazistky' in request.path %} is-active{% endif %}"{% if 'masazistky' in request.path %} aria-current="page"{% endif %}>{% trans "Masérky" %}</a>
+  <a href="{% url 'services:list' %}" class="mob-bar__item{% if '/masaze/' in request.path %} is-active{% endif %}"{% if '/masaze/' in request.path %} aria-current="page"{% endif %}>{% trans "Masáže" %}</a>
   <a href="{% url 'pages:prices' %}" class="mob-bar__item{% if 'cenik' in request.path %} is-active{% endif %}"{% if 'cenik' in request.path %} aria-current="page"{% endif %}>{% trans "Ceny" %}</a>
-  <a href="{% url 'schedule:index' %}" class="mob-bar__item mob-bar__item--cta{% if 'rozvrh' in request.path %} is-active{% endif %}"{% if 'rozvrh' in request.path %} aria-current="page"{% endif %}>{% trans "Rezervovat" %}</a>
+  <a href="{% whatsapp_url placement='mob-bar' %}" class="mob-bar__item mob-bar__item--cta" rel="noopener noreferrer">{% trans "Rezervovat" %}</a>
 </nav>

@@ -14,7 +14,6 @@ from apps.core.mixins import ExtraCssMixin
 from apps.faq.models import FAQ
 from apps.services.models import Service
 from apps.services.pricing_catalog import build_price_catalog
-from apps.therapists.models import Therapist
 
 from .home_copy import FEATURED_SERVICE_SLUGS, get_home_copy
 
@@ -104,9 +103,6 @@ class HomeView(ExtraCssMixin, TemplateView):
 
         ctx['home'] = home
         ctx['featured_services'] = featured_services
-        ctx['featured_therapists'] = list(
-            Therapist.objects.filter(is_active=True).prefetch_related('specialties')[:6]
-        )
         ctx['process_steps'] = [
             {'title': title, 'text': text}
             for title, text in home['steps']

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% trans "O nás" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Black Diamond Spa — prémiový masážní salon v centru Prahy. Naše filozofie, tým a příběh." %}{% endblock %}
 
@@ -40,7 +40,7 @@
   </div>
 
   <div style="display:flex;flex-wrap:wrap;gap:var(--sp-md)">
-    <a href="{% url 'therapists:list' %}" class="btn btn--primary btn--lg shimmer">{% trans "Poznat náš tým" %}</a>
+    <a href="{% whatsapp_url placement='about-cta' %}" class="btn btn--primary btn--lg shimmer" rel="noopener noreferrer">{% trans "Rezervovat masáž" %}</a>
     <a href="{% url 'pages:contact' %}" class="btn btn--secondary btn--lg">{% trans "Kontaktovat nás" %}</a>
   </div>
 

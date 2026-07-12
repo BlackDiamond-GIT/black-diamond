@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% trans "Časté otázky" %} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{% trans "Odpovědi na nejčastější otázky o masážích, rezervaci a provozu Black Diamond Spa v Praze." %}{% endblock %}
 
@@ -48,7 +48,7 @@
     <div class="faq-page__cta">
       <p class="sec__sub">{% trans "Nenašli jste odpověď? Kontaktujte nás nebo rovnou rezervujte termín." %}</p>
       <div class="cta-sec__actions" style="justify-content:center;display:flex;flex-wrap:wrap;gap:var(--sp-md)">
-        <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg">{% trans "Rezervovat masáž" %}</a>
+        <a href="{% whatsapp_url placement='faq-cta' %}" class="btn btn--primary btn--lg" rel="noopener noreferrer">{% trans "Rezervovat masáž" %}</a>
         <a href="{% url 'pages:contact' %}" class="btn btn--secondary btn--lg">{% trans "Kontakt" %}</a>
       </div>
     </div>

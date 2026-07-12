@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static bd_tags %}
+{% load i18n static bd_tags booking_tags %}
 {% block title %}{% if service|trans_field:"meta_title" %}{{ service|trans_field:"meta_title" }}{% else %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endif %}{% endblock %}
 {% block meta_description %}{% if service|trans_field:"meta_description" %}{{ service|trans_field:"meta_description" }}{% else %}{{ service|trans_field:"short" }}{% endif %}{% endblock %}
 {% block og_title %}{% if service|trans_field:"meta_title" %}{{ service|trans_field:"meta_title" }}{% else %}{{ service|trans_field:"title" }} Praha | {{ SITE_NAME }}{% endif %}{% endblock %}
@@ -102,7 +102,7 @@
         {{ service|trans_field:"description" }}
       </p>
 
-      <a href="{% url 'schedule:index' %}" class="btn btn--primary btn--lg shimmer">{% trans "Rezervovat tuto masáž" %}</a>
+      <a href="{% whatsapp_url placement='service-detail-hero' %}" class="btn btn--primary btn--lg shimmer" rel="noopener noreferrer">{% trans "Rezervovat tuto masáž" %}</a>
     </div>
   </div>
 
@@ -155,8 +155,7 @@
     </h2>
     <div class="service-detail__links">
       <a href="{% url 'services:list' %}" class="btn btn--secondary">{% trans "Všechny masáže" %}</a>
-      <a href="{% url 'therapists:list' %}" class="btn btn--ghost">{% trans "Naše masérky" %}</a>
-      <a href="{% url 'schedule:index' %}" class="btn btn--ghost">{% trans "Zobrazit rozvrh" %}</a>
+      <a href="{% whatsapp_url placement='service-detail-bottom' %}" class="btn btn--ghost" rel="noopener noreferrer">{% trans "Rezervovat" %}</a>
     </div>
   </section>
 

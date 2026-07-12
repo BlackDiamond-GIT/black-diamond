@@ -8,10 +8,8 @@
 
     <ul class="nav__links" role="list">
       <li><a href="{% url 'pages:home' %}" {% if request.resolver_match.url_name == 'home' %}aria-current="page"{% endif %}>{% trans "Domů" %}</a></li>
-      <li><a href="{% url 'therapists:list' %}" {% if 'masazistky' in request.path %}aria-current="page"{% endif %}>{% trans "Masérky" %}</a></li>
       <li><a href="{% url 'services:list' %}" {% if 'masaze' in request.path %}aria-current="page"{% endif %}>{% trans "Masáže" %}</a></li>
       <li><a href="{% url 'pages:prices' %}" {% if 'cenik' in request.path %}aria-current="page"{% endif %}>{% trans "Ceník" %}</a></li>
-      <li><a href="{% url 'schedule:index' %}" {% if 'rozvrh' in request.path %}aria-current="page"{% endif %}>{% trans "Rozvrh" %}</a></li>
       <li><a href="{% url 'blog:list' %}" {% if 'blog' in request.path %}aria-current="page"{% endif %}>{% trans "Blog" %}</a></li>
       <li><a href="{% url 'pages:contact' %}" {% if 'kontakty' in request.path %}aria-current="page"{% endif %}>{% trans "Kontakt" %}</a></li>
     </ul>
@@ -51,10 +49,8 @@
   </div>
   <ul class="nav__drawer-links" role="list">
     <li><a href="{% url 'pages:home' %}">{% trans "Domů" %}</a></li>
-    <li><a href="{% url 'therapists:list' %}">{% trans "Masérky" %}</a></li>
     <li><a href="{% url 'services:list' %}">{% trans "Masáže" %}</a></li>
     <li><a href="{% url 'pages:prices' %}">{% trans "Ceník" %}</a></li>
-    <li><a href="{% url 'schedule:index' %}">{% trans "Rozvrh" %}</a></li>
     <li><a href="{% url 'blog:list' %}">{% trans "Blog" %}</a></li>
     <li><a href="{% url 'pages:contact' %}">{% trans "Kontakt" %}</a></li>
     <li><a href="{% url 'pages:about' %}">{% trans "O nás" %}</a></li>
