@@ -8,7 +8,7 @@ HOME_COPY = {
         'hero_cta2': 'Naše masáže',
         'svc_label': 'Naše masáže',
         'svc_title': 'Relaxace pro každý moment',
-        'svc_sub': 'Šest druhů masáže přizpůsobených vašemu tělu i mysli — od klasické švédské po aromaterapii.',
+        'svc_sub': 'Masáže přizpůsobené vašemu tělu i mysli — VIP, relaxační, pro ženy i pro páry.',
         'svc_btn': 'Zjistit více',
         'all_svc': 'Všechny masáže',
         'team_label': 'Náš tým',
@@ -55,7 +55,7 @@ HOME_COPY = {
         'hero_cta2': 'Our massages',
         'svc_label': 'Our massages',
         'svc_title': 'Relaxation for every moment',
-        'svc_sub': 'Six types of massage tailored to your body and mind — from classic Swedish to aromatherapy.',
+        'svc_sub': 'Massages tailored to your body and mind — VIP, relaxation, for women and for couples.',
         'svc_btn': 'Learn more',
         'all_svc': 'All massages',
         'team_label': 'Our team',
@@ -102,7 +102,7 @@ HOME_COPY = {
         'hero_cta2': 'Наши массажи',
         'svc_label': 'Наши массажи',
         'svc_title': 'Расслабление для каждого момента',
-        'svc_sub': 'Шесть видов массажа, подобранных для вашего тела и разума — от классического шведского до ароматерапии.',
+        'svc_sub': 'Массажи, подобранные под ваше тело и разум — VIP, расслабляющий, для женщин и для пар.',
         'svc_btn': 'Подробнее',
         'all_svc': 'Все массажи',
         'team_label': 'Наша команда',
@@ -144,7 +144,7 @@ HOME_COPY = {
     },
 }
 
-FEATURED_SERVICE_SLUGS = ('klasicka-masaz', 'cbd-relaxacni-masaz', 'aromaterapie')
+FEATURED_SERVICE_SLUGS = ('vip-masaz', 'relaxacni-masaz', 'masaz-pro-zeny', 'masaz-pro-pary')
 
 
 def get_home_copy(lang):
