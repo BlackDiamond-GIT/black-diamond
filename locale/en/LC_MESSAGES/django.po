@@ -174,8 +174,8 @@ msgstr "Day"
 msgid "Denní"
 msgstr "Day"
 
-msgid "Denně 9:00–5:00 ráno."
-msgstr "Daily 9:00–5:00 AM."
+msgid "Denně 9:00–5:00."
+msgstr "Daily 9:00–5:00."
 
 msgid "Detail masáže"
 msgstr "Massage details"

@@ -18,6 +18,7 @@ class ServiceListView(ExtraCssMixin, ListView):
 
 class ServiceDetailView(ExtraCssMixin, DetailView):
     model = Service
+    queryset = Service.objects.filter(is_active=True)
     template_name = 'services/detail.html'
     context_object_name = 'service'
     extra_css = [

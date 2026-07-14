@@ -15,7 +15,6 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('rosetta/', include('rosetta.urls')),
     path('api/contact/', include('apps.contact.urls')),
-    path('api/schedule/', include('apps.schedule.api_urls')),
     path('', RedirectView.as_view(url='/cs/', permanent=False)),
 ] + i18n_patterns(
     path('', include('apps.pages.urls', namespace='pages')),
