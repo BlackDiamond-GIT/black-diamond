@@ -31,8 +31,8 @@ class SiteSettings(models.Model):
         help_text=_('e.g. 420797669633 — used in wa.me/ links'),
     )
     rotation_phone_1 = models.CharField(_('Rotating phone 1'), max_length=30, default='+420 797 669 633')
-    rotation_phone_2 = models.CharField(_('Rotating phone 2'), max_length=30, default='+420 777 060 456')
-    rotation_phone_3 = models.CharField(_('Rotating phone 3'), max_length=30, default='+420 778 622 334')
+    rotation_phone_2 = models.CharField(_('Rotating phone 2'), max_length=30, default='+420 797 669 633')
+    rotation_phone_3 = models.CharField(_('Rotating phone 3'), max_length=30, default='+420 797 669 633')
     phone_rotation_hours = models.PositiveSmallIntegerField(
         _('Phone rotation interval (hours)'), default=2,
     )

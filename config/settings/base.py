@@ -133,9 +133,9 @@ SITE_MAPS_EMBED_URL = (
     '!5e0!3m2!1scs!2sua!4v1781872448444!5m2!1scs!2sua'
 )
 SITE_MAPS_URL = (
-    'https://www.google.com/maps/place/Black+Diamond/'
-    '@50.082366,14.4289516,17z/data=!3m1!4b1!4m6!3m5!1s0x470b95f3d3849a1f:0xa55ddc497485ffc6'
-    '!8m2!3d50.082366!4d14.4289516'
+    'https://www.google.com/maps/place/Black+Diamond+-+massage+saloon+%26+private+tantric+club/'
+    '@50.082366,14.4315265,17z/data=!3m1!4b1!4m6!3m5!1s0x470b95f3d3849a1f:0xa55ddc497485ffc6'
+    '!8m2!3d50.082366!4d14.4315265!16s%2Fg%2F11v6y56n1w?hl=cs&entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D'
 )
 
 GOOGLE_PLACES_API_KEY = env('GOOGLE_PLACES_API_KEY', default='')
