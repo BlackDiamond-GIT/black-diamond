@@ -100,7 +100,7 @@ class PublicRoutingAndSeoTests(TestCase):
         self.assertEqual(robots['Content-Type'], 'text/plain; charset=utf-8')
         self.assertContains(
             robots,
-            'Sitemap: https://blackdiamond.cz/sitemap.xml',
+            'Sitemap: https://black-diamond.cz/sitemap.xml',
         )
 
         sitemap_response = self.client.get('/sitemap.xml')
@@ -110,3 +110,14 @@ class PublicRoutingAndSeoTests(TestCase):
         for language in ('cs', 'en', 'ru'):
             self.assertIn(f'https://testserver/{language}/', sitemap_xml)
         self.assertNotIn('aromaterapie', sitemap_xml)
+
+    def test_canonical_and_hreflang_use_the_live_domain_in_every_language(self):
+        for language in ('cs', 'en', 'ru'):
+            response = self.client.get(f'/{language}/')
+            self.assertEqual(response.status_code, 200)
+            self.assertContains(
+                response,
+                f'<link rel="canonical" href="https://black-diamond.cz/{language}/">',
+                html=True,
+            )
+            self.assertNotContains(response, 'https://blackdiamond.cz')

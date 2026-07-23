@@ -11,4 +11,4 @@ Disallow: /django-admin/
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://blackdiamond.cz/sitemap.xml
+Sitemap: https://black-diamond.cz/sitemap.xml

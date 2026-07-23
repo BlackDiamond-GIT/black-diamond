@@ -122,7 +122,7 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='info@blackdiamond.cz')
 CONTACT_RECIPIENT_EMAIL = env('CONTACT_RECIPIENT_EMAIL', default='info@blackdiamond.cz')
 
 SITE_NAME = 'Black Diamond Spa'
-SITE_URL = 'https://blackdiamond.cz'
+SITE_URL = 'https://black-diamond.cz'
 SITE_PHONE = '+420 778 622 334'
 SITE_EMAIL = 'info@blackdiamond.cz'
 SITE_ADDRESS = 'Opletalova 1566/30, 110 00 Praha'
