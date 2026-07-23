@@ -128,15 +128,15 @@ SERVICES = {
         {'slug': 'masaz-pro-pary', 'title': 'Masáž pro páry',   'short': 'Párová masáž pro dvě osoby ve společném prostoru — sdílená relaxace a společný zážitek.', 'duration': 'od 30 min', 'price': 'od 1 400 Kč', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
     'en': [
-        {'slug': 'vip-masaz',      'title': 'VIP Massage',          'short': 'Luxury VIP massage with full masseuse attention, premium oils and individual care from start to finish.', 'duration': 'from 30 min', 'price': 'from 1,800 CZK', 'img': '/assets/img/services/vip-masaz.webp'},
+        {'slug': 'vip-masaz',      'title': 'VIP Massage',          'short': 'Exclusive and individual full-body care with the undivided attention of a certified therapist, using premium organic oils.', 'duration': 'from 30 min', 'price': 'from 1,800 CZK', 'img': '/assets/img/services/vip-masaz.webp'},
         {'slug': 'relaxacni-masaz','title': 'Relaxation Massage',   'short': 'Gentle relaxation massage with premium oils for deep release of body and mind in a calm private atmosphere.', 'duration': 'from 30 min', 'price': 'from 1,600 CZK', 'img': '/assets/img/services/relaxacni-masaz.webp'},
-        {'slug': 'masaz-pro-zeny', 'title': 'Massage for Women',    'short': 'Massage designed specifically for women\'s needs — gentle, safe and fully private.', 'duration': 'from 45 min', 'price': 'from 3,200 CZK', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
+        {'slug': 'masaz-pro-zeny', 'title': 'Massage for Women',    'short': 'A soothing regenerative ritual in a harmonious and fully private setting, focused on relieving stress and deeply relaxing the muscles.', 'duration': 'from 45 min', 'price': 'from 3,200 CZK', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
         {'slug': 'masaz-pro-pary', 'title': 'Couples Massage',      'short': 'Couples massage for two in a shared space — shared relaxation and a joint experience.', 'duration': 'from 30 min', 'price': 'from 1,400 CZK', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
     'ru': [
-        {'slug': 'vip-masaz',      'title': 'VIP-массаж',              'short': 'Роскошный VIP-массаж с полным вниманием массажистки, премиальными маслами и индивидуальным подходом.', 'duration': 'от 30 мин', 'price': 'от 1 800 Kč', 'img': '/assets/img/services/vip-masaz.webp'},
+        {'slug': 'vip-masaz',      'title': 'VIP-массаж',              'short': 'Эксклюзивный индивидуальный уход за всем телом с полным вниманием сертифицированного терапевта и использованием премиальных био-масел.', 'duration': 'от 30 мин', 'price': 'от 1 800 Kč', 'img': '/assets/img/services/vip-masaz.webp'},
         {'slug': 'relaxacni-masaz','title': 'Расслабляющий массаж',   'short': 'Мягкий расслабляющий массаж с премиальными маслами для глубокого снятия напряжения в приватной атмосфере.', 'duration': 'от 30 мин', 'price': 'от 1 600 Kč', 'img': '/assets/img/services/relaxacni-masaz.webp'},
-        {'slug': 'masaz-pro-zeny', 'title': 'Массаж для женщин',       'short': 'Массаж, разработанный специально для потребностей женского тела — мягкий, безопасный и полностью приватный.', 'duration': 'от 45 мин', 'price': 'от 3 200 Kč', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
+        {'slug': 'masaz-pro-zeny', 'title': 'Массаж для женщин',       'short': 'Успокаивающий восстанавливающий ритуал в гармоничной и полностью приватной обстановке, направленный на снятие стресса и глубокое расслабление мышц.', 'duration': 'от 45 мин', 'price': 'от 3 200 Kč', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
         {'slug': 'masaz-pro-pary', 'title': 'Массаж для пар',          'short': 'Массаж для двоих в общем пространстве — совместная релаксация и общий опыт.', 'duration': 'от 30 мин', 'price': 'от 1 400 Kč', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
 }

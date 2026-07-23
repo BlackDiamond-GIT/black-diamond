@@ -12,7 +12,7 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "{{ service|trans_field:'title'|escapejs }}",
-  "description": "{{ service|trans_field:'description'|escapejs }}",
+  "description": "{{ service|trans_field:'short'|escapejs }}",
   "image": "{{ SITE_URL }}{% asset_img 'services' service.slug %}",
   "provider": {
     "@type": "MassageParlor",
@@ -99,7 +99,7 @@
       </h1>
 
       <p class="service-detail__lead" itemprop="description">
-        {{ service|trans_field:"description" }}
+        {{ service|trans_field:"short" }}
       </p>
 
       <a href="{% whatsapp_url placement='service-detail-hero' %}" class="btn btn--primary btn--lg shimmer" rel="noopener noreferrer">{% trans "Rezervovat tuto masáž" %}</a>
@@ -107,6 +107,12 @@
   </div>
 
   <div class="service-detail__sections">
+    {% if service|trans_field:"description" %}
+    <section aria-label="{% trans 'Podrobný popis služby' %}">
+      <p class="service-detail__section-text">{{ service|trans_field:"description" }}</p>
+    </section>
+    {% endif %}
+
     {% if service|trans_field:"what" %}
     <section aria-labelledby="what-heading">
       <h2 id="what-heading" style="font-family:var(--font-display);font-size:var(--fs-h2);margin-bottom:var(--sp-lg)">

@@ -58,6 +58,9 @@ msgstr ""
 "Black Diamond Spa does not provide any sexual services in any form and "
 "serves exclusively as a professional relaxation and massage salon."
 
+msgid "Black Diamond Spa | Luxusní relaxační masáže Praha"
+msgstr "Black Diamond Spa | Luxury Relaxation Massages Prague"
+
 msgid ""
 "Black Diamond Spa — prémiový masážní salon v centru Prahy. Naše filozofie, "
 "tým a příběh."
@@ -398,6 +401,9 @@ msgstr "Pick a date"
 msgid "Platba"
 msgstr "Payment"
 
+msgid "Podrobný popis služby"
+msgstr "Detailed service description"
+
 msgid "Povaha služeb"
 msgstr "Nature of services"
 
@@ -473,6 +479,14 @@ msgstr ""
 
 msgid "Právě na směně"
 msgstr "On shift now"
+
+msgid ""
+"Prémiový masážní salon v centru Prahy na adrese Opletalova 30. Nabízíme "
+"exkluzivní relaxační rituály a masáže pro páry v luxusním privátním "
+"prostředí."
+msgstr ""
+"Premium massage salon in central Prague at Opletalova 30. We offer exclusive"
+" relaxation rituals and couples massages in a luxurious private setting."
 
 msgid "Prémiový relaxační masážní salon v centru Prahy."
 msgstr "Premium relaxation massage salon in central Prague."

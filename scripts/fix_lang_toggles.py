@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOMAIN = "https://blackdiamond.cz"
+DOMAIN = "https://black-diamond.cz"
 LANGS = ("cs", "en", "ru")
 LABELS = {"cs": "CS", "en": "EN", "ru": "RU"}
 

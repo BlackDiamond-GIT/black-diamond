@@ -1,8 +1,13 @@
+import re
+from html import unescape
+
 from django.test import TestCase
+from django.utils.html import strip_tags
 
 from apps.core.management.commands.seed_site import _rewrite_retired_service_links
 from apps.core.models import SiteSettings
 from apps.core.seed_data_services import SERVICES
+from apps.services.models import Service
 
 
 class PublicCompanyDetailsTests(TestCase):
@@ -24,6 +29,24 @@ class PublicCompanyDetailsTests(TestCase):
 
         english = self.client.get('/en/')
         russian = self.client.get('/ru/')
+        self.assertContains(
+            english,
+            '<title>Black Diamond Spa | Luxury Relaxation Massages Prague</title>',
+            html=True,
+        )
+        self.assertContains(
+            english,
+            'Premium massage salon in central Prague at Opletalova 30.',
+        )
+        self.assertContains(
+            russian,
+            '<title>Black Diamond Spa | Роскошный расслабляющий массаж в Праге</title>',
+            html=True,
+        )
+        self.assertContains(
+            russian,
+            'Премиальный массажный салон в центре Праги по адресу Opletalova 30.',
+        )
         self.assertContains(english, 'The operator of Black Diamond Spa is Prague relax s.r.o.')
         self.assertContains(english, 'All our services are provided by certified staff')
         self.assertContains(russian, 'Оператором салона Black Diamond Spa является компания Prague relax s.r.o.')
@@ -53,6 +76,39 @@ class PublicCompanyDetailsTests(TestCase):
             by_slug['masaz-pro-zeny']['short_cs'],
             'Zklidňující regenerační rituál v harmonickém a plně soukromém prostředí, zaměřený na odbourání stresu a hluboké uvolnění svalů.',
         )
+
+    def test_service_details_render_requested_summary_as_primary_copy(self):
+        service_fields = {field.name for field in Service._meta.fields}
+        expected_services = {
+            item['slug']: item
+            for item in SERVICES
+            if item['slug'] in ('vip-masaz', 'masaz-pro-zeny')
+        }
+        for item in expected_services.values():
+            Service.objects.create(**{
+                key: value
+                for key, value in item.items()
+                if key in service_fields and key != 'id'
+            })
+
+        for language in ('cs', 'en', 'ru'):
+            for slug, item in expected_services.items():
+                response = self.client.get(f'/{language}/masaze/{slug}/')
+                self.assertEqual(response.status_code, 200)
+                match = re.search(
+                    r'<p class="service-detail__lead"[^>]*>(.*?)</p>',
+                    response.content.decode(),
+                    flags=re.S,
+                )
+                self.assertIsNotNone(match)
+                self.assertEqual(
+                    ' '.join(strip_tags(match.group(1)).split()),
+                    item[f'short_{language}'],
+                )
+                rendered_text = ' '.join(
+                    strip_tags(unescape(response.content.decode())).split()
+                )
+                self.assertIn(item[f'description_{language}'], rendered_text)
 
 
 class PublicRoutingAndSeoTests(TestCase):
@@ -121,3 +177,10 @@ class PublicRoutingAndSeoTests(TestCase):
                 html=True,
             )
             self.assertNotContains(response, 'https://blackdiamond.cz')
+
+        contact = self.client.get('/en/kontakty/')
+        self.assertContains(
+            contact,
+            '<link rel="alternate" hreflang="x-default" href="https://black-diamond.cz/cs/kontakty/">',
+            html=True,
+        )

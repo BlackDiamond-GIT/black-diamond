@@ -428,7 +428,7 @@ SERVICES = {
     'en': [
         {
             'slug': 'vip-masaz', 'title': 'VIP Massage',
-            'desc': 'Luxury VIP massage with full masseuse attention, premium oils and individual care from start to finish.',
+            'desc': 'Exclusive and individual full-body care with the undivided attention of a certified therapist, using premium organic oils.',
             'duration': 'from 30 min', 'price': 'from 1,800&nbsp;CZK',
             'img': '/assets/img/services/vip-masaz.webp',
             'alt': 'VIP Massage Prague — Black Diamond Spa',
@@ -442,7 +442,7 @@ SERVICES = {
         },
         {
             'slug': 'masaz-pro-zeny', 'title': 'Massage for Women',
-            'desc': 'Massage designed specifically for women\'s needs — gentle, safe and fully private.',
+            'desc': 'A soothing regenerative ritual in a harmonious and fully private setting, focused on relieving stress and deeply relaxing the muscles.',
             'duration': 'from 45 min', 'price': 'from 3,200&nbsp;CZK',
             'img': '/assets/img/services/masaz-pro-zeny.webp',
             'alt': 'Massage for Women Prague — Black Diamond Spa',
@@ -458,7 +458,7 @@ SERVICES = {
     'ru': [
         {
             'slug': 'vip-masaz', 'title': 'VIP-массаж',
-            'desc': 'Роскошный VIP-массаж с полным вниманием массажистки, премиальными маслами и индивидуальным подходом.',
+            'desc': 'Эксклюзивный индивидуальный уход за всем телом с полным вниманием сертифицированного терапевта и использованием премиальных био-масел.',
             'duration': 'от 30 мин', 'price': 'от 1&nbsp;800 Kč',
             'img': '/assets/img/services/vip-masaz.webp',
             'alt': 'VIP-массаж Прага — Black Diamond Spa',
@@ -472,7 +472,7 @@ SERVICES = {
         },
         {
             'slug': 'masaz-pro-zeny', 'title': 'Массаж для женщин',
-            'desc': 'Массаж, разработанный специально для потребностей женского тела — мягкий, безопасный и полностью приватный.',
+            'desc': 'Успокаивающий восстанавливающий ритуал в гармоничной и полностью приватной обстановке, направленный на снятие стресса и глубокое расслабление мышц.',
             'duration': 'от 45 мин', 'price': 'от 3&nbsp;200 Kč',
             'img': '/assets/img/services/masaz-pro-zeny.webp',
             'alt': 'Массаж для женщин Прага — Black Diamond Spa',

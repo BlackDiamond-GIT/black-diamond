@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n static bd_tags booking_tags %}
-{% block title %}Black Diamond Spa | Luxusní relaxační masáže Praha{% endblock %}
-{% block meta_description %}Prémiový masážní salon v centru Prahy na adrese Opletalova 30. Nabízíme exkluzivní relaxační rituály a masáže pro páry v luxusním privátním prostředí.{% endblock %}
-{% block og_title %}Black Diamond Spa | Luxusní relaxační masáže Praha{% endblock %}
-{% block og_description %}Prémiový masážní salon v centru Prahy na adrese Opletalova 30. Nabízíme exkluzivní relaxační rituály a masáže pro páry v luxusním privátním prostředí.{% endblock %}
+{% block title %}{% trans "Black Diamond Spa | Luxusní relaxační masáže Praha" %}{% endblock %}
+{% block meta_description %}{% trans "Prémiový masážní salon v centru Prahy na adrese Opletalova 30. Nabízíme exkluzivní relaxační rituály a masáže pro páry v luxusním privátním prostředí." %}{% endblock %}
+{% block og_title %}{% trans "Black Diamond Spa | Luxusní relaxační masáže Praha" %}{% endblock %}
+{% block og_description %}{% trans "Prémiový masážní salon v centru Prahy na adrese Opletalova 30. Nabízíme exkluzivní relaxační rituály a masáže pro páry v luxusním privátním prostředí." %}{% endblock %}
 
 {% block lcp_preload %}<link rel="preload" as="image" href="{% static 'img/hero.webp' %}" fetchpriority="high">{% endblock %}
 {% block main_class %}{% endblock %}
