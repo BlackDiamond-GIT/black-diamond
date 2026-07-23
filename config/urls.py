@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
@@ -6,9 +7,13 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 from apps.core.views_favicon import favicon
+from apps.core.views_seo import robots_txt
+from config.sitemaps import SITEMAPS
 
 urlpatterns = [
     path('favicon.ico', favicon, name='favicon'),
+    path('robots.txt', robots_txt, name='robots_txt'),
+    path('sitemap.xml', sitemap, {'sitemaps': SITEMAPS}, name='sitemap'),
     path('admin/favicon.ico', favicon, name='admin_favicon'),
     path('admin/media-library/', include('apps.media_library.urls')),
     path('admin/', admin.site.urls),

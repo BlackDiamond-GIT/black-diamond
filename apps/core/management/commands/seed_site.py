@@ -18,6 +18,21 @@ from apps.therapists.models import Therapist
 from apps.core.seed_data import BLOG_DATES, BLOG_SLUGS, BRANCHES, SERVICES, THERAPISTS
 
 ROOT = Path(__file__).resolve().parents[4]
+RETIRED_SERVICE_SLUGS = (
+    'aromaterapie',
+    'cbd-relaxacni-masaz',
+    'klasicka-masaz',
+    'lymfaticka-masaz',
+)
+
+
+def _rewrite_retired_service_links(text: str) -> str:
+    for retired_slug in RETIRED_SERVICE_SLUGS:
+        text = text.replace(
+            f'/masaze/{retired_slug}/',
+            '/masaze/relaxacni-masaz/',
+        )
+    return text
 
 
 def _meta(content: str, name: str) -> str:
@@ -63,7 +78,7 @@ def _read_blog(lang: str, slug: str) -> dict[str, str]:
     if not path.is_file():
         return {'title': '', 'meta_description': '', 'body': ''}
     text = path.read_text(encoding='utf-8')
-    text = (
+    text = _rewrite_retired_service_links(
         text.replace('+420 797 669 633', '+420 778 622 334')
         .replace('tel:+420797669633', 'tel:+420778622334')
         .replace('wa.me/420797669633', 'wa.me/420778622334')

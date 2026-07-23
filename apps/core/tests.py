@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+from apps.core.management.commands.seed_site import _rewrite_retired_service_links
 from apps.core.models import SiteSettings
 from apps.core.seed_data_services import SERVICES
 
@@ -52,3 +53,60 @@ class PublicCompanyDetailsTests(TestCase):
             by_slug['masaz-pro-zeny']['short_cs'],
             'Zklidňující regenerační rituál v harmonickém a plně soukromém prostředí, zaměřený na odbourání stresu a hluboké uvolnění svalů.',
         )
+
+
+class PublicRoutingAndSeoTests(TestCase):
+    def test_therapist_detail_redirect_ignores_slug_in_every_language(self):
+        for language in ('cs', 'en', 'ru'):
+            response = self.client.get(f'/{language}/masazistky/julia/')
+            self.assertRedirects(
+                response,
+                f'/{language}/',
+                fetch_redirect_response=False,
+            )
+
+    def test_retired_services_redirect_to_active_service_in_every_language(self):
+        retired_slugs = (
+            'aromaterapie',
+            'cbd-relaxacni-masaz',
+            'klasicka-masaz',
+            'lymfaticka-masaz',
+        )
+        for language in ('cs', 'en', 'ru'):
+            for retired_slug in retired_slugs:
+                response = self.client.get(
+                    f'/{language}/masaze/{retired_slug}/'
+                )
+                self.assertRedirects(
+                    response,
+                    f'/{language}/masaze/relaxacni-masaz/',
+                    status_code=301,
+                    fetch_redirect_response=False,
+                )
+
+    def test_seed_rewrites_retired_service_links(self):
+        content = (
+            '<a href="/cs/masaze/aromaterapie/">Aroma</a>'
+            '<a href="/en/masaze/lymfaticka-masaz/">Lymphatic</a>'
+        )
+        rewritten = _rewrite_retired_service_links(content)
+        self.assertNotIn('/masaze/aromaterapie/', rewritten)
+        self.assertNotIn('/masaze/lymfaticka-masaz/', rewritten)
+        self.assertEqual(rewritten.count('/masaze/relaxacni-masaz/'), 2)
+
+    def test_robots_and_sitemap_are_public_and_multilingual(self):
+        robots = self.client.get('/robots.txt')
+        self.assertEqual(robots.status_code, 200)
+        self.assertEqual(robots['Content-Type'], 'text/plain; charset=utf-8')
+        self.assertContains(
+            robots,
+            'Sitemap: https://blackdiamond.cz/sitemap.xml',
+        )
+
+        sitemap_response = self.client.get('/sitemap.xml')
+        self.assertEqual(sitemap_response.status_code, 200)
+        self.assertIn('application/xml', sitemap_response['Content-Type'])
+        sitemap_xml = sitemap_response.content.decode()
+        for language in ('cs', 'en', 'ru'):
+            self.assertIn(f'https://testserver/{language}/', sitemap_xml)
+        self.assertNotIn('aromaterapie', sitemap_xml)

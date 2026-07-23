@@ -1,4 +1,5 @@
 from django.views.generic import RedirectView
+from django.urls import reverse
 
 
 class TherapistListView(RedirectView):
@@ -8,4 +9,7 @@ class TherapistListView(RedirectView):
 
 class TherapistDetailView(RedirectView):
     permanent = False
-    pattern_name = 'pages:home'
+
+    def get_redirect_url(self, *args, **kwargs):
+        """Ignore the matched therapist slug when reversing the homepage."""
+        return reverse('pages:home')
