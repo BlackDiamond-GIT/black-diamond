@@ -50,36 +50,36 @@ THERAPISTS_PART1 = [
         'meta_title_ru': 'Julia — Массажистка классический & релакс Прага | Black Diamond Spa',
         'meta_description_cs': (
             'Julia — Klasická & Relax masáž v centru Prahy. Zkušená masérka, '
-            'rezervujte sezení online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'rezervujte sezení online v Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Julia — Classic & Relax massage in central Prague. Experienced masseuse, '
-            'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'book online at Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Julia — классический и релакс массаж в центре Праги. Опытная массажистка, '
-            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Jaké masáže nabízí Julia?', 'a': 'Julia specializuje se na Klasickou, Relax a Hlubokotkaninní masáž. Kompletní seznam najdete v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Julia?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Julia a volný termín. Potvrzení obdržíte e-mailem.'},
             {'q': 'Pro koho je Julia vhodná?', 'a': 'Pro klienty hledající klasickou masáž, relaxaci po stresu nebo péči o záda a krk.'},
             {'q': 'Jak dlouho trvá sezení?', 'a': 'Podle zvolené masáže 60–90 minut v privátním pokoji v centru Prahy.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — snadno dostupné MHD.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha — snadno dostupné MHD.'},
         ],
         'faq_en': [
             {'q': 'What massages does Julia offer?', 'a': 'Julia specializes in Classic, Relax and Deep tissue massage. See the Offered massages section for details.'},
             {'q': 'How to book with Julia?', 'a': 'Online via schedule — choose massage, select Julia and available time. Email confirmation follows.'},
             {'q': 'Who is Julia best for?', 'a': 'Clients seeking classic massage, post-stress relaxation or back and neck care.'},
             {'q': 'How long is a session?', 'a': 'Depending on massage type, 60–90 minutes in a private room in central Prague.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — easily reachable by public transport.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha — easily reachable by public transport.'},
         ],
         'faq_ru': [
             {'q': 'Какие массажи предлагает Julia?', 'a': 'Julia специализируется на классическом, релакс и расслабляющем массаже. Полный список в разделе «Предлагаемые массажи».'},
             {'q': 'Как записаться к Julia?', 'a': 'Онлайн в расписании — выберите массаж, Julia и время. Подтверждение на email.'},
             {'q': 'Для кого подходит Julia?', 'a': 'Для тех, кто ищет классический массаж, релакс после стресса или уход за спиной и шеей.'},
             {'q': 'Сколько длится сеанс?', 'a': 'В зависимости от массажа 60–90 минут в приватном кабинете в центре Праги.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město — удобно на общественном транспорте.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha — удобно на общественном транспорте.'},
         ],
     },
     {
@@ -129,36 +129,36 @@ THERAPISTS_PART1 = [
         'meta_title_ru': 'Diana — Расслабляющий & аромамассаж Прага | Black Diamond Spa',
         'meta_description_cs': (
             'Diana — Hlubokotkaninní & Aromamasáž v centru Prahy. Citlivý přístup, '
-            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Diana — Deep tissue & Aroma massage in central Prague. Sensitive approach, '
-            'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'book online at Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Diana — расслабляющий и аромамассаж в центре Праги. Чуткий подход, '
-            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Jaké masáže nabízí Diana?', 'a': 'Hlubokotkaninní masáž, Aromamasáž a Relax masáž. Detail v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Diana?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Diana a volný termín.'},
             {'q': 'Pro koho je Diana vhodná?', 'a': 'Pro klienty hledající aromaterapii, emoční uvolnění a pomalou relaxaci.'},
             {'q': 'Jaké oleje používá?', 'a': 'Prémiové éterické oleje — levandule, eukalyptus, ylang-ylang a další dle preference.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What does Diana offer?', 'a': 'Deep tissue massage, Aroma massage and Relax massage. See Offered massages section.'},
             {'q': 'How to book with Diana?', 'a': 'Online via schedule — choose massage, select Diana and available time.'},
             {'q': 'Who is Diana best for?', 'a': 'Clients seeking aromatherapy, emotional release and slow relaxation.'},
             {'q': 'What oils does she use?', 'a': 'Premium essential oils — lavender, eucalyptus, ylang-ylang and more by preference.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что предлагает Diana?', 'a': 'Расслабляющий, арома и релакс массаж. Подробности в разделе «Предлагаемые массажи».'},
             {'q': 'Как записаться к Diana?', 'a': 'Онлайн в расписании — выберите массаж, Diana и время.'},
             {'q': 'Для кого подходит Diana?', 'a': 'Для ароматерапии, эмоционального расслабления и медленного релакса.'},
             {'q': 'Какие масла использует?', 'a': 'Премиальные эфирные масла — лаванда, эвкалипт, иланг-иланг и другие.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
     {
@@ -207,36 +207,36 @@ THERAPISTS_PART1 = [
         'meta_title_ru': 'Laura — Арома & релакс массажистка Прага | Black Diamond Spa',
         'meta_description_cs': (
             'Laura — Aromamasáž & Relax masáž v centru Prahy. Harmonický přístup, '
-            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Laura — Aroma & Relax massage in central Prague. Harmonious approach, '
-            'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'book online at Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Laura — арома и релакс массаж в центре Праги. Гармоничный подход, '
-            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Jaké masáže nabízí Laura?', 'a': 'Aromamasáž, Relax masáž a Hlubokotkaninní masáž. Viz sekce Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Laura?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Laura a volný termín.'},
             {'q': 'Pro koho je Laura vhodná?', 'a': 'Pro klienty hledající aromaterapii, relaxaci a péči o harmonii těla a mysli.'},
             {'q': 'Jak dlouho trvá sezení?', 'a': '75–90 minut podle zvolené masáže v privátním pokoji.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What does Laura offer?', 'a': 'Aroma massage, Relax massage and Deep tissue massage. See Offered massages.'},
             {'q': 'How to book with Laura?', 'a': 'Online via schedule — choose massage, select Laura and available time.'},
             {'q': 'Who is Laura best for?', 'a': 'Clients seeking aromatherapy, relaxation and body-mind harmony.'},
             {'q': 'How long is a session?', 'a': '75–90 minutes depending on massage type in a private room.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что предлагает Laura?', 'a': 'Аромамассаж, релакс и расслабляющий массаж. См. раздел «Предлагаемые массажи».'},
             {'q': 'Как записаться к Laura?', 'a': 'Онлайн в расписании — выберите массаж, Laura и время.'},
             {'q': 'Для кого подходит Laura?', 'a': 'Для ароматерапии, релакса и гармонии тела и разума.'},
             {'q': 'Сколько длится сеанс?', 'a': '75–90 минут в зависимости от массажа в приватном кабинете.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
 ]

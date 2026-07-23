@@ -22,25 +22,25 @@ from .phone_rotation import (
 class SiteSettings(models.Model):
     """Singleton model for site-wide settings editable in admin."""
 
-    phone_primary = models.CharField(_('Primary phone'), max_length=30, default='+420 797 669 633')
+    phone_primary = models.CharField(_('Primary phone'), max_length=30, default='+420 778 622 334')
     phone_secondary = models.CharField(_('Secondary phone'), max_length=30, blank=True)
     whatsapp_number = models.CharField(
         _('WhatsApp number (no +, no spaces)'),
         max_length=20,
-        default='420797669633',
-        help_text=_('e.g. 420797669633 — used in wa.me/ links'),
+        default='420778622334',
+        help_text=_('e.g. 420778622334 — used in wa.me/ links'),
     )
-    rotation_phone_1 = models.CharField(_('Rotating phone 1'), max_length=30, default='+420 797 669 633')
-    rotation_phone_2 = models.CharField(_('Rotating phone 2'), max_length=30, default='+420 797 669 633')
-    rotation_phone_3 = models.CharField(_('Rotating phone 3'), max_length=30, default='+420 797 669 633')
+    rotation_phone_1 = models.CharField(_('Rotating phone 1'), max_length=30, default='+420 778 622 334')
+    rotation_phone_2 = models.CharField(_('Rotating phone 2'), max_length=30, default='+420 778 622 334')
+    rotation_phone_3 = models.CharField(_('Rotating phone 3'), max_length=30, default='+420 778 622 334')
     phone_rotation_hours = models.PositiveSmallIntegerField(
         _('Phone rotation interval (hours)'), default=2,
     )
     email = models.EmailField(_('Contact email'), default='info@blackdiamond.cz')
     address = models.CharField(
-        _('Address (studio 1)'), max_length=200, default='Opletalova 1566/30, 110 00 Nové Město',
+        _('Address (studio 1)'), max_length=200, default='Opletalova 1566/30, 110 00 Praha',
     )
-    location_phone_1 = models.CharField(_('Phone (studio 1)'), max_length=30, default='+420 797 669 633')
+    location_phone_1 = models.CharField(_('Phone (studio 1)'), max_length=30, default='+420 778 622 334')
     map_url = models.URLField(_('Map URL (studio 1)'), max_length=500, blank=True)
     maps_embed_url = models.TextField(_('Google Maps embed URL (studio 1)'), blank=True)
     address_2 = models.CharField(_('Address (studio 2)'), max_length=200, blank=True)

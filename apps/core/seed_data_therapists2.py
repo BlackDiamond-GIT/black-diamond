@@ -50,36 +50,36 @@ THERAPISTS_PART2 = [
         'meta_title_ru': 'Vanessa — Классический & спортивный массаж Прага | Black Diamond Spa',
         'meta_description_cs': (
             'Vanessa — Klasická & Sportovní masáž, 10 let praxe. Centrum Prahy, '
-            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Vanessa — Classic & Sports massage, 10 years experience. Central Prague, '
-            'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'book online at Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Vanessa — классический и спортивный массаж, 10 лет опыта. Центр Праги, '
-            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Jaké masáže nabízí Vanessa?', 'a': 'Klasickou, Sportovní a Hlubokotkaninní masáž. Detail v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Vanessa?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Vanessa a volný termín.'},
             {'q': 'Pro koho je Vanessa vhodná?', 'a': 'Pro sportovce, běžce, fitness nadšence i klienty s bolestmi zad.'},
             {'q': 'Kolik let má Vanessa praxe?', 'a': 'Deset let v klasické a sportovní masáži v Praze.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What does Vanessa offer?', 'a': 'Classic, Sports and Deep tissue massage. See Offered massages section.'},
             {'q': 'How to book with Vanessa?', 'a': 'Online via schedule — choose massage, select Vanessa and available time.'},
             {'q': 'Who is Vanessa best for?', 'a': 'Athletes, runners, fitness enthusiasts and clients with back pain.'},
             {'q': 'How much experience?', 'a': 'Ten years in classic and sports massage in Prague.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что предлагает Vanessa?', 'a': 'Классический, спортивный и расслабляющий массаж. См. «Предлагаемые массажи».'},
             {'q': 'Как записаться к Vanessa?', 'a': 'Онлайн в расписании — выберите массаж, Vanessa и время.'},
             {'q': 'Для кого подходит Vanessa?', 'a': 'Для спортсменов, бегунов, фитнеса и клиентов с болями в спине.'},
             {'q': 'Сколько лет опыта?', 'a': 'Десять лет в классическом и спортивном массаже в Праге.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
     {
@@ -128,36 +128,36 @@ THERAPISTS_PART2 = [
         'meta_title_ru': 'Ella — Спортивный & восстановительный массаж Прага | Black Diamond Spa',
         'meta_description_cs': (
             'Ella — Sportovní & Regenerační masáž v centru Prahy. Regenerace svalů, '
-            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Ella — Sports & Recovery massage in central Prague. Muscle regeneration, '
-            'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'book online at Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Ella — спортивный и восстановительный массаж в центре Праги. Регенерация мышц, '
-            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Jaké masáže nabízí Ella?', 'a': 'Sportovní, Regenerační (součást sportovní masáže), Klasickou a Relax masáž.'},
             {'q': 'Jak rezervovat sezení s Ella?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Ella a volný termín.'},
             {'q': 'Pro koho je Ella vhodná?', 'a': 'Pro sportovce po tréninku, maratonu nebo fyzické zátěži hledající regeneraci.'},
             {'q': 'Co je regenerační masáž?', 'a': 'Jemnější varianta sportovní masáže zaměřená na obnovu svalů a redukci napětí.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What does Ella offer?', 'a': 'Sports, Recovery (part of sports massage), Classic and Relax massage.'},
             {'q': 'How to book with Ella?', 'a': 'Online via schedule — choose massage, select Ella and available time.'},
             {'q': 'Who is Ella best for?', 'a': 'Athletes after training, marathons or physical exertion seeking recovery.'},
             {'q': 'What is recovery massage?', 'a': 'A gentler sports massage variant focused on muscle restoration and tension release.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что предлагает Ella?', 'a': 'Спортивный, восстановительный, классический и релакс массаж.'},
             {'q': 'Как записаться к Ella?', 'a': 'Онлайн в расписании — выберите массаж, Ella и время.'},
             {'q': 'Для кого подходит Ella?', 'a': 'Для спортсменов после тренировки, марафона или нагрузки.'},
             {'q': 'Что такое восстановительный массаж?', 'a': 'Более мягкий вариант спортивного массажа для восстановления мышц.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
     {
@@ -205,36 +205,36 @@ THERAPISTS_PART2 = [
         'meta_title_ru': 'Mira — Лимфатический & аромамассаж Прага | Black Diamond Spa',
         'meta_description_cs': (
             'Mira — Lymfatická & Aromamasáž v centru Prahy. Jemný detox, '
-            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'rezervujte online v Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Mira — Lymphatic & Aroma massage in central Prague. Gentle detox, '
-            'book online at Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'book online at Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Mira — лимфатический и аромамассаж в центре Праги. Мягкий детокс, '
-            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Nové Město.'
+            'запись онлайн в Black Diamond Spa. Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Jaké masáže nabízí Mira?', 'a': 'Lymfatickou, Aromamasáž a Relax masáž. Detail v sekci Nabízené masáže.'},
             {'q': 'Jak rezervovat sezení s Mira?', 'a': 'Online v rozvrhu — vyberte masáž, zvolte Mira a volný termín.'},
             {'q': 'Pro koho je Mira vhodná?', 'a': 'Pro otoky, těžké nohy, detox péči a aromaterapeutickou relaxaci.'},
             {'q': 'Bolí lymfatická masáž?', 'a': 'Ne — Mira pracuje velmi jemně, bez bolestivého tlaku.'},
-            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Kde salon najdu?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What does Mira offer?', 'a': 'Lymphatic, Aroma and Relax massage. See Offered massages section.'},
             {'q': 'How to book with Mira?', 'a': 'Online via schedule — choose massage, select Mira and available time.'},
             {'q': 'Who is Mira best for?', 'a': 'Swelling, heavy legs, detox care and aromatherapy relaxation.'},
             {'q': 'Does lymphatic massage hurt?', 'a': 'No — Mira works very gently without painful pressure.'},
-            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Where is the salon?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что предлагает Mira?', 'a': 'Лимфатический, арома и релакс массаж. См. «Предлагаемые массажи».'},
             {'q': 'Как записаться к Mira?', 'a': 'Онлайн в расписании — выберите массаж, Mira и время.'},
             {'q': 'Для кого подходит Mira?', 'a': 'При отёках, тяжести в ногах, детоксе и ароматерапии.'},
             {'q': 'Больно ли при лимфатическом массаже?', 'a': 'Нет — Mira работает очень мягко, без болезненного давления.'},
-            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město.'},
+            {'q': 'Где салон?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
 ]

@@ -108,6 +108,17 @@
   line-height: 1.55;
 }
 
+.contact-item__operator {
+  margin-top: var(--sp-md);
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.contact-item__operator strong {
+  color: var(--text-primary);
+}
+
 .contact-item__value address {
   font-style: normal;
 }

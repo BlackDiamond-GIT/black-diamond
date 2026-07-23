@@ -9,9 +9,9 @@ SERVICES = [
         'title_cs': 'VIP masáž',
         'title_en': 'VIP Massage',
         'title_ru': 'VIP-массаж',
-        'short_cs': 'Luxusní VIP masáž s plnou pozorností masérky, prémiálními oleji a individuálním přístupem od začátku do konce.',
-        'short_en': 'Luxury VIP massage with full masseuse attention, premium oils and individual care from start to finish.',
-        'short_ru': 'Роскошный VIP-массаж с полным вниманием массажистки, премиальными маслами и индивидуальным подходом.',
+        'short_cs': 'Exkluzivní a individuální celotělová péče s plnou pozorností certifikovaného terapeuta za využití prémiových bio olejů.',
+        'short_en': 'Exclusive and individual full-body care with the undivided attention of a certified therapist, using premium organic oils.',
+        'short_ru': 'Эксклюзивный индивидуальный уход за всем телом с полным вниманием сертифицированного терапевта и использованием премиальных био-масел.',
         'description_cs': (
             'VIP masáž v centru Prahy je exkluzivní sezení navržené pro klienty, kteří hledají '
             'nadstandardní péči a maximální komfort. V Black Diamond Spa na Opletalově vám masérka '
@@ -89,7 +89,7 @@ SERVICES = [
             {'q': 'Kolik stojí VIP masáž?', 'a': '30 min 1 800 Kč, 45 min 2 200 Kč, 60 min 2 500 Kč, 90 min 3 800 Kč. Ceny za 1 osobu.'},
             {'q': 'Co je zahrnuto?', 'a': 'Prémiální masážní oleje, prostěradla, privátní pokoj a plná pozornost masérky.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte VIP masáž a volný termín.'},
-            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What is VIP massage?', 'a': 'An exclusive session with full masseuse attention, premium oils and individual personalisation.'},
@@ -97,7 +97,7 @@ SERVICES = [
             {'q': 'How much does VIP massage cost?', 'a': '30 min 1,800 CZK, 45 min 2,200 CZK, 60 min 2,500 CZK, 90 min 3,800 CZK. Prices per person.'},
             {'q': 'What is included?', 'a': 'Premium massage oils, linens, private room and full masseuse attention.'},
             {'q': 'How to book?', 'a': 'Online via schedule — choose VIP massage and available slot.'},
-            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что такое VIP-массаж?', 'a': 'Эксклюзивный сеанс с полным вниманием массажистки, премиальными маслами и индивидуальной настройкой.'},
@@ -105,7 +105,7 @@ SERVICES = [
             {'q': 'Сколько стоит VIP-массаж?', 'a': '30 мин 1 800 Kč, 45 мин 2 200 Kč, 60 мин 2 500 Kč, 90 мин 3 800 Kč. Цены за 1 человека.'},
             {'q': 'Что включено?', 'a': 'Премиальные масла, бельё, приватный кабинет и полное внимание массажистки.'},
             {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите VIP-массаж и свободный слот.'},
-            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
     {
@@ -180,15 +180,15 @@ SERVICES = [
         'meta_title_ru': 'Расслабляющий массаж Прага — от 30 мин / 1 600 Kč | Black Diamond Spa',
         'meta_description_cs': (
             'Relaxační masáž v centru Prahy s prémiálními oleji. Od 30 min / 1 600 Kč. '
-            'Rezervujte online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
+            'Rezervujte online — Black Diamond Spa, Opletalova 1566/30, Praha.'
         ),
         'meta_description_en': (
             'Relaxation massage in central Prague with premium oils. From 30 min / 1,600 CZK. '
-            'Book online — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
+            'Book online — Black Diamond Spa, Opletalova 1566/30, Praha.'
         ),
         'meta_description_ru': (
             'Расслабляющий массаж в центре Праги с премиальными маслами. От 30 мин / 1 600 Kč. '
-            'Запись онлайн — Black Diamond Spa, Opletalova 1566/30, Nové Město.'
+            'Запись онлайн — Black Diamond Spa, Opletalova 1566/30, Praha.'
         ),
         'faq_cs': [
             {'q': 'Co je relaxační masáž?', 'a': 'Jemná masáž s prémiovými oleji zaměřená na celkové uvolnění těla a mysli.'},
@@ -196,7 +196,7 @@ SERVICES = [
             {'q': 'Kolik stojí?', 'a': '30 min 1 600 Kč, 45 min 1 800 Kč, 60 min 2 000 Kč, 90 min 3 000 Kč. Ceny za 1 osobu.'},
             {'q': 'Pro koho je vhodná?', 'a': 'Pro každého, kdo hledá uvolnění od stresu, únavy nebo každodenního napětí.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Relaxační masáž a volný termín.'},
-            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What is relaxation massage?', 'a': 'A gentle massage with premium oils focused on full-body and mind release.'},
@@ -204,7 +204,7 @@ SERVICES = [
             {'q': 'How much does it cost?', 'a': '30 min 1,600 CZK, 45 min 1,800 CZK, 60 min 2,000 CZK, 90 min 3,000 CZK. Prices per person.'},
             {'q': 'Who is it for?', 'a': 'Anyone seeking relief from stress, fatigue or everyday tension.'},
             {'q': 'How to book?', 'a': 'Online via schedule — choose Relaxation Massage and available slot.'},
-            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что такое расслабляющий массаж?', 'a': 'Мягкий массаж с премиальными маслами для полного снятия напряжения тела и разума.'},
@@ -212,7 +212,7 @@ SERVICES = [
             {'q': 'Сколько стоит?', 'a': '30 мин 1 600 Kč, 45 мин 1 800 Kč, 60 мин 2 000 Kč, 90 мин 3 000 Kč. Цены за 1 человека.'},
             {'q': 'Для кого подходит?', 'a': 'Для всех, кто ищет снятие стресса, усталости или ежедневного напряжения.'},
             {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите расслабляющий массаж и свободный слот.'},
-            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
     {
@@ -223,9 +223,9 @@ SERVICES = [
         'title_cs': 'Masáž pro ženy',
         'title_en': 'Massage for Women',
         'title_ru': 'Массаж для женщин',
-        'short_cs': 'Masáž navržená speciálně pro potřeby ženského těla — jemná, bezpečná a zcela privátní.',
-        'short_en': 'Massage designed specifically for women\'s needs — gentle, safe and fully private.',
-        'short_ru': 'Массаж, разработанный специально для потребностей женского тела — мягкий, безопасный и полностью приватный.',
+        'short_cs': 'Zklidňující regenerační rituál v harmonickém a plně soukromém prostředí, zaměřený na odbourání stresu a hluboké uvolnění svalů.',
+        'short_en': 'A soothing regenerative ritual in a harmonious and fully private setting, focused on relieving stress and deeply relaxing the muscles.',
+        'short_ru': 'Успокаивающий восстанавливающий ритуал в гармоничной и полностью приватной обстановке, направленный на снятие стресса и глубокое расслабление мышц.',
         'description_cs': (
             'Masáž pro ženy v centru Prahy je sezení navržené speciálně s ohledem na potřeby '
             'a komfort žen. V Black Diamond Spa na Opletalově probíhá každé sezení v plně '
@@ -301,7 +301,7 @@ SERVICES = [
             {'q': 'Kolik stojí?', 'a': '45 min 3 200 Kč, 60 min 4 000 Kč, 90 min 5 200 Kč. Ceny za 1 osobu.'},
             {'q': 'Je masáž bezpečná?', 'a': 'Ano — sezení probíhá v plně privátním prostředí se zkušenou masérkou a respektujícím přístupem.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Masáž pro ženy a volný termín.'},
-            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What is massage for women?', 'a': 'A specially designed session with women\'s comfort and needs in mind.'},
@@ -309,7 +309,7 @@ SERVICES = [
             {'q': 'How much does it cost?', 'a': '45 min 3,200 CZK, 60 min 4,000 CZK, 90 min 5,200 CZK. Prices per person.'},
             {'q': 'Is the massage safe?', 'a': 'Yes — sessions take place in a fully private setting with an experienced masseuse and a respectful approach.'},
             {'q': 'How to book?', 'a': 'Online via schedule — choose Massage for Women and available slot.'},
-            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что такое массаж для женщин?', 'a': 'Специально разработанный сеанс с учётом комфорта и потребностей женского тела.'},
@@ -317,7 +317,7 @@ SERVICES = [
             {'q': 'Сколько стоит?', 'a': '45 мин 3 200 Kč, 60 мин 4 000 Kč, 90 мин 5 200 Kč. Цены за 1 человека.'},
             {'q': 'Безопасно ли?', 'a': 'Да — сеансы проходят в полностью приватной обстановке с опытной массажисткой и уважительным подходом.'},
             {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите массаж для женщин и свободный слот.'},
-            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
     {
@@ -406,7 +406,7 @@ SERVICES = [
             {'q': 'Kolik stojí?', 'a': '30 min 1 400 Kč, 45 min 1 700 Kč, 60 min 1 900 Kč, 90 min 3 500 Kč — cena za jednu osobu.'},
             {'q': 'Musí mít obě osoby stejnou masáž?', 'a': 'Ne — každá osoba si může zvolit vlastní typ masáže a intenzitu.'},
             {'q': 'Jak rezervovat?', 'a': 'Online v rozvrhu — vyberte Masáž pro páry a uveďte počet osob.'},
-            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Praha.'},
+            {'q': 'Kde nás najdete?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_en': [
             {'q': 'What is couples massage?', 'a': 'A shared session for two in a common private space — each with their own masseuse.'},
@@ -414,7 +414,7 @@ SERVICES = [
             {'q': 'How much does it cost?', 'a': '30 min 1,400 CZK, 45 min 1,700 CZK, 60 min 1,900 CZK, 90 min 3,500 CZK — price per person.'},
             {'q': 'Do both people need the same massage?', 'a': 'No — each person may choose their own massage type and intensity.'},
             {'q': 'How to book?', 'a': 'Online via schedule — choose Couples Massage and indicate number of people.'},
-            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Prague.'},
+            {'q': 'Where are you located?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
         'faq_ru': [
             {'q': 'Что такое массаж для пар?', 'a': 'Совместный сеанс для двоих в общем приватном пространстве — каждый со своей массажисткой.'},
@@ -422,7 +422,7 @@ SERVICES = [
             {'q': 'Сколько стоит?', 'a': '30 мин 1 400 Kč, 45 мин 1 700 Kč, 60 мин 1 900 Kč, 90 мин 3 500 Kč — цена за одного человека.'},
             {'q': 'Должны ли оба делать одинаковый массаж?', 'a': 'Нет — каждый может выбрать свой тип и интенсивность.'},
             {'q': 'Как забронировать?', 'a': 'Онлайн в расписании — выберите массаж для пар и укажите количество человек.'},
-            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Nové Město, Прага.'},
+            {'q': 'Где вас найти?', 'a': 'Black Diamond Spa, Opletalova 1566/30, 110 00 Praha.'},
         ],
     },
 ]

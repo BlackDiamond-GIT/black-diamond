@@ -398,7 +398,7 @@ SERVICES = {
     'cs': [
         {
             'slug': 'vip-masaz', 'title': 'VIP masáž',
-            'desc': 'Luxusní VIP masáž s plnou pozorností masérky, prémiálními oleji a individuálním přístupem od začátku do konce.',
+            'desc': 'Exkluzivní a individuální celotělová péče s plnou pozorností certifikovaného terapeuta za využití prémiových bio olejů.',
             'duration': 'od 30 min', 'price': 'od 1&nbsp;800 Kč',
             'img': '/assets/img/services/vip-masaz.webp',
             'alt': 'VIP masáž Praha — Black Diamond Spa',
@@ -412,7 +412,7 @@ SERVICES = {
         },
         {
             'slug': 'masaz-pro-zeny', 'title': 'Masáž pro ženy',
-            'desc': 'Masáž navržená speciálně pro potřeby ženského těla — jemná, bezpečná a zcela privátní.',
+            'desc': 'Zklidňující regenerační rituál v harmonickém a plně soukromém prostředí, zaměřený na odbourání stresu a hluboké uvolnění svalů.',
             'duration': 'od 45 min', 'price': 'od 3&nbsp;200 Kč',
             'img': '/assets/img/services/masaz-pro-zeny.webp',
             'alt': 'Masáž pro ženy Praha — Black Diamond Spa',

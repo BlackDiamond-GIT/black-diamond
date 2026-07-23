@@ -33,6 +33,11 @@
                 <span itemprop="postalCode">{{ SITE_POSTAL_CODE }}</span> <span itemprop="addressLocality">{{ SITE_ADDRESS_LOCALITY }}</span><br>
                 <span itemprop="addressCountry">{% trans "Česká republika" %}</span>
               </address>
+              <div class="contact-item__operator">
+                <strong>{% trans "Provozovatel" %}:</strong> Prague relax s.r.o.<br>
+                <strong>IČO:</strong> 23481412<br>
+                <strong>{% trans "Sídlo" %}:</strong> Chvalská 718/10, Hloubětín, 198 00 Praha 9
+              </div>
             </div>
           </li>
 
@@ -40,7 +45,7 @@
             <svg class="contact-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             <div class="contact-item__body">
               <strong class="contact-item__label">{% trans "Telefon" %}</strong>
-              <a href="tel:+420797669633" class="contact-item__link" itemprop="telephone">{{ SITE_PHONE }}</a>
+              <a href="{{ SITE_PHONE_TEL }}" class="contact-item__link" itemprop="telephone">{{ SITE_PHONE }}</a>
             </div>
           </li>
 

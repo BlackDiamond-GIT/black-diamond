@@ -63,6 +63,16 @@ def _read_blog(lang: str, slug: str) -> dict[str, str]:
     if not path.is_file():
         return {'title': '', 'meta_description': '', 'body': ''}
     text = path.read_text(encoding='utf-8')
+    text = (
+        text.replace('+420 797 669 633', '+420 778 622 334')
+        .replace('tel:+420797669633', 'tel:+420778622334')
+        .replace('wa.me/420797669633', 'wa.me/420778622334')
+        .replace(
+            'Opletalova 1566/30, 110 00 Nové Město',
+            'Opletalova 1566/30, 110 00 Praha',
+        )
+        .replace('Opletalova 1566/30, Nové Město', 'Opletalova 1566/30, Praha')
+    )
     return {
         'title': _blog_title(text),
         'meta_description': _meta(text, 'description').split('|')[0].strip(),

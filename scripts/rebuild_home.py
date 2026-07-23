@@ -122,9 +122,9 @@ T = {
 
 SERVICES = {
     'cs': [
-        {'slug': 'vip-masaz',      'title': 'VIP masáž',        'short': 'Luxusní VIP masáž s plnou pozorností masérky, prémiálními oleji a individuálním přístupem od začátku do konce.', 'duration': 'od 30 min', 'price': 'od 1 800 Kč', 'img': '/assets/img/services/vip-masaz.webp'},
+        {'slug': 'vip-masaz',      'title': 'VIP masáž',        'short': 'Exkluzivní a individuální celotělová péče s plnou pozorností certifikovaného terapeuta za využití prémiových bio olejů.', 'duration': 'od 30 min', 'price': 'od 1 800 Kč', 'img': '/assets/img/services/vip-masaz.webp'},
         {'slug': 'relaxacni-masaz','title': 'Relaxační masáž',  'short': 'Jemná relaxační masáž s prémiálními oleji pro hluboké uvolnění těla i mysli v klidné privátní atmosféře.', 'duration': 'od 30 min', 'price': 'od 1 600 Kč', 'img': '/assets/img/services/relaxacni-masaz.webp'},
-        {'slug': 'masaz-pro-zeny', 'title': 'Masáž pro ženy',   'short': 'Masáž navržená speciálně pro potřeby ženského těla — jemná, bezpečná a zcela privátní.', 'duration': 'od 45 min', 'price': 'od 3 200 Kč', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
+        {'slug': 'masaz-pro-zeny', 'title': 'Masáž pro ženy',   'short': 'Zklidňující regenerační rituál v harmonickém a plně soukromém prostředí, zaměřený na odbourání stresu a hluboké uvolnění svalů.', 'duration': 'od 45 min', 'price': 'od 3 200 Kč', 'img': '/assets/img/services/masaz-pro-zeny.webp'},
         {'slug': 'masaz-pro-pary', 'title': 'Masáž pro páry',   'short': 'Párová masáž pro dvě osoby ve společném prostoru — sdílená relaxace a společný zážitek.', 'duration': 'od 30 min', 'price': 'od 1 400 Kč', 'img': '/assets/img/services/masaz-pro-pary.webp'},
     ],
     'en': [

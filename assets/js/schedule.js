@@ -86,7 +86,7 @@
       </svg>
       <span class="schedule__hours-text">${hoursText}</span>
       &nbsp;|&nbsp;
-      <a href="tel:+420797669633" style="color:var(--tiffany)">+420 797 669 633</a>
+      <a href="tel:+420778622334" style="color:var(--tiffany)">+420 778 622 334</a>
     `;
   }
 

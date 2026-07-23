@@ -15,7 +15,7 @@ PLACES_BASE = 'https://places.googleapis.com/v1/places'
 SEARCH_TEXT_URL = 'https://places.googleapis.com/v1/places:searchText'
 
 DEFAULT_TEXT_QUERY = (
-    'Erotic massage Black Diamond Opletalova 1566/30 Praha 1'
+    'Black Diamond Spa Opletalova 1566/30 Praha'
 )
 
 

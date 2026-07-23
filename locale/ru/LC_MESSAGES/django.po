@@ -53,15 +53,6 @@ msgstr ""
 
 msgid ""
 "Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě a "
-"slouží pouze jako inzerce pro individuální masérky. Podmínkou inzerce je "
-"pronájem prostorů v masážním salonu. Vstup povolen osobám starším 18 let."
-msgstr ""
-"Black Diamond Spa не предоставляет сексуальные услуги в любой форме и служит"
-" только рекламой для индивидуальных массажисток. Условие размещения — аренда"
-" помещений в массажном салоне. Вход разрешён лицам старше 18 лет."
-
-msgid ""
-"Black Diamond Spa neposkytuje žádné sexuální služby v jakékoliv formě a "
 "slouží výhradně jako profesionální relaxační a masážní salon."
 msgstr ""
 "Black Diamond Spa не предоставляет сексуальные услуги в любой форме и служит"
@@ -174,7 +165,7 @@ msgid "Denní"
 msgstr "Дневная"
 
 msgid "Denně 9:00–5:00."
-msgstr "Ежедневно 9:00–5:00."
+msgstr "Ежедневно 9:00–5:00 утра."
 
 msgid "Detail masáže"
 msgstr "Подробнее о массаже"
@@ -257,9 +248,6 @@ msgstr "Карта — Black Diamond Spa"
 msgid "Masáž"
 msgstr "Массаж"
 
-msgid "Masáž Praha — Prémiový relaxační salon"
-msgstr "Массаж Прага — Премиальный релаксационный салон"
-
 msgid "Masáže"
 msgstr "Массажи"
 
@@ -302,9 +290,6 @@ msgstr "Навигация по расписанию"
 
 msgid "Naše filozofie"
 msgstr "Наша философия"
-
-msgid "Naše masérky"
-msgstr "Наши массажистки"
 
 msgid "Naše služby"
 msgstr "Наши услуги"
@@ -424,9 +409,6 @@ msgstr ""
 "Julia, Diana, Laura, Vanessa, Ella, Mira. У каждой своя специализация. "
 "Бронируйте онлайн."
 
-msgid "Poznat náš tým"
-msgstr "Познакомиться с командой"
-
 msgid ""
 "Pravidla a podmínky návštěvy Black Diamond Spa Praha. Věk 18+. Zákaznická "
 "etiketa a provozní řád."
@@ -471,6 +453,26 @@ msgid ""
 msgstr ""
 "Просим приходить минимум за 10 минут до назначенного времени. В случае "
 "опоздания заранее позвоните нам."
+
+msgid "Provozní kontakt"
+msgstr "Контакт салона"
+
+msgid "Provozovatel"
+msgstr "Оператор"
+
+msgid ""
+"Provozovatelem salonu Black Diamond Spa je společnost Prague relax s.r.o., "
+"IČO: 23481412, se sídlem: Chvalská 718/10, Hloubětín, 198 00 Praha 9. Black "
+"Diamond Spa je registrovaná ochranná známka. Všechny naše služby jsou "
+"poskytovány certifikovaným personálem a mají výhradně relaxační, regenerační"
+" a wellness charakter v souladu s právními předpisy ČR."
+msgstr ""
+"Оператором салона Black Diamond Spa является компания Prague relax s.r.o., "
+"ИНН: 23481412, юридический адрес: Chvalská 718/10, Hloubětín, 198 00 Praha "
+"9. Black Diamond Spa является зарегистрированной торговой маркой. Все наши "
+"услуги предоставляются сертифицированным персоналом и носят исключительно "
+"релаксационный, восстановительный и wellness-характер в соответствии с "
+"законодательством Чешской Республики."
 
 msgid "Právě na směně"
 msgstr "Сейчас на смене"
@@ -527,11 +529,11 @@ msgstr "Забронировать"
 msgid "Rezervovat masáž"
 msgstr "Забронировать массаж"
 
+msgid "Rezervovat přes WhatsApp"
+msgstr "Забронировать через WhatsApp"
+
 msgid "Rezervovat tuto masáž"
 msgstr "Забронировать этот массаж"
-
-msgid "Rozvrh"
-msgstr "Расписание"
 
 msgid "Rozvrh masáží"
 msgstr "Расписание массажей"
@@ -574,6 +576,9 @@ msgstr "Пагинация"
 
 msgid "Stránky"
 msgstr "Страницы"
+
+msgid "Sídlo"
+msgstr "Юридический адрес"
 
 msgid "Telefon"
 msgstr "Телефон"
@@ -689,9 +694,6 @@ msgstr ""
 msgid "Všechny masáže"
 msgstr "Все массажи"
 
-msgid "Všechny masérky"
-msgstr "Все массажистки"
-
 msgid ""
 "Všechny typy masáží a délky na jednom místě. Oleje a relaxační zóna v ceně."
 msgstr ""
@@ -721,12 +723,6 @@ msgstr "Закрыть меню"
 
 msgid "Zkušené masérky"
 msgstr "Опытные массажистки"
-
-msgid "Zobrazit rozvrh"
-msgstr "Смотреть расписание"
-
-msgid "Zobrazit rozvrh & rezervovat"
-msgstr "Смотреть расписание и забронировать"
 
 msgid "Zpráva odeslána!"
 msgstr "Сообщение отправлено!"

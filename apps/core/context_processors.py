@@ -5,6 +5,7 @@ from django.utils.translation import get_language
 
 from .models import SiteSettings
 from .opening_hours import DEFAULT_HOURS, get_opening_hours_display
+from .phone_rotation import format_tel_href
 from .pricing import CurrencySettings
 
 
@@ -17,13 +18,13 @@ def _fallback_address():
     return {
         'SITE_STREET_ADDRESS': 'Opletalova 1566/30',
         'SITE_POSTAL_CODE': '110 00',
-        'SITE_ADDRESS_LOCALITY': 'Nové Město',
+        'SITE_ADDRESS_LOCALITY': 'Praha',
         'SITE_ADDRESS_COUNTRY': 'CZ',
-        'SITE_ADDRESS': getattr(settings, 'SITE_ADDRESS', 'Opletalova 1566/30, 110 00 Nové Město'),
+        'SITE_ADDRESS': getattr(settings, 'SITE_ADDRESS', 'Opletalova 1566/30, 110 00 Praha'),
         'SITE_MAPS_URL': getattr(
             settings,
             'SITE_MAPS_URL',
-            'https://maps.google.com/?q=Opletalova+1566%2F30%2C+110+00+Nov%C3%A9+M%C4%9Bsto',
+            'https://maps.google.com/?q=Opletalova+1566%2F30%2C+110+00+Praha',
         ),
         'SITE_MAPS_EMBED_URL': getattr(settings, 'SITE_MAPS_EMBED_URL', ''),
     }
@@ -35,6 +36,7 @@ def site_settings(request):
         'SITE_NAME': settings.SITE_NAME,
         'SITE_URL': settings.SITE_URL,
         'SITE_PHONE': settings.SITE_PHONE,
+        'SITE_PHONE_TEL': format_tel_href(settings.SITE_PHONE),
         'SITE_EMAIL': settings.SITE_EMAIL,
         'PAGE_LANG': lang,
         'SITE_OPENING_HOURS': DEFAULT_HOURS.get(lang, DEFAULT_HOURS['cs']),
@@ -50,9 +52,11 @@ def site_settings(request):
         base.update({
             'SITE_STREET_ADDRESS': site.address.split(',')[0].strip() if site.address else 'Opletalova 1566/30',
             'SITE_POSTAL_CODE': '110 00',
-            'SITE_ADDRESS_LOCALITY': 'Nové Město',
+            'SITE_ADDRESS_LOCALITY': 'Praha',
             'SITE_ADDRESS_COUNTRY': 'CZ',
             'SITE_ADDRESS': site.address or site.full_address,
+            'SITE_PHONE': site.get_active_phone_display(),
+            'SITE_PHONE_TEL': site.get_active_phone_tel(),
             'SITE_MAPS_URL': site.map_url or getattr(
                 settings,
                 'SITE_MAPS_URL',

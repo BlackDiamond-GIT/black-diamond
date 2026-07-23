@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 WHATSAPP = (
-    '<a href="https://wa.me/420797669633" class="nav__whatsapp" '
+    '<a href="https://wa.me/420778622334" class="nav__whatsapp" '
     'target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">\n'
     '          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
     '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15'

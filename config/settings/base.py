@@ -123,9 +123,9 @@ CONTACT_RECIPIENT_EMAIL = env('CONTACT_RECIPIENT_EMAIL', default='info@blackdiam
 
 SITE_NAME = 'Black Diamond Spa'
 SITE_URL = 'https://blackdiamond.cz'
-SITE_PHONE = '+420 797 669 633'
+SITE_PHONE = '+420 778 622 334'
 SITE_EMAIL = 'info@blackdiamond.cz'
-SITE_ADDRESS = 'Opletalova 1566/30, 110 00 Nové Město'
+SITE_ADDRESS = 'Opletalova 1566/30, 110 00 Praha'
 SITE_MAPS_EMBED_URL = (
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2560.2094122242142'
     '!2d14.4289516!3d50.082366!3m2!1i1024!2i768!4f13.1!3m3!1m2'
@@ -142,7 +142,7 @@ GOOGLE_PLACES_API_KEY = env('GOOGLE_PLACES_API_KEY', default='')
 GOOGLE_PLACE_ID = env('GOOGLE_PLACE_ID', default='')
 GOOGLE_PLACE_QUERY = env(
     'GOOGLE_PLACE_QUERY',
-    default='Erotic massage Black Diamond Opletalova 1566/30 Praha 1',
+    default='Black Diamond Spa Opletalova 1566/30 Praha',
 )
 
 CLOUDINARY_URL = env('CLOUDINARY_URL', default='')
